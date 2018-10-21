@@ -1507,7 +1507,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.za.shaunsaker.isle5;
+				PRODUCT_BUNDLE_IDENTIFIER = co.za.shaunsaker.aisle5;
 				PRODUCT_NAME = Aisle5;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1532,7 +1532,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.za.shaunsaker.isle5;
+				PRODUCT_BUNDLE_IDENTIFIER = co.za.shaunsaker.aisle5;
 				PRODUCT_NAME = Aisle5;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
