@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>315920114440-l0k210gqj66itnaqnnagr7r8ea40g7go.apps.googleusercontent.com</string>
+	<string>315920114440-jab5rjkf1rqsr2k63nq7qgsbs9lnv6rd.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.315920114440-l0k210gqj66itnaqnnagr7r8ea40g7go</string>
+	<string>com.googleusercontent.apps.315920114440-jab5rjkf1rqsr2k63nq7qgsbs9lnv6rd</string>
 	<key>API_KEY</key>
 	<string>AIzaSyACoOFUXC4B6a6UcPOria4FIqwmnOADcqc</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>co.za.shaunsaker.isle5</string>
+	<string>co.za.shaunsaker.aisle5</string>
 	<key>PROJECT_ID</key>
 	<string>isle5-production</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:315920114440:ios:991edcd101199775</string>
+	<string>1:315920114440:ios:050850ebe403dcd5</string>
 	<key>DATABASE_URL</key>
 	<string>https://isle5-production.firebaseio.com</string>
 </dict>

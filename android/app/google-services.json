@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:396876001034:android:991edcd101199775",
+        "mobilesdk_app_id": "1:396876001034:android:050850ebe403dcd5",
         "android_client_info": {
-          "package_name": "co.za.shaunsaker.isle5"
+          "package_name": "co.za.shaunsaker.aisle5"
         }
       },
       "oauth_client": [
