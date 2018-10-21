@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Page } from 'react-native-simple-components';
 import { Text } from 'react-native';
+
+import Page from '../../../components/Page';
 
 export class Home extends React.Component {
   constructor(props) {
