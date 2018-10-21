@@ -8,7 +8,6 @@ target 'Isle5' do
   # Pods for Isle5
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
-  pod 'Firebase/Messaging'
   pod 'Firebase/Firestore'
 
   target 'Isle5Tests' do

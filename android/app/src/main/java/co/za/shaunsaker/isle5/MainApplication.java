@@ -6,7 +6,6 @@ import com.facebook.react.ReactApplication;
 import com.microsoft.codepush.react.CodePush;
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.auth.RNFirebaseAuthPackage;
-import io.invertase.firebase.notifications.RNFirebaseNotificationsPackage;
 import io.invertase.firebase.firestore.RNFirebaseFirestorePackage;
 import com.azendoo.reactnativesnackbar.SnackbarPackage;
 import com.facebook.react.ReactNativeHost;
@@ -25,7 +24,7 @@ public class MainApplication extends Application implements ReactApplication {
         protected String getJSBundleFile() {
         return CodePush.getJSBundleFile();
         }
-    
+
     @Override
     public boolean getUseDeveloperSupport() {
       return BuildConfig.DEBUG;
@@ -35,10 +34,9 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new CodePush(getResources().getString(R.string.reactNativeCodePush_androidDeploymentKey), getApplicationContext(), BuildConfig.DEBUG),
+          new CodePush(getResources().getString(R.string.reactNativeCodePush_androidDeploymentKey), getApplicationContext(), BuildConfig.DEBUG),
           new RNFirebasePackage(),
           new RNFirebaseAuthPackage(),
-          new RNFirebaseNotificationsPackage(),
           new RNFirebaseFirestorePackage(),
           new SnackbarPackage()
       );

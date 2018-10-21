@@ -16,9 +16,6 @@ PODS:
   - Firebase/Firestore (5.8.1):
     - Firebase/CoreOnly
     - FirebaseFirestore (= 0.13.3)
-  - Firebase/Messaging (5.8.1):
-    - Firebase/CoreOnly
-    - FirebaseMessaging (= 3.1.2)
   - FirebaseAnalytics (5.1.4):
     - FirebaseCore (~> 5.1)
     - FirebaseInstanceID (~> 3.2)
@@ -56,11 +53,6 @@ PODS:
   - FirebaseInstanceID (3.2.1):
     - FirebaseCore (~> 5.1)
     - GoogleUtilities/Environment (~> 5.2)
-  - FirebaseMessaging (3.1.2):
-    - FirebaseCore (~> 5.0)
-    - FirebaseInstanceID (~> 3.0)
-    - GoogleUtilities/Reachability (~> 5.2)
-    - Protobuf (~> 3.1)
   - GoogleAppMeasurement (5.1.4):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
@@ -125,7 +117,6 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
-  - Firebase/Messaging
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -137,7 +128,6 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseFirestore
     - FirebaseInstanceID
-    - FirebaseMessaging
     - GoogleAppMeasurement
     - GoogleUtilities
     - gRPC
@@ -159,7 +149,6 @@ SPEC CHECKSUMS:
   FirebaseCore: 27bd80e5bfaaf9552a1f5cacb4c7e8bb925bab22
   FirebaseFirestore: c9ec5660228f97ed10782d72b0498449af07256d
   FirebaseInstanceID: ea5af6920d0a4a29b40459d055bebe4a6c1333c4
-  FirebaseMessaging: d6feeb06218d2675b4149b0ada925a6b707a74cf
   GoogleAppMeasurement: 7d2552cea4e12d09ce737ef0441887a746585ff3
   GoogleUtilities: 760ccb53b7c7f40f9c02d8c241f76f841a7a6162
   gRPC: 9d4c549f37c7cef22478634bac7a0405b6e3dbfb
@@ -172,6 +161,6 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
 
-PODFILE CHECKSUM: 6bbccb30afdfd8f619fcb48004a063b6cee35c35
+PODFILE CHECKSUM: 8f946d87d0b3a91a2e6efbae5bf1ab7c5e470e74
 
 COCOAPODS: 1.5.3
