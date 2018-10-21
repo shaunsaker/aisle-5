@@ -1,4 +1,4 @@
-package co.za.shaunsaker.isle5;
+package co.za.shaunsaker.aisle5;
 
 import android.app.Application;
 

@@ -1,4 +1,4 @@
-package co.za.shaunsaker.isle5;
+package co.za.shaunsaker.aisle5;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "Isle5";
+        return "Aisle5";
     }
 }

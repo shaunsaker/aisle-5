@@ -45,12 +45,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "co.za.shaunsaker.isle5",
+    package = "co.za.shaunsaker.aisle5",
 )
 
 android_resource(
     name = "res",
-    package = "co.za.shaunsaker.isle5",
+    package = "co.za.shaunsaker.aisle5",
     res = "src/main/res",
 )
 
