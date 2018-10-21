@@ -7,12 +7,10 @@ import { store, persistor } from './store';
 import Routes from './Routes';
 
 import ErrorHandler from './handlers/ErrorHandler';
-import NotificationsHandler from './handlers/NotificationsHandler';
 import SystemMessageHandler from './handlers/SystemMessageHandler';
 import AuthHandler from './handlers/AuthHandler';
 import DatabaseHandler from './handlers/DatabaseHandler';
 import NetworkHandler from './handlers/NetworkHandler';
-import LocationHandler from './handlers/LocationHandler';
 import CodePushHandler from './handlers/CodePushHandler';
 import AndroidBackHandler from './handlers/AndroidBackHandler';
 
@@ -30,14 +28,12 @@ export function App() {
   return (
     <Provider store={store}>
       <PersistGate loading={<PageLoader />} persistor={persistor}>
-        <NotificationsHandler />
         <ErrorHandler>
           <SystemMessageHandler>
             <CodePushHandler />
             <AuthHandler />
             <DatabaseHandler />
             <NetworkHandler />
-            <LocationHandler />
             <Routes />
             <AndroidBackHandler />
           </SystemMessageHandler>
