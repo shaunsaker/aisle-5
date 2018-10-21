@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -335,6 +336,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNFirebase;
+		};
+		7AFCA639217CF48800877042 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 83CBBA2D1A601D0E00E9B192;
+			remoteInfo = React;
 		};
 		832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -684,7 +692,6 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				7AE396A8217C584D00FEEEBA /* Recovered References */,
 				D52CA456077F691CDF2D56F2 /* Pods */,
-				FAB65E473CFF4A3791431971 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -762,6 +769,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7AFCA63A217CF48800877042 /* PBXTargetDependency */,
 			);
 			name = Aisle5;
 			productName = "Hello World";
@@ -1410,6 +1418,11 @@
 			isa = PBXTargetDependency;
 			target = 2D02E47A1E0B4A5D006451C7 /* Aisle5-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
+		};
+		7AFCA63A217CF48800877042 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = React;
+			targetProxy = 7AFCA639217CF48800877042 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
