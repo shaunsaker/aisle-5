@@ -1,4 +1,4 @@
-package com.temp;
+package co.za.shaunsaker.isle5;
 
 import android.app.Application;
 

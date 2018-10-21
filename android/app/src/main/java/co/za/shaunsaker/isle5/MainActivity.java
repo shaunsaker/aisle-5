@@ -1,4 +1,4 @@
-package com.temp;
+package co.za.shaunsaker.isle5;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "temp";
+        return "Isle5";
     }
 }
