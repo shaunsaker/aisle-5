@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Page, InfoBlock } from 'react-native-simple-components';
+import { Text } from 'react-native';
 
 import styleConstants from '../../../styleConstants';
+
+import Page from '../../../components/Page';
 
 export class Error extends React.Component {
   constructor(props) {
@@ -32,7 +34,7 @@ export class Error extends React.Component {
           paddingHorizontal: styleConstants.dimensions.spacing.horizontal,
         }}
       >
-        <InfoBlock title="Error" description={message} />
+        <Text>{message}</Text>
       </Page>
     );
   }

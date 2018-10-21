@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Text, ViewPropTypes } from 'react-native';
-import { Touchable } from 'react-native-simple-components';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import styles from './styles';
+
+import Touchable from '../../Touchable';
 
 const propTypes = {
   iconName: PropTypes.string,

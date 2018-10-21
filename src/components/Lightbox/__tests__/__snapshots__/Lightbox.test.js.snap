@@ -51,6 +51,7 @@ exports[`Lightbox renders renders with minimum required props 1`] = `
         }
       }
       enableAutomaticScroll={true}
+      enableOnAndroid={false}
       enableResetScrollToCoords={true}
       extraHeight={75}
       extraScrollHeight={0}
@@ -111,6 +112,7 @@ exports[`Lightbox renders renders with minimum required props 1`] = `
                   "fontStyle": "normal",
                   "fontWeight": "normal",
                 },
+                Object {},
               ]
             }
           >

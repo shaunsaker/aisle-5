@@ -44,6 +44,7 @@ exports[`Menu renders renders with minimum required props 1`] = `
               "fontStyle": "normal",
               "fontWeight": "normal",
             },
+            Object {},
           ]
         }
       >
@@ -54,6 +55,15 @@ exports[`Menu renders renders with minimum required props 1`] = `
   <Modal
     hardwareAccelerated={false}
     onRequestClose={[Function]}
+    supportedOrientations={
+      Array [
+        "portrait",
+        "portrait-upside-down",
+        "landscape",
+        "landscape-left",
+        "landscape-right",
+      ]
+    }
     transparent={true}
     visible={false}
   >
@@ -80,10 +90,9 @@ exports[`Menu renders renders with minimum required props 1`] = `
         style={
           Object {
             "backgroundColor": "white",
-            "borderRadius": 2,
+            "borderRadius": 4,
             "left": 0,
             "opacity": 0,
-            "paddingVertical": 8,
             "position": "absolute",
             "shadowColor": "black",
             "shadowOffset": Object {
@@ -125,16 +134,14 @@ exports[`Menu renders renders with minimum required props 1`] = `
                   undefined,
                   undefined,
                 ],
-                Object {
-                  "width": 0,
-                },
               ]
             }
+            testID="menu.item.Foo"
           >
             <Text
               accessible={true}
               allowFontScaling={true}
-              ellipsizeMode="tail"
+              ellipsizeMode="clip"
               numberOfLines={1}
               style={
                 Array [
@@ -175,16 +182,14 @@ exports[`Menu renders renders with minimum required props 1`] = `
                   undefined,
                   undefined,
                 ],
-                Object {
-                  "width": 0,
-                },
               ]
             }
+            testID="menu.item.Bar"
           >
             <Text
               accessible={true}
               allowFontScaling={true}
-              ellipsizeMode="tail"
+              ellipsizeMode="clip"
               numberOfLines={1}
               style={
                 Array [

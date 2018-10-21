@@ -35,6 +35,7 @@ exports[`CodePushStatus renders renders 1`] = `
           "fontStyle": "normal",
           "fontWeight": "normal",
         },
+        Object {},
       ]
     }
   >
