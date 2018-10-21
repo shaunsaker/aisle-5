@@ -1,3 +1,4 @@
 <resources>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">_2G9RtQjdGojHKC64VanfQNKbQUze941d2cf-909b-4139-a2dd-196406e4cc30</string>
     <string name="app_name">Isle 5</string>
 </resources>
