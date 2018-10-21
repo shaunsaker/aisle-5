@@ -113,6 +113,7 @@ android {
                 }
             }
         }
+        multiDexEnabled true
     }
     splits {
         abi {
@@ -145,7 +146,15 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-snackbar')
+    // Firebase dependencies
+    implementation project(':react-native-firebase')
+    implementation "com.google.android.gms:play-services-base:15.0.1"
+    implementation "com.google.firebase:firebase-core:15.0.0"
+    implementation "com.google.firebase:firebase-auth:15.1.0"
+    implementation "com.google.firebase:firebase-messaging:15.0.2"
+    implementation "com.google.firebase:firebase-firestore:16.0.0"
+    implementation 'com.android.support:multidex:1.0.3' // needed for multidex
+    implementation project(':react-native-snackbar')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules
@@ -163,3 +172,6 @@ project.ext.vectoricons = [
     iconFontNames: [ 'MaterialIcons.ttf' ] // add whatever other icons you want
 ]
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
+apply plugin: 'com.google.gms.google-services'
+

@@ -1,0 +1,32 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+target 'Isle5' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for Isle5
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/Firestore'
+
+  target 'Isle5Tests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+
+target 'Isle5-tvOS' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for Isle5-tvOS
+
+  target 'Isle5-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
