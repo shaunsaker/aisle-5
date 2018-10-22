@@ -6,12 +6,12 @@ const TABS = [
   },
   {
     name: 'Predictions',
-    iconName: 'person',
+    iconName: 'assessment',
     sceneKey: '_predictions',
   },
   {
     name: 'Lists',
-    iconName: 'person',
+    iconName: 'assignment',
     sceneKey: '_lists',
   },
 ];

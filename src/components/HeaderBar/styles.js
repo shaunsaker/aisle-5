@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     paddingBottom: styleConstants.dimensions.spacing.vertical,
     paddingHorizontal: styleConstants.dimensions.spacing.horizontal,
     backgroundColor: styleConstants.colors.primary,
+    ...styleConstants.shadows.large,
   },
 });
 

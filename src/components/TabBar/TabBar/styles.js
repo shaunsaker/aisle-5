@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     backgroundColor: styleConstants.colors.primary,
-    ...styleConstants.shadows.regular,
+    ...styleConstants.shadows.large,
   },
   tabContainer: {
     flex: 1,
