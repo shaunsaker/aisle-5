@@ -1,9 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Text } from 'react-native';
+import { View } from 'react-native';
 
 import Page from '../../../components/Page';
+import HeaderBar from '../../../components/HeaderBar';
+import BlankState from '../../../components/BlankState';
+import TextInput from '../../../components/TextInput';
+import Label from '../../../components/Label';
+import Button from '../../../components/Button';
+import TabBar from '../../../components/TabBar';
 
 export class Home extends React.Component {
   constructor(props) {
@@ -18,8 +24,12 @@ export class Home extends React.Component {
 
   render() {
     return (
-      <Page verticalCenter horizontalCenter>
-        <Text>Hello World!</Text>
+      <Page>
+        <HeaderBar />
+
+        <View style={{ flex: 1 }} />
+
+        <TabBar />
       </Page>
     );
   }

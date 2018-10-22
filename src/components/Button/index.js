@@ -27,7 +27,7 @@ const defaultProps = {};
     - Disabled
     - Loading
 */
-const LargeButton = ({ text, primary, disabled, handlePress, testID, showLoader }) => {
+const Button = ({ text, primary, disabled, handlePress, testID, showLoader }) => {
   const textComponent = showLoader ? (
     <ActivityIndicator size="small" color={styleConstants.colors.primaryText} />
   ) : (
@@ -45,14 +45,14 @@ const LargeButton = ({ text, primary, disabled, handlePress, testID, showLoader 
         primary && styles.primaryContainer,
         disabled && styles.disabledContainer,
       ]}
-      testID={testID || 'largeButton'}
+      testID={testID || 'Button'}
     >
       {textComponent}
     </Touchable>
   );
 };
 
-LargeButton.propTypes = propTypes;
-LargeButton.defaultProps = defaultProps;
+Button.propTypes = propTypes;
+Button.defaultProps = defaultProps;
 
-export default LargeButton;
+export default Button;

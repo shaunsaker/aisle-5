@@ -5,9 +5,14 @@ const TABS = [
     sceneKey: '_home',
   },
   {
-    name: 'Profile',
+    name: 'Predictions',
     iconName: 'person',
-    sceneKey: '_profile',
+    sceneKey: '_predictions',
+  },
+  {
+    name: 'Lists',
+    iconName: 'person',
+    sceneKey: '_lists',
   },
 ];
 

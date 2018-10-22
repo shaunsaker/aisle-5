@@ -37,7 +37,7 @@ export class TabBarContainer extends React.Component {
   }
 
   navigate(page, props) {
-    utils.app.navigate(page, props);
+    utils.navigation.navigate(page, props);
   }
 
   render() {
