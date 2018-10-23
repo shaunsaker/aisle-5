@@ -4,14 +4,17 @@ const fonts = {};
 
 // Font families
 fonts.families = {
-  primary: {
-    fontFamily: 'System',
+  title: {
+    fontFamily: 'ArchivoBlack-Regular',
+  },
+  bold: {
+    fontFamily: 'Muli-Bold',
   },
   medium: {
-    fontFamily: 'System',
+    fontFamily: 'Muli-SemiBold',
   },
-  secondary: {
-    fontFamily: 'System',
+  regular: {
+    fontFamily: 'Muli-Regular',
   },
 };
 
@@ -27,27 +30,27 @@ fonts.sizes = {
 // Font types
 fonts.types = {
   title: {
-    ...fonts.families.medium,
+    ...fonts.families.title,
     fontSize: fonts.sizes.large,
     color: colors.primaryText,
   },
   heading: {
-    ...fonts.families.medium,
+    ...fonts.families.bold,
     fontSize: fonts.sizes.regular,
     color: colors.primaryText,
   },
   paragraph: {
-    ...fonts.families.primary,
+    ...fonts.families.regular,
     fontSize: fonts.sizes.regular,
     color: colors.primaryText,
   },
   small: {
-    ...fonts.families.primary,
+    ...fonts.families.medium,
     fontSize: fonts.sizes.small,
     color: colors.primaryText,
   },
   extraSmall: {
-    ...fonts.families.medium,
+    ...fonts.families.bold,
     fontSize: fonts.sizes.verySmall,
     color: colors.primaryText,
   },

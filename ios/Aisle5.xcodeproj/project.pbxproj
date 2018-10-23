@@ -42,6 +42,10 @@
 		355798A86DFA4D1A8CA9F326 /* libRNFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4D2C07DE780449EBA1A0B20 /* libRNFirebase.a */; };
 		69BA309EE583C629B3A76D96 /* libPods-Aisle5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06619DEE63346F04734746FA /* libPods-Aisle5.a */; };
 		7A1E5005217C6A2A00CEE5DF /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1E4FDB217C6A1600CEE5DF /* libCodePush.a */; };
+		7A24CDB1217FA90C00591495 /* Muli-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A24CD85217FA90A00591495 /* Muli-SemiBold.ttf */; };
+		7A24CDB2217FA90C00591495 /* ArchivoBlack-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A24CDAE217FA90A00591495 /* ArchivoBlack-Regular.ttf */; };
+		7A24CDB3217FA90C00591495 /* Muli-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A24CDAF217FA90B00591495 /* Muli-Bold.ttf */; };
+		7A24CDB4217FA90C00591495 /* Muli-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A24CDB0217FA90B00591495 /* Muli-Regular.ttf */; };
 		7AE3969B217C582F00FEEEBA /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AE3969A217C582F00FEEEBA /* MaterialIcons.ttf */; };
 		7AE3974F217C602D00FEEEBA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AE39727217C602D00FEEEBA /* GoogleService-Info.plist */; };
 		7F7E6B87B1DE4E7E6BEFB808 /* libPods-Aisle5-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A70E5EB7A7E082D1FD78A381 /* libPods-Aisle5-tvOS.a */; };
@@ -392,6 +396,10 @@
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		7A1E4FD5217C6A1600CEE5DF /* CodePush.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CodePush.xcodeproj; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; };
+		7A24CD85217FA90A00591495 /* Muli-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-SemiBold.ttf"; path = "../src/assets/fonts/Muli-SemiBold.ttf"; sourceTree = "<group>"; };
+		7A24CDAE217FA90A00591495 /* ArchivoBlack-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ArchivoBlack-Regular.ttf"; path = "../src/assets/fonts/ArchivoBlack-Regular.ttf"; sourceTree = "<group>"; };
+		7A24CDAF217FA90B00591495 /* Muli-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-Bold.ttf"; path = "../src/assets/fonts/Muli-Bold.ttf"; sourceTree = "<group>"; };
+		7A24CDB0217FA90B00591495 /* Muli-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-Regular.ttf"; path = "../src/assets/fonts/Muli-Regular.ttf"; sourceTree = "<group>"; };
 		7AE3969A217C582F00FEEEBA /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		7AE39727217C602D00FEEEBA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
@@ -685,6 +693,10 @@
 			children = (
 				7AE3969A217C582F00FEEEBA /* MaterialIcons.ttf */,
 				7AE39727217C602D00FEEEBA /* GoogleService-Info.plist */,
+				7A24CDAE217FA90A00591495 /* ArchivoBlack-Regular.ttf */,
+				7A24CDAF217FA90B00591495 /* Muli-Bold.ttf */,
+				7A24CDB0217FA90B00591495 /* Muli-Regular.ttf */,
+				7A24CD85217FA90A00591495 /* Muli-SemiBold.ttf */,
 				13B07FAE1A68108700A75B9A /* Aisle5 */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* Aisle5Tests */,
@@ -1228,8 +1240,12 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				7AE3974F217C602D00FEEEBA /* GoogleService-Info.plist in Resources */,
+				7A24CDB4217FA90C00591495 /* Muli-Regular.ttf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				7AE3969B217C582F00FEEEBA /* MaterialIcons.ttf in Resources */,
+				7A24CDB2217FA90C00591495 /* ArchivoBlack-Regular.ttf in Resources */,
+				7A24CDB3217FA90C00591495 /* Muli-Bold.ttf in Resources */,
+				7A24CDB1217FA90C00591495 /* Muli-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
