@@ -5,6 +5,7 @@ import { View } from 'react-native';
 
 import Page from '../../../components/Page';
 import HeaderBar from '../../../components/HeaderBar';
+import Logo from '../../../components/Logo';
 import BlankState from '../../../components/BlankState';
 import TextInput from '../../../components/TextInput';
 import Label from '../../../components/Label';
@@ -25,7 +26,9 @@ export class Home extends React.Component {
   render() {
     return (
       <Page>
-        <HeaderBar />
+        <HeaderBar>
+          <Logo />
+        </HeaderBar>
 
         <View style={{ flex: 1 }} />
 
