@@ -34,6 +34,12 @@ export class Home extends React.Component {
         </HeaderBar>
 
         <View style={styles.contentContainer}>
+          <BlankState
+            iconName="shopping-basket"
+            title="You have no items"
+            description="Add items by tapping the '+' button below. They'll show up here."
+          />
+
           <View style={styles.iconButtonContainer}>
             <IconButton name="add" />
           </View>
