@@ -44,13 +44,12 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>MaterialIcons.ttf</string>
+		<string>AppIcons.ttf</string>
 		<string>ArchivoBlack-Regular.ttf</string>
 		<string>Muli-Bold.ttf</string>
 		<string>Muli-SemiBold.ttf</string>
 		<string>Muli-Regular.ttf</string>
 	</array>
-	
-	
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

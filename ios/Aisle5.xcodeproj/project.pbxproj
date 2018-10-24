@@ -45,6 +45,7 @@
 		7A24CDB2217FA90C00591495 /* ArchivoBlack-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A24CDAE217FA90A00591495 /* ArchivoBlack-Regular.ttf */; };
 		7A24CDB3217FA90C00591495 /* Muli-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A24CDAF217FA90B00591495 /* Muli-Bold.ttf */; };
 		7A24CDB4217FA90C00591495 /* Muli-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A24CDB0217FA90B00591495 /* Muli-Regular.ttf */; };
+		7AA52633218036550097AC7A /* AppIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AA5260A218036550097AC7A /* AppIcons.ttf */; };
 		7AE3969B217C582F00FEEEBA /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AE3969A217C582F00FEEEBA /* MaterialIcons.ttf */; };
 		7AE3974F217C602D00FEEEBA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AE39727217C602D00FEEEBA /* GoogleService-Info.plist */; };
 		7F7E6B87B1DE4E7E6BEFB808 /* libPods-Aisle5-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A70E5EB7A7E082D1FD78A381 /* libPods-Aisle5-tvOS.a */; };
@@ -398,6 +399,7 @@
 		7A24CDAE217FA90A00591495 /* ArchivoBlack-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ArchivoBlack-Regular.ttf"; path = "../src/assets/fonts/ArchivoBlack-Regular.ttf"; sourceTree = "<group>"; };
 		7A24CDAF217FA90B00591495 /* Muli-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-Bold.ttf"; path = "../src/assets/fonts/Muli-Bold.ttf"; sourceTree = "<group>"; };
 		7A24CDB0217FA90B00591495 /* Muli-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-Regular.ttf"; path = "../src/assets/fonts/Muli-Regular.ttf"; sourceTree = "<group>"; };
+		7AA5260A218036550097AC7A /* AppIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppIcons.ttf; sourceTree = "<group>"; };
 		7AE3969A217C582F00FEEEBA /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		7AE39727217C602D00FEEEBA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
@@ -694,6 +696,7 @@
 				7A24CDAF217FA90B00591495 /* Muli-Bold.ttf */,
 				7A24CDB0217FA90B00591495 /* Muli-Regular.ttf */,
 				7A24CD85217FA90A00591495 /* Muli-SemiBold.ttf */,
+				7AA5260A218036550097AC7A /* AppIcons.ttf */,
 				13B07FAE1A68108700A75B9A /* Aisle5 */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* Aisle5Tests */,
@@ -1240,6 +1243,7 @@
 				7A24CDB4217FA90C00591495 /* Muli-Regular.ttf in Resources */,
 				7AE3969B217C582F00FEEEBA /* MaterialIcons.ttf in Resources */,
 				7A24CDB2217FA90C00591495 /* ArchivoBlack-Regular.ttf in Resources */,
+				7AA52633218036550097AC7A /* AppIcons.ttf in Resources */,
 				7A24CDB3217FA90C00591495 /* Muli-Bold.ttf in Resources */,
 				7A24CDB1217FA90C00591495 /* Muli-SemiBold.ttf in Resources */,
 			);
