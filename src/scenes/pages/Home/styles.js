@@ -6,7 +6,12 @@ const styles = StyleSheet.create({
   contentContainer: {
     flex: 1,
   },
-  iconButtonContainer: {
+  addItemButtonContainer: {
+    position: 'absolute',
+    bottom: styleConstants.dimensions.spacing.horizontal,
+    right: styleConstants.dimensions.spacing.horizontal,
+  },
+  submitItemButtonContainer: {
     position: 'absolute',
     bottom: styleConstants.dimensions.spacing.horizontal,
     right: styleConstants.dimensions.spacing.horizontal,

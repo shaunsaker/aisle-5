@@ -28,6 +28,7 @@ export default class TextInputComponent extends React.Component {
     testID: PropTypes.string,
     inputRef: PropTypes.func,
     multiline: PropTypes.bool,
+    autoFocus: PropTypes.bool,
     style: TextInput.propTypes.style,
   };
 
@@ -47,6 +48,7 @@ export default class TextInputComponent extends React.Component {
       testID,
       inputRef,
       multiline,
+      autoFocus,
       style,
     } = this.props;
 
@@ -64,6 +66,7 @@ export default class TextInputComponent extends React.Component {
         testID={testID}
         ref={inputRef}
         multiline={multiline}
+        autoFocus={autoFocus}
         underlineColorAndroid="transparent"
       />
     );

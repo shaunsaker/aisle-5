@@ -6,9 +6,8 @@ import styleConstants from '../../styleConstants';
 
 const styles = StyleSheet.create({
   input: {
-    ...styleConstants.fonts.types.paragraph,
+    ...styleConstants.fonts.types.heading,
     backgroundColor: styleConstants.colors.white,
-    textAlign: 'center',
     borderWidth: 1,
     borderColor: styleConstants.colors.dividerColor,
     borderRadius: styleConstants.dimensions.borderRadius,
@@ -21,10 +20,7 @@ const styles = StyleSheet.create({
     color: styleConstants.colors.danger,
     borderColor: 'rgba(255, 0, 0, 0.5)',
   },
-  success: {
-    // color: styleConstants.colors.success,
-    // backgroundColor: styleConstants.colors.success,
-  },
+  success: {},
 });
 
 export default styles;
