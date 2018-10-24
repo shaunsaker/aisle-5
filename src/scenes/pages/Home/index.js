@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { View } from 'react-native';
+import Animator from 'react-native-simple-animators';
+
+import styleConstants from '../../../styleConstants';
 
 import styles from './styles';
 
@@ -56,28 +59,13 @@ export class Home extends React.Component {
     });
   }
 
-  onSubmitItem() {}
+  onSubmitItem() {
+    this.setShowInput(false);
+    this.setItem(null);
+  }
 
   render() {
     const { showInput, item } = this.state;
-
-    const headerComponent = showInput ? (
-      <TextInput
-        placeholder="Enter the item's name..."
-        value={item}
-        handleChange={this.onSetItem}
-        handleSubmit={this.onSubmitItem}
-        autoFocus
-      />
-    ) : (
-      <Logo />
-    );
-
-    const addItemButtonComponent = !showInput && (
-      <View style={styles.addItemButtonContainer}>
-        <IconButton name="add" handlePress={this.onAddItem} />
-      </View>
-    );
 
     const submitItemButtonComponent = showInput &&
       item && (
@@ -88,7 +76,33 @@ export class Home extends React.Component {
 
     return (
       <Page>
-        <HeaderBar>{headerComponent}</HeaderBar>
+        <HeaderBar style={styles.headerBar}>
+          <Animator
+            type="translateX"
+            initialValue={0}
+            finalValue={-150}
+            shouldAnimateIn={showInput}
+            shouldAnimateOut={!showInput}
+          >
+            <Logo />
+          </Animator>
+
+          <Animator
+            type="translateY"
+            initialValue={-60}
+            finalValue={0}
+            shouldAnimateIn={showInput}
+            shouldAnimateOut={!showInput}
+            style={styles.inputContainer}
+          >
+            <TextInput
+              placeholder="Enter the item's name..."
+              value={item}
+              handleChange={this.onSetItem}
+              handleSubmit={this.onSubmitItem}
+            />
+          </Animator>
+        </HeaderBar>
 
         <InputContainer style={{ flex: 1 }} contentContainerStyle={styles.contentContainer}>
           <BlankState
@@ -97,7 +111,24 @@ export class Home extends React.Component {
             description="Add items by tapping the '+' button below. They'll show up here."
           />
 
-          {addItemButtonComponent}
+          <Animator
+            type="translateY"
+            initialValue={100}
+            finalValue={0}
+            shouldAnimateIn={!showInput}
+            shouldAnimateOut={showInput}
+            style={styles.addItemButtonContainer}
+          >
+            <Animator
+              type="scale"
+              initialValue={0.5}
+              finalValue={1}
+              shouldAnimateIn={!showInput}
+              shouldAnimateOut={showInput}
+            >
+              <IconButton name="add" handlePress={this.onAddItem} />
+            </Animator>
+          </Animator>
 
           {submitItemButtonComponent}
         </InputContainer>
