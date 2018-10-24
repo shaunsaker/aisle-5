@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     fontSize: 64,
-    color: styleConstants.colors.secondary,
+    color: styleConstants.colors.accent,
     marginBottom: styleConstants.dimensions.spacing.vertical,
   },
   titleText: {
