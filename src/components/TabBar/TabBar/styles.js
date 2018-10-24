@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   activeTabContainer: {},
   icon: {
     fontSize: styleConstants.fonts.sizes.icon,
-    color: styleConstants.colors.white,
+    color: styleConstants.colors.transWhite,
   },
   text: {
     ...styleConstants.fonts.types.small,
