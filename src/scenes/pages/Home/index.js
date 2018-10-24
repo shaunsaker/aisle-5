@@ -3,12 +3,15 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { View } from 'react-native';
 
+import styles from './styles';
+
 import Page from '../../../components/Page';
 import HeaderBar from '../../../components/HeaderBar';
 import Logo from '../../../components/Logo';
 import BlankState from '../../../components/BlankState';
 import TextInput from '../../../components/TextInput';
 import Label from '../../../components/Label';
+import IconButton from '../../../components/IconButton';
 import Button from '../../../components/Button';
 import TabBar from '../../../components/TabBar';
 
@@ -30,7 +33,11 @@ export class Home extends React.Component {
           <Logo />
         </HeaderBar>
 
-        <View style={{ flex: 1 }} />
+        <View style={styles.contentContainer}>
+          <View style={styles.iconButtonContainer}>
+            <IconButton name="add" />
+          </View>
+        </View>
 
         <TabBar />
       </Page>
