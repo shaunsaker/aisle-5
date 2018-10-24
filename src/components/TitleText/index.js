@@ -12,7 +12,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  text: styleConstants.colors.white,
+  color: styleConstants.colors.white,
 };
 
 const TitleText = ({ text, color }) => {

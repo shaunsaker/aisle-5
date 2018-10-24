@@ -5,6 +5,7 @@ import { View } from 'react-native';
 
 import Page from '../../../components/Page';
 import HeaderBar from '../../../components/HeaderBar';
+import TitleText from '../../../components/TitleText';
 import BlankState from '../../../components/BlankState';
 import TabBar from '../../../components/TabBar';
 
@@ -22,7 +23,9 @@ export class Lists extends React.Component {
   render() {
     return (
       <Page>
-        <HeaderBar />
+        <HeaderBar>
+          <TitleText text="Lists" />
+        </HeaderBar>
 
         <View style={{ flex: 1 }} />
 
