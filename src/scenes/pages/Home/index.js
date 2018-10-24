@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
+import { View, Keyboard } from 'react-native';
 import Animator from 'react-native-simple-animators';
 
 import styleConstants from '../../../styleConstants';
@@ -13,6 +13,7 @@ import HeaderBar from '../../../components/HeaderBar';
 import Logo from '../../../components/Logo';
 import InputContainer from '../../../components/InputContainer';
 import BlankState from '../../../components/BlankState';
+import TouchableIcon from '../../../components/TouchableIcon';
 import TextInput from '../../../components/TextInput';
 import Label from '../../../components/Label';
 import IconButton from '../../../components/IconButton';
@@ -25,9 +26,13 @@ export class Home extends React.Component {
 
     this.onAddItem = this.onAddItem.bind(this);
     this.setShowInput = this.setShowInput.bind(this);
+    this.onBack = this.onBack.bind(this);
     this.onSetItem = this.onSetItem.bind(this);
     this.setItem = this.setItem.bind(this);
     this.onSubmitItem = this.onSubmitItem.bind(this);
+    this.hideInput = this.hideInput.bind(this);
+    this.focusInput = this.focusInput.bind(this);
+    this.dismissKeyboard = this.dismissKeyboard.bind(this);
 
     this.state = {
       showInput: false,
@@ -41,12 +46,17 @@ export class Home extends React.Component {
 
   onAddItem() {
     this.setShowInput(true);
+    this.focusInput();
   }
 
   setShowInput(showInput) {
     this.setState({
       showInput,
     });
+  }
+
+  onBack() {
+    this.hideInput();
   }
 
   onSetItem(item) {
@@ -60,8 +70,21 @@ export class Home extends React.Component {
   }
 
   onSubmitItem() {
+    this.hideInput();
+  }
+
+  hideInput() {
     this.setShowInput(false);
     this.setItem(null);
+    this.dismissKeyboard();
+  }
+
+  focusInput() {
+    this.input.focus();
+  }
+
+  dismissKeyboard() {
+    Keyboard.dismiss();
   }
 
   render() {
@@ -95,11 +118,18 @@ export class Home extends React.Component {
             shouldAnimateOut={!showInput}
             style={styles.inputContainer}
           >
+            <View style={styles.backIconContainer}>
+              <TouchableIcon iconName="chevron-left" handlePress={this.onBack} />
+            </View>
+
             <TextInput
               placeholder="Enter the item's name..."
               value={item}
               handleChange={this.onSetItem}
               handleSubmit={this.onSubmitItem}
+              inputRef={(c) => {
+                this.input = c;
+              }}
             />
           </Animator>
         </HeaderBar>

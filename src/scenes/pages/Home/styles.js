@@ -17,6 +17,11 @@ const styles = StyleSheet.create({
     left: styleConstants.dimensions.spacing.horizontal,
     right: styleConstants.dimensions.spacing.horizontal,
     justifyContent: 'center',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  backIconContainer: {
+    marginRight: styleConstants.dimensions.spacing.horizontal / 2,
   },
   addItemButtonContainer: {
     position: 'absolute',
