@@ -9,14 +9,23 @@ import Touchable from '../Touchable';
 const propTypes = {
   name: PropTypes.string,
   handlePress: PropTypes.func,
+  small: PropTypes.bool,
+  secondary: PropTypes.bool,
 };
 
 const defaultProps = {};
 
-const IconButton = ({ name, handlePress }) => {
+const IconButton = ({ name, handlePress, small, secondary }) => {
   return (
-    <Touchable onPress={handlePress} style={styles.container}>
-      <Icon name={name} style={styles.icon} />
+    <Touchable
+      onPress={handlePress}
+      style={[
+        styles.container,
+        small && styles.smallContainer,
+        secondary && styles.secondaryContainer,
+      ]}
+    >
+      <Icon name={name} style={[styles.icon, small && styles.smallIcon]} />
     </Touchable>
   );
 };

@@ -21,8 +21,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  backIconContainer: {
+  backButtonContainer: {
     marginRight: styleConstants.dimensions.spacing.horizontal / 2,
+  },
+  clearTextButtonContainer: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    right: styleConstants.dimensions.spacing.horizontal / 2,
+    justifyContent: 'center',
   },
   addItemButtonContainer: {
     position: 'absolute',

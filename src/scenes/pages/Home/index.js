@@ -30,6 +30,7 @@ export class Home extends React.Component {
     this.onBack = this.onBack.bind(this);
     this.onSetItem = this.onSetItem.bind(this);
     this.setItem = this.setItem.bind(this);
+    this.onClearText = this.onClearText.bind(this);
     this.onSubmitItem = this.onSubmitItem.bind(this);
     this.hideInput = this.hideInput.bind(this);
     this.focusInput = this.focusInput.bind(this);
@@ -70,6 +71,10 @@ export class Home extends React.Component {
     });
   }
 
+  onClearText() {
+    this.setItem(null);
+  }
+
   onSubmitItem() {
     this.hideInput();
   }
@@ -90,6 +95,21 @@ export class Home extends React.Component {
 
   render() {
     const { showInput, item } = this.state;
+
+    const addItemButtonComponent = !showInput && (
+      <Animator
+        type="translateY"
+        initialValue={100}
+        finalValue={0}
+        shouldAnimateIn
+        delay={100}
+        style={styles.addItemButtonContainer}
+      >
+        <Animator type="scale" initialValue={0.5} finalValue={1} shouldAnimateIn delay={100}>
+          <IconButton name="add" handlePress={this.onAddItem} />
+        </Animator>
+      </Animator>
+    );
 
     const submitItemButtonComponent = showInput && (
       <Animator
@@ -133,7 +153,7 @@ export class Home extends React.Component {
             shouldAnimateOut={!showInput}
             style={styles.inputContainer}
           >
-            <View style={styles.backIconContainer}>
+            <View style={styles.backButtonContainer}>
               <TouchableIcon iconName="chevron-left" handlePress={this.onBack} />
             </View>
 
@@ -146,6 +166,17 @@ export class Home extends React.Component {
                 this.input = c;
               }}
             />
+
+            <Animator
+              type="scale"
+              initialValue={0}
+              finalValue={1}
+              shouldAnimateIn={item}
+              shouldAnimateOut={!item}
+              style={styles.clearTextButtonContainer}
+            >
+              <IconButton name="close" handlePress={this.onClearText} small secondary />
+            </Animator>
           </Animator>
         </HeaderBar>
 
@@ -164,26 +195,7 @@ export class Home extends React.Component {
             />
           </Animator>
 
-          <Animator
-            type="translateY"
-            initialValue={100}
-            finalValue={0}
-            shouldAnimateIn={!showInput}
-            shouldAnimateOut={showInput}
-            delay={100}
-            style={styles.addItemButtonContainer}
-          >
-            <Animator
-              type="scale"
-              initialValue={0.5}
-              finalValue={1}
-              shouldAnimateIn={!showInput}
-              shouldAnimateOut={showInput}
-              delay={100}
-            >
-              <IconButton name="add" handlePress={this.onAddItem} />
-            </Animator>
-          </Animator>
+          {addItemButtonComponent}
         </InputContainer>
 
         {submitItemButtonComponent}
