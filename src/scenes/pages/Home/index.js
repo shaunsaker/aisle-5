@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { View, Keyboard } from 'react-native';
 import Animator from 'react-native-simple-animators';
+import KeyboardSpacer from 'react-native-keyboard-spacer';
 
 import styleConstants from '../../../styleConstants';
 
@@ -90,12 +91,26 @@ export class Home extends React.Component {
   render() {
     const { showInput, item } = this.state;
 
-    const submitItemButtonComponent = showInput &&
-      item && (
-        <View style={styles.submitItemButtonContainer}>
+    const submitItemButtonComponent = showInput && (
+      <Animator
+        type="translateY"
+        initialValue={100}
+        finalValue={0}
+        shouldAnimateIn={item && true}
+        shouldAnimateOut={!item && true}
+        style={styles.submitItemButtonContainer}
+      >
+        <Animator
+          type="scale"
+          initialValue={0.5}
+          finalValue={1}
+          shouldAnimateIn={item && true}
+          shouldAnimateOut={!item && true}
+        >
           <IconButton name="check" handlePress={this.onSubmitItem} />
-        </View>
-      );
+        </Animator>
+      </Animator>
+    );
 
     return (
       <Page>
@@ -134,12 +149,20 @@ export class Home extends React.Component {
           </Animator>
         </HeaderBar>
 
-        <InputContainer style={{ flex: 1 }} contentContainerStyle={styles.contentContainer}>
-          <BlankState
-            iconName="shopping-basket"
-            title="You have no items"
-            description="Add items by tapping the '+' button below. They'll show up here."
-          />
+        <InputContainer contentContainerStyle={styles.contentContainer}>
+          <Animator
+            type="opacity"
+            initialValue={1}
+            finalValue={0}
+            shouldAnimateIn={showInput}
+            shouldAnimateOut={!showInput}
+          >
+            <BlankState
+              iconName="shopping-basket"
+              title="You have no items"
+              description="Add items by tapping the '+' button below. They'll show up here."
+            />
+          </Animator>
 
           <Animator
             type="translateY"
@@ -147,6 +170,7 @@ export class Home extends React.Component {
             finalValue={0}
             shouldAnimateIn={!showInput}
             shouldAnimateOut={showInput}
+            delay={100}
             style={styles.addItemButtonContainer}
           >
             <Animator
@@ -155,13 +179,16 @@ export class Home extends React.Component {
               finalValue={1}
               shouldAnimateIn={!showInput}
               shouldAnimateOut={showInput}
+              delay={100}
             >
               <IconButton name="add" handlePress={this.onAddItem} />
             </Animator>
           </Animator>
-
-          {submitItemButtonComponent}
         </InputContainer>
+
+        {submitItemButtonComponent}
+
+        <KeyboardSpacer topSpacing={-55} />
 
         <TabBar />
       </Page>

@@ -5,6 +5,7 @@ import styleConstants from '../../../styleConstants';
 const styles = StyleSheet.create({
   contentContainer: {
     flex: 1,
+    justifyContent: 'center',
   },
   headerBar: {
     height: 60,
@@ -25,13 +26,15 @@ const styles = StyleSheet.create({
   },
   addItemButtonContainer: {
     position: 'absolute',
-    bottom: styleConstants.dimensions.spacing.horizontal,
-    right: styleConstants.dimensions.spacing.horizontal,
+    bottom: 0,
+    right: 0,
+    paddingBottom: styleConstants.dimensions.spacing.horizontal,
+    paddingRight: styleConstants.dimensions.spacing.horizontal,
   },
   submitItemButtonContainer: {
-    position: 'absolute',
-    bottom: styleConstants.dimensions.spacing.horizontal,
-    right: styleConstants.dimensions.spacing.horizontal,
+    alignItems: 'flex-end',
+    paddingBottom: styleConstants.dimensions.spacing.horizontal,
+    paddingRight: styleConstants.dimensions.spacing.horizontal,
   },
 });
 
