@@ -103,9 +103,17 @@ export class Home extends React.Component {
         finalValue={0}
         shouldAnimateIn
         delay={100}
+        easing={styleConstants.easing}
         style={styles.addItemButtonContainer}
       >
-        <Animator type="scale" initialValue={0.5} finalValue={1} shouldAnimateIn delay={100}>
+        <Animator
+          type="scale"
+          initialValue={0.5}
+          finalValue={1}
+          shouldAnimateIn
+          delay={100}
+          easing={styleConstants.easing}
+        >
           <IconButton name="add" handlePress={this.onAddItem} />
         </Animator>
       </Animator>
@@ -116,21 +124,30 @@ export class Home extends React.Component {
         type="translateY"
         initialValue={100}
         finalValue={0}
-        shouldAnimateIn={item && true}
-        shouldAnimateOut={!item && true}
+        shouldAnimateIn={item ? true : null}
+        shouldAnimateOut={!item ? true : null}
+        easing={styleConstants.easing}
         style={styles.submitItemButtonContainer}
       >
         <Animator
           type="scale"
           initialValue={0.5}
           finalValue={1}
-          shouldAnimateIn={item && true}
-          shouldAnimateOut={!item && true}
+          shouldAnimateIn={item ? true : null}
+          shouldAnimateOut={!item ? true : null}
+          easing={styleConstants.easing}
         >
           <IconButton name="check" handlePress={this.onSubmitItem} />
         </Animator>
       </Animator>
     );
+
+    const clearTextButtonComponent = showInput &&
+      item && (
+        <View style={styles.clearTextButtonContainer}>
+          <IconButton name="close" handlePress={this.onClearText} small secondary />
+        </View>
+      );
 
     return (
       <Page>
@@ -141,6 +158,7 @@ export class Home extends React.Component {
             finalValue={-150}
             shouldAnimateIn={showInput}
             shouldAnimateOut={!showInput}
+            easing={styleConstants.easing}
           >
             <Logo />
           </Animator>
@@ -151,6 +169,7 @@ export class Home extends React.Component {
             finalValue={0}
             shouldAnimateIn={showInput}
             shouldAnimateOut={!showInput}
+            easing={styleConstants.easing}
             style={styles.inputContainer}
           >
             <View style={styles.backButtonContainer}>
@@ -167,16 +186,7 @@ export class Home extends React.Component {
               }}
             />
 
-            <Animator
-              type="scale"
-              initialValue={0}
-              finalValue={1}
-              shouldAnimateIn={item}
-              shouldAnimateOut={!item}
-              style={styles.clearTextButtonContainer}
-            >
-              <IconButton name="close" handlePress={this.onClearText} small secondary />
-            </Animator>
+            {clearTextButtonComponent}
           </Animator>
         </HeaderBar>
 
@@ -187,6 +197,7 @@ export class Home extends React.Component {
             finalValue={0}
             shouldAnimateIn={showInput}
             shouldAnimateOut={!showInput}
+            easing={styleConstants.easing}
           >
             <BlankState
               iconName="shopping-basket"
