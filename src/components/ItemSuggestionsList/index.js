@@ -59,6 +59,7 @@ export default class ItemSuggestionsList extends React.Component {
         style={styles.container}
         contentContainerStyle={styles.contentContainer}
         horizontal
+        keyboardShouldPersistTaps="always"
       />
     );
   }
