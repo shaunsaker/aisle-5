@@ -25,7 +25,10 @@ const IconButton = ({ name, handlePress, small, secondary }) => {
         secondary && styles.secondaryContainer,
       ]}
     >
-      <Icon name={name} style={[styles.icon, small && styles.smallIcon]} />
+      <Icon
+        name={name}
+        style={[styles.icon, small && styles.smallIcon, secondary && styles.secondaryIcon]}
+      />
     </Touchable>
   );
 };

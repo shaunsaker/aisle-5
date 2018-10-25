@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 
 import CheckBox from '../../CheckBox';
+import Counter from '../../Counter';
 
 import styles from './styles';
 
@@ -25,7 +26,7 @@ const Item = ({ name, isChecked, quantity, handleToggle, handleSetQuantity }) =>
 
       <Text style={styles.text}>{name}</Text>
 
-      <Text>Quantity</Text>
+      <Counter value={quantity} handleChange={handleSetQuantity} />
     </View>
   );
 };

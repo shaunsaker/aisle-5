@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     borderRadius: SMALL_SIZE,
   },
   secondaryContainer: {
-    backgroundColor: styleConstants.colors.accent,
+    backgroundColor: styleConstants.colors.dividerColor,
   },
   icon: {
     fontSize: 30,
@@ -29,6 +29,9 @@ const styles = StyleSheet.create({
   },
   smallIcon: {
     fontSize: 16,
+  },
+  secondaryIcon: {
+    color: styleConstants.colors.primary,
   },
 });
 
