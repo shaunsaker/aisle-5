@@ -42,7 +42,9 @@ const styles = StyleSheet.create({
     paddingRight: styleConstants.dimensions.spacing.horizontal,
   },
   submitItemButtonContainer: {
-    alignItems: 'flex-end',
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
     paddingBottom: styleConstants.dimensions.spacing.horizontal,
     paddingRight: styleConstants.dimensions.spacing.horizontal,
   },

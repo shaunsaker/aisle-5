@@ -248,9 +248,9 @@ export class Home extends React.Component {
           </InputContainer>
 
           {addItemButtonComponent}
-        </View>
 
-        {submitItemButtonComponent}
+          {submitItemButtonComponent}
+        </View>
 
         <KeyboardSpacer topSpacing={-55} />
 
