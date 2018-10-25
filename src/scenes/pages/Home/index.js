@@ -100,9 +100,22 @@ export class Home extends React.Component {
 
   onSubmitItem() {
     const { item } = this.state;
+    const { userItems } = this.props;
 
     if (item) {
-      this.saveItem(item);
+      const isItemPresentInUserItems =
+        userItems &&
+        utils.objects.convertObjectToArray(userItems).filter((userItem) => {
+          return userItem.name.toLowerCase() === item.toLowerCase();
+        }).length;
+
+      if (!isItemPresentInUserItems) {
+        // Save it to the db
+        this.saveItem(item);
+      } else {
+        // Add it to the pending list
+        console.log('ADDING TO PENDING LIST');
+      }
     }
 
     this.hideInput();
@@ -155,13 +168,13 @@ export class Home extends React.Component {
     // But not exact matches
     const itemSuggestionsArray =
       userItems && item && item.length > 1
-        ? utils.objects
-            .convertObjectToArray(userItems)
-            .filter(
-              (userItem) =>
-                userItem.name.toLowerCase().indexOf(item.toLowerCase()) > -1 &&
-                userItem.name !== item,
-            )
+        ? utils.objects.convertObjectToArray(userItems).filter((userItem) => {
+            const isPartialItemPresent =
+              userItem.name.toLowerCase().indexOf(item.toLowerCase()) > -1 &&
+              userItem.name !== item;
+
+            return isPartialItemPresent;
+          })
         : [];
 
     // Convert items object to array
