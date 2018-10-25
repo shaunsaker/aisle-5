@@ -41,9 +41,9 @@ export default class ItemsList extends React.Component {
 
   renderItem({ item, index }) {
     const { didMount } = this.state;
-    const { handleToggle, handleSetQuantity } = this.props;
+    const { data, handleToggle, handleSetQuantity } = this.props;
 
-    const shouldAnimate = didMount && index < this.maxItemsVisible;
+    const shouldAnimate = (data.length === 1 || didMount) && index < this.maxItemsVisible;
 
     return (
       <Animator
@@ -51,7 +51,6 @@ export default class ItemsList extends React.Component {
         initialValue={shouldAnimate ? styleConstants.dimensions.window.width : 0}
         finalValue={0}
         shouldAnimateIn
-        delay={shouldAnimate ? index * 100 : 0}
         style={styles.itemContainer}
       >
         <Item {...item} handleToggle={handleToggle} handleSetQuantity={handleSetQuantity} />
