@@ -16,6 +16,8 @@ export default class ItemsList extends React.Component {
     this.setDidMount = this.setDidMount.bind(this);
     this.renderItem = this.renderItem.bind(this);
 
+    this.maxItemsVisible = Math.ceil((styleConstants.dimensions.window.height - 65 - 50) / 51); // - headerbar - tabbar / item height
+
     this.state = {
       didMount: false,
     };
@@ -41,13 +43,15 @@ export default class ItemsList extends React.Component {
     const { didMount } = this.state;
     const { handleToggle, handleSetQuantity } = this.props;
 
+    const shouldAnimate = didMount && index < this.maxItemsVisible;
+
     return (
       <Animator
         type="translateX"
-        initialValue={didMount ? styleConstants.dimensions.window.width : 0}
+        initialValue={shouldAnimate ? styleConstants.dimensions.window.width : 0}
         finalValue={0}
         shouldAnimateIn
-        delay={didMount ? 0 : index * 100}
+        delay={shouldAnimate ? index * 100 : 0}
         style={styles.itemContainer}
       >
         <Item {...item} handleToggle={handleToggle} handleSetQuantity={handleSetQuantity} />
