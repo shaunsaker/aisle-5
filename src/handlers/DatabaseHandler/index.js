@@ -7,12 +7,14 @@ export class DatabaseHandler extends React.Component {
     super(props);
 
     this.handleSyncData = this.handleSyncData.bind(this);
+    this.syncUserItems = this.syncUserItems.bind(this);
   }
 
   static get propTypes() {
     return {
       dispatch: PropTypes.func,
       authenticated: PropTypes.bool,
+      uid: PropTypes.string,
     };
   }
 
@@ -33,7 +35,22 @@ export class DatabaseHandler extends React.Component {
   }
 
   handleSyncData() {
-    // NOTE: This is a placeholder for now but this should call other methods, ie. syncReviews
+    this.syncUserItems();
+  }
+
+  syncUserItems() {
+    const { dispatch, uid } = this.props;
+
+    dispatch({
+      type: 'sync',
+      meta: {
+        pathParts: ['items'],
+        query: ['uid', '==', uid],
+        nextAction: {
+          type: 'SET_USER_ITEMS',
+        },
+      },
+    });
   }
 
   render() {
@@ -44,6 +61,7 @@ export class DatabaseHandler extends React.Component {
 function mapStateToProps(state) {
   return {
     authenticated: state.user.authenticated,
+    uid: state.user.uid,
   };
 }
 

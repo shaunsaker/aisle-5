@@ -34,7 +34,7 @@ export class Home extends React.Component {
     this.setItem = this.setItem.bind(this);
     this.onClearItem = this.onClearItem.bind(this);
     this.onSubmitItem = this.onSubmitItem.bind(this);
-    this.saveItemToStore = this.saveItemToStore.bind(this);
+    this.saveItem = this.saveItem.bind(this);
     this.hideInput = this.hideInput.bind(this);
     this.focusInput = this.focusInput.bind(this);
     this.dismissKeyboard = this.dismissKeyboard.bind(this);
@@ -48,7 +48,6 @@ export class Home extends React.Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     uid: PropTypes.string,
-    items: PropTypes.shape({}),
   };
 
   static defaultProps = {};
@@ -86,24 +85,27 @@ export class Home extends React.Component {
     const { item } = this.state;
 
     if (item) {
-      this.saveItemToStore(item);
+      this.saveItem(item);
     }
 
     this.hideInput();
   }
 
-  saveItemToStore(name) {
-    const { dispatch } = this.props;
-    const item = {
+  saveItem(name) {
+    const { dispatch, uid } = this.props;
+    const document = {
       name,
-      quantity: 0,
+      uid,
       date_added: Date.now(),
     };
 
     dispatch({
-      type: 'ADD_ITEM',
+      type: 'addDocument',
+      meta: {
+        pathParts: ['items'],
+      },
       payload: {
-        item,
+        document,
       },
     });
   }
@@ -124,10 +126,10 @@ export class Home extends React.Component {
 
   render() {
     const { showInput, item } = this.state;
-    const { items } = this.props;
+    // const { items } = this.props;
 
     // Convert items object to array
-    const itemsArray = utils.objects.convertObjectToArray(items);
+    const itemsArray = [];
 
     const listComponent = itemsArray.length ? (
       <ItemsList data={itemsArray} handleToggle={null} handleSetQuantity={null} />
@@ -263,7 +265,6 @@ export class Home extends React.Component {
 function mapStateToProps(state) {
   return {
     uid: state.user.uid,
-    items: state.items,
   };
 }
 
