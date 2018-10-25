@@ -13,12 +13,12 @@ import styles from './styles';
 import Page from '../../../components/Page';
 import HeaderBar from '../../../components/HeaderBar';
 import Logo from '../../../components/Logo';
-import InputContainer from '../../../components/InputContainer';
 import BlankState from '../../../components/BlankState';
 import ItemsList from '../../../components/ItemsList';
 import TouchableIcon from '../../../components/TouchableIcon';
+import InputContainer from '../../../components/InputContainer';
 import TextInput from '../../../components/TextInput';
-import Label from '../../../components/Label';
+import ItemSuggestionsList from '../../../components/ItemSuggestionsList';
 import IconButton from '../../../components/IconButton';
 import Button from '../../../components/Button';
 import TabBar from '../../../components/TabBar';
@@ -27,6 +27,7 @@ export class Home extends React.Component {
   constructor(props) {
     super(props);
 
+    this.keyboardDidHide = this.keyboardDidHide.bind(this);
     this.onAddItem = this.onAddItem.bind(this);
     this.setShowInput = this.setShowInput.bind(this);
     this.onBack = this.onBack.bind(this);
@@ -38,6 +39,9 @@ export class Home extends React.Component {
     this.hideInput = this.hideInput.bind(this);
     this.focusInput = this.focusInput.bind(this);
     this.dismissKeyboard = this.dismissKeyboard.bind(this);
+    this.onItemSuggestion = this.onItemSuggestion.bind(this);
+
+    this.keyboardDidHideListener = null;
 
     this.state = {
       showInput: false,
@@ -48,9 +52,22 @@ export class Home extends React.Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     uid: PropTypes.string,
+    userItems: PropTypes.shape({}),
   };
 
   static defaultProps = {};
+
+  componentDidMount() {
+    this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this.keyboardDidHide);
+  }
+
+  componentWillUnmount() {
+    this.keyboardDidHideListener.remove();
+  }
+
+  keyboardDidHide() {
+    this.hideInput();
+  }
 
   onAddItem() {
     this.setShowInput(true);
@@ -124,9 +141,28 @@ export class Home extends React.Component {
     Keyboard.dismiss();
   }
 
+  onItemSuggestion(item) {
+    this.setItem(item);
+  }
+
   render() {
     const { showInput, item } = this.state;
-    // const { items } = this.props;
+    const { userItems } = this.props;
+
+    // Convert userItems object to array
+    // If item is at least 2 characters long
+    // Filter on lower case item name matches
+    // But not exact matches
+    const itemSuggestionsArray =
+      userItems && item && item.length > 1
+        ? utils.objects
+            .convertObjectToArray(userItems)
+            .filter(
+              (userItem) =>
+                userItem.name.toLowerCase().indexOf(item.toLowerCase()) > -1 &&
+                userItem.name !== item,
+            )
+        : [];
 
     // Convert items object to array
     const itemsArray = [];
@@ -203,6 +239,13 @@ export class Home extends React.Component {
         </View>
       );
 
+    const itemSuggestionsComponent = showInput &&
+      item && (
+        <View style={styles.itemSuggestionsListContainer}>
+          <ItemSuggestionsList data={itemSuggestionsArray} handlePress={this.onItemSuggestion} />
+        </View>
+      );
+
     return (
       <Page>
         <HeaderBar style={styles.headerBar}>
@@ -251,6 +294,8 @@ export class Home extends React.Component {
 
           {addItemButtonComponent}
 
+          {itemSuggestionsComponent}
+
           {submitItemButtonComponent}
         </View>
 
@@ -265,6 +310,7 @@ export class Home extends React.Component {
 function mapStateToProps(state) {
   return {
     uid: state.user.uid,
+    userItems: state.userItems,
   };
 }
 

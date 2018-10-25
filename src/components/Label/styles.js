@@ -4,15 +4,15 @@ import styleConstants from '../../styleConstants';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: styleConstants.colors.accent,
+    backgroundColor: styleConstants.colors.dividerColor,
     paddingVertical: styleConstants.dimensions.spacing.vertical / 2,
     paddingHorizontal: styleConstants.dimensions.spacing.horizontal / 2,
-    ...styleConstants.shadows.small,
+    ...styleConstants.shadows.large,
     borderRadius: styleConstants.dimensions.borderRadius,
   },
   text: {
-    ...styleConstants.fonts.types.extraSmall,
-    color: styleConstants.colors.white,
+    ...styleConstants.fonts.types.paragraph,
+    color: styleConstants.colors.primary,
   },
 });
 
