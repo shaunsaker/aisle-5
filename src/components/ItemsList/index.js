@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, FlatList } from 'react-native';
+import { FlatList } from 'react-native';
+import Animator from 'react-native-simple-animators';
+
+import styleConstants from '../../styleConstants';
 
 import styles from './styles';
 
@@ -10,7 +13,12 @@ export default class ItemsList extends React.Component {
   constructor(props) {
     super(props);
 
+    this.setDidMount = this.setDidMount.bind(this);
     this.renderItem = this.renderItem.bind(this);
+
+    this.state = {
+      didMount: false,
+    };
   }
 
   static propTypes = {
@@ -21,13 +29,29 @@ export default class ItemsList extends React.Component {
 
   static defaultProps = {};
 
-  renderItem({ item }) {
+  componentDidMount() {
+    this.setDidMount(true);
+  }
+
+  setDidMount(didMount) {
+    this.setState({ didMount });
+  }
+
+  renderItem({ item, index }) {
+    const { didMount } = this.state;
     const { handleToggle, handleSetQuantity } = this.props;
 
     return (
-      <View style={styles.itemContainer}>
+      <Animator
+        type="translateX"
+        initialValue={didMount ? styleConstants.dimensions.window.width : 0}
+        finalValue={0}
+        shouldAnimateIn
+        delay={didMount ? 0 : index * 100}
+        style={styles.itemContainer}
+      >
         <Item {...item} handleToggle={handleToggle} handleSetQuantity={handleSetQuantity} />
-      </View>
+      </Animator>
     );
   }
 
