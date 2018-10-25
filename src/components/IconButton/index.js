@@ -11,14 +11,16 @@ const propTypes = {
   handlePress: PropTypes.func,
   small: PropTypes.bool,
   secondary: PropTypes.bool,
+  disabled: PropTypes.bool,
 };
 
 const defaultProps = {};
 
-const IconButton = ({ name, handlePress, small, secondary }) => {
+const IconButton = ({ name, handlePress, small, secondary, disabled }) => {
   return (
     <Touchable
       onPress={handlePress}
+      disabled={disabled}
       style={[
         styles.container,
         small && styles.smallContainer,

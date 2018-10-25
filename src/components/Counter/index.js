@@ -17,15 +17,13 @@ const defaultProps = {};
 const Counter = ({ value, handleChange }) => {
   return (
     <View style={styles.container}>
-      <Animator
-        type="opacity"
-        initialValue={0}
-        finalValue={1}
-        shouldAnimateIn={value > 1}
-        shouldAnimateOut={value <= 1}
-      >
-        <IconButton name="remove" small secondary handlePress={() => handleChange(value - 1)} />
-      </Animator>
+      <IconButton
+        name="remove"
+        small
+        secondary
+        handlePress={() => handleChange(value - 1)}
+        disabled={value < 2}
+      />
 
       <Text style={styles.text}>{value}</Text>
 
