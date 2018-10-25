@@ -1,14 +1,15 @@
 import { combineReducers } from 'redux';
-import userReducer from './user';
-import appDataReducer from './appData';
+
 import appStateReducer from './appState';
+import itemsReducer from './items';
 import navigationReducer from './navigation';
+import userReducer from './user';
 
 const reducers = combineReducers({
-  user: userReducer,
-  appData: appDataReducer,
   appState: appStateReducer,
+  items: itemsReducer,
   navigation: navigationReducer,
+  user: userReducer,
 });
 
 export default reducers;

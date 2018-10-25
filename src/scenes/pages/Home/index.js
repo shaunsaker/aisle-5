@@ -30,8 +30,9 @@ export class Home extends React.Component {
     this.onBack = this.onBack.bind(this);
     this.onSetItem = this.onSetItem.bind(this);
     this.setItem = this.setItem.bind(this);
-    this.onClearText = this.onClearText.bind(this);
+    this.onClearItem = this.onClearItem.bind(this);
     this.onSubmitItem = this.onSubmitItem.bind(this);
+    this.saveItemToStore = this.saveItemToStore.bind(this);
     this.hideInput = this.hideInput.bind(this);
     this.focusInput = this.focusInput.bind(this);
     this.dismissKeyboard = this.dismissKeyboard.bind(this);
@@ -42,7 +43,15 @@ export class Home extends React.Component {
     };
   }
 
-  static propTypes = {};
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    uid: PropTypes.string,
+    items: PropTypes.shape({
+      name: PropTypes.string,
+      quantity: PropTypes.number,
+      date_added: PropTypes.instanceOf(Date),
+    }),
+  };
 
   static defaultProps = {};
 
@@ -71,12 +80,31 @@ export class Home extends React.Component {
     });
   }
 
-  onClearText() {
+  onClearItem() {
     this.setItem(null);
   }
 
   onSubmitItem() {
+    const { item } = this.state;
+
+    this.saveItemToStore(item);
     this.hideInput();
+  }
+
+  saveItemToStore(name) {
+    const { dispatch } = this.props;
+    const item = {
+      name,
+      quantity: 0,
+      date_added: Date.now(),
+    };
+
+    dispatch({
+      type: 'ADD_ITEM',
+      payload: {
+        item,
+      },
+    });
   }
 
   hideInput() {
@@ -95,6 +123,9 @@ export class Home extends React.Component {
 
   render() {
     const { showInput, item } = this.state;
+    const { items } = this.props;
+
+    console.log(items);
 
     const addItemButtonComponent = !showInput && (
       <Animator
@@ -145,7 +176,7 @@ export class Home extends React.Component {
     const clearTextButtonComponent = showInput &&
       item && (
         <View style={styles.clearTextButtonContainer}>
-          <IconButton name="close" handlePress={this.onClearText} small secondary />
+          <IconButton name="close" handlePress={this.onClearItem} small secondary />
         </View>
       );
 
@@ -219,8 +250,11 @@ export class Home extends React.Component {
   }
 }
 
-function mapStateToProps() {
-  return {};
+function mapStateToProps(state) {
+  return {
+    uid: state.user.uid,
+    items: state.items,
+  };
 }
 
 export default connect(mapStateToProps)(Home);
