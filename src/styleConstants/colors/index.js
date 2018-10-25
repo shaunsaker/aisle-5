@@ -7,7 +7,7 @@ const colors = {
   transBlack: 'rgba(0, 0, 0, 0.67)',
   primaryText: '#212121',
   secondaryText: '#555555',
-  dividerColor: '#E0E0E0',
+  dividerColor: '#FFFFFF',
 };
 
 export default colors;

@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckBox renders with a customIcon 1`] = `
+<View
+  accessible={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "borderColor": "#212121",
+        "borderWidth": 1,
+        "height": 32,
+        "justifyContent": "center",
+        "width": 32,
+      },
+      undefined,
+    ]
+  }
+/>
+`;
+
+exports[`CheckBox renders with all props 1`] = `
+<View
+  accessible={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "borderColor": "#212121",
+        "borderWidth": 1,
+        "height": 32,
+        "justifyContent": "center",
+        "width": 32,
+      },
+      Object {
+        "backgroundColor": "blue",
+      },
+    ]
+  }
+>
+  <Animator
+    finalValue={1}
+    initialValue={0}
+    shouldAnimateIn={true}
+    type="scale"
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": undefined,
+            "fontSize": 12,
+          },
+          Array [
+            Object {
+              "color": "#212121",
+              "fontSize": 24,
+            },
+            Object {
+              "color": "red",
+            },
+          ],
+          Object {
+            "fontFamily": "Material Icons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+        ]
+      }
+    >
+      
+    </Text>
+  </Animator>
+</View>
+`;
+
+exports[`CheckBox renders with minimum required props 1`] = `
+<View
+  accessible={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "borderColor": "#212121",
+        "borderWidth": 1,
+        "height": 32,
+        "justifyContent": "center",
+        "width": 32,
+      },
+      undefined,
+    ]
+  }
+/>
+`;

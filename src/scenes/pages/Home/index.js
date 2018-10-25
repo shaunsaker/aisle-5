@@ -5,6 +5,7 @@ import { View, Keyboard } from 'react-native';
 import Animator from 'react-native-simple-animators';
 import KeyboardSpacer from 'react-native-keyboard-spacer';
 
+import utils from '../../../utils';
 import styleConstants from '../../../styleConstants';
 
 import styles from './styles';
@@ -14,6 +15,7 @@ import HeaderBar from '../../../components/HeaderBar';
 import Logo from '../../../components/Logo';
 import InputContainer from '../../../components/InputContainer';
 import BlankState from '../../../components/BlankState';
+import ItemsList from '../../../components/ItemsList';
 import TouchableIcon from '../../../components/TouchableIcon';
 import TextInput from '../../../components/TextInput';
 import Label from '../../../components/Label';
@@ -46,11 +48,7 @@ export class Home extends React.Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     uid: PropTypes.string,
-    items: PropTypes.shape({
-      name: PropTypes.string,
-      quantity: PropTypes.number,
-      date_added: PropTypes.instanceOf(Date),
-    }),
+    items: PropTypes.shape({}),
   };
 
   static defaultProps = {};
@@ -87,7 +85,10 @@ export class Home extends React.Component {
   onSubmitItem() {
     const { item } = this.state;
 
-    this.saveItemToStore(item);
+    if (item) {
+      this.saveItemToStore(item);
+    }
+
     this.hideInput();
   }
 
@@ -125,7 +126,27 @@ export class Home extends React.Component {
     const { showInput, item } = this.state;
     const { items } = this.props;
 
-    console.log(items);
+    // Convert items object to array
+    const itemsArray = utils.objects.convertObjectToArray(items);
+
+    const listComponent = itemsArray.length ? (
+      <ItemsList data={itemsArray} handleToggle={null} handleSetQuantity={null} />
+    ) : (
+      <Animator
+        type="opacity"
+        initialValue={1}
+        finalValue={0}
+        shouldAnimateIn={showInput}
+        shouldAnimateOut={!showInput}
+        easing={styleConstants.easing}
+      >
+        <BlankState
+          iconName="shopping-basket"
+          title="You have no items"
+          description="Add items by tapping the '+' button below. They'll show up here."
+        />
+      </Animator>
+    );
 
     const addItemButtonComponent = !showInput && (
       <Animator
@@ -221,24 +242,13 @@ export class Home extends React.Component {
           </Animator>
         </HeaderBar>
 
-        <InputContainer contentContainerStyle={styles.contentContainer}>
-          <Animator
-            type="opacity"
-            initialValue={1}
-            finalValue={0}
-            shouldAnimateIn={showInput}
-            shouldAnimateOut={!showInput}
-            easing={styleConstants.easing}
-          >
-            <BlankState
-              iconName="shopping-basket"
-              title="You have no items"
-              description="Add items by tapping the '+' button below. They'll show up here."
-            />
-          </Animator>
+        <View style={styles.container}>
+          <InputContainer contentContainerStyle={styles.contentContainer}>
+            {listComponent}
+          </InputContainer>
 
           {addItemButtonComponent}
-        </InputContainer>
+        </View>
 
         {submitItemButtonComponent}
 
