@@ -24,9 +24,14 @@ export default class ItemsList extends React.Component {
   }
 
   static propTypes = {
-    data: PropTypes.arrayOf(PropTypes.any),
-    handleToggle: PropTypes.func,
-    handleSetQuantity: PropTypes.number,
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string,
+        isChecked: PropTypes.bool,
+      }),
+    ),
+    handleSetIsChecked: PropTypes.func,
+    handleSetQuantity: PropTypes.func,
   };
 
   static defaultProps = {};
@@ -41,7 +46,7 @@ export default class ItemsList extends React.Component {
 
   renderItem({ item, index }) {
     const { didMount } = this.state;
-    const { data, handleToggle, handleSetQuantity } = this.props;
+    const { data, handleSetIsChecked, handleSetQuantity } = this.props;
 
     const shouldAnimate = (data.length === 1 || didMount) && index < this.maxItemsVisible;
 
@@ -53,7 +58,11 @@ export default class ItemsList extends React.Component {
         shouldAnimateIn
         style={styles.itemContainer}
       >
-        <Item {...item} handleToggle={handleToggle} handleSetQuantity={handleSetQuantity} />
+        <Item
+          {...item}
+          handleSetIsChecked={() => handleSetIsChecked(item.id, !item.isChecked)}
+          handleSetQuantity={(quantity) => handleSetQuantity(item.id, quantity)}
+        />
       </Animator>
     );
   }

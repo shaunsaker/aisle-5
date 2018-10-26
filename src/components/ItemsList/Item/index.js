@@ -11,17 +11,17 @@ const propTypes = {
   name: PropTypes.string,
   isChecked: PropTypes.bool,
   quantity: PropTypes.number,
-  handleToggle: PropTypes.func,
+  handleSetIsChecked: PropTypes.func,
   handleSetQuantity: PropTypes.func,
 };
 
 const defaultProps = {};
 
-const Item = ({ name, isChecked, quantity, handleToggle, handleSetQuantity }) => {
+const Item = ({ name, isChecked, quantity, handleSetIsChecked, handleSetQuantity }) => {
   return (
     <View style={styles.container}>
       <View style={styles.checkBoxContainer}>
-        <CheckBox isChecked={isChecked} handlePress={handleToggle} />
+        <CheckBox isChecked={isChecked} handlePress={handleSetIsChecked} />
       </View>
 
       <Text style={styles.text}>{name}</Text>

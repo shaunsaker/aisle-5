@@ -35,11 +35,15 @@ export class Home extends React.Component {
     this.setItem = this.setItem.bind(this);
     this.onClearItem = this.onClearItem.bind(this);
     this.onSubmitItem = this.onSubmitItem.bind(this);
+    this.submitItem = this.submitItem.bind(this);
     this.saveItem = this.saveItem.bind(this);
+    this.addItem = this.addItem.bind(this);
     this.hideInput = this.hideInput.bind(this);
     this.focusInput = this.focusInput.bind(this);
     this.dismissKeyboard = this.dismissKeyboard.bind(this);
     this.onItemSuggestion = this.onItemSuggestion.bind(this);
+    this.onSetPendingListItemIsChecked = this.onSetPendingListItemIsChecked.bind(this);
+    this.onSetPendingListItemQuantity = this.onSetPendingListItemQuantity.bind(this);
 
     this.keyboardDidHideListener = null;
 
@@ -53,6 +57,7 @@ export class Home extends React.Component {
     dispatch: PropTypes.func.isRequired,
     uid: PropTypes.string,
     userItems: PropTypes.shape({}),
+    pendingList: PropTypes.shape({}),
   };
 
   static defaultProps = {};
@@ -99,6 +104,11 @@ export class Home extends React.Component {
   }
 
   onSubmitItem() {
+    this.submitItem();
+    this.hideInput();
+  }
+
+  submitItem() {
     const { item } = this.state;
     const { userItems } = this.props;
 
@@ -112,13 +122,11 @@ export class Home extends React.Component {
       if (!isItemPresentInUserItems) {
         // Save it to the db
         this.saveItem(item);
-      } else {
-        // Add it to the pending list
-        console.log('ADDING TO PENDING LIST');
       }
-    }
 
-    this.hideInput();
+      // Add it to the pending list
+      this.addItem(item);
+    }
   }
 
   saveItem(name) {
@@ -140,6 +148,23 @@ export class Home extends React.Component {
     });
   }
 
+  addItem(name) {
+    const { dispatch } = this.props;
+    const item = {
+      name,
+      quantity: 1,
+      isChecked: false,
+      date_added: Date.now(),
+    };
+
+    dispatch({
+      type: 'ADD_PENDING_LIST_ITEM',
+      payload: {
+        item,
+      },
+    });
+  }
+
   hideInput() {
     this.setShowInput(false);
     this.setItem(null);
@@ -156,11 +181,24 @@ export class Home extends React.Component {
 
   onItemSuggestion(item) {
     this.setItem(item);
+    this.submitItem();
+    this.hideInput();
+  }
+
+  onSetPendingListItemIsChecked(itemID, isChecked) {
+    console.log(itemID, isChecked);
+  }
+
+  onSetPendingListItemQuantity(itemID, quantity) {
+    console.log(itemID, quantity);
   }
 
   render() {
     const { showInput, item } = this.state;
-    const { userItems } = this.props;
+    const { userItems, pendingList } = this.props;
+
+    // Convert items object to array
+    const pendingListArray = pendingList ? utils.objects.convertObjectToArray(pendingList) : [];
 
     // Convert userItems object to array
     // If item is at least 2 characters long
@@ -177,11 +215,12 @@ export class Home extends React.Component {
           })
         : [];
 
-    // Convert items object to array
-    const itemsArray = [];
-
-    const listComponent = itemsArray.length ? (
-      <ItemsList data={itemsArray} handleToggle={null} handleSetQuantity={null} />
+    const listComponent = pendingListArray.length ? (
+      <ItemsList
+        data={pendingListArray}
+        handleSetIsChecked={this.onSetPendingListItemIsChecked}
+        handleSetQuantity={this.onSetPendingListItemQuantity}
+      />
     ) : (
       <Animator
         type="opacity"
@@ -324,6 +363,7 @@ function mapStateToProps(state) {
   return {
     uid: state.user.uid,
     userItems: state.userItems,
+    pendingList: state.pendingList,
   };
 }
 
