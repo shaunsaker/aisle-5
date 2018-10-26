@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
   text: {
     ...styleConstants.fonts.types.small,
     color: styleConstants.colors.transWhite,
-    ...styleConstants.fonts.mediumFontHelper,
   },
   activeText: {
     color: styleConstants.colors.white,

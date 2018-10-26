@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     ...styleConstants.fonts.types.paragraph,
-    ...styleConstants.fonts.families.medium,
     backgroundColor: styleConstants.colors.white,
     borderWidth: 1,
     borderColor: styleConstants.colors.dividerColor,

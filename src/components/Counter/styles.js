@@ -7,10 +7,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  text: {
-    ...styleConstants.fonts.types.paragraph,
-    ...styleConstants.fonts.families.medium,
-    marginHorizontal: styleConstants.dimensions.spacing.horizontal / 2,
+  spacer: {
+    width: styleConstants.dimensions.spacing.horizontal / 2,
   },
 });
 

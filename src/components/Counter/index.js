@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import Animator from 'react-native-simple-animators';
 
 import styles from './styles';
@@ -33,7 +33,7 @@ const Counter = ({ value, handleChange }) => {
         />
       </Animator>
 
-      <Text style={styles.text}>{value}</Text>
+      <View style={styles.spacer} />
 
       <IconButton name="add" small secondary handlePress={() => handleChange(value + 1)} />
     </View>

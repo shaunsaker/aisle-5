@@ -6,9 +6,7 @@ const styles = StyleSheet.create({
   text: {
     ...styleConstants.fonts.types.small,
   },
-  boldText: {
-    ...styleConstants.fonts.families.medium,
-  },
+  boldText: {},
 });
 
 export default styles;

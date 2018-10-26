@@ -19,6 +19,9 @@ const styles = StyleSheet.create({
     flex: 1,
     marginRight: styleConstants.dimensions.spacing.horizontal,
   },
+  countText: {
+    ...styleConstants.fonts.types.paragraph,
+  },
 });
 
 export default styles;
