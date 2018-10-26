@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import styleConstants from '../../styleConstants';
 
 const SIZE = 50;
-const SMALL_SIZE = 24;
+const SMALL_SIZE = 30;
 
 const styles = StyleSheet.create({
   container: {
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     color: styleConstants.colors.white,
   },
   smallIcon: {
-    fontSize: 16,
+    fontSize: (SMALL_SIZE * 2) / 3,
   },
   secondaryIcon: {
     color: styleConstants.colors.primary,
