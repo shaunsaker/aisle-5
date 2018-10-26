@@ -13,9 +13,6 @@ fonts.families = {
   medium: {
     fontFamily: 'Muli-SemiBold',
   },
-  regular: {
-    fontFamily: 'Muli-Regular',
-  },
 };
 
 // Font sizes
@@ -40,7 +37,7 @@ fonts.types = {
     color: colors.primaryText,
   },
   paragraph: {
-    ...fonts.families.regular,
+    ...fonts.families.medium,
     fontSize: fonts.sizes.regular,
     color: colors.primaryText,
   },

@@ -42,9 +42,7 @@
 		69BA309EE583C629B3A76D96 /* libPods-Aisle5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06619DEE63346F04734746FA /* libPods-Aisle5.a */; };
 		7A1E5005217C6A2A00CEE5DF /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1E4FDB217C6A1600CEE5DF /* libCodePush.a */; };
 		7A24CDB1217FA90C00591495 /* Muli-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A24CD85217FA90A00591495 /* Muli-SemiBold.ttf */; };
-		7A24CDB2217FA90C00591495 /* ArchivoBlack-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A24CDAE217FA90A00591495 /* ArchivoBlack-Regular.ttf */; };
 		7A24CDB3217FA90C00591495 /* Muli-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A24CDAF217FA90B00591495 /* Muli-Bold.ttf */; };
-		7A24CDB4217FA90C00591495 /* Muli-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A24CDB0217FA90B00591495 /* Muli-Regular.ttf */; };
 		7AA52633218036550097AC7A /* AppIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AA5260A218036550097AC7A /* AppIcons.ttf */; };
 		7AE3969B217C582F00FEEEBA /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AE3969A217C582F00FEEEBA /* MaterialIcons.ttf */; };
 		7AE3974F217C602D00FEEEBA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AE39727217C602D00FEEEBA /* GoogleService-Info.plist */; };
@@ -398,7 +396,6 @@
 		7A24CD85217FA90A00591495 /* Muli-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-SemiBold.ttf"; path = "../src/assets/fonts/Muli-SemiBold.ttf"; sourceTree = "<group>"; };
 		7A24CDAE217FA90A00591495 /* ArchivoBlack-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ArchivoBlack-Regular.ttf"; path = "../src/assets/fonts/ArchivoBlack-Regular.ttf"; sourceTree = "<group>"; };
 		7A24CDAF217FA90B00591495 /* Muli-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-Bold.ttf"; path = "../src/assets/fonts/Muli-Bold.ttf"; sourceTree = "<group>"; };
-		7A24CDB0217FA90B00591495 /* Muli-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-Regular.ttf"; path = "../src/assets/fonts/Muli-Regular.ttf"; sourceTree = "<group>"; };
 		7AA5260A218036550097AC7A /* AppIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppIcons.ttf; sourceTree = "<group>"; };
 		7AE3969A217C582F00FEEEBA /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		7AE39727217C602D00FEEEBA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -694,7 +691,6 @@
 				7AE39727217C602D00FEEEBA /* GoogleService-Info.plist */,
 				7A24CDAE217FA90A00591495 /* ArchivoBlack-Regular.ttf */,
 				7A24CDAF217FA90B00591495 /* Muli-Bold.ttf */,
-				7A24CDB0217FA90B00591495 /* Muli-Regular.ttf */,
 				7A24CD85217FA90A00591495 /* Muli-SemiBold.ttf */,
 				7AA5260A218036550097AC7A /* AppIcons.ttf */,
 				13B07FAE1A68108700A75B9A /* Aisle5 */,
@@ -1240,9 +1236,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				7AE3974F217C602D00FEEEBA /* GoogleService-Info.plist in Resources */,
-				7A24CDB4217FA90C00591495 /* Muli-Regular.ttf in Resources */,
 				7AE3969B217C582F00FEEEBA /* MaterialIcons.ttf in Resources */,
-				7A24CDB2217FA90C00591495 /* ArchivoBlack-Regular.ttf in Resources */,
 				7AA52633218036550097AC7A /* AppIcons.ttf in Resources */,
 				7A24CDB3217FA90C00591495 /* Muli-Bold.ttf in Resources */,
 				7A24CDB1217FA90C00591495 /* Muli-SemiBold.ttf in Resources */,
