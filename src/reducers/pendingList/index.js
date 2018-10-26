@@ -7,7 +7,7 @@ export default function pendingListReducer(state = initialState, action = {}) {
   switch (action.type) {
     case 'ADD_PENDING_LIST_ITEM':
       newState = utils.objects.cloneObject(state);
-      newState[action.payload.item.itemID] = action.payload.item;
+      newState[action.payload.item.name] = action.payload.item;
       return newState;
 
     case 'SET_PENDING_LIST_ITEM_IS_CHECKED':

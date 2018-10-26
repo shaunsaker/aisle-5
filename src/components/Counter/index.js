@@ -17,7 +17,13 @@ const defaultProps = {};
 const Counter = ({ value, handleChange }) => {
   return (
     <View style={styles.container}>
-      <Animator type="opacity" initialValue={0.33} finalValue={1} shouldAnimateIn={value > 1}>
+      <Animator
+        type="opacity"
+        initialValue={0.33}
+        finalValue={1}
+        shouldAnimateIn={value > 1}
+        shouldAnimateOut={value < 2}
+      >
         <IconButton
           name="remove"
           small

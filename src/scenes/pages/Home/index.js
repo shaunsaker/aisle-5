@@ -183,8 +183,6 @@ export class Home extends React.Component {
 
   onItemSuggestion(item) {
     this.setItem(item);
-    this.submitItem();
-    this.hideInput();
   }
 
   onSetPendingListItemIsChecked(itemID, isChecked) {

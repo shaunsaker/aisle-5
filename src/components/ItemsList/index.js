@@ -13,13 +13,13 @@ export default class ItemsList extends React.Component {
   constructor(props) {
     super(props);
 
-    this.setDidMount = this.setDidMount.bind(this);
+    this.setDidChange = this.setDidChange.bind(this);
     this.renderItem = this.renderItem.bind(this);
 
     this.maxItemsVisible = Math.ceil((styleConstants.dimensions.window.height - 65 - 50) / 51); // - headerbar - tabbar / item height
 
     this.state = {
-      didMount: false,
+      didChange: false,
     };
   }
 
@@ -36,19 +36,24 @@ export default class ItemsList extends React.Component {
 
   static defaultProps = {};
 
-  componentDidMount() {
-    this.setDidMount(true);
+  componentDidUpdate(prevProps) {
+    const { data } = this.props;
+
+    if (data.length !== prevProps.data.length) {
+      // We only want to animate new list items in
+      this.setDidChange(true);
+    }
   }
 
-  setDidMount(didMount) {
-    this.setState({ didMount });
+  setDidChange(didChange) {
+    this.setState({ didChange });
   }
 
   renderItem({ item, index }) {
-    const { didMount } = this.state;
-    const { data, handleSetIsChecked, handleSetQuantity } = this.props;
+    const { didChange } = this.state;
+    const { handleSetIsChecked, handleSetQuantity } = this.props;
 
-    const shouldAnimate = (data.length === 1 || didMount) && index < this.maxItemsVisible;
+    const shouldAnimate = didChange && index < this.maxItemsVisible;
 
     return (
       <Animator

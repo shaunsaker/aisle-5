@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
+import Animator from 'react-native-simple-animators';
 
 import CheckBox from '../../CheckBox';
 import Counter from '../../Counter';
@@ -26,7 +27,23 @@ const Item = ({ name, isChecked, quantity, handleSetIsChecked, handleSetQuantity
 
       <Text style={styles.text}>{name}</Text>
 
-      <Counter value={quantity} handleChange={handleSetQuantity} />
+      <Animator
+        type="translateX"
+        initialValue={0}
+        finalValue={100}
+        shouldAnimateIn={isChecked}
+        shouldAnimateOut={!isChecked}
+      >
+        <Animator
+          type="scale"
+          initialValue={1}
+          finalValue={0}
+          shouldAnimateIn={isChecked}
+          shouldAnimateOut={!isChecked}
+        >
+          <Counter value={quantity} handleChange={handleSetQuantity} />
+        </Animator>
+      </Animator>
     </View>
   );
 };

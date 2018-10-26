@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     borderRadius: SIZE / 2,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: styleConstants.colors.white,
+    backgroundColor: styleConstants.colors.dividerColor,
     ...styleConstants.shadows.regular,
     borderWidth: 1,
     borderColor: styleConstants.colors.dividerColor,

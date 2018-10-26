@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     width: SMALL_SIZE,
     height: SMALL_SIZE,
     borderRadius: SMALL_SIZE,
+    ...styleConstants.shadows.regular,
   },
   secondaryContainer: {
     backgroundColor: styleConstants.colors.dividerColor,
