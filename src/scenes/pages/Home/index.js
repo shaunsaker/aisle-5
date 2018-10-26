@@ -46,6 +46,10 @@ export class Home extends React.Component {
     this.setPendingListItemIsChecked = this.setPendingListItemIsChecked.bind(this);
     this.onSetPendingListItemQuantity = this.onSetPendingListItemQuantity.bind(this);
     this.setPendingListItemQuantity = this.setPendingListItemQuantity.bind(this);
+    this.onSubmitList = this.onSubmitList.bind(this);
+    this.saveList = this.saveList.bind(this);
+    this.resetPendingList = this.resetPendingList.bind(this);
+    this.setSystemMessage = this.setSystemMessage.bind(this);
 
     this.keyboardDidHideListener = null;
 
@@ -156,7 +160,7 @@ export class Home extends React.Component {
       name,
       quantity: 1,
       isChecked: false,
-      date_added: Date.now(),
+      dateAdded: Date.now(),
     };
 
     dispatch({
@@ -187,6 +191,12 @@ export class Home extends React.Component {
 
   onSetPendingListItemIsChecked(itemID, isChecked) {
     this.setPendingListItemIsChecked(itemID, isChecked);
+
+    if (isChecked) {
+      const datePurchased = Date.now();
+
+      this.setPendingListItemDatePurchased(itemID, datePurchased);
+    }
   }
 
   setPendingListItemIsChecked(itemID, isChecked) {
@@ -197,6 +207,18 @@ export class Home extends React.Component {
       payload: {
         itemID,
         isChecked,
+      },
+    });
+  }
+
+  setPendingListItemDatePurchased(itemID, datePurchased) {
+    const { dispatch } = this.props;
+
+    dispatch({
+      type: 'SET_PENDING_LIST_ITEM_DATE_PURCHASED',
+      payload: {
+        itemID,
+        datePurchased,
       },
     });
   }
@@ -213,6 +235,70 @@ export class Home extends React.Component {
       payload: {
         itemID,
         quantity,
+      },
+    });
+  }
+
+  onSubmitList() {
+    const message = 'Items added to Predictions';
+
+    this.saveList();
+    this.resetPendingList();
+    this.setSystemMessage(message);
+  }
+
+  saveList() {
+    const { dispatch, uid, pendingList, userItems } = this.props;
+
+    // Convert userItems to array
+    const userItemsArray = utils.objects.convertObjectToArray(userItems);
+
+    // Convert pendingList to array
+    // Create array of items where item has user_item_id, date_added, date_purchased from isChecked, quantity
+    const list = utils.objects.convertObjectToArray(pendingList).map((item) => {
+      // Get the user item id
+      const userItemID = userItemsArray.filter((userItem) => userItem.name === item.name)[0].id;
+
+      return {
+        user_item_id: userItemID,
+        quantity: item.quantity,
+        date_added: item.dateAdded,
+        date_purchased: item.datePurchased,
+      };
+    });
+
+    const document = {
+      list,
+      uid,
+      date_added: Date.now(),
+    };
+
+    dispatch({
+      type: 'addDocument',
+      meta: {
+        pathParts: ['lists'],
+      },
+      payload: {
+        document,
+      },
+    });
+  }
+
+  resetPendingList() {
+    const { dispatch } = this.props;
+
+    dispatch({
+      type: 'RESET_PENDING_LIST',
+    });
+  }
+
+  setSystemMessage(message) {
+    const { dispatch } = this.props;
+
+    dispatch({
+      type: 'SET_SYSTEM_MESSAGE',
+      payload: {
+        message,
       },
     });
   }
@@ -238,6 +324,12 @@ export class Home extends React.Component {
             return isPartialItemPresent;
           })
         : [];
+
+    // Show the submit button if all items in the
+    // pendingListArray have isChecked equal to true
+    const showSubmitButton = pendingListArray.length
+      ? !pendingListArray.filter((pendingListItem) => !pendingListItem.isChecked).length && true
+      : null;
 
     const listComponent = pendingListArray.length ? (
       <ItemsList
@@ -322,6 +414,29 @@ export class Home extends React.Component {
         </View>
       );
 
+    const submitButtonComponent = !showInput && (
+      <Animator
+        type="translateY"
+        initialValue={100}
+        finalValue={0}
+        shouldAnimateIn={showSubmitButton}
+        shouldAnimateOut={!showSubmitButton}
+        easing={styleConstants.easing}
+        style={styles.submitButtonContainer}
+      >
+        <Animator
+          type="scale"
+          initialValue={0.5}
+          finalValue={1}
+          shouldAnimateIn={showSubmitButton}
+          shouldAnimateOut={!showSubmitButton}
+          easing={styleConstants.easing}
+        >
+          <Button text="Checkout" primary handlePress={this.onSubmitList} />
+        </Animator>
+      </Animator>
+    );
+
     return (
       <Page>
         <HeaderBar style={styles.headerBar}>
@@ -368,9 +483,11 @@ export class Home extends React.Component {
             {listComponent}
           </InputContainer>
 
-          {addItemButtonComponent}
-
           {itemSuggestionsComponent}
+
+          {submitButtonComponent}
+
+          {addItemButtonComponent}
 
           {submitItemButtonComponent}
         </View>

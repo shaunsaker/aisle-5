@@ -48,6 +48,14 @@ const styles = StyleSheet.create({
     paddingBottom: styleConstants.dimensions.spacing.horizontal,
     paddingRight: styleConstants.dimensions.spacing.horizontal,
   },
+  submitButtonContainer: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    alignItems: 'center',
+    paddingBottom: styleConstants.dimensions.spacing.horizontal,
+  },
 });
 
 export default styles;
