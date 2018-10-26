@@ -43,7 +43,9 @@ export class Home extends React.Component {
     this.dismissKeyboard = this.dismissKeyboard.bind(this);
     this.onItemSuggestion = this.onItemSuggestion.bind(this);
     this.onSetPendingListItemIsChecked = this.onSetPendingListItemIsChecked.bind(this);
+    this.setPendingListItemIsChecked = this.setPendingListItemIsChecked.bind(this);
     this.onSetPendingListItemQuantity = this.onSetPendingListItemQuantity.bind(this);
+    this.setPendingListItemQuantity = this.setPendingListItemQuantity.bind(this);
 
     this.keyboardDidHideListener = null;
 
@@ -186,11 +188,35 @@ export class Home extends React.Component {
   }
 
   onSetPendingListItemIsChecked(itemID, isChecked) {
-    console.log(itemID, isChecked);
+    this.setPendingListItemIsChecked(itemID, isChecked);
+  }
+
+  setPendingListItemIsChecked(itemID, isChecked) {
+    const { dispatch } = this.props;
+
+    dispatch({
+      type: 'SET_PENDING_LIST_ITEM_IS_CHECKED',
+      payload: {
+        itemID,
+        isChecked,
+      },
+    });
   }
 
   onSetPendingListItemQuantity(itemID, quantity) {
-    console.log(itemID, quantity);
+    this.setPendingListItemQuantity(itemID, quantity);
+  }
+
+  setPendingListItemQuantity(itemID, quantity) {
+    const { dispatch } = this.props;
+
+    dispatch({
+      type: 'SET_PENDING_LIST_ITEM_QUANTITY',
+      payload: {
+        itemID,
+        quantity,
+      },
+    });
   }
 
   render() {

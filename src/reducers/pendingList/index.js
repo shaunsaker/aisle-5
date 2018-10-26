@@ -7,17 +7,17 @@ export default function pendingListReducer(state = initialState, action = {}) {
   switch (action.type) {
     case 'ADD_PENDING_LIST_ITEM':
       newState = utils.objects.cloneObject(state);
-      newState[action.payload.item.name] = action.payload.item;
+      newState[action.payload.item.itemID] = action.payload.item;
+      return newState;
+
+    case 'SET_PENDING_LIST_ITEM_IS_CHECKED':
+      newState = utils.objects.cloneObject(state);
+      newState[action.payload.itemID].isChecked = action.payload.isChecked;
       return newState;
 
     case 'SET_PENDING_LIST_ITEM_QUANTITY':
       newState = utils.objects.cloneObject(state);
-      newState[action.payload.item.name].quantity = action.payload.value;
-      return newState;
-
-    case 'TOGGLE_PENDING_LIST_ITEM_IS_CHECKED':
-      newState = utils.objects.cloneObject(state);
-      newState[action.payload.item.name].isChecked = !newState[action.payload.item.name].isChecked;
+      newState[action.payload.itemID].quantity = action.payload.quantity;
       return newState;
 
     case 'RESET_PENDING_LIST':
