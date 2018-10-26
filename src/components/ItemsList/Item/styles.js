@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
   },
   countText: {
     ...styleConstants.fonts.types.paragraph,
+    ...styleConstants.fonts.families.bold,
   },
 });
 

@@ -25,9 +25,9 @@ const Item = ({ name, isChecked, quantity, handleSetIsChecked, handleSetQuantity
         <CheckBox isChecked={isChecked} handlePress={handleSetIsChecked} />
       </View>
 
-      <Text style={styles.countText}>{`${quantity} x `}</Text>
+      <Text style={styles.countText}>{quantity}</Text>
 
-      <Text style={styles.text}>{name}</Text>
+      <Text style={styles.text}>{` x ${name}`}</Text>
 
       <Animator
         type="translateX"
