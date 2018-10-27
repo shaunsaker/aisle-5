@@ -64,6 +64,7 @@ export class Home extends React.Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     uid: PropTypes.string,
+    uniqueID: PropTypes.string,
     userItems: PropTypes.shape({}),
     pendingList: PropTypes.shape({}),
   };
@@ -138,10 +139,11 @@ export class Home extends React.Component {
   }
 
   saveItem(name) {
-    const { dispatch, uid } = this.props;
+    const { dispatch, uid, uniqueID } = this.props;
     const document = {
       name,
       uid,
+      unique_id: uniqueID,
       date_added: Date.now(),
     };
 
@@ -265,7 +267,7 @@ export class Home extends React.Component {
   }
 
   saveList() {
-    const { dispatch, uid, pendingList, userItems } = this.props;
+    const { dispatch, uid, uniqueID, pendingList, userItems } = this.props;
 
     // Convert userItems to array
     const userItemsArray = utils.objects.convertObjectToArray(userItems);
@@ -287,6 +289,7 @@ export class Home extends React.Component {
     const document = {
       list,
       uid,
+      unique_id: uniqueID,
       date_added: Date.now(),
     };
 
@@ -530,6 +533,7 @@ export class Home extends React.Component {
 function mapStateToProps(state) {
   return {
     uid: state.user.uid,
+    uniqueID: state.deviceInfo.uniqueID,
     userItems: state.userItems,
     pendingList: state.pendingList,
   };
