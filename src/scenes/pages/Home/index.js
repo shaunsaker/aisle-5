@@ -416,6 +416,7 @@ export class Home extends React.Component {
         shouldAnimateIn={item ? true : null}
         shouldAnimateOut={!item ? true : null}
         easing={styleConstants.easing}
+        style={styles.submitItemButtonContainer}
       >
         <Animator
           type="translateY"
@@ -424,7 +425,6 @@ export class Home extends React.Component {
           shouldAnimateIn={item ? true : null}
           shouldAnimateOut={!item ? true : null}
           easing={styleConstants.easing}
-          style={styles.submitItemButtonContainer}
         >
           <Animator
             type="scale"
