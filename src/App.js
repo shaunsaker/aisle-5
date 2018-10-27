@@ -10,6 +10,7 @@ import ErrorHandler from './handlers/ErrorHandler';
 import SystemMessageHandler from './handlers/SystemMessageHandler';
 import AuthHandler from './handlers/AuthHandler';
 import DatabaseHandler from './handlers/DatabaseHandler';
+import DeviceInfoHandler from './handlers/DeviceInfoHandler';
 import NetworkHandler from './handlers/NetworkHandler';
 import CodePushHandler from './handlers/CodePushHandler';
 import AndroidBackHandler from './handlers/AndroidBackHandler';
@@ -33,6 +34,7 @@ export function App() {
             <CodePushHandler />
             <AuthHandler />
             <DatabaseHandler />
+            <DeviceInfoHandler />
             <NetworkHandler />
             <Routes />
             <AndroidBackHandler />
