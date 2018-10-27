@@ -2,6 +2,8 @@ import { takeLatest, takeEvery, fork, all } from 'redux-saga/effects';
 
 import { getAuth, signInAnonymously, signOut } from './auth';
 
+import { getUniqueID } from './deviceInfo';
+
 import { logError } from './errors';
 
 import {
@@ -21,6 +23,8 @@ export default function* sagas() {
     fork(takeLatest, 'getAuth', getAuth),
     fork(takeLatest, 'signInAnonymously', signInAnonymously),
     fork(takeLatest, 'signOut', signOut),
+
+    fork(takeLatest, 'getUniqueID', getUniqueID),
 
     fork(takeEvery, 'addDocument', addDocument),
     fork(takeEvery, 'deleteDocument', deleteDocument),
