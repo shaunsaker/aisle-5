@@ -8,8 +8,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: styleConstants.dimensions.spacing.vertical,
     marginHorizontal: styleConstants.dimensions.spacing.horizontal,
-    borderBottomWidth: 1,
-    borderBottomColor: styleConstants.colors.dividerColor,
   },
   checkBoxContainer: {
     marginRight: styleConstants.dimensions.spacing.horizontal,

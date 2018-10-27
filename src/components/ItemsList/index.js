@@ -9,6 +9,7 @@ import styles from './styles';
 
 import Swipeable from '../Swipeable';
 import Item from './Item';
+import ItemSeparator from './ItemSeparator';
 
 export default class ItemsList extends React.Component {
   constructor(props) {
@@ -20,6 +21,7 @@ export default class ItemsList extends React.Component {
     this.onSwipeEnd = this.onSwipeEnd.bind(this);
     this.setScrollEnabled = this.setScrollEnabled.bind(this);
     this.renderItem = this.renderItem.bind(this);
+    this.renderItemSeparator = this.renderItemSeparator.bind(this);
 
     this.itemWidth = styleConstants.dimensions.window.width;
     this.itemHeight = 51;
@@ -109,6 +111,10 @@ export default class ItemsList extends React.Component {
     );
   }
 
+  renderItemSeparator() {
+    return <ItemSeparator />;
+  }
+
   render() {
     const { scrollEnabled } = this.state;
     const { data } = this.props;
@@ -130,6 +136,7 @@ export default class ItemsList extends React.Component {
         })}
         scrollEnabled={scrollEnabled}
         bounces={false}
+        ItemSeparatorComponent={this.renderItemSeparator}
       />
     );
   }
