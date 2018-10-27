@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, PanResponder, Animated } from 'react-native';
 
+import styleConstants from '../../styleConstants';
+
 import styles from './styles';
 
 export default class Swipeable extends React.Component {
@@ -56,6 +58,7 @@ export default class Swipeable extends React.Component {
           Animated.timing(pan, {
             toValue: { x: 0, y: 0 },
             duration: this.snapStartDuration,
+            easing: styleConstants.easing,
           }).start(() => {
             if (onSwipeEnd) {
               onSwipeEnd();
@@ -65,6 +68,7 @@ export default class Swipeable extends React.Component {
           Animated.timing(pan, {
             toValue: { x: width, y: 0 },
             duration: this.snapEndDuration,
+            easing: styleConstants.easing,
           }).start(() => {
             if (onSwipeEnd) {
               onSwipeEnd();
@@ -81,11 +85,18 @@ export default class Swipeable extends React.Component {
 
   render() {
     const { pan } = this.state;
-    const { children } = this.props;
+    const { width, children } = this.props;
+    const color = pan.x.interpolate({
+      inputRange: [0, width],
+      outputRange: ['rgba(255, 0, 0, 0)', 'rgba(255, 0, 0, 1)'],
+    });
 
     return (
       <View style={styles.container}>
-        <Animated.View {...this.panResponder.panHandlers} style={pan.getLayout()}>
+        <Animated.View
+          {...this.panResponder.panHandlers}
+          style={[pan.getLayout(), { backgroundColor: color }]}
+        >
           {children}
         </Animated.View>
       </View>
