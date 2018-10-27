@@ -147,6 +147,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-device-info')
     compile project(':react-native-code-push')
     // Firebase dependencies
     implementation project(':react-native-firebase')
