@@ -7,7 +7,7 @@ import styles from './styles';
 import IconButton from '../IconButton';
 
 const propTypes = {
-  value: PropTypes.number,
+  value: PropTypes.number.isRequired,
   handleChange: PropTypes.func,
 };
 
