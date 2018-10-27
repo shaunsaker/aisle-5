@@ -35,9 +35,9 @@ export default class Swipeable extends React.Component {
     const { width, onSwipeStart, onSwipeEnd, onSwiped } = this.props;
 
     this.panResponder = PanResponder.create({
-      onStartShouldSetPanResponder: () => false,
+      onStartShouldSetPanResponder: () => true,
 
-      onMoveShouldSetPanResponder: () => true,
+      onMoveShouldSetPanResponder: () => false,
 
       onPanResponderTerminationRequest: () => false,
 
