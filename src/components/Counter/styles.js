@@ -10,6 +10,10 @@ const styles = StyleSheet.create({
   spacer: {
     width: styleConstants.dimensions.spacing.horizontal / 2,
   },
+  noShadow: {
+    elevation: 0, // android
+    shadowOpacity: 0, // ios
+  },
 });
 
 export default styles;

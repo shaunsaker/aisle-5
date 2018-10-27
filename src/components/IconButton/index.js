@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { ViewPropTypes } from 'react-native';
 
 import styles from './styles';
 
@@ -12,11 +13,12 @@ const propTypes = {
   small: PropTypes.bool,
   secondary: PropTypes.bool,
   disabled: PropTypes.bool,
+  style: ViewPropTypes.style,
 };
 
 const defaultProps = {};
 
-const IconButton = ({ name, handlePress, small, secondary, disabled }) => {
+const IconButton = ({ name, handlePress, small, secondary, disabled, style }) => {
   return (
     <Touchable
       onPress={handlePress}
@@ -25,6 +27,7 @@ const IconButton = ({ name, handlePress, small, secondary, disabled }) => {
         styles.container,
         small && styles.smallContainer,
         secondary && styles.secondaryContainer,
+        style,
       ]}
     >
       <Icon

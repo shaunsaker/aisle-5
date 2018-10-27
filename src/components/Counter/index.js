@@ -15,21 +15,24 @@ const propTypes = {
 const defaultProps = {};
 
 const Counter = ({ value, handleChange }) => {
+  const shouldEnableDecrementButton = value > 1;
+
   return (
     <View style={styles.container}>
       <Animator
         type="opacity"
         initialValue={0.33}
         finalValue={1}
-        shouldAnimateIn={value > 1}
-        shouldAnimateOut={value < 2}
+        shouldAnimateIn={shouldEnableDecrementButton}
+        shouldAnimateOut={!shouldEnableDecrementButton}
       >
         <IconButton
           name="remove"
           small
           secondary
           handlePress={() => handleChange(value - 1)}
-          disabled={value < 2}
+          disabled={!shouldEnableDecrementButton}
+          style={styles.noShadow}
         />
       </Animator>
 
