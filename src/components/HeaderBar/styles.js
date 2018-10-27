@@ -12,8 +12,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: styleConstants.dimensions.spacing.horizontal,
     backgroundColor: styleConstants.colors.primary,
     ...styleConstants.shadows.large,
-    minHeight: Platform.OS === 'ios' ? 22 + HEADER_HEIGHT : HEADER_HEIGHT,
-    maxHeight: Platform.OS === 'ios' ? 22 + HEADER_HEIGHT : HEADER_HEIGHT,
+    height: HEADER_HEIGHT,
     justifyContent: 'center',
   },
 });
