@@ -476,7 +476,7 @@ export class Home extends React.Component {
           <Animator
             type="translateX"
             initialValue={0}
-            finalValue={-150}
+            finalValue={-160}
             shouldAnimateIn={showInput}
             shouldAnimateOut={!showInput}
             easing={styleConstants.easing}
