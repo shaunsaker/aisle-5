@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 
 import styleConstants from '../../styleConstants';
 
@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
   icon: {
     fontSize: 18,
     color: styleConstants.colors.secondary,
+    marginLeft: Platform.OS == 'android' ? LETTER_SPACING : 0,
     marginRight: LETTER_SPACING,
   },
 });
