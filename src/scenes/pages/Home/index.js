@@ -246,7 +246,14 @@ export class Home extends React.Component {
   }
 
   removePendingListItem(itemID) {
-    console.log(itemID);
+    const { dispatch } = this.props;
+
+    dispatch({
+      type: 'REMOVE_PENDING_LIST_ITEM',
+      payload: {
+        itemID,
+      },
+    });
   }
 
   onSubmitList() {

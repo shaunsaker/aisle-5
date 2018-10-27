@@ -25,6 +25,15 @@ export default function pendingListReducer(state = initialState, action = {}) {
       newState[action.payload.itemID].quantity = action.payload.quantity;
       return newState;
 
+    case 'REMOVE_PENDING_LIST_ITEM':
+      newState = utils.objects.cloneObject(state);
+      const newPendingList = newState;
+
+      delete newPendingList[action.payload.itemID];
+
+      newState = newPendingList;
+      return newState;
+
     case 'RESET_PENDING_LIST':
       newState = utils.objects.cloneObject(state);
       newState = initialState;
