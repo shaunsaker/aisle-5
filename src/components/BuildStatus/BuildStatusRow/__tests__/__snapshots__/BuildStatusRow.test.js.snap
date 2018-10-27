@@ -8,7 +8,7 @@ exports[`BuildStatusRow renders renders 1`] = `
   style={
     Object {
       "color": "#212121",
-      "fontFamily": "System",
+      "fontFamily": "Muli-SemiBold",
       "fontSize": 15,
     }
   }
@@ -17,11 +17,7 @@ exports[`BuildStatusRow renders renders 1`] = `
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
-    style={
-      Object {
-        "fontFamily": "System",
-      }
-    }
+    style={Object {}}
   >
     Foo
      

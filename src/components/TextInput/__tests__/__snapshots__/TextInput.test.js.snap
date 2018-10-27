@@ -8,28 +8,29 @@ exports[`TextInput renders renders with all props 1`] = `
   onChangeText={[MockFunction]}
   onSubmitEditing={[MockFunction]}
   placeholder="Test"
-  placeholderTextColor="#757575"
+  placeholderTextColor="#555555"
   returnKeyType="done"
   secureTextEntry={true}
   style={
     Array [
       Object {
-        "backgroundColor": "#FFFFFF",
-        "borderColor": "#E0E0E0",
-        "borderRadius": 5,
+        "backgroundColor": "#EDE8CA",
+        "borderColor": "#FFFFFF",
+        "borderRadius": 2,
         "borderWidth": 1,
         "color": "#212121",
-        "fontFamily": "Nunito-Regular",
+        "flex": 1,
+        "fontFamily": "Muli-SemiBold",
         "fontSize": 17,
+        "fontWeight": "400",
         "paddingHorizontal": 15,
         "paddingVertical": 10,
-        "textAlign": "center",
         "textAlignVertical": "center",
       },
       Object {
         "backgroundColor": "rgba(255, 0, 0, 0.2)",
         "borderColor": "rgba(255, 0, 0, 0.5)",
-        "color": "#d32f2f",
+        "color": undefined,
       },
       Object {},
       undefined,
@@ -44,20 +45,21 @@ exports[`TextInput renders renders with all props 1`] = `
 exports[`TextInput renders renders with minimum required props 1`] = `
 <TextInput
   allowFontScaling={true}
-  placeholderTextColor="#757575"
+  placeholderTextColor="#555555"
   style={
     Array [
       Object {
-        "backgroundColor": "#FFFFFF",
-        "borderColor": "#E0E0E0",
-        "borderRadius": 5,
+        "backgroundColor": "#EDE8CA",
+        "borderColor": "#FFFFFF",
+        "borderRadius": 2,
         "borderWidth": 1,
         "color": "#212121",
-        "fontFamily": "Nunito-Regular",
+        "flex": 1,
+        "fontFamily": "Muli-SemiBold",
         "fontSize": 17,
+        "fontWeight": "400",
         "paddingHorizontal": 15,
         "paddingVertical": 10,
-        "textAlign": "center",
         "textAlignVertical": "center",
       },
       undefined,

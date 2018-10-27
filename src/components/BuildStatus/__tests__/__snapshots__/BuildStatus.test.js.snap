@@ -16,7 +16,7 @@ exports[`BuildStatus renders renders with minimum required props 1`] = `
     style={
       Object {
         "color": "#212121",
-        "fontFamily": "System",
+        "fontFamily": "Muli-SemiBold",
         "fontSize": 15,
       }
     }
@@ -25,11 +25,7 @@ exports[`BuildStatus renders renders with minimum required props 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
-      style={
-        Object {
-          "fontFamily": "System",
-        }
-      }
+      style={Object {}}
     >
       Version:
        
@@ -43,7 +39,7 @@ exports[`BuildStatus renders renders with minimum required props 1`] = `
     style={
       Object {
         "color": "#212121",
-        "fontFamily": "System",
+        "fontFamily": "Muli-SemiBold",
         "fontSize": 15,
       }
     }
@@ -52,11 +48,7 @@ exports[`BuildStatus renders renders with minimum required props 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
-      style={
-        Object {
-          "fontFamily": "System",
-        }
-      }
+      style={Object {}}
     >
       Build:
        
@@ -70,7 +62,7 @@ exports[`BuildStatus renders renders with minimum required props 1`] = `
     style={
       Object {
         "color": "#212121",
-        "fontFamily": "System",
+        "fontFamily": "Muli-SemiBold",
         "fontSize": 15,
       }
     }
@@ -79,11 +71,7 @@ exports[`BuildStatus renders renders with minimum required props 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
-      style={
-        Object {
-          "fontFamily": "System",
-        }
-      }
+      style={Object {}}
     >
       Code:
        

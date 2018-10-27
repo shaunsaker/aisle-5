@@ -6,8 +6,8 @@ exports[`CodePushStatus renders renders 1`] = `
     Object {
       "alignItems": "center",
       "alignSelf": "stretch",
-      "backgroundColor": "#FFFFFF",
-      "borderRadius": 10,
+      "backgroundColor": "#EDE8CA",
+      "borderRadius": 2,
       "flexDirection": "row",
       "justifyContent": "center",
       "paddingHorizontal": 7.5,
@@ -26,7 +26,7 @@ exports[`CodePushStatus renders renders 1`] = `
           "fontSize": 12,
         },
         Object {
-          "color": "#4caf50",
+          "color": undefined,
           "fontSize": 20,
           "marginRight": 7.5,
         },
@@ -49,7 +49,7 @@ exports[`CodePushStatus renders renders 1`] = `
       Object {
         "color": "#212121",
         "flex": 1,
-        "fontFamily": "System",
+        "fontFamily": "Muli-SemiBold",
         "fontSize": 15,
         "textAlign": "center",
       }
@@ -66,8 +66,8 @@ exports[`CodePushStatus renders renders the loading state 1`] = `
     Object {
       "alignItems": "center",
       "alignSelf": "stretch",
-      "backgroundColor": "#FFFFFF",
-      "borderRadius": 10,
+      "backgroundColor": "#EDE8CA",
+      "borderRadius": 2,
       "flexDirection": "row",
       "justifyContent": "center",
       "paddingHorizontal": 7.5,
@@ -94,7 +94,7 @@ exports[`CodePushStatus renders renders the loading state 1`] = `
       Object {
         "color": "#212121",
         "flex": 1,
-        "fontFamily": "System",
+        "fontFamily": "Muli-SemiBold",
         "fontSize": 15,
         "textAlign": "center",
       }

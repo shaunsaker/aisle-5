@@ -21,7 +21,7 @@ exports[`StatusBar renders renders with minimum required props 1`] = `
           "height": 22,
         },
         Object {
-          "backgroundColor": "#FFFFFF",
+          "backgroundColor": "#EDE8CA",
         },
       ]
     }

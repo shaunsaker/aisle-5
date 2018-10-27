@@ -6,7 +6,7 @@ exports[`PageLoader renders renders 1`] = `
     Array [
       Object {
         "alignSelf": "stretch",
-        "backgroundColor": "#FFFFFF",
+        "backgroundColor": "#EDE8CA",
         "flex": 1,
         "paddingTop": 22,
       },
@@ -17,7 +17,7 @@ exports[`PageLoader renders renders 1`] = `
         "alignItems": "center",
       },
       Object {
-        "backgroundColor": "#3D84A8",
+        "backgroundColor": "#08293A",
       },
     ]
   }
@@ -42,7 +42,7 @@ exports[`PageLoader renders renders 1`] = `
             "height": 22,
           },
           Object {
-            "backgroundColor": "#3D84A8",
+            "backgroundColor": "#08293A",
           },
         ]
       }
@@ -50,7 +50,7 @@ exports[`PageLoader renders renders 1`] = `
   </View>
   <ActivityIndicator
     animating={true}
-    color="#FFFFFF"
+    color="#EDE8CA"
     hidesWhenStopped={true}
     size="large"
   />

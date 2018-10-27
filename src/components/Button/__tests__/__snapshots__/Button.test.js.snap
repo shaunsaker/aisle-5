@@ -13,11 +13,11 @@ exports[`LargeButton renders renders a custom icon 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#FFFFFF",
+      "backgroundColor": "#EDE8CA",
       "borderColor": null,
-      "borderRadius": 5,
+      "borderRadius": 2,
       "borderWidth": 0,
-      "elevation": 2,
+      "elevation": 6,
       "opacity": 1,
       "paddingHorizontal": 15,
       "paddingVertical": 10,
@@ -26,11 +26,11 @@ exports[`LargeButton renders renders a custom icon 1`] = `
         "height": 1,
         "width": 0,
       },
-      "shadowOpacity": 0.17,
+      "shadowOpacity": 0.33,
       "shadowRadius": 2,
     }
   }
-  testID="largeButton"
+  testID="Button"
 >
   <Text
     accessible={true}
@@ -40,7 +40,7 @@ exports[`LargeButton renders renders a custom icon 1`] = `
       Array [
         Object {
           "color": "#212121",
-          "fontFamily": "Nunito-SemiBold",
+          "fontFamily": "Muli-Bold",
           "fontSize": 17,
         },
         undefined,
@@ -66,11 +66,11 @@ exports[`LargeButton renders renders the blueText state 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#FFFFFF",
+      "backgroundColor": "#EDE8CA",
       "borderColor": null,
-      "borderRadius": 5,
+      "borderRadius": 2,
       "borderWidth": 0,
-      "elevation": 2,
+      "elevation": 6,
       "opacity": 1,
       "paddingHorizontal": 15,
       "paddingVertical": 10,
@@ -79,11 +79,11 @@ exports[`LargeButton renders renders the blueText state 1`] = `
         "height": 1,
         "width": 0,
       },
-      "shadowOpacity": 0.17,
+      "shadowOpacity": 0.33,
       "shadowRadius": 2,
     }
   }
-  testID="largeButton"
+  testID="Button"
 >
   <Text
     accessible={true}
@@ -93,7 +93,7 @@ exports[`LargeButton renders renders the blueText state 1`] = `
       Array [
         Object {
           "color": "#212121",
-          "fontFamily": "Nunito-SemiBold",
+          "fontFamily": "Muli-Bold",
           "fontSize": 17,
         },
         undefined,
@@ -119,11 +119,11 @@ exports[`LargeButton renders renders the disabled state 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#FFFFFF",
+      "backgroundColor": "#EDE8CA",
       "borderColor": null,
-      "borderRadius": 5,
+      "borderRadius": 2,
       "borderWidth": 0,
-      "elevation": 2,
+      "elevation": 6,
       "opacity": 0.33,
       "paddingHorizontal": 15,
       "paddingVertical": 10,
@@ -132,11 +132,11 @@ exports[`LargeButton renders renders the disabled state 1`] = `
         "height": 1,
         "width": 0,
       },
-      "shadowOpacity": 0.17,
+      "shadowOpacity": 0.33,
       "shadowRadius": 2,
     }
   }
-  testID="largeButton"
+  testID="Button"
 >
   <Text
     accessible={true}
@@ -146,7 +146,7 @@ exports[`LargeButton renders renders the disabled state 1`] = `
       Array [
         Object {
           "color": "#212121",
-          "fontFamily": "Nunito-SemiBold",
+          "fontFamily": "Muli-Bold",
           "fontSize": 17,
         },
         undefined,
@@ -172,11 +172,11 @@ exports[`LargeButton renders renders the loading state 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#FFFFFF",
+      "backgroundColor": "#EDE8CA",
       "borderColor": null,
-      "borderRadius": 5,
+      "borderRadius": 2,
       "borderWidth": 0,
-      "elevation": 2,
+      "elevation": 6,
       "opacity": 1,
       "paddingHorizontal": 15,
       "paddingVertical": 10,
@@ -185,11 +185,11 @@ exports[`LargeButton renders renders the loading state 1`] = `
         "height": 1,
         "width": 0,
       },
-      "shadowOpacity": 0.17,
+      "shadowOpacity": 0.33,
       "shadowRadius": 2,
     }
   }
-  testID="largeButton"
+  testID="Button"
 >
   <ActivityIndicator
     animating={true}
@@ -213,11 +213,11 @@ exports[`LargeButton renders renders the primary state 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#E23E57",
+      "backgroundColor": "#D17623",
       "borderColor": null,
-      "borderRadius": 5,
+      "borderRadius": 2,
       "borderWidth": 0,
-      "elevation": 2,
+      "elevation": 6,
       "opacity": 1,
       "paddingHorizontal": 15,
       "paddingVertical": 10,
@@ -226,11 +226,11 @@ exports[`LargeButton renders renders the primary state 1`] = `
         "height": 1,
         "width": 0,
       },
-      "shadowOpacity": 0.17,
+      "shadowOpacity": 0.33,
       "shadowRadius": 2,
     }
   }
-  testID="largeButton"
+  testID="Button"
 >
   <Text
     accessible={true}
@@ -240,11 +240,11 @@ exports[`LargeButton renders renders the primary state 1`] = `
       Array [
         Object {
           "color": "#212121",
-          "fontFamily": "Nunito-SemiBold",
+          "fontFamily": "Muli-Bold",
           "fontSize": 17,
         },
         Object {
-          "color": "#FFFFFF",
+          "color": "#EDE8CA",
         },
         undefined,
       ]
@@ -268,11 +268,11 @@ exports[`LargeButton renders renders the secondary state 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#FFFFFF",
+      "backgroundColor": "#EDE8CA",
       "borderColor": null,
-      "borderRadius": 5,
+      "borderRadius": 2,
       "borderWidth": 0,
-      "elevation": 2,
+      "elevation": 6,
       "opacity": 1,
       "paddingHorizontal": 15,
       "paddingVertical": 10,
@@ -281,11 +281,11 @@ exports[`LargeButton renders renders the secondary state 1`] = `
         "height": 1,
         "width": 0,
       },
-      "shadowOpacity": 0.17,
+      "shadowOpacity": 0.33,
       "shadowRadius": 2,
     }
   }
-  testID="largeButton"
+  testID="Button"
 >
   <Text
     accessible={true}
@@ -295,7 +295,7 @@ exports[`LargeButton renders renders the secondary state 1`] = `
       Array [
         Object {
           "color": "#212121",
-          "fontFamily": "Nunito-SemiBold",
+          "fontFamily": "Muli-Bold",
           "fontSize": 17,
         },
         undefined,
@@ -321,11 +321,11 @@ exports[`LargeButton renders renders the warning state 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#FFFFFF",
+      "backgroundColor": "#EDE8CA",
       "borderColor": null,
-      "borderRadius": 5,
+      "borderRadius": 2,
       "borderWidth": 0,
-      "elevation": 2,
+      "elevation": 6,
       "opacity": 1,
       "paddingHorizontal": 15,
       "paddingVertical": 10,
@@ -334,11 +334,11 @@ exports[`LargeButton renders renders the warning state 1`] = `
         "height": 1,
         "width": 0,
       },
-      "shadowOpacity": 0.17,
+      "shadowOpacity": 0.33,
       "shadowRadius": 2,
     }
   }
-  testID="largeButton"
+  testID="Button"
 >
   <Text
     accessible={true}
@@ -348,7 +348,7 @@ exports[`LargeButton renders renders the warning state 1`] = `
       Array [
         Object {
           "color": "#212121",
-          "fontFamily": "Nunito-SemiBold",
+          "fontFamily": "Muli-Bold",
           "fontSize": 17,
         },
         undefined,
@@ -374,11 +374,11 @@ exports[`LargeButton renders renders with minimum required props 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#FFFFFF",
+      "backgroundColor": "#EDE8CA",
       "borderColor": null,
-      "borderRadius": 5,
+      "borderRadius": 2,
       "borderWidth": 0,
-      "elevation": 2,
+      "elevation": 6,
       "opacity": 1,
       "paddingHorizontal": 15,
       "paddingVertical": 10,
@@ -387,11 +387,11 @@ exports[`LargeButton renders renders with minimum required props 1`] = `
         "height": 1,
         "width": 0,
       },
-      "shadowOpacity": 0.17,
+      "shadowOpacity": 0.33,
       "shadowRadius": 2,
     }
   }
-  testID="largeButton"
+  testID="Button"
 >
   <Text
     accessible={true}
@@ -401,7 +401,7 @@ exports[`LargeButton renders renders with minimum required props 1`] = `
       Array [
         Object {
           "color": "#212121",
-          "fontFamily": "Nunito-SemiBold",
+          "fontFamily": "Muli-Bold",
           "fontSize": 17,
         },
         undefined,

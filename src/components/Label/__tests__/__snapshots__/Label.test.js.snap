@@ -12,11 +12,11 @@ exports[`Label renders renders 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "backgroundColor": "#E23E57",
+      "backgroundColor": "#FFFFFF",
       "borderColor": null,
-      "borderRadius": 5,
+      "borderRadius": 2,
       "borderWidth": 0,
-      "elevation": 2,
+      "elevation": 6,
       "opacity": 1,
       "paddingHorizontal": 7.5,
       "paddingVertical": 5,
@@ -25,7 +25,7 @@ exports[`Label renders renders 1`] = `
         "height": 1,
         "width": 0,
       },
-      "shadowOpacity": 0.17,
+      "shadowOpacity": 0.33,
       "shadowRadius": 2,
     }
   }
@@ -36,9 +36,9 @@ exports[`Label renders renders 1`] = `
     ellipsizeMode="tail"
     style={
       Object {
-        "color": "#FFFFFF",
-        "fontFamily": "Nunito-SemiBold",
-        "fontSize": 11,
+        "color": "#08293A",
+        "fontFamily": "Muli-SemiBold",
+        "fontSize": 17,
       }
     }
   >

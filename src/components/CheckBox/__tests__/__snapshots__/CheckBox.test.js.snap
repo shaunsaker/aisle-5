@@ -3,6 +3,7 @@
 exports[`CheckBox renders with a customIcon 1`] = `
 <View
   accessible={true}
+  isTVSelectable={true}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -10,50 +11,31 @@ exports[`CheckBox renders with a customIcon 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={
-    Array [
-      Object {
-        "alignItems": "center",
-        "borderColor": "#212121",
-        "borderWidth": 1,
-        "height": 32,
-        "justifyContent": "center",
-        "width": 32,
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#FFFFFF",
+      "borderColor": "#FFFFFF",
+      "borderRadius": 15,
+      "borderWidth": 1,
+      "elevation": 6,
+      "height": 30,
+      "justifyContent": "center",
+      "opacity": 1,
+      "shadowColor": "#212121",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
       },
-      undefined,
-    ]
-  }
-/>
-`;
-
-exports[`CheckBox renders with all props 1`] = `
-<View
-  accessible={true}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Array [
-      Object {
-        "alignItems": "center",
-        "borderColor": "#212121",
-        "borderWidth": 1,
-        "height": 32,
-        "justifyContent": "center",
-        "width": 32,
-      },
-      Object {
-        "backgroundColor": "blue",
-      },
-    ]
+      "shadowOpacity": 0.33,
+      "shadowRadius": 2,
+      "width": 30,
+    }
   }
 >
   <Animator
     finalValue={1}
-    initialValue={0}
-    shouldAnimateIn={true}
+    initialValue={0.01}
+    shouldAnimateOut={true}
     type="scale"
   >
     <Text
@@ -66,20 +48,84 @@ exports[`CheckBox renders with all props 1`] = `
             "color": undefined,
             "fontSize": 12,
           },
-          Array [
-            Object {
-              "color": "#212121",
-              "fontSize": 24,
-            },
-            Object {
-              "color": "red",
-            },
-          ],
+          Object {
+            "color": "#FEA116",
+            "fontSize": 24,
+          },
           Object {
             "fontFamily": "Material Icons",
             "fontStyle": "normal",
             "fontWeight": "normal",
           },
+          Object {},
+        ]
+      }
+    >
+      
+    </Text>
+  </Animator>
+</View>
+`;
+
+exports[`CheckBox renders with all props 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#FFFFFF",
+      "borderColor": "#FFFFFF",
+      "borderRadius": 15,
+      "borderWidth": 1,
+      "elevation": 6,
+      "height": 30,
+      "justifyContent": "center",
+      "opacity": 1,
+      "shadowColor": "#212121",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 0.33,
+      "shadowRadius": 2,
+      "width": 30,
+    }
+  }
+>
+  <Animator
+    finalValue={1}
+    initialValue={0.01}
+    shouldAnimateIn={true}
+    shouldAnimateOut={false}
+    type="scale"
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": undefined,
+            "fontSize": 12,
+          },
+          Object {
+            "color": "#FEA116",
+            "fontSize": 24,
+          },
+          Object {
+            "fontFamily": "Material Icons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          Object {},
         ]
       }
     >
@@ -92,6 +138,7 @@ exports[`CheckBox renders with all props 1`] = `
 exports[`CheckBox renders with minimum required props 1`] = `
 <View
   accessible={true}
+  isTVSelectable={true}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -99,17 +146,58 @@ exports[`CheckBox renders with minimum required props 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={
-    Array [
-      Object {
-        "alignItems": "center",
-        "borderColor": "#212121",
-        "borderWidth": 1,
-        "height": 32,
-        "justifyContent": "center",
-        "width": 32,
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#FFFFFF",
+      "borderColor": "#FFFFFF",
+      "borderRadius": 15,
+      "borderWidth": 1,
+      "elevation": 6,
+      "height": 30,
+      "justifyContent": "center",
+      "opacity": 1,
+      "shadowColor": "#212121",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
       },
-      undefined,
-    ]
+      "shadowOpacity": 0.33,
+      "shadowRadius": 2,
+      "width": 30,
+    }
   }
-/>
+>
+  <Animator
+    finalValue={1}
+    initialValue={0.01}
+    shouldAnimateOut={true}
+    type="scale"
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": undefined,
+            "fontSize": 12,
+          },
+          Object {
+            "color": "#FEA116",
+            "fontSize": 24,
+          },
+          Object {
+            "fontFamily": "Material Icons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          Object {},
+        ]
+      }
+    >
+      
+    </Text>
+  </Animator>
+</View>
 `;
