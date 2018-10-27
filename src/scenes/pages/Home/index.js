@@ -432,7 +432,16 @@ export class Home extends React.Component {
           shouldAnimateOut={!showSubmitButton}
           easing={styleConstants.easing}
         >
-          <Button text="Checkout" primary handlePress={this.onSubmitList} />
+          <Animator
+            type="opacity"
+            initialValue={0}
+            finalValue={1}
+            shouldAnimateIn={showSubmitButton}
+            shouldAnimateOut={!showSubmitButton}
+            easing={styleConstants.easing}
+          >
+            <Button text="Checkout" primary handlePress={this.onSubmitList} />
+          </Animator>
         </Animator>
       </Animator>
     );
