@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemSuggestionsList renders renders with minimum required props 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "paddingRight": 65,
+    }
+  }
+  data={
+    Array [
+      Object {
+        "id": "1",
+        "name": "Beer",
+      },
+    ]
+  }
+  disableVirtualization={false}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  horizontal={true}
+  initialNumToRender={10}
+  keyExtractor={[Function]}
+  keyboardShouldPersistTaps="always"
+  maxToRenderPerBatch={10}
+  numColumns={1}
+  onContentSizeChange={[Function]}
+  onEndReachedThreshold={2}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
+  stickyHeaderIndices={Array []}
+  style={Object {}}
+  updateCellsBatchingPeriod={50}
+  viewabilityConfigCallbackPairs={Array []}
+  windowSize={21}
+>
+  <View>
+    <View
+      onLayout={[Function]}
+      style={
+        Array [
+          Object {
+            "flexDirection": "row",
+          },
+          null,
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "transform": Array [
+              Object {
+                "translateY": 42,
+              },
+            ],
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "paddingBottom": 10,
+              "paddingLeft": 15,
+              "paddingRight": 7.5,
+              "transform": Array [
+                Object {
+                  "scale": 0.5,
+                },
+              ],
+            }
+          }
+        >
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#FFFFFF",
+                "borderColor": null,
+                "borderRadius": 2,
+                "borderWidth": 0,
+                "elevation": 6,
+                "opacity": 1,
+                "paddingHorizontal": 7.5,
+                "paddingVertical": 5,
+                "shadowColor": "#212121",
+                "shadowOffset": Object {
+                  "height": 1,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.33,
+                "shadowRadius": 2,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#08293A",
+                  "fontFamily": "Muli-SemiBold",
+                  "fontSize": 17,
+                }
+              }
+            >
+              Beer
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
