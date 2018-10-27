@@ -375,7 +375,7 @@ export class Home extends React.Component {
       </Animator>
     );
 
-    const addItemButtonComponent = !showInput && (
+    const addItemButtonComponent = !showInput ? (
       <Animator
         type="translateY"
         initialValue={100}
@@ -396,9 +396,9 @@ export class Home extends React.Component {
           <IconButton name="add" handlePress={this.onAddItem} />
         </Animator>
       </Animator>
-    );
+    ) : null;
 
-    const submitItemButtonComponent = showInput && (
+    const submitItemButtonComponent = showInput ? (
       <Animator
         type="translateY"
         initialValue={100}
@@ -419,23 +419,23 @@ export class Home extends React.Component {
           <IconButton name="check" handlePress={this.onSubmitItem} />
         </Animator>
       </Animator>
-    );
+    ) : null;
 
-    const clearTextButtonComponent = showInput &&
-      item && (
+    const clearTextButtonComponent =
+      showInput && item ? (
         <View style={styles.clearTextButtonContainer}>
           <IconButton name="close" handlePress={this.onClearItem} small secondary />
         </View>
-      );
+      ) : null;
 
-    const itemSuggestionsComponent = showInput &&
-      item && (
+    const itemSuggestionsComponent =
+      showInput && item ? (
         <View style={styles.itemSuggestionsListContainer}>
           <ItemSuggestionsList data={itemSuggestionsArray} handlePress={this.onItemSuggestion} />
         </View>
-      );
+      ) : null;
 
-    const submitButtonComponent = !showInput && (
+    const submitButtonComponent = !showInput ? (
       <Animator
         type="translateY"
         initialValue={100}
@@ -465,7 +465,7 @@ export class Home extends React.Component {
           </Animator>
         </Animator>
       </Animator>
-    );
+    ) : null;
 
     return (
       <Page>
