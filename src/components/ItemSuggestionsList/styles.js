@@ -3,15 +3,17 @@ import { StyleSheet } from 'react-native';
 import styleConstants from '../../styleConstants';
 
 const styles = StyleSheet.create({
-  container: {
-    paddingLeft: styleConstants.dimensions.spacing.horizontal,
-    paddingBottom: styleConstants.dimensions.spacing.vertical,
-  },
+  container: {},
   contentContainer: {
-    paddingRight: 50 + 2 * styleConstants.dimensions.spacing.horizontal, // iconButton
+    paddingRight: 50 + styleConstants.dimensions.spacing.horizontal, // iconButton
   },
   itemContainer: {
-    marginRight: styleConstants.dimensions.spacing.horizontal,
+    paddingLeft: styleConstants.dimensions.spacing.horizontal / 2,
+    paddingRight: styleConstants.dimensions.spacing.horizontal / 2,
+    paddingBottom: styleConstants.dimensions.spacing.vertical,
+  },
+  firstItemContainer: {
+    paddingLeft: styleConstants.dimensions.spacing.horizontal,
   },
 });
 

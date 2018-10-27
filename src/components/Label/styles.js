@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     backgroundColor: styleConstants.colors.dividerColor,
     paddingVertical: styleConstants.dimensions.spacing.vertical / 2,
     paddingHorizontal: styleConstants.dimensions.spacing.horizontal / 2,
-    ...styleConstants.shadows.large,
+    ...styleConstants.shadows.regular,
     borderRadius: styleConstants.dimensions.borderRadius,
   },
   text: {

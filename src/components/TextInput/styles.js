@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
     paddingVertical: styleConstants.dimensions.spacing.vertical,
     paddingHorizontal: styleConstants.dimensions.spacing.horizontal,
     textAlignVertical: 'center',
+    fontWeight: '400',
   },
   error: {
     backgroundColor: 'rgba(255, 0, 0, 0.2)',

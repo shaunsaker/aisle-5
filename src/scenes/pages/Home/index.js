@@ -377,48 +377,66 @@ export class Home extends React.Component {
 
     const addItemButtonComponent = !showInput ? (
       <Animator
-        type="translateY"
-        initialValue={100}
-        finalValue={0}
+        type="opacity"
+        initialValue={0}
+        finalValue={1}
         shouldAnimateIn
         delay={100}
         easing={styleConstants.easing}
         style={styles.addItemButtonContainer}
       >
         <Animator
-          type="scale"
-          initialValue={0.5}
-          finalValue={1}
+          type="translateY"
+          initialValue={200}
+          finalValue={0}
           shouldAnimateIn
           delay={100}
           easing={styleConstants.easing}
-          style={styles.addItemButtonInnerContainer}
         >
-          <IconButton name="add" handlePress={this.onAddItem} />
+          <Animator
+            type="scale"
+            initialValue={0.5}
+            finalValue={1}
+            shouldAnimateIn
+            delay={100}
+            easing={styleConstants.easing}
+            style={styles.addItemButtonInnerContainer}
+          >
+            <IconButton name="add" handlePress={this.onAddItem} />
+          </Animator>
         </Animator>
       </Animator>
     ) : null;
 
     const submitItemButtonComponent = showInput ? (
       <Animator
-        type="translateY"
-        initialValue={100}
-        finalValue={0}
+        type="opacity"
+        initialValue={0}
+        finalValue={1}
         shouldAnimateIn={item ? true : null}
         shouldAnimateOut={!item ? true : null}
         easing={styleConstants.easing}
-        style={styles.submitItemButtonContainer}
       >
         <Animator
-          type="scale"
-          initialValue={0.5}
-          finalValue={1}
+          type="translateY"
+          initialValue={100}
+          finalValue={0}
           shouldAnimateIn={item ? true : null}
           shouldAnimateOut={!item ? true : null}
           easing={styleConstants.easing}
-          style={styles.submitItemButtonInnerContainer}
+          style={styles.submitItemButtonContainer}
         >
-          <IconButton name="check" handlePress={this.onSubmitItem} />
+          <Animator
+            type="scale"
+            initialValue={0.5}
+            finalValue={1}
+            shouldAnimateIn={item ? true : null}
+            shouldAnimateOut={!item ? true : null}
+            easing={styleConstants.easing}
+            style={styles.submitItemButtonInnerContainer}
+          >
+            <IconButton name="check" handlePress={this.onSubmitItem} />
+          </Animator>
         </Animator>
       </Animator>
     ) : null;

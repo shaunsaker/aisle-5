@@ -25,6 +25,7 @@ export default class ItemSuggestionsList extends React.Component {
 
   renderItem({ item, index }) {
     const { handlePress } = this.props;
+    const firstItemContainerStyles = index === 0 && styles.firstItemContainer;
 
     return (
       <Animator
@@ -33,7 +34,6 @@ export default class ItemSuggestionsList extends React.Component {
         finalValue={0}
         shouldAnimateIn
         delay={index * 100}
-        style={styles.itemContainer}
       >
         <Animator
           type="scale"
@@ -41,6 +41,7 @@ export default class ItemSuggestionsList extends React.Component {
           finalValue={1}
           shouldAnimateIn
           delay={index * 100}
+          style={[styles.itemContainer, firstItemContainerStyles]}
         >
           <Label text={item.name} handlePress={() => handlePress(item.name)} />
         </Animator>
