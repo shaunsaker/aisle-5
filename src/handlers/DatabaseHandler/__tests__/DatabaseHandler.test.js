@@ -16,7 +16,25 @@ describe('DatabaseHandler', () => {
   });
 
   describe('methods', () => {
-    it('should handle handleSyncData', () => {});
+    it('should handle handleSyncData', () => {
+      spies[0] = jest.spyOn(DatabaseHandler.prototype, 'syncUserItems');
+      const component = renderer.create(<DatabaseHandler dispatch={dispatch} />);
+      const instance = component.getInstance();
+
+      instance.handleSyncData();
+
+      expect(spies[0]).toHaveBeenCalled();
+    });
+
+    it('should handle syncUserItems', () => {
+      const component = renderer.create(<DatabaseHandler dispatch={dispatch} />);
+      const instance = component.getInstance();
+
+      instance.syncUserItems();
+
+      expect(dispatch).toHaveBeenCalled();
+      expect(dispatch).toMatchSnapshot();
+    });
   });
 
   describe('lifecycle methods', () => {
