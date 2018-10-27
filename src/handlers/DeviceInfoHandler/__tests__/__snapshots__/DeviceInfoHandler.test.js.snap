@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeviceInfoHandler methods should handle getUniqueID 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "meta": Object {
+          "nextAction": Object {
+            "type": "SET_UNIQUE_ID",
+          },
+        },
+        "type": "getUniqueID",
+      },
+    ],
+    Array [
+      Object {
+        "meta": Object {
+          "nextAction": Object {
+            "type": "SET_UNIQUE_ID",
+          },
+        },
+        "type": "getUniqueID",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "isThrow": false,
+      "value": undefined,
+    },
+    Object {
+      "isThrow": false,
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`DeviceInfoHandler renders renders with minimum required props 1`] = `null`;
