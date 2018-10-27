@@ -2,7 +2,7 @@ import { StyleSheet, Platform } from 'react-native';
 
 import styleConstants from '../../styleConstants';
 
-const HEADER_HEIGHT = 44.5;
+const HEADER_HEIGHT = 60;
 
 const styles = StyleSheet.create({
   container: {
@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     backgroundColor: styleConstants.colors.primary,
     ...styleConstants.shadows.large,
     minHeight: Platform.OS === 'ios' ? 22 + HEADER_HEIGHT : HEADER_HEIGHT,
+    maxHeight: Platform.OS === 'ios' ? 22 + HEADER_HEIGHT : HEADER_HEIGHT,
     justifyContent: 'center',
   },
 });
