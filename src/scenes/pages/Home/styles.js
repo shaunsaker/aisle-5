@@ -38,15 +38,17 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     right: 0,
-    paddingBottom: styleConstants.dimensions.spacing.horizontal,
-    paddingRight: styleConstants.dimensions.spacing.horizontal,
+  },
+  addItemButtonInnerContainer: {
+    padding: styleConstants.dimensions.spacing.horizontal,
   },
   submitItemButtonContainer: {
     position: 'absolute',
     bottom: 0,
     right: 0,
-    paddingBottom: styleConstants.dimensions.spacing.horizontal,
-    paddingRight: styleConstants.dimensions.spacing.horizontal,
+  },
+  submitItemButtonInnerContainer: {
+    padding: styleConstants.dimensions.spacing.horizontal,
   },
   submitButtonContainer: {
     position: 'absolute',
@@ -54,7 +56,9 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     alignItems: 'center',
-    paddingBottom: styleConstants.dimensions.spacing.horizontal,
+  },
+  submitButtonInnerContainer: {
+    padding: styleConstants.dimensions.spacing.horizontal,
   },
 });
 

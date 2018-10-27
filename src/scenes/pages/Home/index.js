@@ -392,6 +392,7 @@ export class Home extends React.Component {
           shouldAnimateIn
           delay={100}
           easing={styleConstants.easing}
+          style={styles.addItemButtonInnerContainer}
         >
           <IconButton name="add" handlePress={this.onAddItem} />
         </Animator>
@@ -415,6 +416,7 @@ export class Home extends React.Component {
           shouldAnimateIn={item ? true : null}
           shouldAnimateOut={!item ? true : null}
           easing={styleConstants.easing}
+          style={styles.submitItemButtonInnerContainer}
         >
           <IconButton name="check" handlePress={this.onSubmitItem} />
         </Animator>
@@ -460,6 +462,7 @@ export class Home extends React.Component {
             shouldAnimateIn={showSubmitButton}
             shouldAnimateOut={!showSubmitButton}
             easing={styleConstants.easing}
+            style={styles.submitButtonInnerContainer}
           >
             <Button text="Checkout" primary handlePress={this.onSubmitList} />
           </Animator>

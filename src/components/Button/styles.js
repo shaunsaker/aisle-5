@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     paddingVertical: styleConstants.dimensions.spacing.vertical,
     paddingHorizontal: styleConstants.dimensions.spacing.horizontal,
     borderRadius: styleConstants.dimensions.borderRadius,
-    ...styleConstants.shadows.small,
+    ...styleConstants.shadows.regular,
   },
   primaryContainer: {
     backgroundColor: styleConstants.colors.accent,
