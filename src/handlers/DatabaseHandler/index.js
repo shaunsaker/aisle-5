@@ -8,6 +8,7 @@ export class DatabaseHandler extends React.Component {
 
     this.handleSyncData = this.handleSyncData.bind(this);
     this.syncUserItems = this.syncUserItems.bind(this);
+    this.syncUserLists = this.syncUserLists.bind(this);
   }
 
   static get propTypes() {
@@ -36,6 +37,7 @@ export class DatabaseHandler extends React.Component {
 
   handleSyncData() {
     this.syncUserItems();
+    this.syncUserLists();
   }
 
   syncUserItems() {
@@ -48,6 +50,21 @@ export class DatabaseHandler extends React.Component {
         query: ['uid', '==', uid],
         nextAction: {
           type: 'SET_USER_ITEMS',
+        },
+      },
+    });
+  }
+
+  syncUserLists() {
+    const { dispatch, uid } = this.props;
+
+    dispatch({
+      type: 'sync',
+      meta: {
+        pathParts: ['lists'],
+        query: ['uid', '==', uid],
+        nextAction: {
+          type: 'SET_USER_LISTS',
         },
       },
     });

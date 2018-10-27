@@ -4,7 +4,7 @@ export default function userListsReducer(state = initialState, action = {}) {
   let newState;
 
   switch (action.type) {
-    case 'SET_USER_ITEMS':
+    case 'SET_USER_LISTS':
       newState = initialState; // reset it to initial state
 
       // Iterate over the collection, setting each document

@@ -18,9 +18,9 @@ import AndroidBackHandler from './handlers/AndroidBackHandler';
 import PageLoader from './components/PageLoader';
 
 // Helper to clear local storage during development
-// if (__DEV__) {
-//   persistor.purge();
-// }
+if (__DEV__) {
+  persistor.purge();
+}
 
 // Disable remote debugger warnings
 console.ignoredYellowBox = ['Remote debugger', 'Warning: isMounted(...) is deprecated'];
