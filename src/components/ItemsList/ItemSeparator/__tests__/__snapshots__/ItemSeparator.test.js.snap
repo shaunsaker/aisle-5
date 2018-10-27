@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemSeparator renders renders with minimum required props 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+      "backgroundColor": "#FFFFFF",
+      "height": 1,
+    }
+  }
+/>
+`;
