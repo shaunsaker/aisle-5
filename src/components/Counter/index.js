@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
-import Animator from 'react-native-simple-animators';
 
 import styles from './styles';
 
@@ -19,22 +18,14 @@ const Counter = ({ value, handleChange }) => {
 
   return (
     <View style={styles.container}>
-      <Animator
-        type="opacity"
-        initialValue={0.33}
-        finalValue={1}
-        shouldAnimateIn={shouldEnableDecrementButton}
-        shouldAnimateOut={!shouldEnableDecrementButton}
-      >
-        <IconButton
-          name="remove"
-          small
-          secondary
-          handlePress={() => handleChange(value - 1)}
-          disabled={!shouldEnableDecrementButton}
-          style={styles.noShadow}
-        />
-      </Animator>
+      <IconButton
+        name="remove"
+        small
+        secondary
+        handlePress={() => handleChange(value - 1)}
+        disabled={!shouldEnableDecrementButton}
+        style={!shouldEnableDecrementButton && styles.disabled}
+      />
 
       <View style={styles.spacer} />
 

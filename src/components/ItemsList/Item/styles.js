@@ -6,8 +6,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: styleConstants.dimensions.spacing.vertical,
-    marginHorizontal: styleConstants.dimensions.spacing.horizontal,
+    paddingLeft: styleConstants.dimensions.spacing.horizontal,
   },
   checkBoxContainer: {
     marginRight: styleConstants.dimensions.spacing.horizontal,
