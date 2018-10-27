@@ -44,6 +44,7 @@ export class Home extends React.Component {
     this.onItemSuggestion = this.onItemSuggestion.bind(this);
     this.onSetPendingListItemIsChecked = this.onSetPendingListItemIsChecked.bind(this);
     this.setPendingListItemIsChecked = this.setPendingListItemIsChecked.bind(this);
+    this.setPendingListItemDatePurchased = this.setPendingListItemDatePurchased.bind(this);
     this.onSetPendingListItemQuantity = this.onSetPendingListItemQuantity.bind(this);
     this.setPendingListItemQuantity = this.setPendingListItemQuantity.bind(this);
     this.onRemovePendingListItem = this.onRemovePendingListItem.bind(this);

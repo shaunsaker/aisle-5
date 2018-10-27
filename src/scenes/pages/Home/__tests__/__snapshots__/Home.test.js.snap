@@ -1,0 +1,418 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home methods should handle addItem 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "payload": Object {
+          "item": Object {
+            "dateAdded": 1533309837130,
+            "isChecked": false,
+            "name": undefined,
+            "quantity": 1,
+          },
+        },
+        "type": "ADD_PENDING_LIST_ITEM",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "isThrow": false,
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Home methods should handle removePendingListItem 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "payload": Object {
+          "isChecked": undefined,
+          "itemID": "1",
+        },
+        "type": "SET_PENDING_LIST_ITEM_IS_CHECKED",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "isThrow": false,
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Home methods should handle resetPendingList 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "type": "RESET_PENDING_LIST",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "isThrow": false,
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Home methods should handle saveItem 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "meta": Object {
+          "pathParts": Array [
+            "items",
+          ],
+        },
+        "payload": Object {
+          "document": Object {
+            "date_added": 1533309837130,
+            "name": undefined,
+            "uid": undefined,
+            "unique_id": undefined,
+          },
+        },
+        "type": "addDocument",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "isThrow": false,
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Home methods should handle saveList 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "meta": Object {
+          "pathParts": Array [
+            "lists",
+          ],
+        },
+        "payload": Object {
+          "document": Object {
+            "date_added": 1533309837130,
+            "list": Array [
+              Object {
+                "date_added": undefined,
+                "date_purchased": undefined,
+                "quantity": 6,
+                "user_item_id": "1",
+              },
+            ],
+            "uid": undefined,
+            "unique_id": undefined,
+          },
+        },
+        "type": "addDocument",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "isThrow": false,
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Home methods should handle setPendingListItemDatePurchased 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "payload": Object {
+          "datePurchased": 1533309837130,
+          "itemID": "1",
+        },
+        "type": "SET_PENDING_LIST_ITEM_DATE_PURCHASED",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "isThrow": false,
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Home methods should handle setPendingListItemIsChecked 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "payload": Object {
+          "isChecked": true,
+          "itemID": "1",
+        },
+        "type": "SET_PENDING_LIST_ITEM_IS_CHECKED",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "isThrow": false,
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Home methods should handle setPendingListItemQuantity 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "payload": Object {
+          "isChecked": 6,
+          "itemID": "1",
+        },
+        "type": "SET_PENDING_LIST_ITEM_IS_CHECKED",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "isThrow": false,
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Home methods should handle setSystemMessage 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "payload": Object {
+          "message": undefined,
+        },
+        "type": "SET_SYSTEM_MESSAGE",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "isThrow": false,
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Home renders renders with minimum required props 1`] = `
+<Page>
+  <HeaderBar
+    style={
+      Object {
+        "height": 60,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "transform": Array [
+            Object {
+              "translateX": 0,
+            },
+          ],
+        }
+      }
+    >
+      <Logo />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "bottom": 0,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "left": 15,
+          "position": "absolute",
+          "right": 15,
+          "top": 0,
+          "transform": Array [
+            Object {
+              "translateY": -60,
+            },
+          ],
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "marginRight": 7.5,
+          }
+        }
+      >
+        <TouchableIcon
+          handlePress={[Function]}
+          iconName="chevron-left"
+        />
+      </View>
+      <TextInput
+        handleChange={[Function]}
+        handleSubmit={[Function]}
+        inputRef={[Function]}
+        placeholder="Enter the item's name..."
+        value={null}
+      />
+    </View>
+  </HeaderBar>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <InputContainer
+      contentContainerStyle={
+        Object {
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <BlankState
+          description="Add items by tapping the '+' button below. They'll show up here."
+          iconName="shopping-basket"
+          title="You have no items"
+        />
+      </View>
+    </InputContainer>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "transform": Array [
+            Object {
+              "translateY": 100,
+            },
+          ],
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "transform": Array [
+              Object {
+                "scale": 0.5,
+              },
+            ],
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "opacity": 0,
+              "padding": 15,
+            }
+          }
+        >
+          <Button
+            handlePress={[Function]}
+            primary={true}
+            text="Checkout"
+          />
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "bottom": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "transform": Array [
+              Object {
+                "translateY": 200,
+              },
+            ],
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "padding": 15,
+              "transform": Array [
+                Object {
+                  "scale": 0.5,
+                },
+              ],
+            }
+          }
+        >
+          <IconButton
+            handlePress={[Function]}
+            name="add"
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "right": 0,
+        },
+        Object {
+          "height": 0,
+        },
+        undefined,
+      ]
+    }
+  />
+  <TabBar />
+</Page>
+`;
