@@ -15,15 +15,17 @@ const propTypes = {
 const defaultProps = {};
 
 const CheckBox = ({ isChecked, handlePress }) => {
-  const checkBoxComponent = isChecked && (
-    <Animator type="scale" initialValue={0} finalValue={1} shouldAnimateIn>
-      <Icon name="check" style={styles.icon} />
-    </Animator>
-  );
-
   return (
     <Touchable onPress={handlePress} style={styles.container}>
-      {checkBoxComponent}
+      <Animator
+        type="scale"
+        initialValue={0}
+        finalValue={1}
+        shouldAnimateIn={isChecked}
+        shouldAnimateOut={!isChecked}
+      >
+        <Icon name="check" style={styles.icon} />
+      </Animator>
     </Touchable>
   );
 };
