@@ -7,6 +7,7 @@ import styleConstants from '../../styleConstants';
 
 import styles from './styles';
 
+import Swipeable from '../Swipeable';
 import Item from './Item';
 
 export default class ItemsList extends React.Component {
@@ -15,8 +16,12 @@ export default class ItemsList extends React.Component {
 
     this.scrollToEnd = this.scrollToEnd.bind(this);
     this.setDidChange = this.setDidChange.bind(this);
+    this.onSwipeStart = this.onSwipeStart.bind(this);
+    this.onSwipeEnd = this.onSwipeEnd.bind(this);
+    this.setScrollEnabled = this.setScrollEnabled.bind(this);
     this.renderItem = this.renderItem.bind(this);
 
+    this.itemWidth = styleConstants.dimensions.window.width;
     this.itemHeight = 51;
     this.maxItemsVisible = Math.ceil(
       (styleConstants.dimensions.window.height - 65 - 50) / this.itemHeight,
@@ -24,6 +29,7 @@ export default class ItemsList extends React.Component {
 
     this.state = {
       didChange: false,
+      scrollEnabled: true,
     };
   }
 
@@ -36,6 +42,7 @@ export default class ItemsList extends React.Component {
     ),
     handleSetIsChecked: PropTypes.func,
     handleSetQuantity: PropTypes.func,
+    handleRemoveItem: PropTypes.func,
   };
 
   static defaultProps = {};
@@ -58,30 +65,52 @@ export default class ItemsList extends React.Component {
     this.setState({ didChange });
   }
 
+  onSwipeStart() {
+    this.setScrollEnabled(false);
+  }
+
+  onSwipeEnd() {
+    this.setScrollEnabled(true);
+  }
+
+  setScrollEnabled(scrollEnabled) {
+    this.setState({
+      scrollEnabled,
+    });
+  }
+
   renderItem({ item, index }) {
     const { didChange } = this.state;
-    const { handleSetIsChecked, handleSetQuantity } = this.props;
+    const { handleSetIsChecked, handleSetQuantity, handleRemoveItem } = this.props;
 
     const shouldAnimate = didChange && index < this.maxItemsVisible;
 
     return (
-      <Animator
-        type="translateX"
-        initialValue={shouldAnimate ? styleConstants.dimensions.window.width : 0}
-        finalValue={0}
-        shouldAnimateIn
-        style={styles.itemContainer}
+      <Swipeable
+        width={this.itemWidth}
+        onSwipeStart={this.onSwipeStart}
+        onSwipeEnd={this.onSwipeEnd}
+        onSwiped={() => handleRemoveItem(item.id)}
       >
-        <Item
-          {...item}
-          handleSetIsChecked={() => handleSetIsChecked(item.id, !item.isChecked)}
-          handleSetQuantity={(quantity) => handleSetQuantity(item.id, quantity)}
-        />
-      </Animator>
+        <Animator
+          type="translateX"
+          initialValue={shouldAnimate ? styleConstants.dimensions.window.width : 0}
+          finalValue={0}
+          shouldAnimateIn
+          style={styles.itemContainer}
+        >
+          <Item
+            {...item}
+            handleSetIsChecked={() => handleSetIsChecked(item.id, !item.isChecked)}
+            handleSetQuantity={(quantity) => handleSetQuantity(item.id, quantity)}
+          />
+        </Animator>
+      </Swipeable>
     );
   }
 
   render() {
+    const { scrollEnabled } = this.state;
     const { data } = this.props;
 
     return (
@@ -99,6 +128,8 @@ export default class ItemsList extends React.Component {
           offset: this.itemHeight * index,
           index,
         })}
+        scrollEnabled={scrollEnabled}
+        bounces={false}
       />
     );
   }

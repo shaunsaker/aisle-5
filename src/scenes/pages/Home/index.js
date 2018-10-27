@@ -46,6 +46,8 @@ export class Home extends React.Component {
     this.setPendingListItemIsChecked = this.setPendingListItemIsChecked.bind(this);
     this.onSetPendingListItemQuantity = this.onSetPendingListItemQuantity.bind(this);
     this.setPendingListItemQuantity = this.setPendingListItemQuantity.bind(this);
+    this.onRemovePendingListItem = this.onRemovePendingListItem.bind(this);
+    this.removePendingListItem = this.removePendingListItem.bind(this);
     this.onSubmitList = this.onSubmitList.bind(this);
     this.saveList = this.saveList.bind(this);
     this.resetPendingList = this.resetPendingList.bind(this);
@@ -239,6 +241,14 @@ export class Home extends React.Component {
     });
   }
 
+  onRemovePendingListItem(itemID) {
+    this.removePendingListItem(itemID);
+  }
+
+  removePendingListItem(itemID) {
+    console.log(itemID);
+  }
+
   onSubmitList() {
     const message = 'Items added to Predictions';
 
@@ -336,6 +346,7 @@ export class Home extends React.Component {
         data={pendingListArray}
         handleSetIsChecked={this.onSetPendingListItemIsChecked}
         handleSetQuantity={this.onSetPendingListItemQuantity}
+        handleRemoveItem={this.onRemovePendingListItem}
       />
     ) : (
       <Animator
