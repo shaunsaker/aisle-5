@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo renders renders with minimum required props 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#EDE8CA",
+        "fontFamily": "ArchivoBlack-Regular",
+        "fontSize": 24,
+        "letterSpacing": 5,
+      }
+    }
+  >
+    A
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={false}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": undefined,
+          "fontSize": 12,
+        },
+        Object {
+          "color": "#FEA116",
+          "fontSize": 18,
+          "marginLeft": 0,
+          "marginRight": 5,
+        },
+        Object {
+          "fontFamily": "AppIcons",
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        },
+        Object {},
+      ]
+    }
+  >
+    
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#EDE8CA",
+        "fontFamily": "ArchivoBlack-Regular",
+        "fontSize": 24,
+        "letterSpacing": 5,
+      }
+    }
+  >
+    SLE 5
+  </Text>
+</View>
+`;
