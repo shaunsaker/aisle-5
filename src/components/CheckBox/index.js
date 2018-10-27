@@ -19,7 +19,7 @@ const CheckBox = ({ isChecked, handlePress }) => {
     <Touchable onPress={handlePress} style={styles.container}>
       <Animator
         type="scale"
-        initialValue={0}
+        initialValue={0.01} // fixes an android issue when set to 0
         finalValue={1}
         shouldAnimateIn={isChecked}
         shouldAnimateOut={!isChecked}
