@@ -39,3 +39,6 @@ jest.mock('react-native-code-push', () => {
     sync: jest.fn(),
   };
 });
+
+// Fixes _bezier is not a function bug
+jest.useFakeTimers();

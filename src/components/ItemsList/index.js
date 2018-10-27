@@ -41,7 +41,7 @@ export default class ItemsList extends React.Component {
         id: PropTypes.string,
         isChecked: PropTypes.bool,
       }),
-    ),
+    ).isRequired,
     handleSetIsChecked: PropTypes.func,
     handleSetQuantity: PropTypes.func,
     handleRemoveItem: PropTypes.func,
