@@ -22,7 +22,7 @@ export default class Swipeable extends React.Component {
 
   static get propTypes() {
     return {
-      width: PropTypes.number,
+      width: PropTypes.number.isRequired,
       onSwipeStart: PropTypes.func,
       onSwipeEnd: PropTypes.func,
       onSwiped: PropTypes.func,
