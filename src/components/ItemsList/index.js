@@ -13,10 +13,14 @@ export default class ItemsList extends React.Component {
   constructor(props) {
     super(props);
 
+    this.scrollToEnd = this.scrollToEnd.bind(this);
     this.setDidChange = this.setDidChange.bind(this);
     this.renderItem = this.renderItem.bind(this);
 
-    this.maxItemsVisible = Math.ceil((styleConstants.dimensions.window.height - 65 - 50) / 51); // - headerbar - tabbar / item height
+    this.itemHeight = 51;
+    this.maxItemsVisible = Math.ceil(
+      (styleConstants.dimensions.window.height - 65 - 50) / this.itemHeight,
+    ); // - headerbar - tabbar
 
     this.state = {
       didChange: false,
@@ -42,7 +46,12 @@ export default class ItemsList extends React.Component {
     if (data.length !== prevProps.data.length) {
       // We only want to animate new list items in
       this.setDidChange(true);
+      this.scrollToEnd();
     }
+  }
+
+  scrollToEnd() {
+    this.flatList.scrollToEnd();
   }
 
   setDidChange(didChange) {
@@ -77,11 +86,19 @@ export default class ItemsList extends React.Component {
 
     return (
       <FlatList
+        ref={(c) => {
+          this.flatList = c;
+        }}
         keyExtractor={({ id }) => id}
         data={data}
         renderItem={this.renderItem}
         style={styles.container}
         contentContainerStyle={styles.contentContainer}
+        getItemLayout={(data, index) => ({
+          length: this.itemHeight,
+          offset: this.itemHeight * index,
+          index,
+        })}
       />
     );
   }
