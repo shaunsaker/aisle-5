@@ -3,6 +3,9 @@ import renderer from 'react-test-renderer';
 
 import Swipeable from '..';
 
+// Fixes _bezier is not a function bug
+jest.useFakeTimers();
+
 describe('Swipeable', () => {
   const width = 100;
 

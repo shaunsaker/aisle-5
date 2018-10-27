@@ -7,6 +7,9 @@ import ITEM from '../../../mockData/item';
 jest.mock('../Item', () => 'Item');
 jest.mock('../ItemSeparator', () => 'ItemSeparator');
 
+// Fixes _bezier is not a function bug
+jest.useFakeTimers();
+
 describe('ItemsList', () => {
   const spies = [];
   const dispatch = jest.fn();

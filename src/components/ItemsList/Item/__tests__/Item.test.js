@@ -4,6 +4,9 @@ import renderer from 'react-test-renderer';
 import Item from '..';
 import ITEM from '../../../../mockData/item';
 
+// Fixes _bezier is not a function bug
+jest.useFakeTimers();
+
 describe('Item', () => {
   describe('renders', () => {
     it('renders with minimum required props', () => {

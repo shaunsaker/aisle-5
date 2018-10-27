@@ -10,6 +10,7 @@ jest.mock('react-native-router-flux', () => {
       refresh: jest.fn(),
 
       // Custom
+      home: jest.fn(),
       _home: jest.fn(),
       _predictions: jest.fn(),
       _lists: jest.fn(),
@@ -39,8 +40,5 @@ jest.mock('react-native-code-push', () => {
     sync: jest.fn(),
   };
 });
-
-// Fixes _bezier is not a function bug
-jest.useFakeTimers();
 
 Date.now = jest.fn(() => 1533309837130);

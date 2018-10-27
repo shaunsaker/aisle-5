@@ -4,6 +4,9 @@ import renderer from 'react-test-renderer';
 import ItemSuggestionsList from '..';
 import USER_ITEM from '../../../mockData/userItem';
 
+// Fixes _bezier is not a function bug
+jest.useFakeTimers();
+
 describe('ItemSuggestionsList', () => {
   const spies = [];
   const dispatch = jest.fn();
