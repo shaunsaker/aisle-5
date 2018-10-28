@@ -17,9 +17,9 @@ const sagaMiddleware = createSagaMiddleware();
 middlewares.push(sagaMiddleware);
 
 // Only log store actions if dev and iOS
-// if (__DEV__ && Platform.OS === 'ios') {
-//   middlewares.push(logger);
-// }
+if (__DEV__ && Platform.OS === 'ios') {
+  middlewares.push(logger);
+}
 
 // apply the middleware
 const middleware = applyMiddleware(...middlewares);
