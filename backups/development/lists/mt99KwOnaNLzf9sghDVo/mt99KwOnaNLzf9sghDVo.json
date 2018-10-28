@@ -1,0 +1,40 @@
+{
+  "uid": {
+    "value": "KdLQCFiyRKNMpujHEhrXLBAHFMX2",
+    "type": "string"
+  },
+  "date_added": {
+    "value": 1540716515665,
+    "type": "number"
+  },
+  "list": {
+    "value": [
+      {
+        "value": {
+          "user_item_id": {
+            "value": "6Nm8biZBl1y4UBubpc25",
+            "type": "string"
+          },
+          "date_purchased": {
+            "value": 1540111874000,
+            "type": "number"
+          },
+          "date_added": {
+            "value": 1539593474000,
+            "type": "number"
+          },
+          "quantity": {
+            "value": 6,
+            "type": "number"
+          }
+        },
+        "type": "object"
+      }
+    ],
+    "type": "array"
+  },
+  "unique_id": {
+    "value": "B92F150F-FF6F-41E3-8EB6-854E76AA0465",
+    "type": "string"
+  }
+}

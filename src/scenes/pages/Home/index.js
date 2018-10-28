@@ -359,22 +359,13 @@ export class Home extends React.Component {
         handleSetQuantity={this.onSetPendingListItemQuantity}
         handleRemoveItem={this.onRemovePendingListItem}
       />
-    ) : (
-      <Animator
-        type="opacity"
-        initialValue={1}
-        finalValue={0}
-        shouldAnimateIn={showInput}
-        shouldAnimateOut={!showInput}
-        easing={styleConstants.easing}
-      >
-        <BlankState
-          iconName="shopping-basket"
-          title="You have no items"
-          description="Add items by tapping the '+' button below. They'll show up here."
-        />
-      </Animator>
-    );
+    ) : !showInput ? (
+      <BlankState
+        iconName="shopping-basket"
+        title="You have no items"
+        description="Add items by tapping the '+' button below. They'll show up here."
+      />
+    ) : null;
 
     const addItemButtonComponent = !showInput ? (
       <Animator

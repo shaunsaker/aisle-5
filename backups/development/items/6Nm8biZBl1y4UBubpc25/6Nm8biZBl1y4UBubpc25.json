@@ -1,0 +1,18 @@
+{
+  "uid": {
+    "value": "KdLQCFiyRKNMpujHEhrXLBAHFMX2",
+    "type": "string"
+  },
+  "date_added": {
+    "value": 1540716501819,
+    "type": "number"
+  },
+  "name": {
+    "value": "Beer",
+    "type": "string"
+  },
+  "unique_id": {
+    "value": "B92F150F-FF6F-41E3-8EB6-854E76AA0465",
+    "type": "string"
+  }
+}
