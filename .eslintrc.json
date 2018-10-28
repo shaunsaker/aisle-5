@@ -41,7 +41,6 @@
     "import/named": "off",
     "implicit-arrow-linebreak": "off",
     "operator-linebreak": "off",
-    "max-len": "off",
     "no-case-declarations": "off",
     "indent": "off" // controlled by Prettier
   },
