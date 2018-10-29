@@ -64,7 +64,7 @@ exports[`TabBarContainer renders renders with minimum required props 1`] = `
         ]
       }
     >
-      
+      
     </Text>
     <Text
       accessible={true}

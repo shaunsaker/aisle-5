@@ -300,19 +300,11 @@ exports[`Home renders renders with minimum required props 1`] = `
         }
       }
     >
-      <View
-        style={
-          Object {
-            "opacity": 1,
-          }
-        }
-      >
-        <BlankState
-          description="Add items by tapping the '+' button below. They'll show up here."
-          iconName="shopping-basket"
-          title="You have no items"
-        />
-      </View>
+      <BlankState
+        description="Add items by tapping the '+' button below. They'll show up here."
+        iconName="shopping-basket"
+        title="You have no items"
+      />
     </InputContainer>
     <View
       style={

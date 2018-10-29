@@ -5,7 +5,7 @@ import ItemsList from '..';
 import ITEM from '../../../mockData/item';
 
 jest.mock('../Item', () => 'Item');
-jest.mock('../ItemSeparator', () => 'ItemSeparator');
+jest.mock('../../ItemSeparator', () => 'ItemSeparator');
 
 // Fixes _bezier is not a function bug
 jest.useFakeTimers();

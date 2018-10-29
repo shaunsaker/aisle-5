@@ -64,7 +64,7 @@ exports[`TabBar renders renders 1`] = `
         ]
       }
     >
-      
+      
     </Text>
     <Text
       accessible={true}
@@ -283,7 +283,7 @@ exports[`TabBar renders renders the active state 1`] = `
         ]
       }
     >
-      
+      
     </Text>
     <Text
       accessible={true}

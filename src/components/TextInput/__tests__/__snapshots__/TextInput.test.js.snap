@@ -16,7 +16,7 @@ exports[`TextInput renders renders with all props 1`] = `
       Object {
         "backgroundColor": "#EDE8CA",
         "borderColor": "#FFFFFF",
-        "borderRadius": 2,
+        "borderRadius": 5,
         "borderWidth": 1,
         "color": "#212121",
         "flex": 1,
@@ -51,7 +51,7 @@ exports[`TextInput renders renders with minimum required props 1`] = `
       Object {
         "backgroundColor": "#EDE8CA",
         "borderColor": "#FFFFFF",
-        "borderRadius": 2,
+        "borderRadius": 5,
         "borderWidth": 1,
         "color": "#212121",
         "flex": 1,

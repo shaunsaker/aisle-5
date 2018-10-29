@@ -14,7 +14,7 @@ exports[`Label renders renders 1`] = `
     Object {
       "backgroundColor": "#FFFFFF",
       "borderColor": null,
-      "borderRadius": 2,
+      "borderRadius": 5,
       "borderWidth": 0,
       "elevation": 6,
       "opacity": 1,
