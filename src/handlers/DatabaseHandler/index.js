@@ -15,7 +15,7 @@ export class DatabaseHandler extends React.Component {
     return {
       dispatch: PropTypes.func,
       authenticated: PropTypes.bool,
-      uid: PropTypes.string,
+      uniqueID: PropTypes.string,
     };
   }
 
@@ -41,13 +41,13 @@ export class DatabaseHandler extends React.Component {
   }
 
   syncUserItems() {
-    const { dispatch, uid } = this.props;
+    const { dispatch, uniqueID } = this.props;
 
     dispatch({
       type: 'sync',
       meta: {
         pathParts: ['items'],
-        query: ['uid', '==', uid],
+        query: ['unique_id', '==', uniqueID],
         nextAction: {
           type: 'SET_USER_ITEMS',
         },
@@ -56,13 +56,13 @@ export class DatabaseHandler extends React.Component {
   }
 
   syncUserLists() {
-    const { dispatch, uid } = this.props;
+    const { dispatch, uniqueID } = this.props;
 
     dispatch({
       type: 'sync',
       meta: {
         pathParts: ['lists'],
-        query: ['uid', '==', uid],
+        query: ['unique_id', '==', uniqueID],
         nextAction: {
           type: 'SET_USER_LISTS',
         },
@@ -78,7 +78,7 @@ export class DatabaseHandler extends React.Component {
 function mapStateToProps(state) {
   return {
     authenticated: state.user.authenticated,
-    uid: state.user.uid,
+    uniqueID: state.deviceInfo.uniqueID,
   };
 }
 
