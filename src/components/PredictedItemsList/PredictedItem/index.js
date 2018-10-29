@@ -15,7 +15,7 @@ const propTypes = {
 
 const defaultProps = {};
 
-const PROGRESS_BAR_WIDTH = 120;
+const PROGRESS_BAR_WIDTH = 160;
 
 const PredictedItem = ({
   name,
@@ -23,12 +23,20 @@ const PredictedItem = ({
   daysLeftUntilZeroQuantity,
   height,
 }) => {
+  const daysLeftText = `${Math.floor(daysLeftUntilZeroQuantity)} days`;
+
   return (
     <View style={[styles.container, { height }]}>
-      <Text style={styles.text}>{name}</Text>
+      <Text numberOfLines={1} style={styles.text}>
+        {name}
+      </Text>
 
-      <View style={styles.progressBarContainer}>
-        <ProgressBar value={remainingQuantityPercentage} width={PROGRESS_BAR_WIDTH} />
+      <View style={styles.consumptionContainer}>
+        <ProgressBar value={remainingQuantityPercentage} />
+
+        <View style={styles.daysLeftTextContainer}>
+          <Text style={styles.daysLeftText}>{daysLeftText}</Text>
+        </View>
       </View>
     </View>
   );

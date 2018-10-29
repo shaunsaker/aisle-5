@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
-import Animator from 'react-native-simple-animators';
 
 import utils from '../../../../utils';
 import styleConstants from '../../../../styleConstants';
@@ -9,29 +8,17 @@ import styles from './styles';
 
 const propTypes = {
   value: PropTypes.number,
-  width: PropTypes.number,
 };
 
 const defaultProps = {};
 
-const INNER_PADDING = styleConstants.dimensions.spacing.horizontal / 2;
-
-const ProgressBar = ({ value, width }) => {
-  const containerWidth = (value * (width - INNER_PADDING * 2)) / 100; // value is a %
+const ProgressBar = ({ value }) => {
   const valueAsInt = value / 100;
-  const containerColor = utils.app.getColor(1 - valueAsInt);
+  const wrapperColor = utils.app.getColor(1 - valueAsInt);
 
   return (
-    <View style={[styles.wrapper, { width }]}>
-      <Animator
-        type="width"
-        initialValue={0}
-        finalValue={containerWidth}
-        shouldAnimateIn
-        easing={styleConstants.easing}
-        delay={100}
-        style={[styles.container, { width: containerWidth, backgroundColor: containerColor }]}
-      />
+    <View style={[styles.wrapper, { backgroundColor: wrapperColor }]}>
+      <View style={[styles.container, { width: value }]} />
     </View>
   );
 };

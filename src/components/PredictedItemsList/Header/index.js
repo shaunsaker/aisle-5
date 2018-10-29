@@ -13,9 +13,13 @@ const defaultProps = {};
 const Header = ({ height }) => {
   return (
     <View style={[styles.container, { height }]}>
-      <Text style={styles.text}>NAME</Text>
+      <View style={styles.firstColumn}>
+        <Text style={styles.text}>NAME</Text>
+      </View>
 
-      <Text style={styles.text}>LEFT OVER</Text>
+      <View style={styles.secondColumn}>
+        <Text style={styles.text}>CONSUMPTION</Text>
+      </View>
     </View>
   );
 };

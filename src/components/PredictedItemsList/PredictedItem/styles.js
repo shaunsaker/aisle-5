@@ -13,10 +13,21 @@ const styles = StyleSheet.create({
   text: {
     flex: 1,
     ...styleConstants.fonts.types.small,
+    marginRight: styleConstants.dimensions.spacing.horizontal,
   },
-  progressBarContainer: {
-    flex: 1,
-    alignItems: 'flex-end',
+  consumptionContainer: {
+    flex: 2,
+  },
+  daysLeftTextContainer: {
+    position: 'absolute',
+    top: 0,
+    right: styleConstants.dimensions.spacing.horizontal / 2,
+    bottom: 0,
+    justifyContent: 'center',
+  },
+  daysLeftText: {
+    ...styleConstants.fonts.types.small,
+    color: styleConstants.colors.dividerColor,
   },
 });
 

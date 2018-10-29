@@ -8,6 +8,8 @@ import Header from './Header';
 import PredictedItem from './PredictedItem';
 import ItemSeparator from '../ItemSeparator';
 
+import PREDICTED_ITEMS_LIST from '../../mockData/predictedItemsList';
+
 export default class PredictedItemsList extends React.Component {
   constructor(props) {
     super(props);
@@ -44,7 +46,10 @@ export default class PredictedItemsList extends React.Component {
   }
 
   render() {
-    const { data } = this.props;
+    // const { data } = this.props;
+
+    // TODO: TEMP
+    const data = PREDICTED_ITEMS_LIST;
 
     return (
       <FlatList

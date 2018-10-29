@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     top: styleConstants.dimensions.spacing.vertical / 2,
     bottom: styleConstants.dimensions.spacing.vertical / 2,
     left: styleConstants.dimensions.spacing.horizontal / 2,
+    backgroundColor: styleConstants.colors.dividerColor,
   },
 });
 
