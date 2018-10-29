@@ -9,7 +9,7 @@ import styles from './styles';
 
 import Swipeable from '../Swipeable';
 import Item from './Item';
-import ItemSeparator from './ItemSeparator';
+import ItemSeparator from '../ItemSeparator';
 
 export default class ItemsList extends React.Component {
   constructor(props) {

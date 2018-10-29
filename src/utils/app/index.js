@@ -1,11 +1,11 @@
 import createError from './createError';
-import getPredictionsList from './getPredictionsList';
+import getPredictedItemsList from './getPredictedItemsList';
 import prepareNextAction from './prepareNextAction';
 
 // All app-specific utils go here
 const app = {
   createError,
-  getPredictionsList,
+  getPredictedItemsList,
   prepareNextAction,
 };
 

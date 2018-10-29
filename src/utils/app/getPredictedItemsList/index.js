@@ -2,7 +2,7 @@ import utils from '../..';
 
 const MS_IN_ONE_DAY = 1000 * 60 * 60 * 24;
 
-const getPredictionsList = (userLists, userItems) => {
+const getPredictedItemsList = (userLists, userItems) => {
   // Convert userLists to array
   const userListsArray = !utils.objects.isEmptyObject(userLists)
     ? utils.objects.convertObjectToArray(userLists)
@@ -18,7 +18,7 @@ const getPredictionsList = (userLists, userItems) => {
   // Group the items by item_user_id
   const groupedItems = allItems && utils.arrays.groupArrayOfObjectsByKey(allItems, 'user_item_id');
 
-  const predictionsList = Object.keys(groupedItems).map((id) => {
+  const predictedItemsList = Object.keys(groupedItems).map((id) => {
     const items = groupedItems[id];
 
     // Sort the items by date_purchased
@@ -88,7 +88,7 @@ const getPredictionsList = (userLists, userItems) => {
     };
   });
 
-  return predictionsList;
+  return predictedItemsList;
 };
 
-export default getPredictionsList;
+export default getPredictedItemsList;

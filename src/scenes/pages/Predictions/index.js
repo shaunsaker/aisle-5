@@ -9,7 +9,6 @@ import styles from './styles';
 import Page from '../../../components/Page';
 import HeaderBar from '../../../components/HeaderBar';
 import TitleText from '../../../components/TitleText';
-import HeadingText from '../../../components/HeadingText';
 import BlankState from '../../../components/BlankState';
 import TabBar from '../../../components/TabBar';
 
@@ -30,7 +29,7 @@ export class Predictions extends React.Component {
 
   render() {
     const { userLists, userItems } = this.props;
-    const predictionsList = utils.app.getPredictionsList(userLists, userItems);
+    const predictedItemsList = utils.app.getPredictedItemsList(userLists, userItems);
 
     return (
       <Page>
@@ -39,57 +38,7 @@ export class Predictions extends React.Component {
         </HeaderBar>
 
         <View style={styles.container}>
-          <View style={styles.row}>
-            <View style={styles.column}>
-              <Text style={styles.headerText}>NAME</Text>
-            </View>
-            <View style={styles.column}>
-              <Text style={styles.headerText}>USAGE PER DAY</Text>
-            </View>
-            <View style={styles.column}>
-              <Text style={styles.headerText}>DAYS LEFT</Text>
-            </View>
-            <View style={styles.column}>
-              <Text style={styles.headerText}>LEVEL (%)</Text>
-            </View>
-          </View>
-
-          {predictionsList.map((prediction) => {
-            const predictionIsReady =
-              prediction.averageUsagePerDay || prediction.averageUsagePerDay === 0;
-
-            const dataComponent = predictionIsReady ? (
-              <Fragment>
-                <View style={styles.column}>
-                  <Text style={styles.text}>{Math.round(prediction.averageUsagePerDay)}</Text>
-                </View>
-                <View style={styles.column}>
-                  <Text style={styles.text}>
-                    {Math.floor(prediction.daysLeftUntilZeroQuantity)}
-                  </Text>
-                </View>
-                <View style={styles.column}>
-                  <Text style={styles.text}>
-                    {Math.floor(prediction.remainingQuantityPercentage)}
-                  </Text>
-                </View>
-              </Fragment>
-            ) : (
-              <View style={styles.noDataContainer}>
-                <Text style={styles.text}>Not enough data</Text>
-              </View>
-            );
-
-            return (
-              <View key={prediction.id} style={styles.row}>
-                <View style={styles.column}>
-                  <Text style={styles.text}>{prediction.name}</Text>
-                </View>
-
-                {dataComponent}
-              </View>
-            );
-          })}
+          <View />
         </View>
 
         <TabBar />
