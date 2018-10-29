@@ -27,7 +27,9 @@ export class Home extends React.Component {
   constructor(props) {
     super(props);
 
+    this.keyboardDidShow = this.keyboardDidShow.bind(this);
     this.keyboardDidHide = this.keyboardDidHide.bind(this);
+    this.setKeyboardIsShown = this.setKeyboardIsShown.bind(this);
     this.onAddItem = this.onAddItem.bind(this);
     this.setShowInput = this.setShowInput.bind(this);
     this.onBack = this.onBack.bind(this);
@@ -54,11 +56,13 @@ export class Home extends React.Component {
     this.resetPendingList = this.resetPendingList.bind(this);
     this.setSystemMessage = this.setSystemMessage.bind(this);
 
+    this.keyboardDidShowListener = null;
     this.keyboardDidHideListener = null;
 
     this.state = {
       showInput: false,
       item: null,
+      keyboardIsShown: false,
     };
   }
 
@@ -73,15 +77,28 @@ export class Home extends React.Component {
   static defaultProps = {};
 
   componentDidMount() {
+    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this.keyboardDidShow);
     this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this.keyboardDidHide);
   }
 
   componentWillUnmount() {
+    this.keyboardDidShowListener.remove();
     this.keyboardDidHideListener.remove();
   }
 
+  keyboardDidShow() {
+    this.setKeyboardIsShown(true);
+  }
+
   keyboardDidHide() {
+    this.setKeyboardIsShown(false);
     this.hideInput();
+  }
+
+  setKeyboardIsShown(keyboardIsShown) {
+    this.setState({
+      keyboardIsShown,
+    });
   }
 
   onAddItem() {
@@ -325,7 +342,7 @@ export class Home extends React.Component {
   }
 
   render() {
-    const { showInput, item } = this.state;
+    const { showInput, item, keyboardIsShown } = this.state;
     const { userItems, pendingList } = this.props;
 
     // Convert items object to array
@@ -367,38 +384,39 @@ export class Home extends React.Component {
       />
     ) : null;
 
-    const addItemButtonComponent = !showInput ? (
-      <Animator
-        type="opacity"
-        initialValue={0}
-        finalValue={1}
-        shouldAnimateIn
-        delay={100}
-        easing={styleConstants.easing}
-        style={styles.addItemButtonContainer}
-      >
+    const addItemButtonComponent =
+      !showInput && !keyboardIsShown ? (
         <Animator
-          type="translateY"
-          initialValue={200}
-          finalValue={0}
+          type="opacity"
+          initialValue={0}
+          finalValue={1}
           shouldAnimateIn
           delay={100}
           easing={styleConstants.easing}
+          style={styles.addItemButtonContainer}
         >
           <Animator
-            type="scale"
-            initialValue={0.5}
-            finalValue={1}
+            type="translateY"
+            initialValue={200}
+            finalValue={0}
             shouldAnimateIn
             delay={100}
             easing={styleConstants.easing}
-            style={styles.addItemButtonInnerContainer}
           >
-            <IconButton name="add" handlePress={this.onAddItem} />
+            <Animator
+              type="scale"
+              initialValue={0.5}
+              finalValue={1}
+              shouldAnimateIn
+              delay={100}
+              easing={styleConstants.easing}
+              style={styles.addItemButtonInnerContainer}
+            >
+              <IconButton name="add" handlePress={this.onAddItem} />
+            </Animator>
           </Animator>
         </Animator>
-      </Animator>
-    ) : null;
+      ) : null;
 
     const submitItemButtonComponent = showInput ? (
       <Animator
