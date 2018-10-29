@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressBar renders renders with minimum required props 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "stretch",
+      "backgroundColor": "rgba(42, 213, 42, 1)",
+      "borderRadius": 5,
+      "flex": 1,
+      "padding": 7.5,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#EDE8CA",
+        "borderColor": null,
+        "borderRadius": 5,
+        "borderWidth": 0,
+        "bottom": 5,
+        "elevation": 2,
+        "left": 7.5,
+        "position": "absolute",
+        "right": 7.5,
+        "shadowColor": "#212121",
+        "shadowOffset": Object {
+          "height": 1,
+          "width": 0,
+        },
+        "shadowOpacity": 0.17,
+        "shadowRadius": 2,
+        "top": 5,
+        "width": "100%",
+      }
+    }
+  />
+</View>
+`;
