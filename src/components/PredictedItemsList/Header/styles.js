@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   icon: {
     fontSize: styleConstants.fonts.sizes.icon,
     color: styleConstants.colors.primaryText,
-    marginLeft: styleConstants.dimensions.spacing.horizontal / 2,
+    marginLeft: styleConstants.dimensions.spacing.horizontal,
   },
 });
 
