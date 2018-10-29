@@ -9,7 +9,14 @@ const styles = StyleSheet.create({
     paddingLeft: styleConstants.dimensions.spacing.horizontal,
   },
   checkBoxContainer: {
-    marginRight: styleConstants.dimensions.spacing.horizontal,
+    paddingRight: styleConstants.dimensions.spacing.horizontal,
+  },
+  deleteButtonContainer: {
+    position: 'absolute',
+    top: 0,
+    right: styleConstants.dimensions.spacing.horizontal,
+    bottom: 0,
+    justifyContent: 'center',
   },
   text: {
     ...styleConstants.fonts.types.paragraph,

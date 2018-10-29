@@ -80,6 +80,7 @@ export default class ItemsList extends React.Component {
           {...item}
           handleSetIsChecked={() => handleSetIsChecked(item.id, !item.isChecked)}
           handleSetQuantity={(quantity) => handleSetQuantity(item.id, quantity)}
+          handleRemoveItem={() => handleRemoveItem(item.id)}
         />
       </Animator>
     );
