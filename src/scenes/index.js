@@ -10,7 +10,7 @@ const scenes = Actions.create(
     <Scene key="root">
       <Tabs key="tabs" lazy animationEnabled={false} hideNavBar hideTabBar>
         <Scene key="home" component={Home} hideNavBar type="replace" />
-        <Scene key="predictions" component={Predictions} hideNavBar type="replace" initial />
+        <Scene key="predictions" component={Predictions} hideNavBar type="replace" />
         <Scene key="lists" component={Lists} hideNavBar type="replace" />
       </Tabs>
     </Scene>
