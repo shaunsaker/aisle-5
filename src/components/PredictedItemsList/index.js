@@ -8,6 +8,7 @@ import Header from './Header';
 import PredictedItem from './PredictedItem';
 import ItemSeparator from '../ItemSeparator';
 
+import HEADER_ITEMS from './headerItems';
 import PREDICTED_ITEMS_LIST from '../../mockData/predictedItemsList';
 
 export default class PredictedItemsList extends React.Component {
@@ -25,12 +26,21 @@ export default class PredictedItemsList extends React.Component {
 
   static propTypes = {
     data: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+    handleHeaderItemPress: PropTypes.func,
   };
 
   static defaultProps = {};
 
   renderListHeader() {
-    return <Header height={this.itemHeight} />;
+    const { handleHeaderItemPress } = this.props;
+
+    return (
+      <Header
+        headerItems={HEADER_ITEMS}
+        handleHeaderItemPress={handleHeaderItemPress}
+        height={this.itemHeight}
+      />
+    );
   }
 
   renderItem({ item }) {

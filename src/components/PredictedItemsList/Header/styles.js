@@ -11,17 +11,19 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: styleConstants.colors.dividerColor,
   },
-  firstColumn: {
-    flex: 1,
-    marginRight: styleConstants.dimensions.spacing.horizontal,
-  },
-  secondColumn: {
-    flex: 2,
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   text: {
     ...styleConstants.fonts.types.paragraph,
     ...styleConstants.fonts.families.bold,
     textDecorationLine: 'underline',
+  },
+  icon: {
+    fontSize: styleConstants.fonts.sizes.icon,
+    color: styleConstants.colors.primaryText,
+    marginLeft: styleConstants.dimensions.spacing.horizontal / 2,
   },
 });
 
