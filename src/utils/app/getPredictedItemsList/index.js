@@ -12,11 +12,14 @@ const getPredictedItemsList = (userLists, userItems) => {
   const itemArrays = userListsArray.map((userList) => userList.list.map((item) => item));
 
   // Concat the arrays of items from each list
-  const allItems =
-    itemArrays.length && itemArrays.reduce((totalItems, nextItem) => totalItems.concat(nextItem));
+  const allItems = itemArrays.length
+    ? itemArrays.reduce((totalItems, nextItem) => totalItems.concat(nextItem))
+    : [];
 
   // Group the items by item_user_id
-  const groupedItems = allItems && utils.arrays.groupArrayOfObjectsByKey(allItems, 'user_item_id');
+  const groupedItems = allItems.length
+    ? utils.arrays.groupArrayOfObjectsByKey(allItems, 'user_item_id')
+    : [];
 
   const predictedItemsList = Object.keys(groupedItems).map((id) => {
     const items = groupedItems[id];

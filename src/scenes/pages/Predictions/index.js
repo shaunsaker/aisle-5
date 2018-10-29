@@ -77,7 +77,6 @@ export class Predictions extends React.Component {
       );
     }
 
-    // TODO: Test with no data
     const predictedItemsListComponent = predictedItemsList.length ? (
       <PredictedItemsList
         data={predictedItemsList}
