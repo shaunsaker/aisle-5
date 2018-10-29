@@ -1,0 +1,229 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PredictedItemsList renders renders with minimum required props 1`] = `
+<RCTScrollView
+  ItemSeparatorComponent={[Function]}
+  ListHeaderComponent={[Function]}
+  bounces={false}
+  contentContainerStyle={Object {}}
+  data={
+    Array [
+      Object {
+        "averageUsagePerDay": 0.5,
+        "daysLeftUntilZeroQuantity": null,
+        "id": "-1",
+        "name": "Whiskey",
+        "previouslyPurchasedQuantity": null,
+        "remainingQuantity": null,
+        "remainingQuantityPercentage": null,
+      },
+      Object {
+        "averageUsagePerDay": 0.5,
+        "daysLeftUntilZeroQuantity": 0,
+        "id": "0",
+        "name": "Wine",
+        "previouslyPurchasedQuantity": 1,
+        "remainingQuantity": 0,
+        "remainingQuantityPercentage": 0,
+      },
+      Object {
+        "averageUsagePerDay": 2,
+        "daysLeftUntilZeroQuantity": 2,
+        "id": "1",
+        "name": "Beer",
+        "previouslyPurchasedQuantity": 6,
+        "remainingQuantity": 2,
+        "remainingQuantityPercentage": 25,
+      },
+      Object {
+        "averageUsagePerDay": 0.5,
+        "daysLeftUntilZeroQuantity": 2,
+        "id": "10",
+        "name": "Bread",
+        "previouslyPurchasedQuantity": 2,
+        "remainingQuantity": 1,
+        "remainingQuantityPercentage": 50,
+      },
+      Object {
+        "averageUsagePerDay": 0.25,
+        "daysLeftUntilZeroQuantity": 4,
+        "id": "2",
+        "name": "Milk",
+        "previouslyPurchasedQuantity": 4,
+        "remainingQuantity": 2,
+        "remainingQuantityPercentage": 75,
+      },
+      Object {
+        "averageUsagePerDay": 0.1,
+        "daysLeftUntilZeroQuantity": 6,
+        "id": "3",
+        "name": "Cheese",
+        "previouslyPurchasedQuantity": 1,
+        "remainingQuantity": 1,
+        "remainingQuantityPercentage": 100,
+      },
+    ]
+  }
+  disableVirtualization={false}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  getItemLayout={[Function]}
+  horizontal={false}
+  initialNumToRender={10}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  numColumns={1}
+  onContentSizeChange={[Function]}
+  onEndReachedThreshold={2}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
+  stickyHeaderIndices={Array []}
+  style={Object {}}
+  updateCellsBatchingPeriod={50}
+  viewabilityConfigCallbackPairs={Array []}
+  windowSize={21}
+>
+  <View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <Header
+        headerItems={
+          Array [
+            Object {
+              "fieldName": "name",
+              "flex": 1,
+              "text": "NAME",
+            },
+            Object {
+              "fieldName": "remainingQuantity",
+              "flex": 2,
+              "text": "CONSUMPTION",
+            },
+          ]
+        }
+        height={51}
+      />
+    </View>
+    <View
+      style={null}
+    >
+      <View
+        style={Object {}}
+      >
+        <PredictedItem
+          averageUsagePerDay={0.5}
+          daysLeftUntilZeroQuantity={null}
+          height={51}
+          id="-1"
+          name="Whiskey"
+          previouslyPurchasedQuantity={null}
+          remainingQuantity={null}
+          remainingQuantityPercentage={null}
+        />
+      </View>
+      <ItemSeparator />
+    </View>
+    <View
+      style={null}
+    >
+      <View
+        style={Object {}}
+      >
+        <PredictedItem
+          averageUsagePerDay={0.5}
+          daysLeftUntilZeroQuantity={0}
+          height={51}
+          id="0"
+          name="Wine"
+          previouslyPurchasedQuantity={1}
+          remainingQuantity={0}
+          remainingQuantityPercentage={0}
+        />
+      </View>
+      <ItemSeparator />
+    </View>
+    <View
+      style={null}
+    >
+      <View
+        style={Object {}}
+      >
+        <PredictedItem
+          averageUsagePerDay={2}
+          daysLeftUntilZeroQuantity={2}
+          height={51}
+          id="1"
+          name="Beer"
+          previouslyPurchasedQuantity={6}
+          remainingQuantity={2}
+          remainingQuantityPercentage={25}
+        />
+      </View>
+      <ItemSeparator />
+    </View>
+    <View
+      style={null}
+    >
+      <View
+        style={Object {}}
+      >
+        <PredictedItem
+          averageUsagePerDay={0.5}
+          daysLeftUntilZeroQuantity={2}
+          height={51}
+          id="10"
+          name="Bread"
+          previouslyPurchasedQuantity={2}
+          remainingQuantity={1}
+          remainingQuantityPercentage={50}
+        />
+      </View>
+      <ItemSeparator />
+    </View>
+    <View
+      style={null}
+    >
+      <View
+        style={Object {}}
+      >
+        <PredictedItem
+          averageUsagePerDay={0.25}
+          daysLeftUntilZeroQuantity={4}
+          height={51}
+          id="2"
+          name="Milk"
+          previouslyPurchasedQuantity={4}
+          remainingQuantity={2}
+          remainingQuantityPercentage={75}
+        />
+      </View>
+      <ItemSeparator />
+    </View>
+    <View
+      style={null}
+    >
+      <View
+        style={Object {}}
+      >
+        <PredictedItem
+          averageUsagePerDay={0.1}
+          daysLeftUntilZeroQuantity={6}
+          height={51}
+          id="3"
+          name="Cheese"
+          previouslyPurchasedQuantity={1}
+          remainingQuantity={1}
+          remainingQuantityPercentage={100}
+        />
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
