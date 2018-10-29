@@ -87,7 +87,7 @@ export class Predictions extends React.Component {
       <BlankState
         iconName="poll"
         title="You have no predictions"
-        description="Use the app and it will start predicting how how much of each item you have left over and when you will run out."
+        description="Use the app and it will start predicting when you will run out of each item."
       />
     );
 
