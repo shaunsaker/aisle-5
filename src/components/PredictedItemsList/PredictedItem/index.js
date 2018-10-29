@@ -32,7 +32,7 @@ const PredictedItem = ({
     );
   } else {
     const daysLeftText = `${Math.floor(daysLeftUntilZeroQuantity)} day${
-      daysLeftUntilZeroQuantity > 1 || daysLeftUntilZeroQuantity === 0 ? 's' : ''
+      daysLeftUntilZeroQuantity !== 1 ? 's' : ''
     } left`;
 
     consumptionComponent = (

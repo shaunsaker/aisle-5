@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'stretch',
     borderRadius: styleConstants.dimensions.borderRadius,
-    ...styleConstants.shadows.small,
     padding: styleConstants.dimensions.spacing.horizontal / 2, // NOTE: Needed for the width % to work
   },
   container: {

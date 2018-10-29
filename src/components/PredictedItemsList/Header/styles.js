@@ -16,14 +16,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    ...styleConstants.fonts.types.paragraph,
+    ...styleConstants.fonts.types.small,
     ...styleConstants.fonts.families.bold,
     textDecorationLine: 'underline',
   },
   icon: {
     fontSize: styleConstants.fonts.sizes.icon,
     color: styleConstants.colors.primaryText,
-    marginLeft: styleConstants.dimensions.spacing.horizontal,
+    marginLeft: styleConstants.dimensions.spacing.horizontal / 2,
   },
 });
 
