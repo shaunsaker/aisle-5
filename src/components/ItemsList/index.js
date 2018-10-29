@@ -7,7 +7,6 @@ import styleConstants from '../../styleConstants';
 
 import styles from './styles';
 
-import Swipeable from '../Swipeable';
 import Item from './Item';
 import ItemSeparator from '../ItemSeparator';
 
@@ -17,9 +16,6 @@ export default class ItemsList extends React.Component {
 
     this.scrollToEnd = this.scrollToEnd.bind(this);
     this.setDidChange = this.setDidChange.bind(this);
-    this.onSwipeStart = this.onSwipeStart.bind(this);
-    this.onSwipeEnd = this.onSwipeEnd.bind(this);
-    this.setScrollEnabled = this.setScrollEnabled.bind(this);
     this.renderItem = this.renderItem.bind(this);
     this.renderItemSeparator = this.renderItemSeparator.bind(this);
 
@@ -31,7 +27,6 @@ export default class ItemsList extends React.Component {
 
     this.state = {
       didChange: false,
-      scrollEnabled: true,
     };
   }
 
@@ -67,20 +62,6 @@ export default class ItemsList extends React.Component {
     this.setState({ didChange });
   }
 
-  onSwipeStart() {
-    this.setScrollEnabled(false);
-  }
-
-  onSwipeEnd() {
-    this.setScrollEnabled(true);
-  }
-
-  setScrollEnabled(scrollEnabled) {
-    this.setState({
-      scrollEnabled,
-    });
-  }
-
   renderItem({ item, index }) {
     const { didChange } = this.state;
     const { handleSetIsChecked, handleSetQuantity, handleRemoveItem } = this.props;
@@ -88,26 +69,19 @@ export default class ItemsList extends React.Component {
     const shouldAnimate = didChange && index < this.maxItemsVisible;
 
     return (
-      <Swipeable
-        width={this.itemWidth}
-        onSwipeStart={this.onSwipeStart}
-        onSwipeEnd={this.onSwipeEnd}
-        onSwiped={() => handleRemoveItem(item.id)}
+      <Animator
+        type="translateX"
+        initialValue={shouldAnimate ? styleConstants.dimensions.window.width : 0}
+        finalValue={0}
+        shouldAnimateIn
+        style={styles.itemContainer}
       >
-        <Animator
-          type="translateX"
-          initialValue={shouldAnimate ? styleConstants.dimensions.window.width : 0}
-          finalValue={0}
-          shouldAnimateIn
-          style={styles.itemContainer}
-        >
-          <Item
-            {...item}
-            handleSetIsChecked={() => handleSetIsChecked(item.id, !item.isChecked)}
-            handleSetQuantity={(quantity) => handleSetQuantity(item.id, quantity)}
-          />
-        </Animator>
-      </Swipeable>
+        <Item
+          {...item}
+          handleSetIsChecked={() => handleSetIsChecked(item.id, !item.isChecked)}
+          handleSetQuantity={(quantity) => handleSetQuantity(item.id, quantity)}
+        />
+      </Animator>
     );
   }
 
