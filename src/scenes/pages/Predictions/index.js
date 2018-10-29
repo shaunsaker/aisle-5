@@ -17,7 +17,14 @@ export class Predictions extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.onSortByFieldName = this.onSortByFieldName.bind(this);
+    this.setSortByKey = this.setSortByKey.bind(this);
+    this.toggleReverseSort = this.toggleReverseSort.bind(this);
+
+    this.state = {
+      sortByKey: null,
+      reverseSort: false,
+    };
   }
 
   static propTypes = {
@@ -28,13 +35,54 @@ export class Predictions extends React.Component {
 
   static defaultProps = {};
 
+  onSortByFieldName(fieldName) {
+    const { sortByKey } = this.state;
+
+    this.setSortByKey(fieldName);
+
+    if (sortByKey === fieldName) {
+      // If the sort by key is the same,
+      // toggle reverse sort
+      this.toggleReverseSort();
+    }
+  }
+
+  setSortByKey(sortByKey) {
+    this.setState({
+      sortByKey,
+    });
+  }
+
+  toggleReverseSort() {
+    const { reverseSort } = this.state;
+
+    this.setState({
+      reverseSort: !reverseSort,
+    });
+  }
+
   render() {
+    const { sortByKey, reverseSort } = this.state;
     const { userLists, userItems } = this.props;
-    const predictedItemsList = utils.app.getPredictedItemsList(userLists, userItems);
+    let predictedItemsList = utils.app.getPredictedItemsList(userLists, userItems);
+
+    if (sortByKey) {
+      // Sort the array of predicted items by the key provided
+      // If present
+      // Reverse it as needed
+      predictedItemsList = utils.arrays.sortArrayOfObjectsByKey(
+        predictedItemsList,
+        sortByKey,
+        reverseSort,
+      );
+    }
 
     // TODO: Test with no data
     const predictedItemsListComponent = predictedItemsList.length ? (
-      <PredictedItemsList data={predictedItemsList} />
+      <PredictedItemsList
+        data={predictedItemsList}
+        handleHeaderItemPress={this.onSortByFieldName}
+      />
     ) : (
       <BlankState
         iconName="poll"

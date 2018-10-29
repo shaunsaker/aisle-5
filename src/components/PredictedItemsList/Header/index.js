@@ -13,6 +13,7 @@ const propTypes = {
     PropTypes.shape({
       text: PropTypes.string,
       flex: PropTypes.number,
+      fieldName: PropTypes.string,
     }),
   ).isRequired,
   handleHeaderItemPress: PropTypes.func.isRequired,
@@ -30,7 +31,7 @@ const Header = ({ headerItems, handleHeaderItemPress, height }) => {
         return (
           <Touchable
             key={item.text}
-            onPress={() => handleHeaderItemPress(item)}
+            onPress={() => handleHeaderItemPress(item.fieldName)}
             style={[
               styles.row,
               { flex: item.flex },
