@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingVertical: styleConstants.dimensions.spacing.vertical / 2,
+    paddingVertical: styleConstants.dimensions.spacing.vertical,
     paddingHorizontal: styleConstants.dimensions.spacing.horizontal,
   },
   text: {
@@ -17,20 +17,16 @@ const styles = StyleSheet.create({
   },
   consumptionContainer: {
     flex: 2,
-    justifyContent: 'space-between',
   },
-  footerContainer: {
-    marginTop: styleConstants.dimensions.spacing.vertical / 2,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+  daysLeftTextContainer: {
+    position: 'absolute',
+    top: 0,
+    right: styleConstants.dimensions.spacing.horizontal,
+    bottom: 0,
+    justifyContent: 'center',
   },
-  remainingQuantityTextContainer: {},
-  remainingQuantityText: {
-    ...styleConstants.fonts.types.extraSmall,
-  },
-  daysLeftTextContainer: {},
   daysLeftText: {
-    ...styleConstants.fonts.types.extraSmall,
+    ...styleConstants.fonts.types.small,
   },
   noDataText: {
     ...styleConstants.fonts.types.paragraph,

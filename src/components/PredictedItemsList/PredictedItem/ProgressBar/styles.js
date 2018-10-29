@@ -7,7 +7,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'stretch',
     borderRadius: styleConstants.dimensions.borderRadius,
-    overflow: 'hidden',
+    ...styleConstants.shadows.small,
+    padding: styleConstants.dimensions.spacing.horizontal / 2, // NOTE: Needed for the width % to work
   },
   container: {
     borderRadius: styleConstants.dimensions.borderRadius,
@@ -15,6 +16,7 @@ const styles = StyleSheet.create({
     top: styleConstants.dimensions.spacing.vertical / 2,
     bottom: styleConstants.dimensions.spacing.vertical / 2,
     left: styleConstants.dimensions.spacing.horizontal / 2,
+    right: styleConstants.dimensions.spacing.horizontal / 2,
     backgroundColor: styleConstants.colors.white,
     ...styleConstants.shadows.small,
   },

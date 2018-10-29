@@ -8,9 +8,6 @@ import ProgressBar from './ProgressBar';
 
 const propTypes = {
   name: PropTypes.string,
-  averageUsagePerDay: PropTypes.number,
-  previouslyPurchasedQuantity: PropTypes.number,
-  remainingQuantity: PropTypes.number,
   remainingQuantityPercentage: PropTypes.number,
   daysLeftUntilZeroQuantity: PropTypes.number,
   height: PropTypes.number,
@@ -20,17 +17,10 @@ const defaultProps = {};
 
 const PredictedItem = ({
   name,
-  averageUsagePerDay,
-  previouslyPurchasedQuantity,
-  remainingQuantity,
   remainingQuantityPercentage,
   daysLeftUntilZeroQuantity,
   height,
 }) => {
-  /*
-    TODO: If there is only one previouslyPurchasedQuantity, round to the nearest digit
-    TODO: Animate bar width, wrapper bg color, days left?, current quantity?
-  */
   let consumptionComponent;
 
   if (remainingQuantityPercentage === null) {
@@ -41,9 +31,6 @@ const PredictedItem = ({
       </View>
     );
   } else {
-    const remainingQuantityText = `${Math.floor(
-      remainingQuantity,
-    )} / ${previouslyPurchasedQuantity} unit${previouslyPurchasedQuantity > 1 ? 's' : ''}`;
     const daysLeftText = `${Math.floor(daysLeftUntilZeroQuantity)} day${
       daysLeftUntilZeroQuantity > 1 || daysLeftUntilZeroQuantity === 0 ? 's' : ''
     } left`;
@@ -52,14 +39,8 @@ const PredictedItem = ({
       <View style={styles.consumptionContainer}>
         <ProgressBar value={remainingQuantityPercentage} />
 
-        <View style={styles.footerContainer}>
-          <View style={styles.remainingQuantityTextContainer}>
-            <Text style={styles.remainingQuantityText}>{remainingQuantityText}</Text>
-          </View>
-
-          <View style={styles.daysLeftTextContainer}>
-            <Text style={styles.daysLeftText}>{daysLeftText}</Text>
-          </View>
+        <View style={styles.daysLeftTextContainer}>
+          <Text style={styles.daysLeftText}>{daysLeftText}</Text>
         </View>
       </View>
     );
