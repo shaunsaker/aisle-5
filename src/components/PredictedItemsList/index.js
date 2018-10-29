@@ -4,6 +4,7 @@ import { FlatList, View } from 'react-native';
 
 import styles from './styles';
 
+import Header from './Header';
 import PredictedItem from './PredictedItem';
 import ItemSeparator from '../ItemSeparator';
 
@@ -11,8 +12,11 @@ export default class PredictedItemsList extends React.Component {
   constructor(props) {
     super(props);
 
+    this.renderListHeader = this.renderListHeader.bind(this);
     this.renderItem = this.renderItem.bind(this);
     this.renderItemSeparator = this.renderItemSeparator.bind(this);
+
+    this.itemHeight = 51;
 
     this.state = {};
   }
@@ -23,10 +27,14 @@ export default class PredictedItemsList extends React.Component {
 
   static defaultProps = {};
 
+  renderListHeader() {
+    return <Header height={this.itemHeight} />;
+  }
+
   renderItem({ item }) {
     return (
       <View style={styles.itemContainer}>
-        <PredictedItem {...item} />
+        <PredictedItem {...item} height={this.itemHeight} />
       </View>
     );
   }
@@ -45,7 +53,6 @@ export default class PredictedItemsList extends React.Component {
         }}
         keyExtractor={({ id }) => id}
         data={data}
-        renderItem={this.renderItem}
         style={styles.container}
         contentContainerStyle={styles.contentContainer}
         getItemLayout={(data, index) => ({
@@ -54,6 +61,8 @@ export default class PredictedItemsList extends React.Component {
           index,
         })}
         bounces={false}
+        ListHeaderComponent={this.renderListHeader}
+        renderItem={this.renderItem}
         ItemSeparatorComponent={this.renderItemSeparator}
       />
     );

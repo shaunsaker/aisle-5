@@ -1,7 +1,7 @@
 const TABS = [
   {
     name: 'Home',
-    iconName: 'shopping-cart',
+    iconName: 'shopping-basket',
     sceneKey: '_home',
   },
   {
