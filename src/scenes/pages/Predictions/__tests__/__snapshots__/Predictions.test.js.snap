@@ -1,0 +1,358 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Predictions renders renders with minimum required props 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#EDE8CA",
+        "flex": 1,
+        "paddingTop": 22,
+      },
+      undefined,
+      undefined,
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "zIndex": 100,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "height": 22,
+          },
+          Object {
+            "backgroundColor": "#08293A",
+          },
+        ]
+      }
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignSelf": "stretch",
+          "backgroundColor": "#08293A",
+          "borderColor": null,
+          "borderWidth": 0,
+          "elevation": 12,
+          "height": 60,
+          "justifyContent": "center",
+          "paddingBottom": 10,
+          "paddingHorizontal": 15,
+          "paddingTop": 10,
+          "shadowColor": "#212121",
+          "shadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.33,
+          "shadowRadius": 4,
+        },
+        undefined,
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "#212121",
+            "fontFamily": "ArchivoBlack-Regular",
+            "fontSize": 24,
+          },
+          Object {
+            "color": "#EDE8CA",
+          },
+        ]
+      }
+    >
+      Predictions
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <RCTScrollView
+      ItemSeparatorComponent={[Function]}
+      ListHeaderComponent={[Function]}
+      bounces={false}
+      contentContainerStyle={Object {}}
+      data={
+        Array [
+          Object {
+            "averageUsagePerDay": null,
+            "daysLeftUntilZeroQuantity": null,
+            "id": "1",
+            "name": "Beer",
+            "previouslyPurchasedQuantity": null,
+            "remainingQuantity": null,
+            "remainingQuantityPercentage": null,
+          },
+        ]
+      }
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      getItemLayout={[Function]}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      style={Object {}}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "borderBottomColor": "#FFFFFF",
+                  "borderBottomWidth": 1,
+                  "flexDirection": "row",
+                  "paddingHorizontal": 15,
+                  "paddingVertical": 10,
+                },
+                Object {
+                  "height": 51,
+                },
+              ]
+            }
+          >
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "marginRight": 7.5,
+                  "opacity": 1,
+                }
+              }
+              testID="predictions.predictedItemsList.header.button.NAME"
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#212121",
+                    "fontFamily": "Muli-Bold",
+                    "fontSize": 15,
+                    "textDecorationLine": "underline",
+                  }
+                }
+              >
+                NAME
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={false}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": undefined,
+                      "fontSize": 12,
+                    },
+                    Object {
+                      "color": "#212121",
+                      "fontSize": 24,
+                      "marginLeft": 7.5,
+                    },
+                    Object {
+                      "fontFamily": "Material Icons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flex": 2,
+                  "flexDirection": "row",
+                  "marginRight": 0,
+                  "opacity": 1,
+                }
+              }
+              testID="predictions.predictedItemsList.header.button.CONSUMPTION"
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#212121",
+                    "fontFamily": "Muli-Bold",
+                    "fontSize": 15,
+                    "textDecorationLine": "underline",
+                  }
+                }
+              >
+                CONSUMPTION
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={false}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": undefined,
+                      "fontSize": 12,
+                    },
+                    Object {
+                      "color": "#212121",
+                      "fontSize": 24,
+                      "marginLeft": 7.5,
+                    },
+                    Object {
+                      "fontFamily": "Material Icons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={null}
+        >
+          <View
+            style={Object {}}
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "paddingHorizontal": 15,
+                    "paddingVertical": 10,
+                  },
+                  Object {
+                    "height": 51,
+                  },
+                ]
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                numberOfLines={1}
+                style={
+                  Object {
+                    "color": "#212121",
+                    "flex": 1,
+                    "fontFamily": "Muli-SemiBold",
+                    "fontSize": 17,
+                    "marginRight": 15,
+                  }
+                }
+              >
+                Beer
+              </Text>
+              <View
+                style={
+                  Object {
+                    "flex": 2,
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "#212121",
+                      "fontFamily": "Muli-SemiBold",
+                      "fontSize": 17,
+                    }
+                  }
+                >
+                  Not enough data
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+  <TabBar />
+</View>
+`;

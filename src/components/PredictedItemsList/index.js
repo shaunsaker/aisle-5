@@ -26,18 +26,20 @@ export default class PredictedItemsList extends React.Component {
   static propTypes = {
     data: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
     handleHeaderItemPress: PropTypes.func,
+    headerTestIDPrefix: PropTypes.string,
   };
 
   static defaultProps = {};
 
   renderListHeader() {
-    const { handleHeaderItemPress } = this.props;
+    const { handleHeaderItemPress, headerTestIDPrefix } = this.props;
 
     return (
       <Header
         headerItems={HEADER_ITEMS}
         handleHeaderItemPress={handleHeaderItemPress}
         height={this.itemHeight}
+        headerTestIDPrefix={headerTestIDPrefix}
       />
     );
   }

@@ -28,7 +28,6 @@ export class Predictions extends React.Component {
   }
 
   static propTypes = {
-    dispatch: PropTypes.func.isRequired,
     userLists: PropTypes.shape({}),
     userItems: PropTypes.shape({}),
   };
@@ -81,6 +80,7 @@ export class Predictions extends React.Component {
       <PredictedItemsList
         data={predictedItemsList}
         handleHeaderItemPress={this.onSortByFieldName}
+        headerTestIDPrefix="predictions.predictedItemsList.header.button."
       />
     ) : (
       <BlankState

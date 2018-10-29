@@ -18,11 +18,12 @@ const propTypes = {
   ).isRequired,
   handleHeaderItemPress: PropTypes.func.isRequired,
   height: PropTypes.number,
+  headerTestIDPrefix: PropTypes.string,
 };
 
 const defaultProps = {};
 
-const Header = ({ headerItems, handleHeaderItemPress, height }) => {
+const Header = ({ headerItems, handleHeaderItemPress, height, headerTestIDPrefix }) => {
   return (
     <View style={[styles.container, { height }]}>
       {headerItems.map((item, index) => {
@@ -37,6 +38,7 @@ const Header = ({ headerItems, handleHeaderItemPress, height }) => {
               { flex: item.flex },
               { marginRight: isNotLastItem ? styleConstants.dimensions.spacing.horizontal / 2 : 0 },
             ]}
+            testID={`${headerTestIDPrefix}${item.text}`}
           >
             <Text style={styles.text}>{item.text}</Text>
 
