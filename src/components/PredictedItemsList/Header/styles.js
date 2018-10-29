@@ -6,9 +6,10 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: styleConstants.colors.dividerColor,
     paddingVertical: styleConstants.dimensions.spacing.vertical,
     paddingHorizontal: styleConstants.dimensions.spacing.horizontal,
+    borderBottomWidth: 1,
+    borderBottomColor: styleConstants.colors.dividerColor,
   },
   firstColumn: {
     flex: 1,
@@ -18,8 +19,9 @@ const styles = StyleSheet.create({
     flex: 2,
   },
   text: {
-    ...styleConstants.fonts.types.small,
+    ...styleConstants.fonts.types.paragraph,
     ...styleConstants.fonts.families.bold,
+    textDecorationLine: 'underline',
   },
 });
 

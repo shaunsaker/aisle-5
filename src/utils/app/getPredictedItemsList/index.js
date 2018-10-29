@@ -52,6 +52,8 @@ const getPredictedItemsList = (userLists, userItems) => {
     const { name } = userItems[id];
 
     let averageUsagePerDay = null;
+    let previouslyPurchasedQuantity = null;
+    let remainingQuantity = null;
     let remainingQuantityPercentage = null;
     let daysLeftUntilZeroQuantity = null;
 
@@ -61,19 +63,19 @@ const getPredictedItemsList = (userLists, userItems) => {
       averageUsagePerDay = totalUsagesPerDay / numberOfUsagesPerDay;
 
       // Calculate the remainingQuantityPercentage
-      const lastPurchasedItem = sortedItems[sortedItems.length - 1];
-      const lastPurchasedDate = lastPurchasedItem.date_purchased;
-      const lastPurchasedQuantity = lastPurchasedItem.quantity;
+      const previouslyPurchasedItem = sortedItems[sortedItems.length - 1];
+      const previouslyPurchasedDate = previouslyPurchasedItem.date_purchased;
+      previouslyPurchasedQuantity = previouslyPurchasedItem.quantity;
       const now = Date.now();
-      const timeSinceLastPurchase = now - lastPurchasedDate;
+      const timeSinceLastPurchase = now - previouslyPurchasedDate;
       const daysSinceLastPurchase = timeSinceLastPurchase / MS_IN_ONE_DAY;
       const quantityConsumed = daysSinceLastPurchase * averageUsagePerDay;
-      const remainingQuantity = lastPurchasedQuantity - quantityConsumed;
+      remainingQuantity = previouslyPurchasedQuantity - quantityConsumed;
 
       // Only allow remainingQuantity above or equal to 0
       const realRemainingQuantity = remainingQuantity >= 0 ? remainingQuantity : 0;
 
-      remainingQuantityPercentage = (100 * realRemainingQuantity) / lastPurchasedQuantity;
+      remainingQuantityPercentage = (100 * realRemainingQuantity) / previouslyPurchasedQuantity;
 
       // Calculate the daysLeftUntilZeroQuantity
       daysLeftUntilZeroQuantity = realRemainingQuantity / averageUsagePerDay;
@@ -83,6 +85,8 @@ const getPredictedItemsList = (userLists, userItems) => {
       id,
       name,
       averageUsagePerDay,
+      remainingQuantity,
+      previouslyPurchasedQuantity,
       remainingQuantityPercentage,
       daysLeftUntilZeroQuantity,
     };

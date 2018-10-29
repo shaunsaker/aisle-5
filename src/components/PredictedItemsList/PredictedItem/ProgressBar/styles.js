@@ -6,7 +6,6 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     alignItems: 'stretch',
-    backgroundColor: styleConstants.colors.dividerColor,
     borderRadius: styleConstants.dimensions.borderRadius,
     overflow: 'hidden',
   },
@@ -16,7 +15,8 @@ const styles = StyleSheet.create({
     top: styleConstants.dimensions.spacing.vertical / 2,
     bottom: styleConstants.dimensions.spacing.vertical / 2,
     left: styleConstants.dimensions.spacing.horizontal / 2,
-    backgroundColor: styleConstants.colors.dividerColor,
+    backgroundColor: styleConstants.colors.white,
+    ...styleConstants.shadows.small,
   },
 });
 

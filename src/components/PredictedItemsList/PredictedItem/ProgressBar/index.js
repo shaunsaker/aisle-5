@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
 import utils from '../../../../utils';
-import styleConstants from '../../../../styleConstants';
 import styles from './styles';
 
 const propTypes = {
