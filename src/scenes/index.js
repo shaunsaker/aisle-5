@@ -11,7 +11,7 @@ const scenes = Actions.create(
       <Tabs key="tabs" lazy animationEnabled={false} hideNavBar hideTabBar>
         <Scene key="home" component={Home} hideNavBar type="replace" />
         <Scene key="predictions" component={Predictions} hideNavBar type="replace" />
-        <Scene key="lists" component={Lists} hideNavBar type="replace" initial />
+        <Scene key="lists" component={Lists} hideNavBar type="replace" />
       </Tabs>
     </Scene>
   </Lightbox>,
