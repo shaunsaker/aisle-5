@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderTabs renders renders with minimum required props 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "borderBottomColor": "#FFFFFF",
+      "borderBottomWidth": 1,
+      "flexDirection": "row",
+      "height": 51,
+      "paddingHorizontal": 15,
+      "paddingVertical": 10,
+    }
+  }
+>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "opacity": 1,
+      }
+    }
+    testID="undefinedFoo"
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "#212121",
+            "fontFamily": "Muli-Bold",
+            "fontSize": 15,
+            "textDecorationLine": "underline",
+          },
+          Object {
+            "color": "#D17623",
+          },
+        ]
+      }
+    >
+      Foo
+    </Text>
+  </View>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "opacity": 1,
+      }
+    }
+    testID="undefinedBar"
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "#212121",
+            "fontFamily": "Muli-Bold",
+            "fontSize": 15,
+            "textDecorationLine": "underline",
+          },
+          false,
+        ]
+      }
+    >
+      Bar
+    </Text>
+  </View>
+</View>
+`;

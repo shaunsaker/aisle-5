@@ -14,7 +14,7 @@ const propTypes = {
   ).isRequired,
   activeTab: PropTypes.shape({
     text: PropTypes.string,
-  }),
+  }).isRequired,
   handleTabPress: PropTypes.func.isRequired,
   headerTestIDPrefix: PropTypes.string,
 };
