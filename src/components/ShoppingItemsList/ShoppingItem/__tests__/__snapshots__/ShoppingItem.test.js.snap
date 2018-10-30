@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShoppingItem renders renders with minimum required props 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "paddingHorizontal": 15,
+      },
+      Object {
+        "height": undefined,
+      },
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#212121",
+        "fontFamily": "Muli-Bold",
+        "fontSize": 17,
+      }
+    }
+  >
+    6
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#212121",
+        "fontFamily": "Muli-SemiBold",
+        "fontSize": 17,
+      }
+    }
+  >
+     x Beer
+  </Text>
+</View>
+`;
