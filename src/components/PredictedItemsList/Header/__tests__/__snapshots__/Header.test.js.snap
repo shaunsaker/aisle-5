@@ -36,6 +36,7 @@ exports[`Header renders renders with minimum required props 1`] = `
         "opacity": 1,
       }
     }
+    testID="undefinedNAME"
   >
     <Text
       accessible={true}
@@ -97,6 +98,7 @@ exports[`Header renders renders with minimum required props 1`] = `
         "opacity": 1,
       }
     }
+    testID="undefinedCONSUMPTION"
   >
     <Text
       accessible={true}

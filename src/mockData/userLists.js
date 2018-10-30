@@ -1,5 +1,5 @@
-const userLists = [
-  {
+const userLists = {
+  1: {
     uid: '1',
     date_added: Date.now(),
     unique_id: '1',
@@ -11,8 +11,9 @@ const userLists = [
         quantity: 6,
       },
     ],
+    id: '1',
   },
-  {
+  2: {
     uid: '1',
     date_added: Date.now(),
     unique_id: '1',
@@ -24,7 +25,8 @@ const userLists = [
         quantity: 6,
       },
     ],
+    id: '2',
   },
-];
+};
 
 export default userLists;

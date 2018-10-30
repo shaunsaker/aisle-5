@@ -4,7 +4,11 @@ exports[`ItemsList renders renders with minimum required props 1`] = `
 <RCTScrollView
   ItemSeparatorComponent={[Function]}
   bounces={false}
-  contentContainerStyle={Object {}}
+  contentContainerStyle={
+    Object {
+      "paddingBottom": 70,
+    }
+  }
   data={
     Array [
       Object {
@@ -32,7 +36,6 @@ exports[`ItemsList renders renders with minimum required props 1`] = `
   onScrollBeginDrag={[Function]}
   onScrollEndDrag={[Function]}
   renderItem={[Function]}
-  scrollEnabled={true}
   scrollEventThrottle={50}
   stickyHeaderIndices={Array []}
   style={Object {}}
@@ -45,50 +48,25 @@ exports[`ItemsList renders renders with minimum required props 1`] = `
       style={null}
     >
       <View
-        style={Object {}}
-      >
-        <View
-          onMoveShouldSetResponder={[Function]}
-          onMoveShouldSetResponderCapture={[Function]}
-          onResponderEnd={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderReject={[Function]}
-          onResponderRelease={[Function]}
-          onResponderStart={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          onStartShouldSetResponderCapture={[Function]}
-          style={
-            Object {
-              "backgroundColor": "rgba(255, 0, 0, 0)",
-              "left": 0,
-              "top": 0,
-            }
-          }
-        >
-          <View
-            style={
+        style={
+          Object {
+            "transform": Array [
               Object {
-                "transform": Array [
-                  Object {
-                    "translateX": 0,
-                  },
-                ],
-              }
-            }
-          >
-            <Item
-              handleSetIsChecked={[Function]}
-              handleSetQuantity={[Function]}
-              id="1"
-              isChecked={true}
-              name="Beer"
-              quantity={6}
-            />
-          </View>
-        </View>
+                "translateX": 0,
+              },
+            ],
+          }
+        }
+      >
+        <Item
+          handleRemoveItem={[Function]}
+          handleSetIsChecked={[Function]}
+          handleSetQuantity={[Function]}
+          id="1"
+          isChecked={true}
+          name="Beer"
+          quantity={6}
+        />
       </View>
     </View>
   </View>

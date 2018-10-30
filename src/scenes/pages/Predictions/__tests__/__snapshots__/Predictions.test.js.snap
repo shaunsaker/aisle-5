@@ -104,13 +104,13 @@ exports[`Predictions renders renders with minimum required props 1`] = `
       data={
         Array [
           Object {
-            "averageUsagePerDay": null,
-            "daysLeftUntilZeroQuantity": null,
+            "averageUsagePerDay": 5184,
+            "daysLeftUntilZeroQuantity": 0.0023148148148148147,
             "id": "1",
             "name": "Beer",
-            "previouslyPurchasedQuantity": null,
-            "remainingQuantity": null,
-            "remainingQuantityPercentage": null,
+            "previouslyPurchasedQuantity": 6,
+            "remainingQuantity": 12,
+            "remainingQuantityPercentage": 200,
           },
         ]
       }
@@ -332,20 +332,69 @@ exports[`Predictions renders renders with minimum required props 1`] = `
                   }
                 }
               >
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
+                <View
                   style={
                     Object {
-                      "color": "#212121",
-                      "fontFamily": "Muli-SemiBold",
-                      "fontSize": 17,
+                      "alignItems": "stretch",
+                      "backgroundColor": "rgba(42, 213, 42, 1)",
+                      "borderRadius": 5,
+                      "flex": 1,
+                      "padding": 7.5,
                     }
                   }
                 >
-                  Not enough data
-                </Text>
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#EDE8CA",
+                        "borderColor": null,
+                        "borderRadius": 5,
+                        "borderWidth": 0,
+                        "bottom": 5,
+                        "elevation": 2,
+                        "left": 7.5,
+                        "position": "absolute",
+                        "right": 7.5,
+                        "shadowColor": "#212121",
+                        "shadowOffset": Object {
+                          "height": 1,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0.17,
+                        "shadowRadius": 2,
+                        "top": 5,
+                        "width": "100%",
+                      }
+                    }
+                  />
+                </View>
+                <View
+                  style={
+                    Object {
+                      "bottom": 0,
+                      "elevation": 100,
+                      "justifyContent": "center",
+                      "position": "absolute",
+                      "right": 15,
+                      "top": 0,
+                    }
+                  }
+                >
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "color": "#212121",
+                        "fontFamily": "Muli-SemiBold",
+                        "fontSize": 15,
+                      }
+                    }
+                  >
+                    0 days left
+                  </Text>
+                </View>
               </View>
             </View>
           </View>

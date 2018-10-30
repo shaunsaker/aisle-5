@@ -13,7 +13,7 @@ exports[`DatabaseHandler methods should handle syncUserItems 1`] = `
             "items",
           ],
           "query": Array [
-            "uid",
+            "unique_id",
             "==",
             undefined,
           ],

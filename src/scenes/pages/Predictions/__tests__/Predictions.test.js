@@ -8,6 +8,9 @@ import HEADER_ITEMS from '../../../../components/PredictedItemsList/headerItems'
 
 jest.mock('../../../../components/TabBar', () => 'TabBar');
 
+// Fixes _bezier is not a function bug
+jest.useFakeTimers();
+
 describe('Predictions', () => {
   const spies = [];
   const dispatch = jest.fn();

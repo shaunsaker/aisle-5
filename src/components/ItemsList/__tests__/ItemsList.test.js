@@ -43,37 +43,6 @@ describe('ItemsList', () => {
       expect(instance.state.didChange).toEqual(true);
     });
 
-    it('should handle onSwipeStart', () => {
-      spies[0] = jest.spyOn(ItemsList.prototype, 'setScrollEnabled');
-      const component = renderer.create(<ItemsList data={data} />);
-      const instance = component.getInstance();
-
-      instance.onSwipeStart();
-
-      expect(spies[0]).toHaveBeenCalledWith(false);
-    });
-
-    it('should handle onSwipeEnd', () => {
-      spies[0] = jest.spyOn(ItemsList.prototype, 'setScrollEnabled');
-      const component = renderer.create(<ItemsList data={data} />);
-      const instance = component.getInstance();
-
-      instance.onSwipeEnd();
-
-      expect(spies[0]).toHaveBeenCalledWith(true);
-    });
-
-    it('should handle setScrollEnabled', () => {
-      const component = renderer.create(<ItemsList data={data} />);
-      const instance = component.getInstance();
-
-      expect(instance.state.scrollEnabled).toEqual(true);
-
-      instance.setScrollEnabled(false);
-
-      expect(instance.state.scrollEnabled).toEqual(false);
-    });
-
     it('should handle renderItem', () => {
       // NOTE: We assume this works (handled by RN FlatList)
     });
