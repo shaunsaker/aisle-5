@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemsList renders renders with minimum required props 1`] = `
+<RCTScrollView
+  ItemSeparatorComponent={[Function]}
+  bounces={false}
+  contentContainerStyle={
+    Object {
+      "paddingBottom": 70,
+    }
+  }
+  data={
+    Array [
+      Object {
+        "id": "1",
+        "isChecked": true,
+        "name": "Beer",
+        "quantity": 6,
+      },
+    ]
+  }
+  disableVirtualization={false}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  getItemLayout={[Function]}
+  horizontal={false}
+  initialNumToRender={10}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  numColumns={1}
+  onContentSizeChange={[Function]}
+  onEndReachedThreshold={2}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
+  stickyHeaderIndices={Array []}
+  style={Object {}}
+  updateCellsBatchingPeriod={50}
+  viewabilityConfigCallbackPairs={Array []}
+  windowSize={21}
+>
+  <View>
+    <View
+      style={null}
+    >
+      <View
+        style={Object {}}
+      >
+        <ShoppingItem
+          height={51}
+          name="Beer"
+          quantity={6}
+        />
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
