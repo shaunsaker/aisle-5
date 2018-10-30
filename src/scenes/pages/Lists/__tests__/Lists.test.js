@@ -1,19 +1,21 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { List } from '..';
+import { Lists } from '..';
 import USER_LISTS from '../../../../mockData/userLists';
 import USER_ITEMS from '../../../../mockData/userItems';
 import TABS from '../tabs';
 
-describe('List', () => {
+jest.mock('../../../../components/TabBar', () => 'TabBar');
+
+describe('Lists', () => {
   const spies = [];
   const dispatch = jest.fn();
   const selectedTab = TABS[0];
 
   describe('renders', () => {
     it('renders with minimum required props', () => {
-      const component = renderer.create(<List userLists={USER_LISTS} userItems={USER_ITEMS} />);
+      const component = renderer.create(<Lists userLists={USER_LISTS} userItems={USER_ITEMS} />);
 
       expect(component).toMatchSnapshot();
     });
@@ -21,8 +23,8 @@ describe('List', () => {
 
   describe('methods', () => {
     it('should handle onTabPress', () => {
-      spies[0] = jest.spyOn(List.prototype, 'setActiveTab');
-      const component = renderer.create(<List userLists={USER_LISTS} userItems={USER_ITEMS} />);
+      spies[0] = jest.spyOn(Lists.prototype, 'setActiveTab');
+      const component = renderer.create(<Lists userLists={USER_LISTS} userItems={USER_ITEMS} />);
       const instance = component.getInstance();
 
       instance.onTabPress(selectedTab);
@@ -31,7 +33,7 @@ describe('List', () => {
     });
 
     it('should handle setActiveTab', () => {
-      const component = renderer.create(<List userLists={USER_LISTS} userItems={USER_ITEMS} />);
+      const component = renderer.create(<Lists userLists={USER_LISTS} userItems={USER_ITEMS} />);
       const instance = component.getInstance();
 
       instance.setActiveTab(selectedTab);
@@ -42,8 +44,8 @@ describe('List', () => {
 
   describe('actions', () => {
     it('should call onTabPress on tab button press', () => {
-      spies[0] = jest.spyOn(List.prototype, 'onTabPress');
-      const component = renderer.create(<List userLists={USER_LISTS} userItems={USER_ITEMS} />);
+      spies[0] = jest.spyOn(Lists.prototype, 'onTabPress');
+      const component = renderer.create(<Lists userLists={USER_LISTS} userItems={USER_ITEMS} />);
       const { root } = component;
       const targetComponent = root.findByProps({
         testID: `lists.headerTabs.button.${selectedTab.text}`,

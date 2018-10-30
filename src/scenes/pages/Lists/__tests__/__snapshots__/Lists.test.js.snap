@@ -1,0 +1,326 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Lists renders renders with minimum required props 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#EDE8CA",
+        "flex": 1,
+        "paddingTop": 22,
+      },
+      undefined,
+      undefined,
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "zIndex": 100,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "height": 22,
+          },
+          Object {
+            "backgroundColor": "#08293A",
+          },
+        ]
+      }
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignSelf": "stretch",
+          "backgroundColor": "#08293A",
+          "borderColor": null,
+          "borderWidth": 0,
+          "elevation": 12,
+          "height": 60,
+          "justifyContent": "center",
+          "paddingBottom": 10,
+          "paddingHorizontal": 15,
+          "paddingTop": 10,
+          "shadowColor": "#212121",
+          "shadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.33,
+          "shadowRadius": 4,
+        },
+        undefined,
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "#212121",
+            "fontFamily": "ArchivoBlack-Regular",
+            "fontSize": 24,
+          },
+          Object {
+            "color": "#EDE8CA",
+          },
+        ]
+      }
+    >
+      Lists
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#FFFFFF",
+            "borderBottomWidth": 1,
+            "flexDirection": "row",
+            "height": 51,
+            "paddingHorizontal": 15,
+            "paddingVertical": 10,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "opacity": 1,
+            }
+          }
+          testID="lists.headerTabs.button.WEEKLY"
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "#212121",
+                  "fontFamily": "Muli-Bold",
+                  "fontSize": 15,
+                  "textDecorationLine": "underline",
+                },
+                Object {
+                  "color": "#D17623",
+                },
+              ]
+            }
+          >
+            WEEKLY
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "opacity": 1,
+            }
+          }
+          testID="lists.headerTabs.button.MONTHLY"
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "#212121",
+                  "fontFamily": "Muli-Bold",
+                  "fontSize": 15,
+                  "textDecorationLine": "underline",
+                },
+                false,
+              ]
+            }
+          >
+            MONTHLY
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "opacity": 1,
+            }
+          }
+          testID="lists.headerTabs.button.YEARLY"
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "#212121",
+                  "fontFamily": "Muli-Bold",
+                  "fontSize": 15,
+                  "textDecorationLine": "underline",
+                },
+                false,
+              ]
+            }
+          >
+            YEARLY
+          </Text>
+        </View>
+      </View>
+    </View>
+    <RCTScrollView
+      ItemSeparatorComponent={[Function]}
+      bounces={false}
+      contentContainerStyle={
+        Object {
+          "paddingBottom": 70,
+        }
+      }
+      data={
+        Array [
+          Object {
+            "id": "1",
+            "name": "Beer",
+            "quantity": 36288,
+          },
+        ]
+      }
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      getItemLayout={[Function]}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      style={Object {}}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View>
+        <View
+          style={null}
+        >
+          <View
+            style={Object {}}
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "paddingHorizontal": 15,
+                  },
+                  Object {
+                    "height": 51,
+                  },
+                ]
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#212121",
+                    "fontFamily": "Muli-Bold",
+                    "fontSize": 17,
+                  }
+                }
+              >
+                36288
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#212121",
+                    "fontFamily": "Muli-SemiBold",
+                    "fontSize": 17,
+                  }
+                }
+              >
+                 x Beer
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+  <TabBar />
+</View>
+`;
