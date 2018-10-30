@@ -72,7 +72,12 @@ export class Lists extends React.Component {
     const shoppingListComponent = predictedItemsList.length ? (
       <Fragment>
         <View style={styles.headerTabsContainer}>
-          <HeaderTabs tabs={TABS} activeTab={activeTab} handleTabPress={this.onTabPress} />
+          <HeaderTabs
+            tabs={TABS}
+            activeTab={activeTab}
+            handleTabPress={this.onTabPress}
+            headerTestIDPrefix="lists.headerTabs.button."
+          />
         </View>
 
         <ShoppingItemsList data={shoppingList} />
