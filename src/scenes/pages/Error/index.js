@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 
 import styles from './styles';
 
@@ -26,9 +26,9 @@ export class Error extends React.Component {
 
     return (
       <Page>
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
           <BlankState iconName="error-outline" title="Something went wrong" description={message} />
-        </View>
+        </ScrollView>
       </Page>
     );
   }
