@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Text } from 'react-native';
+import { View } from 'react-native';
 
-import styleConstants from '../../../styleConstants';
+import styles from './styles';
 
 import Page from '../../../components/Page';
+import BlankState from '../../../components/BlankState';
 
 export class Error extends React.Component {
   constructor(props) {
@@ -18,23 +19,16 @@ export class Error extends React.Component {
     message: PropTypes.string,
   };
 
-  static defaultProps = {
-    message: 'Something went wrong.',
-  };
+  static defaultProps = {};
 
   render() {
     const { message } = this.props;
 
     return (
-      <Page
-        style={{
-          justifyContent: 'center',
-          alignItems: 'center',
-          paddingVertical: styleConstants.dimensions.spacing.vertical,
-          paddingHorizontal: styleConstants.dimensions.spacing.horizontal,
-        }}
-      >
-        <Text>{message}</Text>
+      <Page>
+        <View style={styles.container}>
+          <BlankState iconName="error-outline" title="Something went wrong" description={message} />
+        </View>
       </Page>
     );
   }

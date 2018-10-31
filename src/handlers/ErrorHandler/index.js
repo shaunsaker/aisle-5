@@ -16,11 +16,11 @@ export class ErrorHandler extends React.Component {
   constructor(props) {
     super(props);
 
-    this.setHasError = this.setHasError.bind(this);
+    this.setErrorMessage = this.setErrorMessage.bind(this);
     this.logError = this.logError.bind(this);
 
     this.state = {
-      hasError: null,
+      errorMessage: null,
     };
   }
 
@@ -33,12 +33,12 @@ export class ErrorHandler extends React.Component {
   static defaultProps = {};
 
   componentDidCatch(error) {
-    this.setHasError(true);
+    this.setErrorMessage(error.message);
     this.logError(error);
   }
 
-  setHasError(hasError) {
-    this.setState({ hasError });
+  setErrorMessage(errorMessage) {
+    this.setState({ errorMessage });
   }
 
   logError(error) {
@@ -54,11 +54,11 @@ export class ErrorHandler extends React.Component {
   }
 
   render() {
-    const { hasError } = this.state;
+    const { errorMessage } = this.state;
     const { children } = this.props;
 
-    if (hasError) {
-      return <Error />;
+    if (errorMessage) {
+      return <Error message={errorMessage} />;
     }
 
     return children;

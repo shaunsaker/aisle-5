@@ -28,8 +28,8 @@ console.ignoredYellowBox = ['Remote debugger', 'Warning: isMounted(...) is depre
 export function App() {
   return (
     <Provider store={store}>
-      <PersistGate loading={<PageLoader />} persistor={persistor}>
-        <ErrorHandler>
+      <ErrorHandler>
+        <PersistGate loading={<PageLoader />} persistor={persistor}>
           <SystemMessageHandler>
             <CodePushHandler />
             <AuthHandler />
@@ -39,8 +39,8 @@ export function App() {
             <Routes />
             <AndroidBackHandler />
           </SystemMessageHandler>
-        </ErrorHandler>
-      </PersistGate>
+        </PersistGate>
+      </ErrorHandler>
     </Provider>
   );
 }
