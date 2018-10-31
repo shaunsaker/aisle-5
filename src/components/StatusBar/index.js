@@ -16,9 +16,8 @@ const defaultProps = {
 };
 
 const StatusBarComponent = ({ backgroundColor, barStyle }) => {
-  const iosStatusBar = Platform.OS === 'ios' && (
-    <View style={[styles.statusBar, { backgroundColor }]} />
-  );
+  const iosStatusBar =
+    Platform.OS === 'ios' ? <View style={[styles.statusBar, { backgroundColor }]} /> : null;
 
   return (
     <View style={[styles.container]}>
