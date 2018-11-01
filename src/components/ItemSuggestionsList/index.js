@@ -61,6 +61,7 @@ export default class ItemSuggestionsList extends React.Component {
         contentContainerStyle={styles.contentContainer}
         horizontal
         keyboardShouldPersistTaps="always"
+        showsHorizontalScrollIndicator={false}
       />
     );
   }
