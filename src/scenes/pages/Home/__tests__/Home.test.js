@@ -266,14 +266,26 @@ describe('Home', () => {
       expect(dispatch).toMatchSnapshot();
     });
 
-    it('should handle onSetPendingListItemQuantity', () => {
-      spies[0] = jest.spyOn(Home.prototype, 'setPendingListItemQuantity');
-      const component = renderer.create(<Home dispatch={dispatch} />);
-      const instance = component.getInstance();
+    describe('should handle onSetPendingListItemQuantity', () => {
+      it('when quantity is 0', () => {
+        spies[0] = jest.spyOn(Home.prototype, 'navigate');
+        const component = renderer.create(<Home dispatch={dispatch} />);
+        const instance = component.getInstance();
 
-      instance.onSetPendingListItemQuantity(ITEM.id, ITEM.quantity);
+        instance.onSetPendingListItemQuantity(ITEM.id, 0);
 
-      expect(spies[0]).toHaveBeenCalledWith(ITEM.id, ITEM.quantity);
+        expect(spies[0]).toHaveBeenCalledWith('removePendingItemModal', { itemName: ITEM.id });
+      });
+
+      it('when quantity is not 0', () => {
+        spies[0] = jest.spyOn(Home.prototype, 'setPendingListItemQuantity');
+        const component = renderer.create(<Home dispatch={dispatch} />);
+        const instance = component.getInstance();
+
+        instance.onSetPendingListItemQuantity(ITEM.id, ITEM.quantity);
+
+        expect(spies[0]).toHaveBeenCalledWith(ITEM.id, ITEM.quantity);
+      });
     });
 
     it('should handle setPendingListItemQuantity', () => {

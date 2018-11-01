@@ -14,6 +14,7 @@ jest.mock('react-native-router-flux', () => {
       _home: jest.fn(),
       _predictions: jest.fn(),
       _lists: jest.fn(),
+      removePendingItemModal: jest.fn(),
     },
     ActionConst: {
       FOCUS: 'FOCUS',
