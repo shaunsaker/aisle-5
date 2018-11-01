@@ -118,9 +118,7 @@ export class Home extends React.Component {
   }
 
   onSetItem(item) {
-    const trimmedItem = item ? item.trim() : item;
-
-    this.setItem(trimmedItem);
+    this.setItem(item);
   }
 
   setItem(item) {
@@ -141,21 +139,23 @@ export class Home extends React.Component {
   submitItem() {
     const { item } = this.state;
     const { userItems } = this.props;
+    const trimmedItem = item.trim();
 
-    if (item) {
+    if (trimmedItem) {
       const isItemPresentInUserItems =
         userItems &&
         utils.objects.convertObjectToArray(userItems).filter((userItem) => {
-          return userItem.name.toLowerCase() === item.toLowerCase();
+          return userItem.name.toLowerCase() === trimmedItem.toLowerCase();
         }).length;
 
       if (!isItemPresentInUserItems) {
-        // Save it to the db
-        this.saveItem(item);
+        // Save the trimmed version to the db
+
+        this.saveItem(trimmedItem);
       }
 
       // Add it to the pending list
-      this.addItem(item);
+      this.addItem(trimmedItem);
     }
   }
 
