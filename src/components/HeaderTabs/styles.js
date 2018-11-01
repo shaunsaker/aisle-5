@@ -6,14 +6,15 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: styleConstants.dimensions.spacing.vertical,
-    paddingHorizontal: styleConstants.dimensions.spacing.horizontal,
+
     borderBottomWidth: 1,
     borderBottomColor: styleConstants.colors.dividerColor,
     height: 51, // item height
   },
   tabContainer: {
     flex: 1,
+    paddingVertical: styleConstants.dimensions.spacing.vertical,
+    paddingHorizontal: styleConstants.dimensions.spacing.horizontal,
     alignItems: 'center',
   },
   activeTabContainer: {},
