@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { View, ActivityIndicator, Text } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
 
 import styleConstants from '../../styleConstants';
 import styles from './styles';
@@ -33,21 +33,11 @@ export class NetworkActivityIndicator extends React.Component {
     const isSynced = !pendingTransactions.length;
     const isLoading = !isOffline && !isSynced;
 
-    const offlineComponent = isOffline ? <Text style={styles.text}>Offline</Text> : null;
-
-    const syncedComponent = isLoading ? (
-      <View style={styles.row}>
-        <ActivityIndicator size="small" color={styleConstants.colors.white} style={styles.loader} />
-      </View>
+    const loaderComponent = isLoading ? (
+      <ActivityIndicator size="small" color={styleConstants.colors.white} style={styles.loader} />
     ) : null;
 
-    return (
-      <View style={styles.container}>
-        {offlineComponent}
-
-        {syncedComponent}
-      </View>
-    );
+    return <View style={styles.container}>{loaderComponent}</View>;
   }
 }
 
