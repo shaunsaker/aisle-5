@@ -1,24 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SystemMessageHandler lifecycle methods should call showSnackbar and resetError if systemMessage changed in componentDidUpdate 1`] = `
-[MockFunction] {
-  "calls": Array [
-    Array [
-      Object {
-        "type": "RESET_SYSTEM_MESSAGE",
-      },
-    ],
-  ],
-  "results": Array [
-    Object {
-      "isThrow": false,
-      "value": undefined,
-    },
-  ],
-}
-`;
-
-exports[`SystemMessageHandler methods should handle resetError 1`] = `
+exports[`SystemMessageHandler methods should handle resetSystemMessage 1`] = `
 [MockFunction] {
   "calls": Array [
     Array [
@@ -37,3 +19,87 @@ exports[`SystemMessageHandler methods should handle resetError 1`] = `
 `;
 
 exports[`SystemMessageHandler renders renders 1`] = `<View />`;
+
+exports[`SystemMessageHandler renders renders the snackbar state 1`] = `
+Array [
+  <View />,
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "left": 0,
+        "paddingHorizontal": 15,
+        "paddingVertical": 10,
+        "position": "absolute",
+        "right": 0,
+        "top": 82,
+        "transform": Array [
+          Object {
+            "translateY": -200,
+          },
+        ],
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "transform": Array [
+            Object {
+              "scale": 0,
+            },
+          ],
+        }
+      }
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#FEA116",
+            "borderColor": null,
+            "borderRadius": 5,
+            "borderWidth": 0,
+            "elevation": 12,
+            "opacity": 1,
+            "paddingHorizontal": 15,
+            "paddingVertical": 10,
+            "shadowColor": "#212121",
+            "shadowOffset": Object {
+              "height": 2,
+              "width": 0,
+            },
+            "shadowOpacity": 0.33,
+            "shadowRadius": 4,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#FFFFFF",
+              "fontFamily": "Muli-SemiBold",
+              "fontSize": 15,
+              "textAlign": "center",
+            }
+          }
+        >
+          Test
+        </Text>
+      </View>
+    </View>
+  </View>,
+]
+`;
+
+exports[`SystemMessageHandler renders renders with minimum required props 1`] = `<View />`;

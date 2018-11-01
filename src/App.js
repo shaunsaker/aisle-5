@@ -30,15 +30,15 @@ export function App() {
     <Provider store={store}>
       <ErrorHandler>
         <PersistGate loading={<PageLoader />} persistor={persistor}>
+          <CodePushHandler />
+          <AuthHandler />
+          <DatabaseHandler />
+          <DeviceInfoHandler />
+          <NetworkHandler />
           <SystemMessageHandler>
-            <CodePushHandler />
-            <AuthHandler />
-            <DatabaseHandler />
-            <DeviceInfoHandler />
-            <NetworkHandler />
             <Routes />
-            <AndroidBackHandler />
           </SystemMessageHandler>
+          <AndroidBackHandler />
         </PersistGate>
       </ErrorHandler>
     </Provider>
