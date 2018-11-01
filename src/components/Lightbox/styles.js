@@ -3,9 +3,12 @@ import { StyleSheet } from 'react-native';
 import styleConstants from '../../styleConstants';
 
 const styles = StyleSheet.create({
-  wrapper: {
+  outerWrapper: {
     ...StyleSheet.absoluteFillObject,
     backgroundColor: styleConstants.colors.transBlack,
+  },
+  wrapper: {
+    flex: 1,
   },
   container: {},
   contentContainer: {

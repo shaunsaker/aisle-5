@@ -15,9 +15,7 @@ export default class Lightbox extends React.Component {
 
     this.onBack = this.onBack.bind(this);
 
-    this.state = {
-      shouldAnimateOut: false,
-    };
+    this.state = {};
   }
 
   static propTypes = {
@@ -38,25 +36,30 @@ export default class Lightbox extends React.Component {
   }
 
   render() {
-    const { shouldAnimateOut } = this.state;
     const { children } = this.props;
 
     return (
       <Animator
-        type="translateY"
-        initialValue={styleConstants.dimensions.window.height}
-        finalValue={0}
+        type="opacity"
+        initialValue={0}
+        finalValue={1}
         shouldAnimateIn
-        shouldAnimateOut={shouldAnimateOut}
-        animateOutCallback={this.onBack}
-        style={styles.wrapper}
+        style={styles.outerWrapper}
       >
-        <InputContainer
-          containerStyle={styles.container}
-          contentContainerStyle={styles.contentContainer}
+        <Animator
+          type="translateY"
+          initialValue={styleConstants.dimensions.window.height}
+          finalValue={0}
+          shouldAnimateIn
+          style={styles.wrapper}
         >
-          {children}
-        </InputContainer>
+          <InputContainer
+            containerStyle={styles.container}
+            contentContainerStyle={styles.contentContainer}
+          >
+            {children}
+          </InputContainer>
+        </Animator>
       </Animator>
     );
   }
