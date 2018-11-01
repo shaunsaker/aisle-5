@@ -15,14 +15,18 @@ describe('SystemMessageHandler', () => {
 
   describe('renders', () => {
     it('renders with minimum required props', () => {
-      const component = renderer.create(<SystemMessageHandler>{children}</SystemMessageHandler>);
+      const component = renderer.create(
+        <SystemMessageHandler dispatch={dispatch}>{children}</SystemMessageHandler>,
+      );
 
       expect(component).toMatchSnapshot();
     });
 
     it('renders the snackbar state', () => {
       const component = renderer.create(
-        <SystemMessageHandler systemMessage={systemMessage}>{children}</SystemMessageHandler>,
+        <SystemMessageHandler dispatch={dispatch} systemMessage={systemMessage}>
+          {children}
+        </SystemMessageHandler>,
       );
 
       expect(component).toMatchSnapshot();
@@ -31,7 +35,9 @@ describe('SystemMessageHandler', () => {
 
   describe('methods', () => {
     it('should handle setHideSnackbar', () => {
-      const component = renderer.create(<SystemMessageHandler>{children}</SystemMessageHandler>);
+      const component = renderer.create(
+        <SystemMessageHandler dispatch={dispatch}>{children}</SystemMessageHandler>,
+      );
       const instance = component.getInstance();
 
       expect(instance.state.hideSnackbar).toEqual(false);
@@ -39,6 +45,18 @@ describe('SystemMessageHandler', () => {
       instance.setHideSnackbar(true);
 
       expect(instance.state.hideSnackbar).toEqual(true);
+    });
+
+    it('should handle onAnimateOut', () => {
+      spies[0] = jest.spyOn(SystemMessageHandler.prototype, 'resetSystemMessage');
+      const component = renderer.create(
+        <SystemMessageHandler dispatch={dispatch}>{children}</SystemMessageHandler>,
+      );
+      const instance = component.getInstance();
+
+      instance.onAnimateOut();
+
+      expect(spies[0]).toHaveBeenCalled();
     });
 
     it('should handle resetSystemMessage', () => {
@@ -52,12 +70,36 @@ describe('SystemMessageHandler', () => {
       expect(dispatch).toHaveBeenCalled();
       expect(dispatch).toMatchSnapshot();
     });
+
+    it('should handle clearTimer', () => {
+      const component = renderer.create(
+        <SystemMessageHandler dispatch={dispatch}>{children}</SystemMessageHandler>,
+      );
+      const instance = component.getInstance();
+
+      instance.clearTimer();
+    });
+
+    it('should handle onSnackbarPress', () => {
+      spies[0] = jest.spyOn(SystemMessageHandler.prototype, 'clearTimer');
+      spies[1] = jest.spyOn(SystemMessageHandler.prototype, 'setHideSnackbar');
+      const component = renderer.create(
+        <SystemMessageHandler dispatch={dispatch}>{children}</SystemMessageHandler>,
+      );
+      const instance = component.getInstance();
+
+      instance.onSnackbarPress();
+
+      expect(spies[0]).toHaveBeenCalled();
+      expect(spies[1]).toHaveBeenCalledWith(true);
+    });
   });
 
   describe('lifecycle methods', () => {
     it('should call setHideSnackbar and resetSystemMessage if systemMessage changed in componentDidUpdate', () => {
-      spies[0] = jest.spyOn(SystemMessageHandler.prototype, 'setHideSnackbar');
-      spies[1] = jest.spyOn(SystemMessageHandler.prototype, 'resetSystemMessage');
+      spies[0] = jest.spyOn(SystemMessageHandler.prototype, 'clearTimer');
+      spies[1] = jest.spyOn(SystemMessageHandler.prototype, 'setHideSnackbar');
+
       const component = renderer.create(
         <SystemMessageHandler dispatch={dispatch} systemMessage="Something went wrong">
           <View />
@@ -65,19 +107,21 @@ describe('SystemMessageHandler', () => {
       );
       const instance = component.getInstance();
 
+      // Setup
+      instance.timer = true;
+
       component.update(
         <SystemMessageHandler dispatch={dispatch} systemMessage="Same same, but different">
           <View />
         </SystemMessageHandler>,
       );
 
+      expect(spies[0]).toHaveBeenCalled();
+      expect(spies[1]).toHaveBeenCalledWith(false);
+
       // FIXME: How to test this?
       // setTimeout(() => {
-      //   expect(spies[0]).toHaveBeenCalled();
-
-      //   // setTimeout(() => {
-      //   //   expect(spies[1]).toHaveBeenCalled();
-      //   // }, 500); // FIXME: snackbar duration
+      //   expect(spies[1]).toHaveBeenCalledWith(true);
 
       //   done();
       // }, instance.snackbarDuration);

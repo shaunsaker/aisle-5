@@ -18,8 +18,6 @@ exports[`SystemMessageHandler methods should handle resetSystemMessage 1`] = `
 }
 `;
 
-exports[`SystemMessageHandler renders renders 1`] = `<View />`;
-
 exports[`SystemMessageHandler renders renders the snackbar state 1`] = `
 Array [
   <View />,

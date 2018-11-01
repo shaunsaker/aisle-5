@@ -12,8 +12,11 @@ export class SystemMessageHandler extends React.Component {
     super(props);
 
     this.setHideSnackbar = this.setHideSnackbar.bind(this);
+    this.onAnimateOut = this.onAnimateOut.bind(this);
     this.resetSystemMessage = this.resetSystemMessage.bind(this);
+    this.onSnackbarPress = this.onSnackbarPress.bind(this);
 
+    this.timer = null;
     this.snackbarDuration = 2750;
 
     this.state = {
@@ -22,7 +25,7 @@ export class SystemMessageHandler extends React.Component {
   }
 
   static propTypes = {
-    dispatch: PropTypes.func,
+    dispatch: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired,
     systemMessage: PropTypes.string,
   };
@@ -32,13 +35,17 @@ export class SystemMessageHandler extends React.Component {
   componentDidUpdate(prevProps) {
     const { systemMessage } = this.props;
 
-    if (systemMessage && (!prevProps.systemMessage || systemMessage !== prevProps.systemMessage)) {
-      setTimeout(() => {
-        this.setHideSnackbar(true);
+    if (systemMessage && systemMessage !== prevProps.systemMessage) {
+      if (this.timer) {
+        this.clearTimer();
+      }
 
-        setTimeout(() => {
-          this.resetSystemMessage();
-        }, 500);
+      // Show the snackbar
+      this.setHideSnackbar(false);
+
+      this.timer = setTimeout(() => {
+        // Hide the snackbar
+        this.setHideSnackbar(true);
       }, this.snackbarDuration);
     }
   }
@@ -49,12 +56,25 @@ export class SystemMessageHandler extends React.Component {
     });
   }
 
+  onAnimateOut() {
+    this.resetSystemMessage();
+  }
+
   resetSystemMessage() {
     const { dispatch } = this.props;
 
     dispatch({
       type: 'RESET_SYSTEM_MESSAGE',
     });
+  }
+
+  clearTimer() {
+    clearTimeout(this.timer);
+  }
+
+  onSnackbarPress() {
+    this.clearTimer();
+    this.setHideSnackbar(true);
   }
 
   render() {
@@ -66,8 +86,9 @@ export class SystemMessageHandler extends React.Component {
         type="translateY"
         initialValue={-200}
         finalValue={0}
-        shouldAnimateIn
+        shouldAnimateIn={!hideSnackbar}
         shouldAnimateOut={hideSnackbar}
+        animateOutCallback={this.onAnimateOut}
         style={styles.snackbarContainer}
       >
         <Animator
@@ -77,7 +98,7 @@ export class SystemMessageHandler extends React.Component {
           shouldAnimateIn
           shouldAnimateOut={hideSnackbar}
         >
-          <Snackbar text={systemMessage} />
+          <Snackbar text={systemMessage} handlePress={this.onSnackbarPress} />
         </Animator>
       </Animator>
     );
