@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import Predictions from './pages/Predictions';
 import Lists from './pages/Lists';
 
+import RemovePendingItemModal from './modals/RemovePendingItemModal';
+
 const scenes = Actions.create(
   <Lightbox>
     <Scene key="root">
@@ -14,6 +16,8 @@ const scenes = Actions.create(
         <Scene key="lists" component={Lists} hideNavBar type="replace" />
       </Tabs>
     </Scene>
+
+    <Scene key="removePendingItemModal" component={RemovePendingItemModal} hideNavBar />
   </Lightbox>,
 );
 

@@ -5,7 +5,7 @@ import styleConstants from '../../styleConstants';
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    backgroundColor: styleConstants.colors.white,
+    backgroundColor: styleConstants.colors.dividerColor,
     paddingVertical: styleConstants.dimensions.spacing.vertical,
     paddingHorizontal: styleConstants.dimensions.spacing.horizontal,
     borderRadius: styleConstants.dimensions.borderRadius,

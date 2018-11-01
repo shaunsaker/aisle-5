@@ -55,6 +55,7 @@ export class Home extends React.Component {
     this.saveList = this.saveList.bind(this);
     this.resetPendingList = this.resetPendingList.bind(this);
     this.setSystemMessage = this.setSystemMessage.bind(this);
+    this.navigate = this.navigate.bind(this);
 
     this.keyboardDidShowListener = null;
     this.keyboardDidHideListener = null;
@@ -248,7 +249,11 @@ export class Home extends React.Component {
   }
 
   onSetPendingListItemQuantity(itemID, quantity) {
-    this.setPendingListItemQuantity(itemID, quantity);
+    if (quantity === 0) {
+      this.navigate('removePendingItemModal', { itemName: itemID });
+    } else {
+      this.setPendingListItemQuantity(itemID, quantity);
+    }
   }
 
   setPendingListItemQuantity(itemID, quantity) {
@@ -341,6 +346,10 @@ export class Home extends React.Component {
         message,
       },
     });
+  }
+
+  navigate(page, props) {
+    utils.navigation.navigate(page, props);
   }
 
   render() {

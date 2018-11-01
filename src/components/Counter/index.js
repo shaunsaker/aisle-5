@@ -14,18 +14,9 @@ const propTypes = {
 const defaultProps = {};
 
 const Counter = ({ value, handleChange }) => {
-  const shouldEnableDecrementButton = value > 1;
-
   return (
     <View style={styles.container}>
-      <IconButton
-        name="remove"
-        small
-        secondary
-        handlePress={() => handleChange(value - 1)}
-        disabled={!shouldEnableDecrementButton}
-        style={!shouldEnableDecrementButton && styles.disabled}
-      />
+      <IconButton name="remove" small secondary handlePress={() => handleChange(value - 1)} />
 
       <View style={styles.spacer} />
 
