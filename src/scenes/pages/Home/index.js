@@ -284,7 +284,7 @@ export class Home extends React.Component {
   }
 
   onSubmitList() {
-    const message = 'Items added to Predictions';
+    const message = 'List added to Predictions';
 
     this.saveList();
     this.resetPendingList();
