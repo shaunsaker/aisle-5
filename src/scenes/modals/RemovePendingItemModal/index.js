@@ -15,7 +15,7 @@ export class RemovePendingItemModal extends React.Component {
 
     this.onCancel = this.onCancel.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
+    this.removePendingListItem = this.removePendingListItem.bind(this);
     this.navigate = this.navigate.bind(this);
 
     this.state = {};
@@ -74,7 +74,7 @@ export class RemovePendingItemModal extends React.Component {
                 text="No"
                 handlePress={this.onCancel}
                 containerStyle={styles.firstButtonContainer}
-                testID="confirmationModal.button.submit"
+                testID="removePendingItemModal.button.cancel"
               />
             </View>
 
@@ -85,7 +85,7 @@ export class RemovePendingItemModal extends React.Component {
                 text="Yes"
                 primary
                 handlePress={this.onSubmit}
-                testID="confirmationModal.button.cancel"
+                testID="removePendingItemModal.button.submit"
               />
             </View>
           </View>
