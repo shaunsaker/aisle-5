@@ -133,7 +133,7 @@ export class Home extends React.Component {
 
   onSubmitItem() {
     this.submitItem();
-    this.hideInput();
+    this.setItem(null);
   }
 
   submitItem() {
