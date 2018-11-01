@@ -375,9 +375,12 @@ export class Home extends React.Component {
 
     // Show the submit button if all items in the
     // pendingListArray have isChecked equal to true
-    const showSubmitButton = pendingListArray.length
-      ? !pendingListArray.filter((pendingListItem) => !pendingListItem.isChecked).length && true
-      : null;
+    const showSubmitButton = pendingListArray.length ? true : null;
+    const isSubmitButtonDisabled =
+      pendingListArray.length &&
+      pendingListArray.filter((pendingListItem) => !pendingListItem.isChecked).length
+        ? true
+        : null;
 
     const listComponent = pendingListArray.length ? (
       <ItemsList
@@ -502,7 +505,12 @@ export class Home extends React.Component {
             easing={styleConstants.easing}
             style={styles.submitButtonInnerContainer}
           >
-            <Button text="Checkout" primary handlePress={this.onSubmitList} />
+            <Button
+              text="Checkout"
+              primary
+              handlePress={this.onSubmitList}
+              disabled={isSubmitButtonDisabled}
+            />
           </Animator>
         </Animator>
       </Animator>
