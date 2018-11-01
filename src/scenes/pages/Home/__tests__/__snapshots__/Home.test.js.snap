@@ -301,9 +301,9 @@ exports[`Home renders renders with minimum required props 1`] = `
       }
     >
       <BlankState
-        description="Add items by tapping the '+' button below. They'll show up here."
+        description="Add items you need by tapping the '+' button below. They'll show up here, ready for your next shopping trip."
         iconName="shopping-basket"
-        title="You have no items"
+        title="All stocked up?"
       />
     </InputContainer>
     <View
