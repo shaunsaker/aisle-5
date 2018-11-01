@@ -85,7 +85,7 @@ export class Lists extends React.Component {
     ) : (
       <BlankState
         iconName="assignment"
-        title="Nothing for you just yet."
+        title="Nothing just yet."
         description="Once you have items in your predictions, we'll be able to tell you what you need to buy on a weekly, monthly and yearly basis. Get crack-a-lacking amigo!"
       />
     );

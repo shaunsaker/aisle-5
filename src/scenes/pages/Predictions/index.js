@@ -86,7 +86,7 @@ export class Predictions extends React.Component {
       <BlankState
         iconName="poll"
         title="Wingardium Leviosa!"
-        description="Use the app and it will magically predict when you'll run out of items that you've previously 'checked out'."
+        description="Use the app and it will magically predict when you'll run out of items."
       />
     );
 
