@@ -147,11 +147,15 @@ android {
 }
 
 dependencies {
-    implementation project(':react-native-device-info')
+    implementation (project(':react-native-device-info')) {
+        exclude group: 'com.google.android.gms' // A*
+    }
     implementation project(':react-native-code-push')
     // Firebase dependencies
     implementation project(':react-native-firebase')
-    implementation "com.google.android.gms:play-services-base:15.0.1"
+    implementation ("com.google.android.gms:play-services-base:15.0.1") {
+        force = true; // *A: Force play services to 15.0.1
+    }
     implementation "com.google.firebase:firebase-core:15.0.0"
     implementation "com.google.firebase:firebase-auth:15.1.0"
     implementation "com.google.firebase:firebase-firestore:16.0.0"
