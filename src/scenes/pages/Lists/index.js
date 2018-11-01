@@ -53,12 +53,12 @@ export class Lists extends React.Component {
     const predictedItemsList = utils.app.getPredictedItemsList(userLists, userItems);
 
     // Filter items that have enough data
-    const predictableItemsList = predictedItemsList.filter(
+    const filteredPredictedItemsList = predictedItemsList.filter(
       (item) => item.averageUsagePerDay !== null,
     );
 
     // Get the shopping list
-    const shoppingList = predictableItemsList.map((item) => {
+    const shoppingList = filteredPredictedItemsList.map((item) => {
       // Calculate the quantity needed relative to the time
       const relativeQuantity = item.averageUsagePerDay * activeTab.timeInDays;
 
@@ -69,7 +69,7 @@ export class Lists extends React.Component {
       };
     });
 
-    const shoppingListComponent = predictedItemsList.length ? (
+    const shoppingListComponent = filteredPredictedItemsList.length ? (
       <Fragment>
         <View style={styles.headerTabsContainer}>
           <HeaderTabs
