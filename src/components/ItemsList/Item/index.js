@@ -63,17 +63,17 @@ const Item = ({
 
       <Animator
         type="translateX"
-        initialValue={100}
-        finalValue={0}
-        shouldAnimateIn={!isChecked}
-        shouldAnimateOut={isChecked}
+        initialValue={0}
+        finalValue={100}
+        shouldAnimateIn={isChecked}
+        shouldAnimateOut={!isChecked}
       >
         <Animator
           type="scale"
-          initialValue={0}
-          finalValue={1}
-          shouldAnimateIn={!isChecked}
-          shouldAnimateOut={isChecked}
+          initialValue={1}
+          finalValue={0}
+          shouldAnimateIn={isChecked}
+          shouldAnimateOut={!isChecked}
         >
           <Counter value={quantity} handleChange={handleSetQuantity} />
         </Animator>
