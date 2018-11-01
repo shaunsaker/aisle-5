@@ -33,6 +33,7 @@ exports[`ItemSuggestionsList renders renders with minimum required props 1`] = `
   onScrollEndDrag={[Function]}
   renderItem={[Function]}
   scrollEventThrottle={50}
+  showsHorizontalScrollIndicator={false}
   stickyHeaderIndices={Array []}
   style={Object {}}
   updateCellsBatchingPeriod={50}

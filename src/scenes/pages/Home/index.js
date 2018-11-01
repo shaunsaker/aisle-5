@@ -117,7 +117,7 @@ export class Home extends React.Component {
   }
 
   onSetItem(item) {
-    const trimmedItem = item.trim();
+    const trimmedItem = item ? item.trim() : item;
 
     this.setItem(trimmedItem);
   }

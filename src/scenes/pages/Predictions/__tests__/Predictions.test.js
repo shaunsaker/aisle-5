@@ -6,6 +6,7 @@ import USER_LISTS from '../../../../mockData/userLists';
 import USER_ITEMS from '../../../../mockData/userItems';
 import HEADER_ITEMS from '../../../../components/PredictedItemsList/headerItems';
 
+jest.mock('../../../../components/NetworkActivityIndicator', () => 'NetworkActivityIndicator');
 jest.mock('../../../../components/TabBar', () => 'TabBar');
 
 // Fixes _bezier is not a function bug

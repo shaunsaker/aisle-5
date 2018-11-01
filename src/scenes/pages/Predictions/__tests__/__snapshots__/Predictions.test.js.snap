@@ -87,6 +87,19 @@ exports[`Predictions renders renders with minimum required props 1`] = `
     >
       Predictions
     </Text>
+    <View
+      style={
+        Object {
+          "bottom": 0,
+          "justifyContent": "center",
+          "position": "absolute",
+          "right": 15,
+          "top": 0,
+        }
+      }
+    >
+      <NetworkActivityIndicator />
+    </View>
   </View>
   <View
     style={

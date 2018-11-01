@@ -35,14 +35,14 @@ describe('ErrorHandler', () => {
       const instance = component.getInstance();
 
       // Setup
-      instance.setHasError(true);
+      instance.setErrorMessage('Test');
 
       expect(component).toMatchSnapshot();
     });
   });
 
   describe('methods', () => {
-    it('should handle setHasError', () => {
+    it('should handle setErrorMessage', () => {
       const component = renderer.create(
         <ErrorHandler dispatch={dispatch}>
           <View />
@@ -50,9 +50,9 @@ describe('ErrorHandler', () => {
       );
       const instance = component.getInstance();
 
-      instance.setHasError(true);
+      instance.setErrorMessage('Test');
 
-      expect(instance.state.hasError).toEqual(true);
+      expect(instance.state.errorMessage).toEqual('Test');
     });
 
     it('should handle logError', () => {
@@ -72,8 +72,8 @@ describe('ErrorHandler', () => {
   });
 
   describe('lifecycle methods', () => {
-    it('calls setHasError and logError in componentDidCatch', () => {
-      spies[0] = jest.spyOn(ErrorHandler.prototype, 'setHasError');
+    it('calls setErrorMessage and logError in componentDidCatch', () => {
+      spies[0] = jest.spyOn(ErrorHandler.prototype, 'setErrorMessage');
       spies[1] = jest.spyOn(ErrorHandler.prototype, 'logError');
       renderer.create(
         <ErrorHandler dispatch={dispatch}>

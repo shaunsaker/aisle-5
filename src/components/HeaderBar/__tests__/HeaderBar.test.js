@@ -4,6 +4,8 @@ import { View } from 'react-native';
 
 import HeaderBar from '..';
 
+jest.mock('../../NetworkActivityIndicator', () => 'NetworkActivityIndicator');
+
 describe('HeaderBar', () => {
   const children = <View />;
   const style = { backgroundColor: 'red' };

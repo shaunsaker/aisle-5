@@ -86,9 +86,9 @@ describe('Home', () => {
       const component = renderer.create(<Home dispatch={dispatch} />);
       const instance = component.getInstance();
 
-      instance.onSetItem(ITEM);
+      instance.onSetItem(ITEM.name);
 
-      expect(spies[0]).toHaveBeenCalledWith(ITEM);
+      expect(spies[0]).toHaveBeenCalledWith(ITEM.name);
     });
 
     it('should handle setItem', () => {

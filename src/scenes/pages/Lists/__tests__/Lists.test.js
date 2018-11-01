@@ -6,6 +6,7 @@ import USER_LISTS from '../../../../mockData/userLists';
 import USER_ITEMS from '../../../../mockData/userItems';
 import TABS from '../tabs';
 
+jest.mock('../../../../components/NetworkActivityIndicator', () => 'NetworkActivityIndicator');
 jest.mock('../../../../components/TabBar', () => 'TabBar');
 
 describe('Lists', () => {
