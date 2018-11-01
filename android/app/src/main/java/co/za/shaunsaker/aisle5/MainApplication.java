@@ -38,7 +38,7 @@ public class MainApplication extends Application implements ReactApplication {
           new CodePush(getResources().getString(R.string.reactNativeCodePush_androidDeploymentKey), getApplicationContext(), BuildConfig.DEBUG),
           new RNFirebasePackage(),
           new RNFirebaseAuthPackage(),
-          new RNFirebaseFirestorePackage(),
+          new RNFirebaseFirestorePackage()
       );
     }
 
