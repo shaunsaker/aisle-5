@@ -389,8 +389,8 @@ export class Home extends React.Component {
     ) : !showInput ? (
       <BlankState
         iconName="shopping-basket"
-        title="You have no items"
-        description="Add items by tapping the '+' button below. They'll show up here."
+        title="All stocked up?"
+        description="Add items you need by tapping the '+' button below. They'll show up here, ready for your next shopping trip."
       />
     ) : null;
 
