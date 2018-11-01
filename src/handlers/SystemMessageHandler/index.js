@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Snackbar from 'react-native-snackbar';
 
 import styleConstants from '../../styleConstants';
 
@@ -37,12 +36,6 @@ export class SystemMessageHandler extends React.Component {
 
   showSnackbar() {
     const { systemMessage } = this.props;
-
-    Snackbar.show({
-      title: systemMessage,
-      duration: this.snackbarDuration,
-      backgroundColor: styleConstants.colors.orange,
-    });
   }
 
   resetError() {

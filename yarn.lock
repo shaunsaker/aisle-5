@@ -5150,10 +5150,6 @@ react-native-simple-animators@^2.2.4:
   dependencies:
     prop-types "^15.6.0"
 
-react-native-snackbar@^0.5.3:
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/react-native-snackbar/-/react-native-snackbar-0.5.3.tgz#deabb9ab5bc9eb79a162b46b79ad4d0bf1409c3d"
-
 react-native-tab-view@^0.0.77:
   version "0.0.77"
   resolved "http://registry.npmjs.org/react-native-tab-view/-/react-native-tab-view-0.0.77.tgz#11ceb8e7c23100d07e628dc151b57797524d00d4"
