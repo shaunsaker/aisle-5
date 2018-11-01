@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NetworkActivityIndicator renders renders the loading state 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "stretch",
+      "flexDirection": "row",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <ActivityIndicator
+      animating={true}
+      color="#EDE8CA"
+      hidesWhenStopped={true}
+      size="small"
+      style={
+        Object {
+          "marginLeft": 10,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`NetworkActivityIndicator renders renders the offline state 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "stretch",
+      "flexDirection": "row",
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#EDE8CA",
+        "fontSize": undefined,
+      }
+    }
+  >
+    Offline
+  </Text>
+</View>
+`;
+
+exports[`NetworkActivityIndicator renders renders with minimum required props 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "stretch",
+      "flexDirection": "row",
+    }
+  }
+/>
+`;

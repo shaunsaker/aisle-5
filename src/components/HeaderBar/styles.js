@@ -15,6 +15,13 @@ const styles = StyleSheet.create({
     height: HEADER_HEIGHT,
     justifyContent: 'center',
   },
+  networkActivityIndicatorContainer: {
+    position: 'absolute',
+    top: 0,
+    right: styleConstants.dimensions.spacing.horizontal,
+    bottom: 0,
+    justifyContent: 'center',
+  },
 });
 
 export default styles;
