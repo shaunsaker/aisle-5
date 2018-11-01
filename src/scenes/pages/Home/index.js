@@ -349,11 +349,10 @@ export class Home extends React.Component {
     const pendingListArray = pendingList ? utils.objects.convertObjectToArray(pendingList) : [];
 
     // Convert userItems object to array
-    // If item is at least 2 characters long
     // Filter on lower case item name matches
     // But not exact matches
     const itemSuggestionsArray =
-      userItems && item && item.length > 1
+      userItems && item
         ? utils.objects.convertObjectToArray(userItems).filter((userItem) => {
             const isPartialItemPresent =
               userItem.name.toLowerCase().indexOf(item.toLowerCase()) > -1 &&
