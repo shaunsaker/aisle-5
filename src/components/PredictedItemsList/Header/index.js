@@ -36,7 +36,7 @@ const Header = ({ headerItems, handleHeaderItemPress, height, headerTestIDPrefix
             style={[
               styles.row,
               { flex: item.flex },
-              { marginRight: isNotLastItem ? styleConstants.dimensions.spacing.horizontal / 2 : 0 },
+              { marginRight: isNotLastItem ? styleConstants.dimensions.spacing.horizontal : 0 },
             ]}
             testID={`${headerTestIDPrefix}${item.text}`}
           >
