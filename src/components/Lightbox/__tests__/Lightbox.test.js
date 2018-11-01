@@ -21,15 +21,6 @@ describe('Lightbox', () => {
   });
 
   describe('methods', () => {
-    it('should handle animateOut', () => {
-      const component = renderer.create(<Lightbox />);
-      const instance = component.getInstance();
-
-      instance.animateOut();
-
-      expect(instance.state.shouldAnimateOut).toBe(true);
-    });
-
     describe('should handle onBack', () => {
       it('with handleClose', () => {
         const component = renderer.create(<Lightbox handleClose={handleClose} />);
