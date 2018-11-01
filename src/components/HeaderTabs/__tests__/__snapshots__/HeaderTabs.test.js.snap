@@ -9,8 +9,6 @@ exports[`HeaderTabs renders renders with minimum required props 1`] = `
       "borderBottomWidth": 1,
       "flexDirection": "row",
       "height": 51,
-      "paddingHorizontal": 15,
-      "paddingVertical": 10,
     }
   }
 >
@@ -28,6 +26,8 @@ exports[`HeaderTabs renders renders with minimum required props 1`] = `
         "alignItems": "center",
         "flex": 1,
         "opacity": 1,
+        "paddingHorizontal": 15,
+        "paddingVertical": 10,
       }
     }
     testID="undefinedFoo"
@@ -67,6 +67,8 @@ exports[`HeaderTabs renders renders with minimum required props 1`] = `
         "alignItems": "center",
         "flex": 1,
         "opacity": 1,
+        "paddingHorizontal": 15,
+        "paddingVertical": 10,
       }
     }
     testID="undefinedBar"

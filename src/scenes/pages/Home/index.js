@@ -139,7 +139,7 @@ export class Home extends React.Component {
   submitItem() {
     const { item } = this.state;
     const { userItems } = this.props;
-    const trimmedItem = item.trim();
+    const trimmedItem = item ? item.trim() : item;
 
     if (trimmedItem) {
       const isItemPresentInUserItems =
@@ -149,8 +149,7 @@ export class Home extends React.Component {
         }).length;
 
       if (!isItemPresentInUserItems) {
-        // Save the trimmed version to the db
-
+        // Save the trimmed version to the d
         this.saveItem(trimmedItem);
       }
 

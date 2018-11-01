@@ -112,7 +112,7 @@ describe('Home', () => {
 
     it('should handle onSubmitItem', () => {
       spies[0] = jest.spyOn(Home.prototype, 'submitItem');
-      spies[1] = jest.spyOn(Home.prototype, 'hideInput');
+      spies[1] = jest.spyOn(Home.prototype, 'setItem');
       const component = renderer.create(<Home dispatch={dispatch} />);
       const instance = component.getInstance();
 

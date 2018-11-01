@@ -187,7 +187,7 @@ exports[`Predictions renders renders with minimum required props 1`] = `
                   "alignItems": "center",
                   "flex": 1,
                   "flexDirection": "row",
-                  "marginRight": 7.5,
+                  "marginRight": 15,
                   "opacity": 1,
                 }
               }

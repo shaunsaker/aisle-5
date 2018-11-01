@@ -342,6 +342,7 @@ exports[`Home renders renders with minimum required props 1`] = `
           }
         >
           <Button
+            disabled={null}
             handlePress={[Function]}
             primary={true}
             text="Checkout"

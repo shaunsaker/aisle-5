@@ -118,8 +118,6 @@ exports[`Lists renders renders with minimum required props 1`] = `
             "borderBottomWidth": 1,
             "flexDirection": "row",
             "height": 51,
-            "paddingHorizontal": 15,
-            "paddingVertical": 10,
           }
         }
       >
@@ -137,6 +135,8 @@ exports[`Lists renders renders with minimum required props 1`] = `
               "alignItems": "center",
               "flex": 1,
               "opacity": 1,
+              "paddingHorizontal": 15,
+              "paddingVertical": 10,
             }
           }
           testID="lists.headerTabs.button.WEEKLY"
@@ -176,6 +176,8 @@ exports[`Lists renders renders with minimum required props 1`] = `
               "alignItems": "center",
               "flex": 1,
               "opacity": 1,
+              "paddingHorizontal": 15,
+              "paddingVertical": 10,
             }
           }
           testID="lists.headerTabs.button.MONTHLY"
@@ -213,6 +215,8 @@ exports[`Lists renders renders with minimum required props 1`] = `
               "alignItems": "center",
               "flex": 1,
               "opacity": 1,
+              "paddingHorizontal": 15,
+              "paddingVertical": 10,
             }
           }
           testID="lists.headerTabs.button.YEARLY"
