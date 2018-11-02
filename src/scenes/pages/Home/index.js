@@ -53,7 +53,6 @@ export class Home extends React.Component {
     this.removePendingListItem = this.removePendingListItem.bind(this);
     this.onSubmitList = this.onSubmitList.bind(this);
     this.saveList = this.saveList.bind(this);
-    this.resetPendingList = this.resetPendingList.bind(this);
     this.setSystemMessage = this.setSystemMessage.bind(this);
     this.navigate = this.navigate.bind(this);
 
@@ -283,22 +282,23 @@ export class Home extends React.Component {
   }
 
   onSubmitList() {
-    const message = 'List added to Predictions';
+    // Save list with the isChecked items
+    // Remove the isChecked items from the list
+    // Set system message - X items added to predictions
 
-    this.saveList();
-    this.resetPendingList();
-    this.setSystemMessage(message);
-  }
-
-  saveList() {
-    const { dispatch, uid, uniqueID, pendingList, userItems } = this.props;
+    const { pendingList, userItems } = this.props;
 
     // Convert userItems to array
     const userItemsArray = utils.objects.convertObjectToArray(userItems);
 
     // Convert pendingList to array
+    // Filter the isChecked items
+    const checkedItems = utils.objects
+      .convertObjectToArray(pendingList)
+      .filter((item) => item.isChecked);
+
     // Create array of items where item has user_item_id, date_added, date_purchased from isChecked, quantity
-    const list = utils.objects.convertObjectToArray(pendingList).map((item) => {
+    const list = checkedItems.map((item) => {
       // Get the user item id
       const userItemID = userItemsArray.filter((userItem) => userItem.name === item.name)[0].id;
 
@@ -309,6 +309,22 @@ export class Home extends React.Component {
         date_purchased: item.datePurchased,
       };
     });
+
+    this.saveList(list);
+
+    // Remove the items in the list from the pendingList
+    checkedItems.forEach((item) => this.removePendingListItem(item.name));
+
+    const checkedItemCount = checkedItems.length;
+    const message = `${checkedItemCount} item${
+      checkedItemCount > 1 ? 's' : ''
+    } added to Predictions`;
+
+    this.setSystemMessage(message);
+  }
+
+  saveList(list) {
+    const { dispatch, uid, uniqueID } = this.props;
 
     const document = {
       list,
@@ -325,14 +341,6 @@ export class Home extends React.Component {
       payload: {
         document,
       },
-    });
-  }
-
-  resetPendingList() {
-    const { dispatch } = this.props;
-
-    dispatch({
-      type: 'RESET_PENDING_LIST',
     });
   }
 
@@ -371,15 +379,6 @@ export class Home extends React.Component {
             return isPartialItemPresent;
           })
         : [];
-
-    // Show the submit button if all items in the
-    // pendingListArray have isChecked equal to true
-    const showSubmitButton = pendingListArray.length ? true : null;
-    const isSubmitButtonDisabled =
-      pendingListArray.length &&
-      pendingListArray.filter((pendingListItem) => !pendingListItem.isChecked).length
-        ? true
-        : null;
 
     const listComponent = pendingListArray.length ? (
       <ItemsList
@@ -477,6 +476,23 @@ export class Home extends React.Component {
         </View>
       ) : null;
 
+    // Show the submit button if we have a list of at least one item
+    const showSubmitButton = pendingListArray.length ? true : null;
+
+    // Disable the submit button if no items are checked
+    const isSubmitButtonDisabled = !pendingListArray.filter(
+      (pendingListItem) => pendingListItem.isChecked,
+    ).length;
+
+    // Count the checked items
+    const checkedItemCount = pendingListArray.filter((pendingListItem) => pendingListItem.isChecked)
+      .length;
+
+    // Display text accordingly
+    const submitButtonText = isSubmitButtonDisabled
+      ? 'Checkout'
+      : `Checkout (${checkedItemCount}) item${checkedItemCount > 1 ? 's' : ''}`;
+
     const submitButtonComponent = !showInput ? (
       <Animator
         type="translateY"
@@ -505,7 +521,7 @@ export class Home extends React.Component {
             style={styles.submitButtonInnerContainer}
           >
             <Button
-              text="Checkout"
+              text={submitButtonText}
               primary
               handlePress={this.onSubmitList}
               disabled={isSubmitButtonDisabled}
