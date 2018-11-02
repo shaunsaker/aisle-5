@@ -4,7 +4,7 @@ import styleConstants from '../../styleConstants';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: styleConstants.colors.dividerColor,
+    backgroundColor: styleConstants.colors.accent,
     paddingVertical: styleConstants.dimensions.spacing.vertical / 2,
     paddingHorizontal: styleConstants.dimensions.spacing.horizontal / 2,
     ...styleConstants.shadows.regular,
@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   },
   text: {
     ...styleConstants.fonts.types.paragraph,
-    color: styleConstants.colors.primary,
+    color: styleConstants.colors.white,
   },
 });
 
