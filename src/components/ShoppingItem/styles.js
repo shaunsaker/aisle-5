@@ -6,7 +6,6 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: styleConstants.dimensions.spacing.horizontal,
   },
   countText: {
     ...styleConstants.fonts.types.paragraph,

@@ -18,14 +18,9 @@ const styles = StyleSheet.create({
     bottom: 0,
     justifyContent: 'center',
   },
-  text: {
-    ...styleConstants.fonts.types.paragraph,
+  shoppingItemContainer: {
     flex: 1,
     marginRight: styleConstants.dimensions.spacing.horizontal,
-  },
-  countText: {
-    ...styleConstants.fonts.types.paragraph,
-    ...styleConstants.fonts.families.bold,
   },
 });
 

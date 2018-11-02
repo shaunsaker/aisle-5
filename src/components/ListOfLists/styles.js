@@ -9,7 +9,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: styleConstants.dimensions.spacing.horizontal,
   },
-  itemContainer: {},
+  itemContainer: {
+    paddingHorizontal: styleConstants.dimensions.spacing.horizontal,
+  },
 });
 
 export default styles;

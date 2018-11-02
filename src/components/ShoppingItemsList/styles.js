@@ -5,7 +5,9 @@ import styleConstants from '../../styleConstants';
 const styles = StyleSheet.create({
   container: {},
   contentContainer: {},
-  itemContainer: {},
+  itemContainer: {
+    paddingHorizontal: styleConstants.dimensions.spacing.horizontal,
+  },
 });
 
 export default styles;

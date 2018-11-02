@@ -4,6 +4,7 @@ import { View, Text } from 'react-native';
 import Animator from 'react-native-simple-animators';
 
 import CheckBox from '../../CheckBox';
+import ShoppingItem from '../../ShoppingItem';
 import Counter from '../../Counter';
 
 import styles from './styles';
@@ -25,9 +26,9 @@ const Item = ({ name, isChecked, quantity, handleSetIsChecked, handleSetQuantity
         <CheckBox isChecked={isChecked} handlePress={handleSetIsChecked} />
       </View>
 
-      <Text style={styles.countText}>{quantity}</Text>
-
-      <Text style={styles.text}>{` x ${name}`}</Text>
+      <View style={styles.shoppingItemContainer}>
+        <ShoppingItem name={name} quantity={quantity} />
+      </View>
 
       <Animator
         type="translateX"
