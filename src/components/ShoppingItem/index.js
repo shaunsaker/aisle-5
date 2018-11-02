@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 
@@ -15,11 +15,17 @@ const propTypes = {
 const defaultProps = {};
 
 const ShoppingItem = ({ name, quantity, height }) => {
-  return (
-    <View style={[styles.container, { height }]}>
+  const quantityComponent = quantity ? (
+    <Fragment>
       <Text style={styles.countText}>{quantity}</Text>
 
       <Text style={styles.text}> x </Text>
+    </Fragment>
+  ) : null;
+
+  return (
+    <View style={[styles.container, { height }]}>
+      {quantityComponent}
 
       <View style={styles.emojiContainer}>
         <Emoji name={name} />

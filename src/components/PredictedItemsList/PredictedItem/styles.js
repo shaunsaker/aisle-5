@@ -10,9 +10,8 @@ const styles = StyleSheet.create({
     paddingVertical: styleConstants.dimensions.spacing.vertical,
     paddingHorizontal: styleConstants.dimensions.spacing.horizontal,
   },
-  text: {
+  shoppingItemContainer: {
     flex: 1,
-    ...styleConstants.fonts.types.paragraph,
     marginRight: styleConstants.dimensions.spacing.horizontal,
   },
   consumptionContainer: {

@@ -4,6 +4,7 @@ import { View, Text } from 'react-native';
 
 import styles from './styles';
 
+import ShoppingItem from '../../ShoppingItem';
 import ProgressBar from './ProgressBar';
 
 const propTypes = {
@@ -48,9 +49,9 @@ const PredictedItem = ({
 
   return (
     <View style={[styles.container, { height }]}>
-      <Text numberOfLines={1} style={styles.text}>
-        {name}
-      </Text>
+      <View style={styles.shoppingItemContainer}>
+        <ShoppingItem name={name} />
+      </View>
 
       {consumptionComponent}
     </View>
