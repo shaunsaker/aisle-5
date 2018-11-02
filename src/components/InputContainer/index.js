@@ -19,6 +19,8 @@ const InputContainer = ({ containerStyle, contentContainerStyle, children }) => 
       <KeyboardAwareScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={contentContainerStyle}
+        bounces={false}
+        scrollEnabled={false}
       >
         {children}
       </KeyboardAwareScrollView>

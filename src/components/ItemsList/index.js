@@ -19,11 +19,7 @@ export default class ItemsList extends React.Component {
     this.renderItem = this.renderItem.bind(this);
     this.renderItemSeparator = this.renderItemSeparator.bind(this);
 
-    this.itemWidth = styleConstants.dimensions.window.width;
     this.itemHeight = 51;
-    this.maxItemsVisible = Math.ceil(
-      (styleConstants.dimensions.window.height - 65 - 50) / this.itemHeight,
-    ); // - headerbar - tabbar
 
     this.state = {
       didChange: false,
@@ -62,11 +58,11 @@ export default class ItemsList extends React.Component {
     this.setState({ didChange });
   }
 
-  renderItem({ item, index }) {
+  renderItem({ item }) {
     const { didChange } = this.state;
     const { handleSetIsChecked, handleSetQuantity, handleRemoveItem } = this.props;
 
-    const shouldAnimate = didChange && index < this.maxItemsVisible;
+    const shouldAnimate = didChange;
 
     return (
       <Animator
@@ -91,7 +87,6 @@ export default class ItemsList extends React.Component {
   }
 
   render() {
-    const { scrollEnabled } = this.state;
     const { data } = this.props;
 
     return (
@@ -109,7 +104,6 @@ export default class ItemsList extends React.Component {
           offset: this.itemHeight * index,
           index,
         })}
-        scrollEnabled={scrollEnabled}
         ItemSeparatorComponent={this.renderItemSeparator}
       />
     );
