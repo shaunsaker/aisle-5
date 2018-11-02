@@ -18,14 +18,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   activeTabContainer: {},
-  text: {
-    ...styleConstants.fonts.types.small,
-    ...styleConstants.fonts.families.bold,
-    textDecorationLine: 'underline',
-  },
-  activeTabText: {
-    color: styleConstants.colors.accent,
-  },
 });
 
 export default styles;

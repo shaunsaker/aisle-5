@@ -1,10 +1,11 @@
 import { StyleSheet } from 'react-native';
 
-import styleConstants from '../../styleConstants';
+import styleConstants from '../../../styleConstants';
 
 const styles = StyleSheet.create({
-  text: {
-    ...styleConstants.fonts.types.heading,
+  container: {
+    flex: 1,
+    justifyContent: 'center',
   },
 });
 

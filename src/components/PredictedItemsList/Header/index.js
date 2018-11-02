@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import styleConstants from '../../../styleConstants';
 import styles from './styles';
 
-import Touchable from '../../Touchable';
+import LinkText from '../../LinkText';
 
 const propTypes = {
   headerItems: PropTypes.arrayOf(
@@ -30,20 +30,22 @@ const Header = ({ headerItems, handleHeaderItemPress, height, headerTestIDPrefix
         const isNotLastItem = index !== headerItems.length - 1;
 
         return (
-          <Touchable
+          <View
             key={item.text}
-            onPress={() => handleHeaderItemPress(item.fieldName)}
             style={[
               styles.row,
               { flex: item.flex },
               { marginRight: isNotLastItem ? styleConstants.dimensions.spacing.horizontal : 0 },
             ]}
-            testID={`${headerTestIDPrefix}${item.text}`}
           >
-            <Text style={styles.text}>{item.text}</Text>
+            <LinkText
+              text={item.text}
+              handlePress={() => handleHeaderItemPress(item.fieldName)}
+              testID={`${headerTestIDPrefix}${item.text}`}
+            />
 
             <Icon name="swap-vert" style={styles.icon} />
-          </Touchable>
+          </View>
         );
       })}
     </View>

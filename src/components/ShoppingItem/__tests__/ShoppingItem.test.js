@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 import ShoppingItem from '..';
-import ITEM from '../../../../mockData/item';
+import ITEM from '../../../mockData/item';
 
 describe('ShoppingItem', () => {
   describe('renders', () => {

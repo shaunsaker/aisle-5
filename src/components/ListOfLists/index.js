@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FlatList, View } from 'react-native';
+import { SectionList, View } from 'react-native';
 
 import styles from './styles';
 
+import LinkText from '../LinkText';
 import ShoppingItem from '../ShoppingItem';
 import ItemSeparator from '../ItemSeparator';
 
-export default class ShoppingItemsList extends React.Component {
+export default class ListOfLists extends React.Component {
   constructor(props) {
     super(props);
 
+    this.renderSectionHeader = this.renderSectionHeader.bind(this);
     this.renderItem = this.renderItem.bind(this);
     this.renderItemSeparator = this.renderItemSeparator.bind(this);
 
@@ -20,24 +22,30 @@ export default class ShoppingItemsList extends React.Component {
   }
 
   static propTypes = {
-    data: PropTypes.arrayOf(
+    sections: PropTypes.arrayOf(
       PropTypes.shape({
-        id: PropTypes.string,
+        title: PropTypes.string,
+        data: PropTypes.arrayOf(PropTypes.shape({})),
       }),
     ).isRequired,
   };
 
   static defaultProps = {};
 
-  renderItem({ item }) {
-    // If the quantity is less than 1, round to the nearest digit
-    // Else just round it
-    const quantity =
-      item.quantity < 1 ? Number(item.quantity.toFixed(1)) : Math.round(item.quantity);
+  renderSectionHeader({ section }) {
+    return (
+      <View style={[styles.headerContainer, { height: this.itemHeight }]}>
+        <LinkText text={section.title} disabled />
+      </View>
+    );
+  }
 
+  renderItem({ item }) {
     return (
       <View style={styles.itemContainer}>
-        <ShoppingItem name={item.name} quantity={quantity} height={this.itemHeight} />
+        <ShoppingItem name={item.name} quantity={item.quantity} height={this.itemHeight} />
+
+        <ItemSeparator />
       </View>
     );
   }
@@ -47,25 +55,20 @@ export default class ShoppingItemsList extends React.Component {
   }
 
   render() {
-    const { data } = this.props;
+    const { sections } = this.props;
 
     return (
-      <FlatList
+      <SectionList
         ref={(c) => {
           this.flatList = c;
         }}
         keyExtractor={({ id }) => id}
-        data={data}
+        sections={sections}
+        renderSectionHeader={this.renderSectionHeader}
         renderItem={this.renderItem}
         style={styles.container}
         contentContainerStyle={styles.contentContainer}
-        getItemLayout={(data, index) => ({
-          length: this.itemHeight,
-          offset: this.itemHeight * index,
-          index,
-        })}
         bounces={false}
-        ItemSeparatorComponent={this.renderItemSeparator}
       />
     );
   }

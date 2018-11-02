@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 
 import styles from './styles';
 
-import Touchable from '../Touchable';
+import LinkText from '../LinkText';
 
 const propTypes = {
   tabs: PropTypes.arrayOf(
@@ -28,14 +28,14 @@ const HeaderTabs = ({ tabs, activeTab, handleTabPress, headerTestIDPrefix }) => 
         const isActive = item.text === activeTab.text;
 
         return (
-          <Touchable
-            key={item.text}
-            onPress={() => handleTabPress(item)}
-            style={[styles.tabContainer, styles.activeTabContainer]}
-            testID={`${headerTestIDPrefix}${item.text}`}
-          >
-            <Text style={[styles.text, isActive && styles.activeTabText]}>{item.text}</Text>
-          </Touchable>
+          <View key={item.text} style={[styles.tabContainer, styles.activeTabContainer]}>
+            <LinkText
+              text={item.text}
+              isActive={isActive}
+              handlePress={() => handleTabPress(item)}
+              testID={`${headerTestIDPrefix}${item.text}`}
+            />
+          </View>
         );
       })}
     </View>
