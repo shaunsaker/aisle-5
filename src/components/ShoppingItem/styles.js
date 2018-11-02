@@ -11,7 +11,11 @@ const styles = StyleSheet.create({
     ...styleConstants.fonts.types.paragraph,
     ...styleConstants.fonts.families.bold,
   },
-  text: {
+  xText: {
+    ...styleConstants.fonts.types.paragraph,
+  },
+  nameText: {
+    flex: 1, // for ellipsis
     ...styleConstants.fonts.types.paragraph,
   },
   emojiContainer: {},

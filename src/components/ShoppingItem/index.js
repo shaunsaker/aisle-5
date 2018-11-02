@@ -19,7 +19,7 @@ const ShoppingItem = ({ name, quantity, height }) => {
     <Fragment>
       <Text style={styles.countText}>{quantity}</Text>
 
-      <Text style={styles.text}> x </Text>
+      <Text style={styles.xText}> x </Text>
     </Fragment>
   ) : null;
 
@@ -31,7 +31,9 @@ const ShoppingItem = ({ name, quantity, height }) => {
         <Emoji name={name} />
       </View>
 
-      <Text style={styles.text}>{name}</Text>
+      <Text numberOfLines={1} style={styles.nameText}>
+        {name}
+      </Text>
     </View>
   );
 };
