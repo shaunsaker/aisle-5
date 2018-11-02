@@ -488,11 +488,6 @@ export class Home extends React.Component {
     const checkedItemCount = pendingListArray.filter((pendingListItem) => pendingListItem.isChecked)
       .length;
 
-    // Display text accordingly
-    const submitButtonText = isSubmitButtonDisabled
-      ? 'Checkout'
-      : `Checkout (${checkedItemCount}) item${checkedItemCount > 1 ? 's' : ''}`;
-
     const submitButtonComponent = !showInput ? (
       <Animator
         type="translateY"
@@ -521,7 +516,7 @@ export class Home extends React.Component {
             style={styles.submitButtonInnerContainer}
           >
             <Button
-              text={submitButtonText}
+              text="Save and Clear"
               primary
               handlePress={this.onSubmitList}
               disabled={isSubmitButtonDisabled}
