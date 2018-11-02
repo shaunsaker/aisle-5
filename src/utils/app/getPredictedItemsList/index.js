@@ -52,7 +52,7 @@ const getPredictedItemsList = (userLists, userItems) => {
       usagesPerDay.length && usagesPerDay.reduce((total, usage) => total + usage);
 
     // Get the item name
-    const { name } = userItems[id];
+    const name = userItems[id] ? userItems[id].name : 'Ghost'; // TODO: This is caused by a data save error
 
     let averageUsagePerDay = null;
     let previouslyPurchasedQuantity = null;
