@@ -17,7 +17,6 @@ const InputContainer = ({ containerStyle, contentContainerStyle, children }) => 
   return (
     <View style={[styles.container, containerStyle]}>
       <KeyboardAwareScrollView
-        bounces={false}
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={contentContainerStyle}
       >

@@ -20,7 +20,7 @@ const Emoji = ({ name }) => {
   const actualEmoji = emojiKey && emoji.get(emojiKey);
 
   if (actualEmoji) {
-    return <Text style={styles.emoji}>{actualEmoji}</Text>;
+    return <Text style={styles.emoji}>{actualEmoji} </Text>;
   }
 
   return null;

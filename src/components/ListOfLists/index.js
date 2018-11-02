@@ -74,7 +74,6 @@ export default class ListOfLists extends React.Component {
         renderItem={this.renderItem}
         style={styles.container}
         contentContainerStyle={styles.contentContainer}
-        bounces={false}
         stickySectionHeadersEnabled
       />
     );

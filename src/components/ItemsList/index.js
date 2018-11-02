@@ -110,7 +110,6 @@ export default class ItemsList extends React.Component {
           index,
         })}
         scrollEnabled={scrollEnabled}
-        bounces={false}
         ItemSeparatorComponent={this.renderItemSeparator}
       />
     );

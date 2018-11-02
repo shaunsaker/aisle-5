@@ -19,11 +19,13 @@ const ShoppingItem = ({ name, quantity, height }) => {
     <View style={[styles.container, { height }]}>
       <Text style={styles.countText}>{quantity}</Text>
 
-      <Text style={styles.text}>{` x ${name} `}</Text>
+      <Text style={styles.text}> x </Text>
 
       <View style={styles.emojiContainer}>
         <Emoji name={name} />
       </View>
+
+      <Text style={styles.text}>{name}</Text>
     </View>
   );
 };

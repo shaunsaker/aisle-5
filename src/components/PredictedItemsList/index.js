@@ -73,7 +73,6 @@ export default class PredictedItemsList extends React.Component {
           offset: this.itemHeight * index,
           index,
         })}
-        bounces={false}
         ListHeaderComponent={this.renderListHeader}
         renderItem={this.renderItem}
         ItemSeparatorComponent={this.renderItemSeparator}

@@ -64,7 +64,6 @@ export default class ShoppingItemsList extends React.Component {
           offset: this.itemHeight * index,
           index,
         })}
-        bounces={false}
         ItemSeparatorComponent={this.renderItemSeparator}
       />
     );
