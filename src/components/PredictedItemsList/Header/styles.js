@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: styleConstants.dimensions.spacing.horizontal,
     borderBottomWidth: 1,
     borderBottomColor: styleConstants.colors.dividerColor,
+    backgroundColor: styleConstants.colors.white,
   },
   row: {
     flexDirection: 'row',

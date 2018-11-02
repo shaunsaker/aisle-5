@@ -76,6 +76,7 @@ export default class PredictedItemsList extends React.Component {
         ListHeaderComponent={this.renderListHeader}
         renderItem={this.renderItem}
         ItemSeparatorComponent={this.renderItemSeparator}
+        stickyHeaderIndices={[0]}
       />
     );
   }
