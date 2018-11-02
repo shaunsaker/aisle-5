@@ -4,6 +4,8 @@ import { View, Text } from 'react-native';
 
 import styles from './styles';
 
+import Emoji from '../Emoji';
+
 const propTypes = {
   name: PropTypes.string,
   quantity: PropTypes.number,
@@ -17,7 +19,11 @@ const ShoppingItem = ({ name, quantity, height }) => {
     <View style={[styles.container, { height }]}>
       <Text style={styles.countText}>{quantity}</Text>
 
-      <Text style={styles.text}>{` x ${name}`}</Text>
+      <Text style={styles.text}>{` x ${name} `}</Text>
+
+      <View style={styles.emojiContainer}>
+        <Emoji name={name} />
+      </View>
     </View>
   );
 };

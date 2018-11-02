@@ -22,6 +22,7 @@ fonts.sizes = {
   small: 15,
   verySmall: 11,
   icon: 24,
+  emoji: 20,
 };
 
 // Font types

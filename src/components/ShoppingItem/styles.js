@@ -14,6 +14,10 @@ const styles = StyleSheet.create({
   text: {
     ...styleConstants.fonts.types.paragraph,
   },
+  emojiContainer: {},
+  emoji: {
+    fontSize: styleConstants.fonts.sizes.emoji,
+  },
 });
 
 export default styles;
