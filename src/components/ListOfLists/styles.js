@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
   headerContainer: {
     justifyContent: 'center',
     paddingHorizontal: styleConstants.dimensions.spacing.horizontal,
-    paddingBottom: styleConstants.dimensions.spacing.vertical,
   },
   itemWrapper: {},
   itemContainer: {
