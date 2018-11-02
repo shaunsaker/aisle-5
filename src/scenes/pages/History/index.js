@@ -33,10 +33,14 @@ export class History extends React.Component {
     const userListsArray = utils.objects.convertObjectToArray(userLists);
 
     // Sort by date_added
-    // TODO:
+    const sortedUserListsArray = utils.arrays.sortArrayOfObjectsByKey(
+      userListsArray,
+      'date_added',
+      true,
+    );
 
     // Process the data into sections
-    const userListSections = userListsArray.map((userList) => {
+    const userListSections = sortedUserListsArray.map((userList) => {
       const title = 'Yesterday, 10 November, 16:05'; // TODO:
       const data = userList.list.map((item) => {
         const { name } = userItems[item.user_item_id];

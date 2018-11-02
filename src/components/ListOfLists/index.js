@@ -34,16 +34,22 @@ export default class ListOfLists extends React.Component {
 
   renderSectionHeader({ section }) {
     return (
-      <View style={[styles.headerContainer, { height: this.itemHeight }]}>
-        <LinkText text={section.title} disabled />
+      <View style={styles.headerWrapper}>
+        <View style={[styles.headerContainer, { height: this.itemHeight }]}>
+          <LinkText text={section.title} disabled />
+        </View>
+
+        <ItemSeparator />
       </View>
     );
   }
 
   renderItem({ item }) {
     return (
-      <View style={styles.itemContainer}>
-        <ShoppingItem name={item.name} quantity={item.quantity} height={this.itemHeight} />
+      <View style={styles.itemWrapper}>
+        <View style={styles.itemContainer}>
+          <ShoppingItem name={item.name} quantity={item.quantity} height={this.itemHeight} />
+        </View>
 
         <ItemSeparator />
       </View>
@@ -69,6 +75,7 @@ export default class ListOfLists extends React.Component {
         style={styles.container}
         contentContainerStyle={styles.contentContainer}
         bounces={false}
+        stickySectionHeadersEnabled
       />
     );
   }
