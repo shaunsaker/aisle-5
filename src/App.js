@@ -14,6 +14,7 @@ import DeviceInfoHandler from './handlers/DeviceInfoHandler';
 import NetworkHandler from './handlers/NetworkHandler';
 import CodePushHandler from './handlers/CodePushHandler';
 import AndroidBackHandler from './handlers/AndroidBackHandler';
+import CoachmarksHandler from './handlers/CoachmarksHandler';
 
 import PageLoader from './components/PageLoader';
 
@@ -36,7 +37,9 @@ export function App() {
           <DeviceInfoHandler />
           <NetworkHandler />
           <SystemMessageHandler>
-            <Routes />
+            <CoachmarksHandler>
+              <Routes />
+            </CoachmarksHandler>
           </SystemMessageHandler>
           <AndroidBackHandler />
         </PersistGate>

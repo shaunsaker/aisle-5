@@ -7,6 +7,7 @@ export class DatabaseHandler extends React.Component {
     super(props);
 
     this.handleSyncData = this.handleSyncData.bind(this);
+    this.syncUserCoachmarks = this.syncUserCoachmarks.bind(this);
     this.syncUserItems = this.syncUserItems.bind(this);
     this.syncUserLists = this.syncUserLists.bind(this);
   }
@@ -36,8 +37,24 @@ export class DatabaseHandler extends React.Component {
   }
 
   handleSyncData() {
+    this.syncUserCoachmarks();
     this.syncUserItems();
     this.syncUserLists();
+  }
+
+  syncUserCoachmarks() {
+    const { dispatch, uniqueID } = this.props;
+
+    dispatch({
+      type: 'sync',
+      meta: {
+        pathParts: ['coachmarks'],
+        query: ['unique_id', '==', uniqueID],
+        nextAction: {
+          type: 'SET_USER_COACHMARKS',
+        },
+      },
+    });
   }
 
   syncUserItems() {
