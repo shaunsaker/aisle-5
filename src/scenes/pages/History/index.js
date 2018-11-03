@@ -9,6 +9,7 @@ import styles from './styles';
 import Page from '../../../components/Page';
 import HeaderBar from '../../../components/HeaderBar';
 import TitleText from '../../../components/TitleText';
+import BlankState from '../../../components/BlankState';
 import ListOfLists from '../../../components/ListOfLists';
 import TabBar from '../../../components/TabBar';
 
@@ -60,15 +61,23 @@ export class History extends React.Component {
       };
     });
 
+    const listComponent = userListSections.length ? (
+      <ListOfLists sections={userListSections} />
+    ) : (
+      <BlankState
+        iconName="watch-later"
+        title="We have no history together."
+        description="Once you start saving lists, they will show up here for reference."
+      />
+    );
+
     return (
       <Page>
         <HeaderBar>
           <TitleText text="History" />
         </HeaderBar>
 
-        <View style={styles.container}>
-          <ListOfLists sections={userListSections} />
-        </View>
+        <View style={styles.container}>{listComponent}</View>
 
         <TabBar />
       </Page>

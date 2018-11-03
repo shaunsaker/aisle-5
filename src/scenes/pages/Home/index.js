@@ -388,11 +388,7 @@ export class Home extends React.Component {
         handleRemoveItem={this.onRemovePendingListItem}
       />
     ) : !showInput ? (
-      <BlankState
-        iconName="shopping-basket"
-        title="All stocked up?"
-        description="Add items you need by tapping the '+' button below. They'll show up here, ready for your next shopping trip."
-      />
+      <BlankState iconName="shopping-basket" title="List empty." />
     ) : null;
 
     const addItemButtonComponent =
