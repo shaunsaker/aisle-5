@@ -318,7 +318,7 @@ export class Home extends React.Component {
     const checkedItemCount = checkedItems.length;
     const message = `${checkedItemCount} item${
       checkedItemCount > 1 ? 's' : ''
-    } added to Predictions`;
+    } saved to Predictions`;
 
     this.setSystemMessage(message);
   }
