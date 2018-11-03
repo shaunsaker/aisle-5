@@ -5,6 +5,8 @@ import Animator from 'react-native-simple-animators';
 
 import styles from './styles';
 
+import COACHMARKS from './coachmarks';
+
 export class CoachmarksHandler extends React.Component {
   constructor(props) {
     super(props);
@@ -19,6 +21,17 @@ export class CoachmarksHandler extends React.Component {
   static defaultProps = {};
 
   render() {
+    /*
+
+      TODO: Push the coachmarks on depending on triggers, ie.
+      const tooltips = [];
+
+      componentDidMount
+      pendingList has an item
+      pendingList item is checked
+      pendingList was cleared
+    */
+
     const { children } = this.props;
     const tooltipComponent = null;
 
