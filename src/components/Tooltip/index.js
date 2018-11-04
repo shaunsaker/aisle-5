@@ -75,7 +75,7 @@ export default class Tooltip extends React.Component {
     const trianglePositionStyles = this.getTrianglePosition(triangleOrientation);
 
     return (
-      <Touchable handlePress={handlePress} style={[styles.container, containerStyles]}>
+      <Touchable onPress={handlePress} style={[styles.container, containerStyles]}>
         <Snackbar text={text} disabled />
 
         <View style={[styles.triangleContainer, triangleRotateStyles, trianglePositionStyles]}>

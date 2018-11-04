@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Keyboard } from 'react-native';
 
 import utils from '../../utils';
 import styles from './styles';
@@ -15,10 +16,14 @@ export class CoachmarksHandler extends React.Component {
     super(props);
 
     this.hasUserSeenCoachmark = this.hasUserSeenCoachmark.bind(this);
+    this.keyboardDidShow = this.keyboardDidShow.bind(this);
     this.onShowCoachmark = this.onShowCoachmark.bind(this);
     this.setTooltipID = this.setTooltipID.bind(this);
+    this.onHideCoachmark = this.onHideCoachmark.bind(this);
     this.saveCoachmark = this.saveCoachmark.bind(this);
     this.navigate = this.navigate.bind(this);
+
+    this.keyboardDidShowListener = null;
 
     this.state = {
       tooltipID: null,
@@ -32,6 +37,7 @@ export class CoachmarksHandler extends React.Component {
     uid: PropTypes.string,
     uniqueID: PropTypes.string,
     pendingList: PropTypes.shape({}),
+    scene: PropTypes.string,
   };
 
   static defaultProps = {};
@@ -43,6 +49,31 @@ export class CoachmarksHandler extends React.Component {
     if (!hasUserSeenAddItemCoachmark) {
       this.onShowCoachmark(coachmarkID);
     }
+
+    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this.keyboardDidShow);
+  }
+
+  componentDidUpdate(prevProps) {
+    const { tooltipID } = this.state;
+    const { scene } = this.props;
+
+    // If the scene changed, hide the tooltip
+    if (tooltipID && scene !== prevProps.scene) {
+      this.onHideCoachmark(tooltipID);
+    }
+  }
+
+  componentWillUnmount() {
+    this.keyboardDidShowListener.remove();
+  }
+
+  keyboardDidShow() {
+    const { tooltipID } = this.state;
+
+    // If the addItem tooltip is shown, hide it
+    if (tooltipID && tooltipID === 'addItem') {
+      this.onHideCoachmark(tooltipID);
+    }
   }
 
   hasUserSeenCoachmark(coachmarkID) {
@@ -53,7 +84,7 @@ export class CoachmarksHandler extends React.Component {
 
     // Check if the user has seen the coachmark
     const userHasSeenAddItemCoachmark = userCoachmarksArray.filter(
-      (coachmark) => coachmark.id === coachmarkID,
+      (coachmark) => coachmark.coachmark_id === coachmarkID,
     ).length;
 
     return userHasSeenAddItemCoachmark;
@@ -61,8 +92,6 @@ export class CoachmarksHandler extends React.Component {
 
   onShowCoachmark(coachmarkID) {
     const coachmark = COACHMARKS[coachmarkID];
-
-    // this.saveCoachmark(coachmarkID); // TODO:
 
     if (coachmark.type === 'tooltip') {
       this.setTooltipID(coachmarkID);
@@ -75,6 +104,11 @@ export class CoachmarksHandler extends React.Component {
     this.setState({
       tooltipID,
     });
+  }
+
+  onHideCoachmark(coachmarkID) {
+    this.setTooltipID(null); // reset state
+    this.saveCoachmark(coachmarkID);
   }
 
   saveCoachmark(coachmarkID) {
@@ -103,8 +137,6 @@ export class CoachmarksHandler extends React.Component {
   render() {
     /*
 
-      TODO: Clear tooltip on press
-      TODO: Clear tooltip on action
       TODO: Clear tooltip on navigate
       TODO: Push the coachmarks on depending on triggers, ie.
 
@@ -119,7 +151,11 @@ export class CoachmarksHandler extends React.Component {
 
     const tooltipComponent = tooltipID ? (
       <TooltipAnimator style={[styles.tooltipContainer, tooltip.position]}>
-        <Tooltip text={tooltip.titleText} triangleOrientation={tooltip.triangleOrientation} />
+        <Tooltip
+          text={tooltip.titleText}
+          triangleOrientation={tooltip.triangleOrientation}
+          handlePress={() => this.onHideCoachmark(tooltipID)}
+        />
       </TooltipAnimator>
     ) : null;
 
@@ -139,6 +175,7 @@ function mapStateToProps(state) {
     uid: state.user.uid,
     uniqueID: state.deviceInfo.uniqueID,
     pendingList: state.pendingList,
+    scene: state.navigation.scene,
   };
 }
 
