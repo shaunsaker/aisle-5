@@ -1,12 +1,11 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
-import Animator from 'react-native-simple-animators';
 
 import utils from '../../utils';
 import styles from './styles';
 
+import TooltipAnimator from './TooltipAnimator';
 import Tooltip from '../../components/Tooltip';
 
 import COACHMARKS from './coachmarks';
@@ -104,6 +103,9 @@ export class CoachmarksHandler extends React.Component {
   render() {
     /*
 
+      TODO: Clear tooltip on press
+      TODO: Clear tooltip on action
+      TODO: Clear tooltip on navigate
       TODO: Push the coachmarks on depending on triggers, ie.
 
       pendingList has an item
@@ -116,9 +118,9 @@ export class CoachmarksHandler extends React.Component {
     const tooltip = COACHMARKS[tooltipID];
 
     const tooltipComponent = tooltipID ? (
-      <View style={[styles.tooltipContainer, tooltip.position]}>
+      <TooltipAnimator style={[styles.tooltipContainer, tooltip.position]}>
         <Tooltip text={tooltip.titleText} triangleOrientation={tooltip.triangleOrientation} />
-      </View>
+      </TooltipAnimator>
     ) : null;
 
     return (

@@ -23,7 +23,10 @@ const coachmarks = {
     titleText: 'Tap this to add an item',
     position: {
       bottom: ICON_BUTTON_SIZE + (styleConstants.dimensions.spacing.vertical + TOOLTIP_HEIGHT) / 2, // icon button + vertical spacing / 2 + tooltip height / 2
-      right: ICON_BUTTON_SIZE + styleConstants.dimensions.spacing.horizontal * 2, // icon button + horizontal spacing
+      right:
+        ICON_BUTTON_SIZE +
+        styleConstants.dimensions.spacing.horizontal * 2 +
+        styleConstants.dimensions.spacing.horizontal / 2, // icon button + horizontal spacing
     },
     triangleOrientation: 90,
   },
