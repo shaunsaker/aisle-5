@@ -9,13 +9,14 @@ import Touchable from '../Touchable';
 const propTypes = {
   text: PropTypes.string,
   handlePress: PropTypes.func,
+  disabled: PropTypes.bool,
 };
 
 const defaultProps = {};
 
-const Snackbar = ({ text, handlePress }) => {
+const Snackbar = ({ text, handlePress, disabled }) => {
   return (
-    <Touchable onPress={handlePress} style={styles.container}>
+    <Touchable onPress={handlePress} disabled={disabled} style={styles.container}>
       <Text style={styles.text}>{text}</Text>
     </Touchable>
   );

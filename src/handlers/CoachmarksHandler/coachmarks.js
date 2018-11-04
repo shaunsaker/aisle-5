@@ -8,7 +8,7 @@
       top: 50,
       right: 50,
     }, // tooltip only
-    arrowDirection: '90deg', // tooltip only - can infer that it's on the RHS
+    triangleOrientation: 90, // tooltip only - can infer that it's on the RHS
   },
 */
 
@@ -20,7 +20,7 @@ const coachmarks = {
       top: 50,
       right: 50,
     },
-    arrowDirection: '90deg',
+    triangleOrientation: 90,
   },
   removeItem: {
     type: 'tooltip',
@@ -29,7 +29,7 @@ const coachmarks = {
       top: 50,
       right: 50,
     },
-    arrowDirection: '90deg',
+    triangleOrientation: 90,
   },
   checkItem: {
     type: 'tooltip',
@@ -38,7 +38,7 @@ const coachmarks = {
       top: 50,
       right: 50,
     },
-    arrowDirection: '90deg',
+    triangleOrientation: 90,
   },
   predictions: {
     type: 'modal',
