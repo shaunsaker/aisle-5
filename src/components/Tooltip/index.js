@@ -12,7 +12,7 @@ export default class Tooltip extends React.Component {
   constructor(props) {
     super(props);
 
-    this.getContainerPadding = this.getContainerPadding.bind(this);
+    this.getContainerStyles = this.getContainerStyles.bind(this);
     this.getTrianglePosition = this.getTrianglePosition.bind(this);
 
     this.triangleSize = 20;
@@ -28,7 +28,7 @@ export default class Tooltip extends React.Component {
 
   static defaultProps = {};
 
-  getContainerPadding(orientation) {
+  getContainerStyles(orientation) {
     let padding;
 
     if (orientation === 90 || orientation === 270) {
@@ -37,7 +37,12 @@ export default class Tooltip extends React.Component {
       padding = this.triangleSize / 2;
     }
 
-    return padding;
+    const containerStyles = {
+      padding,
+      margin: padding * -1, // remove the padding we added
+    };
+
+    return containerStyles;
   }
 
   getTrianglePosition(orientation) {
@@ -65,12 +70,12 @@ export default class Tooltip extends React.Component {
 
   render() {
     const { text, triangleOrientation, handlePress } = this.props;
-    const paddingStyles = { padding: this.getContainerPadding(triangleOrientation) };
+    const containerStyles = this.getContainerStyles(triangleOrientation);
     const triangleRotateStyles = { transform: [{ rotate: `${triangleOrientation}deg` }] };
     const trianglePositionStyles = this.getTrianglePosition(triangleOrientation);
 
     return (
-      <Touchable handlePress={handlePress} style={[styles.container, paddingStyles]}>
+      <Touchable handlePress={handlePress} style={[styles.container, containerStyles]}>
         <Snackbar text={text} disabled />
 
         <View style={[styles.triangleContainer, triangleRotateStyles, trianglePositionStyles]}>

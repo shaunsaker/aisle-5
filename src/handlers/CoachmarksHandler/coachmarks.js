@@ -1,3 +1,5 @@
+import styleConstants from '../../styleConstants';
+
 /*
   addItem: {
     type: 'tooltip', // or modal
@@ -12,19 +14,22 @@
   },
 */
 
+const ICON_BUTTON_SIZE = 50;
+const TOOLTIP_HEIGHT = 39;
+
 const coachmarks = {
   addItem: {
     type: 'tooltip',
     titleText: 'Tap this to add an item',
     position: {
-      top: 50,
-      right: 50,
+      bottom: ICON_BUTTON_SIZE + (styleConstants.dimensions.spacing.vertical + TOOLTIP_HEIGHT) / 2, // icon button + vertical spacing / 2 + tooltip height / 2
+      right: ICON_BUTTON_SIZE + styleConstants.dimensions.spacing.horizontal * 2, // icon button + horizontal spacing
     },
     triangleOrientation: 90,
   },
   removeItem: {
     type: 'tooltip',
-    titleText: 'Tap this to add an item',
+    titleText: 'Tap this to remove an item',
     position: {
       top: 50,
       right: 50,
@@ -33,7 +38,7 @@ const coachmarks = {
   },
   checkItem: {
     type: 'tooltip',
-    titleText: 'Tap this to add an item',
+    titleText: 'Tap this to mark an item as checked',
     position: {
       top: 50,
       right: 50,
