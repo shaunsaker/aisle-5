@@ -15,8 +15,9 @@ export class CoachmarksHandler extends React.Component {
   constructor(props) {
     super(props);
 
-    this.hasUserSeenCoachmark = this.hasUserSeenCoachmark.bind(this);
     this.keyboardDidShow = this.keyboardDidShow.bind(this);
+    this.hasUserSeenCoachmark = this.hasUserSeenCoachmark.bind(this);
+    this.hasUserCheckedPendingListItem = this.hasUserCheckedPendingListItem.bind(this);
     this.onShowCoachmark = this.onShowCoachmark.bind(this);
     this.setTooltipID = this.setTooltipID.bind(this);
     this.onHideCoachmark = this.onHideCoachmark.bind(this);
@@ -43,11 +44,12 @@ export class CoachmarksHandler extends React.Component {
   static defaultProps = {};
 
   componentDidMount() {
-    const coachmarkID = 'addItem';
-    const hasUserSeenAddItemCoachmark = this.hasUserSeenCoachmark(coachmarkID);
+    const hasUserSeenAddItemCoachmark = this.hasUserSeenCoachmark('addItem');
+
+    // TODO: Test with fresh store and data
 
     if (!hasUserSeenAddItemCoachmark) {
-      this.onShowCoachmark(coachmarkID);
+      this.onShowCoachmark('addItem');
     }
 
     this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this.keyboardDidShow);
@@ -55,12 +57,61 @@ export class CoachmarksHandler extends React.Component {
 
   componentDidUpdate(prevProps) {
     const { tooltipID } = this.state;
-    const { scene } = this.props;
+    const { scene, pendingList } = this.props;
+    const pendingListHasItems = Object.keys(pendingList).length;
+    const previousPendingListHasItems = Object.keys(prevProps.pendingList).length;
 
     // If the scene changed, hide the tooltip
     if (tooltipID && scene !== prevProps.scene) {
       this.onHideCoachmark(tooltipID);
     }
+
+    // If the user has not seen the checkItem coachmark and
+    // The user has just added a pending item
+    // Show the checkItem coachmark
+    const hasUserSeenCheckItemCoachmark = this.hasUserSeenCoachmark('checkItem');
+    const hasUserAddPendingItem = pendingListHasItems && !previousPendingListHasItems;
+
+    if (!hasUserSeenCheckItemCoachmark && hasUserAddPendingItem) {
+      this.onShowCoachmark('checkItem');
+    }
+
+    // If the checkItem coachmark is shown and
+    // The user has marked his pending item as checked
+    // Hide the checkItem coachmark
+    // Show the checkout coachmark
+    const hasUserCheckedPendingListItem =
+      pendingListHasItems &&
+      previousPendingListHasItems &&
+      this.hasUserCheckedPendingListItem(pendingList) &&
+      !this.hasUserCheckedPendingListItem(prevProps.pendingList);
+
+    if (tooltipID === 'checkItem' && hasUserCheckedPendingListItem) {
+      this.onHideCoachmark('checkItem');
+    }
+
+    // If the user has not seen the checkout coachmark and
+    // The user has marked his pending item as checked
+    // Show the checkout coachmark
+    const hasUserSeenCheckoutCoachmark = this.hasUserSeenCoachmark('checkout');
+
+    if (!hasUserSeenCheckoutCoachmark && hasUserCheckedPendingListItem) {
+      this.onShowCoachmark('checkout');
+    }
+
+    // If the checkout coachmark is shown and
+    // The user has cleared their list
+    // Hide the checkout coachmark
+    const hasUserClearedPendingList = !pendingListHasItems && previousPendingListHasItems;
+
+    if (tooltipID === 'checkout' && hasUserClearedPendingList) {
+      this.onHideCoachmark('checkout');
+    }
+
+    // If the user has not seen the predictions coachmark and
+    // The user has cleared their list
+    // Show the predictions coachmark
+    // TODO:
   }
 
   componentWillUnmount() {
@@ -88,6 +139,13 @@ export class CoachmarksHandler extends React.Component {
     ).length;
 
     return userHasSeenAddItemCoachmark;
+  }
+
+  hasUserCheckedPendingListItem(pendingList) {
+    const itemID = Object.keys(pendingList)[0];
+    const hasUserCheckedPendingListItem = pendingList[itemID].isChecked;
+
+    return hasUserCheckedPendingListItem;
   }
 
   onShowCoachmark(coachmarkID) {
@@ -135,16 +193,6 @@ export class CoachmarksHandler extends React.Component {
   }
 
   render() {
-    /*
-
-      TODO: Clear tooltip on navigate
-      TODO: Push the coachmarks on depending on triggers, ie.
-
-      pendingList has an item
-      pendingList item is checked
-      pendingList was cleared
-    */
-
     const { tooltipID } = this.state;
     const { children } = this.props;
     const tooltip = COACHMARKS[tooltipID];

@@ -512,7 +512,7 @@ export class Home extends React.Component {
             style={styles.submitButtonInnerContainer}
           >
             <Button
-              text="Save and Clear"
+              text="Checkout"
               primary
               handlePress={this.onSubmitList}
               disabled={isSubmitButtonDisabled}

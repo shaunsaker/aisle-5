@@ -5,6 +5,7 @@ import styleConstants from '../../styleConstants';
 const styles = StyleSheet.create({
   tooltipContainer: {
     position: 'absolute',
+    alignSelf: 'center',
   },
 });
 
