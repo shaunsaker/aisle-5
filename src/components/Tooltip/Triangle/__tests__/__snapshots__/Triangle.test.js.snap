@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Triangle renders renders with minimum required props 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderBottomColor": "#FEA116",
+        "borderLeftColor": "transparent",
+        "borderRightColor": "transparent",
+      },
+      Object {
+        "borderBottomWidth": undefined,
+        "borderLeftWidth": undefined,
+        "borderRightWidth": undefined,
+      },
+    ]
+  }
+/>
+`;

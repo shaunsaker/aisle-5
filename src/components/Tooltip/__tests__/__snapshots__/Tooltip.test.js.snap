@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tooltip renders renders with minimum required props 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "margin": -10,
+      "opacity": 1,
+      "padding": 10,
+    }
+  }
+>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#FEA116",
+        "borderColor": null,
+        "borderRadius": 5,
+        "borderWidth": 0,
+        "elevation": 12,
+        "opacity": 1,
+        "paddingHorizontal": 15,
+        "paddingVertical": 10,
+        "shadowColor": "#212121",
+        "shadowOffset": Object {
+          "height": 2,
+          "width": 0,
+        },
+        "shadowOpacity": 0.33,
+        "shadowRadius": 4,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontFamily": "Muli-SemiBold",
+          "fontSize": 15,
+          "textAlign": "center",
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "position": "absolute",
+        },
+        Object {
+          "transform": Array [
+            Object {
+              "rotate": "undefineddeg",
+            },
+          ],
+        },
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "right": 0,
+          "top": 0,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "borderBottomColor": "#FEA116",
+            "borderLeftColor": "transparent",
+            "borderRightColor": "transparent",
+          },
+          Object {
+            "borderBottomWidth": 20,
+            "borderLeftWidth": 20,
+            "borderRightWidth": 20,
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;
