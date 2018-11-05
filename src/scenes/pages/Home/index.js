@@ -315,10 +315,7 @@ export class Home extends React.Component {
     // Remove the items in the list from the pendingList
     checkedItems.forEach((item) => this.removePendingListItem(item.name));
 
-    const checkedItemCount = checkedItems.length;
-    const message = `${checkedItemCount} item${
-      checkedItemCount > 1 ? 's' : ''
-    } saved to Predictions`;
+    const message = 'List saved to Predictions';
 
     this.setSystemMessage(message);
   }
@@ -479,10 +476,6 @@ export class Home extends React.Component {
     const isSubmitButtonDisabled = !pendingListArray.filter(
       (pendingListItem) => pendingListItem.isChecked,
     ).length;
-
-    // Count the checked items
-    const checkedItemCount = pendingListArray.filter((pendingListItem) => pendingListItem.isChecked)
-      .length;
 
     const submitButtonComponent = !showInput ? (
       <Animator
