@@ -6,6 +6,7 @@ import History from './pages/History';
 import Predictions from './pages/Predictions';
 import Lists from './pages/Lists';
 
+import InfoModal from './modals/InfoModal';
 import RemovePendingItemModal from './modals/RemovePendingItemModal';
 
 const scenes = Actions.create(
@@ -19,6 +20,7 @@ const scenes = Actions.create(
       </Tabs>
     </Scene>
 
+    <Scene key="infoModal" component={InfoModal} hideNavBar />
     <Scene key="removePendingItemModal" component={RemovePendingItemModal} hideNavBar />
   </Lightbox>,
 );
