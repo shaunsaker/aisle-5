@@ -27,7 +27,7 @@ export class CoachmarksHandler extends React.Component {
     this.keyboardDidShowListener = null;
 
     this.state = {
-      tooltipID: null,
+      coachmarkID: null,
     };
   }
 
@@ -44,26 +44,22 @@ export class CoachmarksHandler extends React.Component {
   static defaultProps = {};
 
   componentDidMount() {
-    const hasUserSeenAddItemCoachmark = this.hasUserSeenCoachmark('addItem');
-
-    // TODO: Test with fresh store and data
-
-    if (!hasUserSeenAddItemCoachmark) {
-      this.onShowCoachmark('addItem');
-    }
-
     this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this.keyboardDidShow);
   }
 
   componentDidUpdate(prevProps) {
-    const { tooltipID } = this.state;
+    const { coachmarkID } = this.state;
     const { scene, pendingList } = this.props;
     const pendingListHasItems = Object.keys(pendingList).length;
     const previousPendingListHasItems = Object.keys(prevProps.pendingList).length;
 
-    // If the scene changed, hide the tooltip
-    if (tooltipID && scene !== prevProps.scene) {
-      this.onHideCoachmark(tooltipID);
+    // If the user has not seen the addItem coachmark and
+    // The user has no pending list items
+    // Show the addItem coachmark
+    const hasUserSeenAddItemCoachmark = this.hasUserSeenCoachmark('addItem');
+
+    if (!hasUserSeenAddItemCoachmark && !pendingListHasItems) {
+      this.onShowCoachmark('addItem');
     }
 
     // If the user has not seen the checkItem coachmark and
@@ -86,7 +82,7 @@ export class CoachmarksHandler extends React.Component {
       this.hasUserCheckedPendingListItem(pendingList) &&
       !this.hasUserCheckedPendingListItem(prevProps.pendingList);
 
-    if (tooltipID === 'checkItem' && hasUserCheckedPendingListItem) {
+    if (coachmarkID === 'checkItem' && hasUserCheckedPendingListItem) {
       this.onHideCoachmark('checkItem');
     }
 
@@ -104,14 +100,23 @@ export class CoachmarksHandler extends React.Component {
     // Hide the checkout coachmark
     const hasUserClearedPendingList = !pendingListHasItems && previousPendingListHasItems;
 
-    if (tooltipID === 'checkout' && hasUserClearedPendingList) {
+    if (coachmarkID === 'checkout' && hasUserClearedPendingList) {
       this.onHideCoachmark('checkout');
     }
 
     // If the user has not seen the predictions coachmark and
     // The user has cleared their list
     // Show the predictions coachmark
-    // TODO:
+    const hasUserSeenPredictionsCoachmark = this.hasUserSeenCoachmark('predictions');
+
+    if (!hasUserSeenPredictionsCoachmark && hasUserClearedPendingList) {
+      this.onShowCoachmark('predictions');
+    }
+
+    // If the scene changed, hide the coachmark
+    if (coachmarkID && scene !== prevProps.scene) {
+      this.onHideCoachmark(coachmarkID);
+    }
   }
 
   componentWillUnmount() {
@@ -119,11 +124,11 @@ export class CoachmarksHandler extends React.Component {
   }
 
   keyboardDidShow() {
-    const { tooltipID } = this.state;
+    const { coachmarkID } = this.state;
 
     // If the addItem tooltip is shown, hide it
-    if (tooltipID && tooltipID === 'addItem') {
-      this.onHideCoachmark(tooltipID);
+    if (coachmarkID && coachmarkID === 'addItem') {
+      this.onHideCoachmark(coachmarkID);
     }
   }
 
@@ -151,16 +156,19 @@ export class CoachmarksHandler extends React.Component {
   onShowCoachmark(coachmarkID) {
     const coachmark = COACHMARKS[coachmarkID];
 
-    if (coachmark.type === 'tooltip') {
-      this.setTooltipID(coachmarkID);
-    } else {
-      // Navigate to modal TODO:
+    this.setTooltipID(coachmarkID);
+
+    if (coachmark.type === 'modal') {
+      const { titleText } = coachmark;
+      const { descriptionText } = coachmark;
+
+      this.navigate('infoModal', { titleText, descriptionText });
     }
   }
 
-  setTooltipID(tooltipID) {
+  setTooltipID(coachmarkID) {
     this.setState({
-      tooltipID,
+      coachmarkID,
     });
   }
 
@@ -193,19 +201,20 @@ export class CoachmarksHandler extends React.Component {
   }
 
   render() {
-    const { tooltipID } = this.state;
+    const { coachmarkID } = this.state;
     const { children } = this.props;
-    const tooltip = COACHMARKS[tooltipID];
+    const coachmark = COACHMARKS[coachmarkID];
 
-    const tooltipComponent = tooltipID ? (
-      <TooltipAnimator style={[styles.tooltipContainer, tooltip.position]}>
-        <Tooltip
-          text={tooltip.titleText}
-          triangleOrientation={tooltip.triangleOrientation}
-          handlePress={() => this.onHideCoachmark(tooltipID)}
-        />
-      </TooltipAnimator>
-    ) : null;
+    const tooltipComponent =
+      coachmark && coachmark.type === 'tooltip' ? (
+        <TooltipAnimator style={[styles.tooltipContainer, coachmark.position]}>
+          <Tooltip
+            text={coachmark.titleText}
+            triangleOrientation={coachmark.triangleOrientation}
+            handlePress={() => this.onHideCoachmark(coachmarkID)}
+          />
+        </TooltipAnimator>
+      ) : null;
 
     return (
       <Fragment>

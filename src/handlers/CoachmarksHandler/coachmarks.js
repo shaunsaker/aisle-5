@@ -64,9 +64,9 @@ const coachmarks = {
   },
   predictions: {
     type: 'modal',
-    iconName: 'help-outline',
-    titleText: 'Tap this to add an item',
-    descriptionText: null,
+    titleText: "Woohoo! You've added your first list!",
+    descriptionText:
+      "The next time you add the same items, we'll be able to start predicting how often you use them.",
   },
 };
 
