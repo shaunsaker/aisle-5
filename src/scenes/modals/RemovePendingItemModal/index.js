@@ -7,6 +7,7 @@ import utils from '../../../utils';
 import styles from './styles';
 
 import Lightbox from '../../../components/Lightbox';
+import ModalCard from '../../../components/ModalCard';
 import Button from '../../../components/Button';
 
 export class RemovePendingItemModal extends React.Component {
@@ -59,7 +60,7 @@ export class RemovePendingItemModal extends React.Component {
 
     return (
       <Lightbox>
-        <View style={styles.container}>
+        <ModalCard>
           <View style={styles.textContainer}>
             <Text style={styles.text}>Are you sure you want to remove </Text>
 
@@ -89,7 +90,7 @@ export class RemovePendingItemModal extends React.Component {
               />
             </View>
           </View>
-        </View>
+        </ModalCard>
       </Lightbox>
     );
   }
