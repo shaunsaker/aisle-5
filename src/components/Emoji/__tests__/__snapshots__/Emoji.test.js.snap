@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Emoji renders renders the default state 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "fontSize": 20,
+    }
+  }
+>
+  🍺
+   
+</Text>
+`;
+
+exports[`Emoji renders renders with minimum required props 1`] = `null`;
