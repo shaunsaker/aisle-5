@@ -47,35 +47,45 @@ export class CoachmarksHandler extends React.Component {
     this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this.keyboardDidShow);
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
     const { coachmarkID } = this.state;
+    const previousCoachmarkID = prevState.coachmarkID;
     const { scene, pendingList } = this.props;
     const pendingListHasItems = Object.keys(pendingList).length;
     const previousPendingListHasItems = Object.keys(prevProps.pendingList).length;
 
+    // If the checkItem coachmark is not shown and
     // If the user has not seen the addItem coachmark and
-    // The user has no pending list items
+    // If the user has no pending list items and
+    // If the user had no pending list items and
+    // If there was not a coachmark previously
     // Show the addItem coachmark
     const hasUserSeenAddItemCoachmark = this.hasUserSeenCoachmark('addItem');
 
-    if (!hasUserSeenAddItemCoachmark && !pendingListHasItems) {
+    if (
+      coachmarkID !== 'addItem' &&
+      !hasUserSeenAddItemCoachmark &&
+      !pendingListHasItems &&
+      !previousPendingListHasItems &&
+      !previousCoachmarkID
+    ) {
       this.onShowCoachmark('addItem');
     }
 
+    // If the checkItem coachmark is not shown and
     // If the user has not seen the checkItem coachmark and
-    // The user has just added a pending item
+    // If the user has just added a pending item
     // Show the checkItem coachmark
     const hasUserSeenCheckItemCoachmark = this.hasUserSeenCoachmark('checkItem');
     const hasUserAddPendingItem = pendingListHasItems && !previousPendingListHasItems;
 
-    if (!hasUserSeenCheckItemCoachmark && hasUserAddPendingItem) {
+    if (coachmarkID !== 'checkItem' && !hasUserSeenCheckItemCoachmark && hasUserAddPendingItem) {
       this.onShowCoachmark('checkItem');
     }
 
     // If the checkItem coachmark is shown and
-    // The user has marked his pending item as checked
+    // If the user has marked his pending item as checked
     // Hide the checkItem coachmark
-    // Show the checkout coachmark
     const hasUserCheckedPendingListItem =
       pendingListHasItems &&
       previousPendingListHasItems &&
@@ -86,17 +96,22 @@ export class CoachmarksHandler extends React.Component {
       this.onHideCoachmark('checkItem');
     }
 
+    // If the checkout coachmark is not shown and
     // If the user has not seen the checkout coachmark and
-    // The user has marked his pending item as checked
+    // If the user has marked his pending item as checked
     // Show the checkout coachmark
     const hasUserSeenCheckoutCoachmark = this.hasUserSeenCoachmark('checkout');
 
-    if (!hasUserSeenCheckoutCoachmark && hasUserCheckedPendingListItem) {
+    if (
+      coachmarkID !== 'checkout' &&
+      !hasUserSeenCheckoutCoachmark &&
+      hasUserCheckedPendingListItem
+    ) {
       this.onShowCoachmark('checkout');
     }
 
     // If the checkout coachmark is shown and
-    // The user has cleared their list
+    // If the user has cleared their list
     // Hide the checkout coachmark
     const hasUserClearedPendingList = !pendingListHasItems && previousPendingListHasItems;
 
@@ -105,7 +120,7 @@ export class CoachmarksHandler extends React.Component {
     }
 
     // If the user has not seen the predictions coachmark and
-    // The user has cleared their list
+    // If the user has cleared their list
     // Show the predictions coachmark
     const hasUserSeenPredictionsCoachmark = this.hasUserSeenCoachmark('predictions');
 
