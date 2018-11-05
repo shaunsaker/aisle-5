@@ -320,7 +320,7 @@ describe('Home', () => {
 
     it('should handle onSubmitList', () => {
       spies[0] = jest.spyOn(Home.prototype, 'saveList');
-      spies[1] = jest.spyOn(Home.prototype, 'resetPendingList');
+      spies[1] = jest.spyOn(Home.prototype, 'removePendingListItem');
       spies[2] = jest.spyOn(Home.prototype, 'setSystemMessage');
       const component = renderer.create(
         <Home dispatch={dispatch} userItems={USER_ITEMS} pendingList={pendingList} />,
@@ -330,7 +330,7 @@ describe('Home', () => {
       instance.onSubmitList();
 
       expect(spies[0]).toHaveBeenCalled();
-      expect(spies[1]).toHaveBeenCalled();
+      expect(spies[1]).toHaveBeenCalled(); // TODO: More ellaborate testing needed
       expect(spies[2]).toHaveBeenCalledWith(expect.any(String));
     });
 
@@ -341,16 +341,6 @@ describe('Home', () => {
       const instance = component.getInstance();
 
       instance.saveList();
-
-      expect(dispatch).toHaveBeenCalled();
-      expect(dispatch).toMatchSnapshot();
-    });
-
-    it('should handle resetPendingList', () => {
-      const component = renderer.create(<Home dispatch={dispatch} />);
-      const instance = component.getInstance();
-
-      instance.resetPendingList();
 
       expect(dispatch).toHaveBeenCalled();
       expect(dispatch).toMatchSnapshot();

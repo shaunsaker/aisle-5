@@ -17,23 +17,62 @@ exports[`PredictedItem renders renders the default state 1`] = `
     ]
   }
 >
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    numberOfLines={1}
+  <View
     style={
       Object {
-        "color": "#212121",
         "flex": 1,
-        "fontFamily": "Muli-SemiBold",
-        "fontSize": 17,
         "marginRight": 15,
       }
     }
   >
-    Beer
-  </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          },
+          Object {
+            "height": undefined,
+          },
+        ]
+      }
+    >
+      <View
+        style={Object {}}
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 20,
+            }
+          }
+        >
+          🍺
+           
+        </Text>
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        numberOfLines={1}
+        style={
+          Object {
+            "color": "#212121",
+            "flex": 1,
+            "fontFamily": "Muli-SemiBold",
+            "fontSize": 17,
+          }
+        }
+      >
+        Beer
+      </Text>
+    </View>
+  </View>
   <View
     style={
       Object {
@@ -92,23 +131,48 @@ exports[`PredictedItem renders renders the not enough data state 1`] = `
     ]
   }
 >
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    numberOfLines={1}
+  <View
     style={
       Object {
-        "color": "#212121",
         "flex": 1,
-        "fontFamily": "Muli-SemiBold",
-        "fontSize": 17,
         "marginRight": 15,
       }
     }
   >
-    Whiskey
-  </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          },
+          Object {
+            "height": undefined,
+          },
+        ]
+      }
+    >
+      <View
+        style={Object {}}
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        numberOfLines={1}
+        style={
+          Object {
+            "color": "#212121",
+            "flex": 1,
+            "fontFamily": "Muli-SemiBold",
+            "fontSize": 17,
+          }
+        }
+      >
+        Whiskey
+      </Text>
+    </View>
+  </View>
   <View
     style={
       Object {
@@ -151,23 +215,62 @@ exports[`PredictedItem renders renders the out of stock state 1`] = `
     ]
   }
 >
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    numberOfLines={1}
+  <View
     style={
       Object {
-        "color": "#212121",
         "flex": 1,
-        "fontFamily": "Muli-SemiBold",
-        "fontSize": 17,
         "marginRight": 15,
       }
     }
   >
-    Wine
-  </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          },
+          Object {
+            "height": undefined,
+          },
+        ]
+      }
+    >
+      <View
+        style={Object {}}
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 20,
+            }
+          }
+        >
+          🍷
+           
+        </Text>
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        numberOfLines={1}
+        style={
+          Object {
+            "color": "#212121",
+            "flex": 1,
+            "fontFamily": "Muli-SemiBold",
+            "fontSize": 17,
+          }
+        }
+      >
+        Wine
+      </Text>
+    </View>
+  </View>
   <View
     style={
       Object {
@@ -226,21 +329,46 @@ exports[`PredictedItem renders renders with minimum required props 1`] = `
     ]
   }
 >
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    numberOfLines={1}
+  <View
     style={
       Object {
-        "color": "#212121",
         "flex": 1,
-        "fontFamily": "Muli-SemiBold",
-        "fontSize": 17,
         "marginRight": 15,
       }
     }
-  />
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          },
+          Object {
+            "height": undefined,
+          },
+        ]
+      }
+    >
+      <View
+        style={Object {}}
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        numberOfLines={1}
+        style={
+          Object {
+            "color": "#212121",
+            "flex": 1,
+            "fontFamily": "Muli-SemiBold",
+            "fontSize": 17,
+          }
+        }
+      />
+    </View>
+  </View>
   <View
     style={
       Object {

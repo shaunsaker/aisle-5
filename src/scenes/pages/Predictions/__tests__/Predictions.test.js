@@ -81,7 +81,7 @@ describe('Predictions', () => {
         testID: `predictions.predictedItemsList.header.button.${selectedHeader.text}`,
       });
 
-      targetComponent.props.onPress();
+      targetComponent.props.handlePress();
 
       expect(spies[0]).toHaveBeenCalledWith(fieldName);
     });

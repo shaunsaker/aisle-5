@@ -112,7 +112,6 @@ exports[`Predictions renders renders with minimum required props 1`] = `
     <RCTScrollView
       ItemSeparatorComponent={[Function]}
       ListHeaderComponent={[Function]}
-      bounces={false}
       contentContainerStyle={Object {}}
       data={
         Array [
@@ -145,7 +144,11 @@ exports[`Predictions renders renders with minimum required props 1`] = `
       onScrollEndDrag={[Function]}
       renderItem={[Function]}
       scrollEventThrottle={50}
-      stickyHeaderIndices={Array []}
+      stickyHeaderIndices={
+        Array [
+          0,
+        ]
+      }
       style={Object {}}
       updateCellsBatchingPeriod={50}
       viewabilityConfigCallbackPairs={Array []}
@@ -161,6 +164,7 @@ exports[`Predictions renders renders with minimum required props 1`] = `
               Array [
                 Object {
                   "alignItems": "center",
+                  "backgroundColor": "#EDE8CA",
                   "borderBottomColor": "#FFFFFF",
                   "borderBottomWidth": 1,
                   "flexDirection": "row",
@@ -174,40 +178,56 @@ exports[`Predictions renders renders with minimum required props 1`] = `
             }
           >
             <View
-              accessible={true}
-              isTVSelectable={true}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
               style={
-                Object {
-                  "alignItems": "center",
-                  "flex": 1,
-                  "flexDirection": "row",
-                  "marginRight": 15,
-                  "opacity": 1,
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                  },
+                  Object {
+                    "flex": 1,
+                  },
+                  Object {
+                    "marginRight": 15,
+                  },
+                ]
               }
-              testID="predictions.predictedItemsList.header.button.NAME"
             >
-              <Text
+              <View
                 accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
-                    "color": "#212121",
-                    "fontFamily": "Muli-Bold",
-                    "fontSize": 15,
-                    "textDecorationLine": "underline",
+                    "opacity": 1,
                   }
                 }
+                testID="predictions.predictedItemsList.header.button.NAME"
               >
-                NAME
-              </Text>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#08293A",
+                        "fontFamily": "Muli-Bold",
+                        "fontSize": 15,
+                        "textDecorationLine": "underline",
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  NAME
+                </Text>
+              </View>
               <Text
                 accessible={true}
                 allowFontScaling={false}
@@ -236,40 +256,56 @@ exports[`Predictions renders renders with minimum required props 1`] = `
               </Text>
             </View>
             <View
-              accessible={true}
-              isTVSelectable={true}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
               style={
-                Object {
-                  "alignItems": "center",
-                  "flex": 2,
-                  "flexDirection": "row",
-                  "marginRight": 0,
-                  "opacity": 1,
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                  },
+                  Object {
+                    "flex": 2,
+                  },
+                  Object {
+                    "marginRight": 0,
+                  },
+                ]
               }
-              testID="predictions.predictedItemsList.header.button.CONSUMPTION"
             >
-              <Text
+              <View
                 accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
+                isTVSelectable={true}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
-                    "color": "#212121",
-                    "fontFamily": "Muli-Bold",
-                    "fontSize": 15,
-                    "textDecorationLine": "underline",
+                    "opacity": 1,
                   }
                 }
+                testID="predictions.predictedItemsList.header.button.CONSUMPTION"
               >
-                CONSUMPTION
-              </Text>
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#08293A",
+                        "fontFamily": "Muli-Bold",
+                        "fontSize": 15,
+                        "textDecorationLine": "underline",
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  CONSUMPTION
+                </Text>
+              </View>
               <Text
                 accessible={true}
                 allowFontScaling={false}
@@ -321,23 +357,62 @@ exports[`Predictions renders renders with minimum required props 1`] = `
                 ]
               }
             >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                numberOfLines={1}
+              <View
                 style={
                   Object {
-                    "color": "#212121",
                     "flex": 1,
-                    "fontFamily": "Muli-SemiBold",
-                    "fontSize": 17,
                     "marginRight": 15,
                   }
                 }
               >
-                Beer
-              </Text>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                      },
+                      Object {
+                        "height": undefined,
+                      },
+                    ]
+                  }
+                >
+                  <View
+                    style={Object {}}
+                  >
+                    <Text
+                      accessible={true}
+                      allowFontScaling={true}
+                      ellipsizeMode="tail"
+                      style={
+                        Object {
+                          "fontSize": 20,
+                        }
+                      }
+                    >
+                      🍺
+                       
+                    </Text>
+                  </View>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    numberOfLines={1}
+                    style={
+                      Object {
+                        "color": "#212121",
+                        "flex": 1,
+                        "fontFamily": "Muli-SemiBold",
+                        "fontSize": 17,
+                      }
+                    }
+                  >
+                    Beer
+                  </Text>
+                </View>
+              </View>
               <View
                 style={
                   Object {

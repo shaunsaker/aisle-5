@@ -129,6 +129,71 @@ exports[`TabBarContainer renders renders with minimum required props 1`] = `
         ]
       }
     >
+      
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgba(273, 232, 202, 0.67)",
+            "fontFamily": "Muli-SemiBold",
+            "fontSize": 15,
+          },
+          undefined,
+        ]
+      }
+    >
+      History
+    </Text>
+  </View>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "opacity": 1,
+        "paddingBottom": 7,
+        "paddingVertical": 5,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": undefined,
+            "fontSize": 12,
+          },
+          Array [
+            Object {
+              "color": "rgba(273, 232, 202, 0.67)",
+              "fontSize": 24,
+            },
+            undefined,
+          ],
+          Object {
+            "fontFamily": "Material Icons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          Object {},
+        ]
+      }
+    >
       
     </Text>
     <Text

@@ -6,6 +6,7 @@ exports[`Header renders renders with minimum required props 1`] = `
     Array [
       Object {
         "alignItems": "center",
+        "backgroundColor": "#EDE8CA",
         "borderBottomColor": "#FFFFFF",
         "borderBottomWidth": 1,
         "flexDirection": "row",
@@ -19,40 +20,56 @@ exports[`Header renders renders with minimum required props 1`] = `
   }
 >
   <View
-    accessible={true}
-    isTVSelectable={true}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "flexDirection": "row",
-        "marginRight": 15,
-        "opacity": 1,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+        },
+        Object {
+          "flex": 1,
+        },
+        Object {
+          "marginRight": 15,
+        },
+      ]
     }
-    testID="undefinedNAME"
   >
-    <Text
+    <View
       accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "color": "#212121",
-          "fontFamily": "Muli-Bold",
-          "fontSize": 15,
-          "textDecorationLine": "underline",
+          "opacity": 1,
         }
       }
+      testID="undefinedNAME"
     >
-      NAME
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#08293A",
+              "fontFamily": "Muli-Bold",
+              "fontSize": 15,
+              "textDecorationLine": "underline",
+            },
+            undefined,
+          ]
+        }
+      >
+        NAME
+      </Text>
+    </View>
     <Text
       accessible={true}
       allowFontScaling={false}
@@ -81,40 +98,56 @@ exports[`Header renders renders with minimum required props 1`] = `
     </Text>
   </View>
   <View
-    accessible={true}
-    isTVSelectable={true}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
-      Object {
-        "alignItems": "center",
-        "flex": 2,
-        "flexDirection": "row",
-        "marginRight": 0,
-        "opacity": 1,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+        },
+        Object {
+          "flex": 2,
+        },
+        Object {
+          "marginRight": 0,
+        },
+      ]
     }
-    testID="undefinedCONSUMPTION"
   >
-    <Text
+    <View
       accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "color": "#212121",
-          "fontFamily": "Muli-Bold",
-          "fontSize": 15,
-          "textDecorationLine": "underline",
+          "opacity": 1,
         }
       }
+      testID="undefinedCONSUMPTION"
     >
-      CONSUMPTION
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#08293A",
+              "fontFamily": "Muli-Bold",
+              "fontSize": 15,
+              "textDecorationLine": "underline",
+            },
+            undefined,
+          ]
+        }
+      >
+        CONSUMPTION
+      </Text>
+    </View>
     <Text
       accessible={true}
       allowFontScaling={false}

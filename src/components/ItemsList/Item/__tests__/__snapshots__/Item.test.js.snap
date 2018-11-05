@@ -87,36 +87,90 @@ exports[`Item renders renders the note checked state 1`] = `
       </View>
     </View>
   </View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
+  <View
     style={
       Object {
-        "color": "#212121",
-        "fontFamily": "Muli-Bold",
-        "fontSize": 17,
-      }
-    }
-  >
-    6
-  </Text>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "color": "#212121",
         "flex": 1,
-        "fontFamily": "Muli-SemiBold",
-        "fontSize": 17,
         "marginRight": 15,
       }
     }
   >
-     x Beer
-  </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          },
+          Object {
+            "height": undefined,
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#212121",
+            "fontFamily": "Muli-Bold",
+            "fontSize": 17,
+          }
+        }
+      >
+        6
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#212121",
+            "fontFamily": "Muli-SemiBold",
+            "fontSize": 17,
+          }
+        }
+      >
+         x 
+      </Text>
+      <View
+        style={Object {}}
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 20,
+            }
+          }
+        >
+          🍺
+           
+        </Text>
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        numberOfLines={1}
+        style={
+          Object {
+            "color": "#212121",
+            "flex": 1,
+            "fontFamily": "Muli-SemiBold",
+            "fontSize": 17,
+          }
+        }
+      >
+        Beer
+      </Text>
+    </View>
+  </View>
   <View
     style={
       Object {
@@ -379,36 +433,90 @@ exports[`Item renders renders with minimum required props 1`] = `
       </View>
     </View>
   </View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
+  <View
     style={
       Object {
-        "color": "#212121",
-        "fontFamily": "Muli-Bold",
-        "fontSize": 17,
-      }
-    }
-  >
-    6
-  </Text>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "color": "#212121",
         "flex": 1,
-        "fontFamily": "Muli-SemiBold",
-        "fontSize": 17,
         "marginRight": 15,
       }
     }
   >
-     x Beer
-  </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          },
+          Object {
+            "height": undefined,
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#212121",
+            "fontFamily": "Muli-Bold",
+            "fontSize": 17,
+          }
+        }
+      >
+        6
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#212121",
+            "fontFamily": "Muli-SemiBold",
+            "fontSize": 17,
+          }
+        }
+      >
+         x 
+      </Text>
+      <View
+        style={Object {}}
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 20,
+            }
+          }
+        >
+          🍺
+           
+        </Text>
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        numberOfLines={1}
+        style={
+          Object {
+            "color": "#212121",
+            "flex": 1,
+            "fontFamily": "Muli-SemiBold",
+            "fontSize": 17,
+          }
+        }
+      >
+        Beer
+      </Text>
+    </View>
+  </View>
   <View
     style={
       Object {

@@ -48,24 +48,6 @@ exports[`Home methods should handle removePendingListItem 1`] = `
 }
 `;
 
-exports[`Home methods should handle resetPendingList 1`] = `
-[MockFunction] {
-  "calls": Array [
-    Array [
-      Object {
-        "type": "RESET_PENDING_LIST",
-      },
-    ],
-  ],
-  "results": Array [
-    Object {
-      "isThrow": false,
-      "value": undefined,
-    },
-  ],
-}
-`;
-
 exports[`Home methods should handle saveItem 1`] = `
 [MockFunction] {
   "calls": Array [
@@ -110,14 +92,7 @@ exports[`Home methods should handle saveList 1`] = `
         "payload": Object {
           "document": Object {
             "date_added": 1533309837130,
-            "list": Array [
-              Object {
-                "date_added": undefined,
-                "date_purchased": undefined,
-                "quantity": 6,
-                "user_item_id": "1",
-              },
-            ],
+            "list": undefined,
             "uid": undefined,
             "unique_id": undefined,
           },
@@ -301,9 +276,8 @@ exports[`Home renders renders with minimum required props 1`] = `
       }
     >
       <BlankState
-        description="Add items you need by tapping the '+' button below. They'll show up here, ready for your next shopping trip."
         iconName="shopping-basket"
-        title="All stocked up?"
+        title="List empty."
       />
     </InputContainer>
     <View
@@ -342,7 +316,7 @@ exports[`Home renders renders with minimum required props 1`] = `
           }
         >
           <Button
-            disabled={null}
+            disabled={true}
             handlePress={[Function]}
             primary={true}
             text="Checkout"

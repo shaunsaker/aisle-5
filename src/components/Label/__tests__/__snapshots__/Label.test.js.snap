@@ -12,7 +12,7 @@ exports[`Label renders renders 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "backgroundColor": "#FFFFFF",
+      "backgroundColor": "#D17623",
       "borderColor": null,
       "borderRadius": 5,
       "borderWidth": 0,
@@ -36,7 +36,7 @@ exports[`Label renders renders 1`] = `
     ellipsizeMode="tail"
     style={
       Object {
-        "color": "#08293A",
+        "color": "#EDE8CA",
         "fontFamily": "Muli-SemiBold",
         "fontSize": 17,
       }

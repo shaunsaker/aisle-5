@@ -4,7 +4,6 @@ exports[`PredictedItemsList renders renders with minimum required props 1`] = `
 <RCTScrollView
   ItemSeparatorComponent={[Function]}
   ListHeaderComponent={[Function]}
-  bounces={false}
   contentContainerStyle={Object {}}
   data={
     Array [
@@ -82,7 +81,11 @@ exports[`PredictedItemsList renders renders with minimum required props 1`] = `
   onScrollEndDrag={[Function]}
   renderItem={[Function]}
   scrollEventThrottle={50}
-  stickyHeaderIndices={Array []}
+  stickyHeaderIndices={
+    Array [
+      0,
+    ]
+  }
   style={Object {}}
   updateCellsBatchingPeriod={50}
   viewabilityConfigCallbackPairs={Array []}

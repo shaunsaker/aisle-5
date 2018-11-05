@@ -33,6 +33,7 @@ exports[`InputContainer renders with minimum required props 1`] = `
     keyboardSpace={0}
     onScroll={[Function]}
     resetKeyboardSpace={[Function]}
+    scrollEnabled={false}
     scrollEventThrottle={1}
     scrollForExtraHeightOnAndroid={[Function]}
     scrollIntoView={[Function]}

@@ -13,84 +13,104 @@ exports[`HeaderTabs renders renders with minimum required props 1`] = `
   }
 >
   <View
-    accessible={true}
-    isTVSelectable={true}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "opacity": 1,
-        "paddingHorizontal": 15,
-        "paddingVertical": 10,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "paddingHorizontal": 15,
+          "paddingVertical": 10,
+        },
+        Object {},
+      ]
     }
-    testID="undefinedFoo"
   >
-    <Text
+    <View
       accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
-        Array [
-          Object {
-            "color": "#212121",
-            "fontFamily": "Muli-Bold",
-            "fontSize": 15,
-            "textDecorationLine": "underline",
-          },
-          Object {
-            "color": "#D17623",
-          },
-        ]
+        Object {
+          "opacity": 1,
+        }
       }
+      testID="undefinedFoo"
     >
-      Foo
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#08293A",
+              "fontFamily": "Muli-Bold",
+              "fontSize": 15,
+              "textDecorationLine": "underline",
+            },
+            Object {
+              "color": "#D17623",
+            },
+          ]
+        }
+      >
+        FOO
+      </Text>
+    </View>
   </View>
   <View
-    accessible={true}
-    isTVSelectable={true}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "opacity": 1,
-        "paddingHorizontal": 15,
-        "paddingVertical": 10,
-      }
+      Array [
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "paddingHorizontal": 15,
+          "paddingVertical": 10,
+        },
+        Object {},
+      ]
     }
-    testID="undefinedBar"
   >
-    <Text
+    <View
       accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
-        Array [
-          Object {
-            "color": "#212121",
-            "fontFamily": "Muli-Bold",
-            "fontSize": 15,
-            "textDecorationLine": "underline",
-          },
-          false,
-        ]
+        Object {
+          "opacity": 1,
+        }
       }
+      testID="undefinedBar"
     >
-      Bar
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#08293A",
+              "fontFamily": "Muli-Bold",
+              "fontSize": 15,
+              "textDecorationLine": "underline",
+            },
+            false,
+          ]
+        }
+      >
+        BAR
+      </Text>
+    </View>
   </View>
 </View>
 `;

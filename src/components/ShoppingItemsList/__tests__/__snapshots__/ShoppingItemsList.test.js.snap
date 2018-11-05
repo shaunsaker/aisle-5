@@ -3,12 +3,7 @@
 exports[`ItemsList renders renders with minimum required props 1`] = `
 <RCTScrollView
   ItemSeparatorComponent={[Function]}
-  bounces={false}
-  contentContainerStyle={
-    Object {
-      "paddingBottom": 70,
-    }
-  }
+  contentContainerStyle={Object {}}
   data={
     Array [
       Object {
@@ -48,7 +43,11 @@ exports[`ItemsList renders renders with minimum required props 1`] = `
       style={null}
     >
       <View
-        style={Object {}}
+        style={
+          Object {
+            "paddingHorizontal": 15,
+          }
+        }
       >
         <ShoppingItem
           height={51}

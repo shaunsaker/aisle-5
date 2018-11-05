@@ -7,7 +7,6 @@ exports[`ShoppingItem renders renders with minimum required props 1`] = `
       Object {
         "alignItems": "center",
         "flexDirection": "row",
-        "paddingHorizontal": 15,
       },
       Object {
         "height": undefined,
@@ -41,7 +40,40 @@ exports[`ShoppingItem renders renders with minimum required props 1`] = `
       }
     }
   >
-     x Beer
+     x 
+  </Text>
+  <View
+    style={Object {}}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontSize": 20,
+        }
+      }
+    >
+      🍺
+       
+    </Text>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    numberOfLines={1}
+    style={
+      Object {
+        "color": "#212121",
+        "flex": 1,
+        "fontFamily": "Muli-SemiBold",
+        "fontSize": 17,
+      }
+    }
+  >
+    Beer
   </Text>
 </View>
 `;

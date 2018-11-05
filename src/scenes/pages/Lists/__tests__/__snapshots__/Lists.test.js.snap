@@ -122,134 +122,159 @@ exports[`Lists renders renders with minimum required props 1`] = `
         }
       >
         <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
-            Object {
-              "alignItems": "center",
-              "flex": 1,
-              "opacity": 1,
-              "paddingHorizontal": 15,
-              "paddingVertical": 10,
-            }
+            Array [
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "paddingHorizontal": 15,
+                "paddingVertical": 10,
+              },
+              Object {},
+            ]
           }
-          testID="lists.headerTabs.button.WEEKLY"
         >
-          <Text
+          <View
             accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Object {
-                  "color": "#212121",
-                  "fontFamily": "Muli-Bold",
-                  "fontSize": 15,
-                  "textDecorationLine": "underline",
-                },
-                Object {
-                  "color": "#D17623",
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
+            testID="lists.headerTabs.button.WEEKLY"
           >
-            WEEKLY
-          </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#08293A",
+                    "fontFamily": "Muli-Bold",
+                    "fontSize": 15,
+                    "textDecorationLine": "underline",
+                  },
+                  Object {
+                    "color": "#D17623",
+                  },
+                ]
+              }
+            >
+              WEEKLY
+            </Text>
+          </View>
         </View>
         <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
-            Object {
-              "alignItems": "center",
-              "flex": 1,
-              "opacity": 1,
-              "paddingHorizontal": 15,
-              "paddingVertical": 10,
-            }
+            Array [
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "paddingHorizontal": 15,
+                "paddingVertical": 10,
+              },
+              Object {},
+            ]
           }
-          testID="lists.headerTabs.button.MONTHLY"
         >
-          <Text
+          <View
             accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Object {
-                  "color": "#212121",
-                  "fontFamily": "Muli-Bold",
-                  "fontSize": 15,
-                  "textDecorationLine": "underline",
-                },
-                false,
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
+            testID="lists.headerTabs.button.MONTHLY"
           >
-            MONTHLY
-          </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#08293A",
+                    "fontFamily": "Muli-Bold",
+                    "fontSize": 15,
+                    "textDecorationLine": "underline",
+                  },
+                  false,
+                ]
+              }
+            >
+              MONTHLY
+            </Text>
+          </View>
         </View>
         <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
-            Object {
-              "alignItems": "center",
-              "flex": 1,
-              "opacity": 1,
-              "paddingHorizontal": 15,
-              "paddingVertical": 10,
-            }
+            Array [
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "paddingHorizontal": 15,
+                "paddingVertical": 10,
+              },
+              Object {},
+            ]
           }
-          testID="lists.headerTabs.button.YEARLY"
         >
-          <Text
+          <View
             accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Object {
-                  "color": "#212121",
-                  "fontFamily": "Muli-Bold",
-                  "fontSize": 15,
-                  "textDecorationLine": "underline",
-                },
-                false,
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
+            testID="lists.headerTabs.button.YEARLY"
           >
-            YEARLY
-          </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#08293A",
+                    "fontFamily": "Muli-Bold",
+                    "fontSize": 15,
+                    "textDecorationLine": "underline",
+                  },
+                  false,
+                ]
+              }
+            >
+              YEARLY
+            </Text>
+          </View>
         </View>
       </View>
     </View>
     <RCTScrollView
       ItemSeparatorComponent={[Function]}
-      bounces={false}
-      contentContainerStyle={
-        Object {
-          "paddingBottom": 70,
-        }
-      }
+      contentContainerStyle={Object {}}
       data={
         Array [
           Object {
@@ -288,7 +313,11 @@ exports[`Lists renders renders with minimum required props 1`] = `
           style={null}
         >
           <View
-            style={Object {}}
+            style={
+              Object {
+                "paddingHorizontal": 15,
+              }
+            }
           >
             <View
               style={
@@ -296,7 +325,6 @@ exports[`Lists renders renders with minimum required props 1`] = `
                   Object {
                     "alignItems": "center",
                     "flexDirection": "row",
-                    "paddingHorizontal": 15,
                   },
                   Object {
                     "height": 51,
@@ -330,7 +358,40 @@ exports[`Lists renders renders with minimum required props 1`] = `
                   }
                 }
               >
-                 x Beer
+                 x 
+              </Text>
+              <View
+                style={Object {}}
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "fontSize": 20,
+                    }
+                  }
+                >
+                  🍺
+                   
+                </Text>
+              </View>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                numberOfLines={1}
+                style={
+                  Object {
+                    "color": "#212121",
+                    "flex": 1,
+                    "fontFamily": "Muli-SemiBold",
+                    "fontSize": 17,
+                  }
+                }
+              >
+                Beer
               </Text>
             </View>
           </View>

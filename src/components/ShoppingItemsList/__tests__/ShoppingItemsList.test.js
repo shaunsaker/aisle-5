@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import ItemsList from '..';
 import ITEM from '../../../mockData/item';
 
-jest.mock('../ShoppingItem', () => 'ShoppingItem');
+jest.mock('../../ShoppingItem', () => 'ShoppingItem');
 jest.mock('../../ItemSeparator', () => 'ItemSeparator');
 
 // Fixes _bezier is not a function bug

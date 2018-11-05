@@ -3,7 +3,6 @@
 exports[`ItemsList renders renders with minimum required props 1`] = `
 <RCTScrollView
   ItemSeparatorComponent={[Function]}
-  bounces={false}
   contentContainerStyle={
     Object {
       "paddingBottom": 70,

@@ -52,7 +52,7 @@ describe('Lists', () => {
         testID: `lists.headerTabs.button.${selectedTab.text}`,
       });
 
-      targetComponent.props.onPress();
+      targetComponent.props.handlePress();
 
       expect(spies[0]).toHaveBeenCalledWith(selectedTab);
     });
