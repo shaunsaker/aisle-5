@@ -25,7 +25,12 @@ export default class ListOfLists extends React.Component {
     sections: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string,
-        data: PropTypes.arrayOf(PropTypes.shape({})),
+        data: PropTypes.arrayOf(
+          PropTypes.shape({
+            name: PropTypes.string,
+            quantity: PropTypes.number,
+          }),
+        ),
       }),
     ).isRequired,
   };

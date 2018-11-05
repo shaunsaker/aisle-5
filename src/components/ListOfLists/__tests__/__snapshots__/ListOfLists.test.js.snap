@@ -1,0 +1,237 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListOfLists renders renders with minimum required props 1`] = `
+<RCTScrollView
+  contentContainerStyle={Object {}}
+  data={
+    Array [
+      Object {
+        "data": Array [
+          Object {
+            "id": "1",
+            "isChecked": true,
+            "name": "Beer",
+            "quantity": 6,
+          },
+        ],
+        "title": "Test",
+      },
+    ]
+  }
+  disableVirtualization={false}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  horizontal={false}
+  initialNumToRender={10}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  onContentSizeChange={[Function]}
+  onEndReachedThreshold={2}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  renderItem={[Function]}
+  renderSectionHeader={[Function]}
+  scrollEventThrottle={50}
+  sections={
+    Array [
+      Object {
+        "data": Array [
+          Object {
+            "id": "1",
+            "isChecked": true,
+            "name": "Beer",
+            "quantity": 6,
+          },
+        ],
+        "title": "Test",
+      },
+    ]
+  }
+  stickyHeaderIndices={Array []}
+  stickySectionHeadersEnabled={false}
+  style={Object {}}
+  updateCellsBatchingPeriod={50}
+  windowSize={21}
+>
+  <View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#EDE8CA",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "justifyContent": "center",
+                "paddingHorizontal": 15,
+              },
+              Object {
+                "height": 51,
+              },
+            ]
+          }
+        >
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#08293A",
+                    "fontFamily": "Muli-Bold",
+                    "fontSize": 15,
+                    "textDecorationLine": "underline",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              TEST
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "alignSelf": "stretch",
+              "backgroundColor": "#FFFFFF",
+              "height": 1,
+            }
+          }
+        />
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        style={Object {}}
+      >
+        <View
+          style={
+            Object {
+              "paddingHorizontal": 15,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                },
+                Object {
+                  "height": 51,
+                },
+              ]
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#212121",
+                  "fontFamily": "Muli-Bold",
+                  "fontSize": 17,
+                }
+              }
+            >
+              6
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#212121",
+                  "fontFamily": "Muli-SemiBold",
+                  "fontSize": 17,
+                }
+              }
+            >
+               x 
+            </Text>
+            <View
+              style={Object {}}
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "fontSize": 20,
+                  }
+                }
+              >
+                🍺
+                 
+              </Text>
+            </View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              numberOfLines={1}
+              style={
+                Object {
+                  "color": "#212121",
+                  "flex": 1,
+                  "fontFamily": "Muli-SemiBold",
+                  "fontSize": 17,
+                }
+              }
+            >
+              Beer
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "alignSelf": "stretch",
+              "backgroundColor": "#FFFFFF",
+              "height": 1,
+            }
+          }
+        />
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    />
+  </View>
+</RCTScrollView>
+`;
