@@ -18,6 +18,7 @@ import styleConstants from '../../styleConstants';
 
 const ICON_BUTTON_SIZE = 50;
 const TOOLTIP_HEIGHT = 39;
+const TRIANGLE_SIZE = 20;
 const STATUS_BAR_HEIGHT = Platform.OS === 'ios' ? 22 : 0;
 const HEADER_HEIGHT = 60;
 const ITEM_HEIGHT = 51;
@@ -30,11 +31,15 @@ const coachmarks = {
     type: 'tooltip',
     titleText: 'Tap this to add an item',
     position: {
-      bottom: ICON_BUTTON_SIZE + (styleConstants.dimensions.spacing.vertical + TOOLTIP_HEIGHT) / 2,
+      bottom:
+        ICON_BUTTON_SIZE +
+        (styleConstants.dimensions.spacing.vertical + TOOLTIP_HEIGHT) / 2 -
+        TRIANGLE_SIZE,
       right:
         ICON_BUTTON_SIZE +
         styleConstants.dimensions.spacing.horizontal * 2 +
-        styleConstants.dimensions.spacing.horizontal / 2,
+        styleConstants.dimensions.spacing.horizontal / 2 -
+        TRIANGLE_SIZE,
     },
     triangleOrientation: 90,
   },
@@ -42,11 +47,12 @@ const coachmarks = {
     type: 'tooltip',
     titleText: 'Tap this to check an item',
     position: {
-      top: STATUS_BAR_HEIGHT + HEADER_HEIGHT + (ITEM_HEIGHT - TOOLTIP_HEIGHT) / 2,
+      top: STATUS_BAR_HEIGHT + HEADER_HEIGHT + (ITEM_HEIGHT - TOOLTIP_HEIGHT) / 2 - TRIANGLE_SIZE,
       left:
         styleConstants.dimensions.spacing.horizontal * 2 +
         SMALL_ICON_BUTTON_SIZE +
-        styleConstants.dimensions.spacing.horizontal / 2,
+        styleConstants.dimensions.spacing.horizontal / 2 -
+        TRIANGLE_SIZE,
     },
     triangleOrientation: 270,
   },
@@ -58,7 +64,8 @@ const coachmarks = {
         TAB_BAR_HEIGHT +
         styleConstants.dimensions.spacing.vertical +
         BUTTON_HEIGHT +
-        (styleConstants.dimensions.spacing.vertical * 5) / 2,
+        (styleConstants.dimensions.spacing.vertical * 5) / 2 -
+        TRIANGLE_SIZE / 2,
     },
     triangleOrientation: 180,
   },
