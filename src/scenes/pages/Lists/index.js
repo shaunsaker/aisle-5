@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { View } from 'react-native';
 
 import utils from '../../../utils';
+import config from '../../../config';
 import styles from './styles';
 
 import Page from '../../../components/Page';
@@ -85,8 +86,8 @@ export class Lists extends React.Component {
     ) : (
       <BlankState
         iconName="assignment"
-        title="Nothing just yet."
-        description="Once you have items in your predictions, we'll be able to tell you what you need to buy on a weekly, monthly and yearly basis."
+        title={config.copy.blankStates.lists.title}
+        description={config.copy.blankStates.lists.description}
       />
     );
 

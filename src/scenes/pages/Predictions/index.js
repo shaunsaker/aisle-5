@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { View } from 'react-native';
 
 import utils from '../../../utils';
+import config from '../../../config';
 import styles from './styles';
 
 import Page from '../../../components/Page';
@@ -85,8 +86,8 @@ export class Predictions extends React.Component {
     ) : (
       <BlankState
         iconName="poll"
-        title="Wingardium Leviosa!"
-        description="Use the app and it will magically predict when you'll run out of items."
+        title={config.copy.blankStates.predictions.title}
+        description={config.copy.blankStates.predictions.description}
       />
     );
 

@@ -1,6 +1,8 @@
+import copy from './copy';
 import version from './version';
 
 const config = {
+  copy,
   version,
 };
 

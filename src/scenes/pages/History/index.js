@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { View } from 'react-native';
 
 import utils from '../../../utils';
+import config from '../../../config';
 import styles from './styles';
 
 import Page from '../../../components/Page';
@@ -66,8 +67,8 @@ export class History extends React.Component {
     ) : (
       <BlankState
         iconName="watch-later"
-        title="We have no history together."
-        description="Once you start saving lists, they will show up here for reference."
+        title={config.copy.blankStates.history.title}
+        description={config.copy.blankStates.history.description}
       />
     );
 

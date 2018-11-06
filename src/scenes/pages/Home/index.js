@@ -6,6 +6,7 @@ import Animator from 'react-native-simple-animators';
 import KeyboardSpacer from 'react-native-keyboard-spacer';
 
 import utils from '../../../utils';
+import config from '../../../config';
 import styleConstants from '../../../styleConstants';
 
 import styles from './styles';
@@ -385,7 +386,11 @@ export class Home extends React.Component {
         handleRemoveItem={this.onRemovePendingListItem}
       />
     ) : !showInput ? (
-      <BlankState iconName="shopping-basket" title="List empty." description="Surely not." />
+      <BlankState
+        iconName="shopping-basket"
+        title={config.copy.blankStates.home.title}
+        description={config.copy.blankStates.home.description}
+      />
     ) : null;
 
     const addItemButtonComponent =
