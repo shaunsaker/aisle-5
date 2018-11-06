@@ -9,11 +9,13 @@ export default function userCoachmarksReducer(state = initialState, action = {})
 
       // Iterate over the collection, setting each document
       // as an object on newState indexed by documentID
-      action.payload.data.forEach((document) => {
-        const key = document.id;
+      if (action.payload.data.length) {
+        action.payload.data.forEach((document) => {
+          const key = document.id;
 
-        newState[key] = document;
-      });
+          newState[key] = document;
+        });
+      }
 
       return newState;
 
