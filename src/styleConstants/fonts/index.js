@@ -31,6 +31,7 @@ fonts.types = {
     ...fonts.families.title,
     fontSize: fonts.sizes.large,
     color: colors.primaryText,
+    lineHeight: fonts.sizes.large * 1.25,
   },
   heading: {
     ...fonts.families.bold,
@@ -41,6 +42,7 @@ fonts.types = {
     ...fonts.families.medium,
     fontSize: fonts.sizes.regular,
     color: colors.primaryText,
+    lineHeight: fonts.sizes.regular * 1.5,
   },
   small: {
     ...fonts.families.medium,
