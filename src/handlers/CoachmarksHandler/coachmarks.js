@@ -71,9 +71,9 @@ const coachmarks = {
   },
   predictions: {
     type: 'modal',
-    titleText: "Woohoo! You've added your first list!",
+    titleText: 'Easy as pie',
     descriptionText:
-      "The next time you add the same items, we'll be able to start predicting how often you use them.",
+      "Congrats, you've added your first list. The next time you add the same items, we'll be able to start predicting how often you use them.",
   },
 };
 

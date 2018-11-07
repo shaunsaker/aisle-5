@@ -1,20 +1,22 @@
 const copy = {
   blankStates: {
     home: {
-      title: 'No more cakes and ale',
-      description: 'Surely not',
+      title: 'Bring home the bacon',
+      description: 'Items that you need will appear here after you add them.',
     },
     history: {
-      title: 'Bring home the bacon',
-      description: 'Surely not',
+      title: 'Proof is in the pudding',
+      description: 'Lists that you "Checkout" will be saved here for future reference.',
     },
     predictions: {
-      title: 'Bun in the oven',
-      description: 'Surely not',
+      title: 'Icing on the cake',
+      description:
+        "Once you've checked out items at least twice, we'll start predicting their usage here.",
     },
     lists: {
-      title: 'Pears for your heirs',
-      description: 'Surely not',
+      title: 'Thats the way the cookie crumbles',
+      description:
+        "Over here we'll tell you how many items to buy on a weekly, monthly and yearly basis.",
     },
   },
 };
