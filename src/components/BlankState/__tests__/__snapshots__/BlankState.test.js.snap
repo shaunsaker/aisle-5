@@ -47,6 +47,7 @@ exports[`BlankState renders renders 1`] = `
         "color": "#212121",
         "fontFamily": "ArchivoBlack-Regular",
         "fontSize": 24,
+        "lineHeight": 30,
         "marginBottom": 10,
         "textAlign": "center",
       }
@@ -63,6 +64,7 @@ exports[`BlankState renders renders 1`] = `
         "color": "#212121",
         "fontFamily": "Muli-SemiBold",
         "fontSize": 17,
+        "lineHeight": 25.5,
         "textAlign": "center",
       }
     }

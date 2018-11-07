@@ -39,6 +39,7 @@ exports[`Label renders renders 1`] = `
         "color": "#EDE8CA",
         "fontFamily": "Muli-SemiBold",
         "fontSize": 17,
+        "lineHeight": 25.5,
       }
     }
   >

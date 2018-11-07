@@ -12,9 +12,8 @@ exports[`Tooltip renders renders with minimum required props 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "margin": -10,
       "opacity": 1,
-      "padding": 10,
+      "padding": 20,
     }
   }
 >

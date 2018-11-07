@@ -23,6 +23,7 @@ exports[`ShoppingItem renders renders with minimum required props 1`] = `
         "color": "#212121",
         "fontFamily": "Muli-Bold",
         "fontSize": 17,
+        "lineHeight": 25.5,
       }
     }
   >
@@ -37,6 +38,7 @@ exports[`ShoppingItem renders renders with minimum required props 1`] = `
         "color": "#212121",
         "fontFamily": "Muli-SemiBold",
         "fontSize": 17,
+        "lineHeight": 25.5,
       }
     }
   >
@@ -70,6 +72,7 @@ exports[`ShoppingItem renders renders with minimum required props 1`] = `
         "flex": 1,
         "fontFamily": "Muli-SemiBold",
         "fontSize": 17,
+        "lineHeight": 25.5,
       }
     }
   >

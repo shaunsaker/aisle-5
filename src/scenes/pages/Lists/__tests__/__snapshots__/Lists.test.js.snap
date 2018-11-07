@@ -78,6 +78,7 @@ exports[`Lists renders renders with minimum required props 1`] = `
             "color": "#212121",
             "fontFamily": "ArchivoBlack-Regular",
             "fontSize": 24,
+            "lineHeight": 30,
           },
           Object {
             "color": "#EDE8CA",
@@ -341,6 +342,7 @@ exports[`Lists renders renders with minimum required props 1`] = `
                     "color": "#212121",
                     "fontFamily": "Muli-Bold",
                     "fontSize": 17,
+                    "lineHeight": 25.5,
                   }
                 }
               >
@@ -355,6 +357,7 @@ exports[`Lists renders renders with minimum required props 1`] = `
                     "color": "#212121",
                     "fontFamily": "Muli-SemiBold",
                     "fontSize": 17,
+                    "lineHeight": 25.5,
                   }
                 }
               >
@@ -388,6 +391,7 @@ exports[`Lists renders renders with minimum required props 1`] = `
                     "flex": 1,
                     "fontFamily": "Muli-SemiBold",
                     "fontSize": 17,
+                    "lineHeight": 25.5,
                   }
                 }
               >
