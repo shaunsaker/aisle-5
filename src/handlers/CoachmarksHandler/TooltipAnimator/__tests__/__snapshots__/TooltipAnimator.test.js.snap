@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TooltipAnimator renders renders with minimum required props 1`] = `
+<View
+  style={
+    Object {
+      "opacity": 0,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "transform": Array [
+          Object {
+            "scale": 0,
+          },
+        ],
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "transform": Array [
+            Object {
+              "scale": 1,
+            },
+          ],
+        }
+      }
+    />
+  </View>
+</View>
+`;
