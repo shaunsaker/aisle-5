@@ -5,7 +5,7 @@ import styleConstants from '../../styleConstants';
 /*
   addItem: {
     type: 'tooltip', // or modal
-    iconName: 'help-outline', // modal only
+    emojiName: 'yum', // modal only
     titleText: 'Tap this to add an item',
     descriptionText: null, // modal only
     position: {
@@ -71,6 +71,7 @@ const coachmarks = {
   },
   predictions: {
     type: 'modal',
+    emojiName: 'yum',
     titleText: 'Easy as pie',
     descriptionText:
       "Congrats, you've added your first list. The next time you add the same items, we'll be able to start predicting how often you use them.",

@@ -8,6 +8,7 @@ import styles from './styles';
 
 import Lightbox from '../../../components/Lightbox';
 import ModalCard from '../../../components/ModalCard';
+import Emoji from '../../../components/Emoji';
 import Button from '../../../components/Button';
 
 export class InfoModal extends React.Component {
@@ -22,6 +23,7 @@ export class InfoModal extends React.Component {
 
   static propTypes = {
     /* passed by previous scene */
+    emojiName: PropTypes.string,
     titleText: PropTypes.string,
     descriptionText: PropTypes.string,
   };
@@ -37,11 +39,18 @@ export class InfoModal extends React.Component {
   }
 
   render() {
-    const { titleText, descriptionText } = this.props;
+    const { emojiName, titleText, descriptionText } = this.props;
+    const emojiComponent = emojiName ? (
+      <View style={styles.emojiContainer}>
+        <Emoji name="yum" size={64} />
+      </View>
+    ) : null;
 
     return (
       <Lightbox>
         <ModalCard>
+          {emojiComponent}
+
           <Text style={styles.titleText}>{titleText}</Text>
 
           <Text style={styles.descriptionText}>{descriptionText}</Text>

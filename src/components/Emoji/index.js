@@ -7,6 +7,7 @@ import styles from './styles';
 
 const propTypes = {
   name: PropTypes.string,
+  size: PropTypes.number,
 };
 
 const defaultProps = {};
@@ -14,13 +15,14 @@ const defaultProps = {};
 /*
  Returns an emoji if there is a match with the name
 */
-const Emoji = ({ name }) => {
-  const emojiMatch = name && emoji.search(name.toLowerCase())[0];
+const Emoji = ({ name, size }) => {
+  const emojiMatches = name && emoji.search(name.toLowerCase());
+  const emojiMatch = name && emojiMatches[0];
   const emojiKey = emojiMatch && emojiMatch.key;
   const actualEmoji = emojiKey && emoji.get(emojiKey);
 
   if (actualEmoji) {
-    return <Text style={styles.emoji}>{actualEmoji} </Text>;
+    return <Text style={[styles.emoji, { fontSize: size }]}>{actualEmoji} </Text>;
   }
 
   return null;

@@ -3,6 +3,10 @@ import { StyleSheet } from 'react-native';
 import styleConstants from '../../../styleConstants';
 
 const styles = StyleSheet.create({
+  emojiContainer: {
+    alignItems: 'center',
+    marginBottom: styleConstants.dimensions.spacing.vertical,
+  },
   titleText: {
     ...styleConstants.fonts.types.title,
     textAlign: 'center',
