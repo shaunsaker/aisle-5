@@ -17,9 +17,9 @@ export class CoachmarksHandler extends React.Component {
 
     this.keyboardDidShow = this.keyboardDidShow.bind(this);
     this.hasUserSeenCoachmark = this.hasUserSeenCoachmark.bind(this);
-    this.hasUserCheckedPendingListItem = this.hasUserCheckedPendingListItem.bind(this);
+    this.hasUserCheckedFirstPendingListItem = this.hasUserCheckedFirstPendingListItem.bind(this);
     this.onShowCoachmark = this.onShowCoachmark.bind(this);
-    this.setTooltipID = this.setTooltipID.bind(this);
+    this.setCoachmarkID = this.setCoachmarkID.bind(this);
     this.onHideCoachmark = this.onHideCoachmark.bind(this);
     this.saveCoachmark = this.saveCoachmark.bind(this);
     this.navigate = this.navigate.bind(this);
@@ -37,7 +37,7 @@ export class CoachmarksHandler extends React.Component {
     userCoachmarks: PropTypes.shape({ coachmark_id: PropTypes.string }),
     uid: PropTypes.string,
     uniqueID: PropTypes.string,
-    pendingList: PropTypes.shape({}),
+    pendingList: PropTypes.shape({}).isRequired,
     scene: PropTypes.string,
   };
 
@@ -86,13 +86,13 @@ export class CoachmarksHandler extends React.Component {
     // If the checkItem coachmark is shown and
     // If the user has marked his pending item as checked
     // Hide the checkItem coachmark
-    const hasUserCheckedPendingListItem =
+    const hasUserCheckedFirstPendingListItem =
       pendingListHasItems &&
       previousPendingListHasItems &&
-      this.hasUserCheckedPendingListItem(pendingList) &&
-      !this.hasUserCheckedPendingListItem(prevProps.pendingList);
+      this.hasUserCheckedFirstPendingListItem(pendingList) &&
+      !this.hasUserCheckedFirstPendingListItem(prevProps.pendingList);
 
-    if (coachmarkID === 'checkItem' && hasUserCheckedPendingListItem) {
+    if (coachmarkID === 'checkItem' && hasUserCheckedFirstPendingListItem) {
       this.onHideCoachmark('checkItem');
     }
 
@@ -105,7 +105,7 @@ export class CoachmarksHandler extends React.Component {
     if (
       coachmarkID !== 'checkout' &&
       !hasUserSeenCheckoutCoachmark &&
-      hasUserCheckedPendingListItem
+      hasUserCheckedFirstPendingListItem
     ) {
       this.onShowCoachmark('checkout');
     }
@@ -151,43 +151,45 @@ export class CoachmarksHandler extends React.Component {
     const { userCoachmarks } = this.props;
 
     // Convert the userCoachmarks object into an array
-    const userCoachmarksArray = utils.objects.convertObjectToArray(userCoachmarks);
+    const userCoachmarksArray = userCoachmarks
+      ? utils.objects.convertObjectToArray(userCoachmarks)
+      : [];
 
     // Check if the user has seen the coachmark
     const userHasSeenAddItemCoachmark = userCoachmarksArray.filter(
       (coachmark) => coachmark.coachmark_id === coachmarkID,
-    ).length;
+    ).length
+      ? true
+      : null;
 
     return userHasSeenAddItemCoachmark;
   }
 
-  hasUserCheckedPendingListItem(pendingList) {
+  hasUserCheckedFirstPendingListItem(pendingList) {
     const itemID = Object.keys(pendingList)[0];
-    const hasUserCheckedPendingListItem = pendingList[itemID].isChecked;
+    const hasUserCheckedFirstPendingListItem = pendingList[itemID].isChecked;
 
-    return hasUserCheckedPendingListItem;
+    return hasUserCheckedFirstPendingListItem;
   }
 
   onShowCoachmark(coachmarkID) {
     const coachmark = COACHMARKS[coachmarkID];
 
-    this.setTooltipID(coachmarkID);
+    this.setCoachmarkID(coachmarkID);
 
     if (coachmark.type === 'modal') {
-      const { emojiName, titleText, descriptionText } = coachmark;
-
-      this.navigate('infoModal', { emojiName, titleText, descriptionText });
+      this.navigate('infoModal', { ...coachmark });
     }
   }
 
-  setTooltipID(coachmarkID) {
+  setCoachmarkID(coachmarkID) {
     this.setState({
       coachmarkID,
     });
   }
 
   onHideCoachmark(coachmarkID) {
-    this.setTooltipID(null); // reset state
+    this.setCoachmarkID(null); // reset state
     this.saveCoachmark(coachmarkID);
   }
 
@@ -226,6 +228,7 @@ export class CoachmarksHandler extends React.Component {
             text={coachmark.titleText}
             triangleOrientation={coachmark.triangleOrientation}
             handlePress={() => this.onHideCoachmark(coachmarkID)}
+            testID={`coachmarksHandler.tooltip.${coachmarkID}`}
           />
         </TooltipAnimator>
       ) : null;

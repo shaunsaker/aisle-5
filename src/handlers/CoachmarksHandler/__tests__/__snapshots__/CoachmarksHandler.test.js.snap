@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CoachmarksHandler methods should handle saveCoachmark 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "meta": Object {
+          "pathParts": Array [
+            "coachmarks",
+          ],
+        },
+        "payload": Object {
+          "document": Object {
+            "coachmark_id": "addItem",
+            "uid": undefined,
+            "unique_id": undefined,
+          },
+        },
+        "type": "addDocument",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "isThrow": false,
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`CoachmarksHandler renders renders with minimum required props 1`] = `null`;

@@ -46,9 +46,14 @@ exports[`PredictedItem renders renders the default state 1`] = `
           allowFontScaling={true}
           ellipsizeMode="tail"
           style={
-            Object {
-              "fontSize": 20,
-            }
+            Array [
+              Object {
+                "fontSize": 20,
+              },
+              Object {
+                "fontSize": undefined,
+              },
+            ]
           }
         >
           🍺
@@ -247,9 +252,14 @@ exports[`PredictedItem renders renders the out of stock state 1`] = `
           allowFontScaling={true}
           ellipsizeMode="tail"
           style={
-            Object {
-              "fontSize": 20,
-            }
+            Array [
+              Object {
+                "fontSize": 20,
+              },
+              Object {
+                "fontSize": undefined,
+              },
+            ]
           }
         >
           🍷

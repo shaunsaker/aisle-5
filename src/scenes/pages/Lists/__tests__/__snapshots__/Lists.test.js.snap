@@ -371,9 +371,14 @@ exports[`Lists renders renders with minimum required props 1`] = `
                   allowFontScaling={true}
                   ellipsizeMode="tail"
                   style={
-                    Object {
-                      "fontSize": 20,
-                    }
+                    Array [
+                      Object {
+                        "fontSize": 20,
+                      },
+                      Object {
+                        "fontSize": undefined,
+                      },
+                    ]
                   }
                 >
                   🍺

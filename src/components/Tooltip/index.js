@@ -23,6 +23,7 @@ export default class Tooltip extends React.Component {
     text: PropTypes.string,
     triangleOrientation: PropTypes.number,
     handlePress: PropTypes.func,
+    testID: PropTypes.string,
   };
 
   static defaultProps = {};
@@ -56,12 +57,16 @@ export default class Tooltip extends React.Component {
   }
 
   render() {
-    const { text, triangleOrientation, handlePress } = this.props;
+    const { text, triangleOrientation, handlePress, testID } = this.props;
     const triangleRotateStyles = { transform: [{ rotate: `${triangleOrientation}deg` }] };
     const trianglePositionStyles = this.getTrianglePosition(triangleOrientation);
 
     return (
-      <Touchable onPress={handlePress} style={[styles.container, { padding: this.triangleSize }]}>
+      <Touchable
+        onPress={handlePress}
+        style={[styles.container, { padding: this.triangleSize }]}
+        testID={testID}
+      >
         <Snackbar text={text} disabled />
 
         <View style={[styles.triangleContainer, triangleRotateStyles, trianglePositionStyles]}>
