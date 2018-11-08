@@ -97,11 +97,16 @@ describe('CoachmarksHandler', () => {
         );
         const instance = component.getInstance();
         const coachmark = COACHMARKS[modalID];
+        const { emojiName, titleText, descriptionText } = coachmark;
 
         instance.onShowCoachmark(modalID);
 
         expect(spies[0]).toHaveBeenCalledWith(modalID);
-        expect(spies[1]).toHaveBeenCalledWith('infoModal', { ...coachmark });
+        expect(spies[1]).toHaveBeenCalledWith('infoModal', {
+          emojiName,
+          titleText,
+          descriptionText,
+        });
       });
     });
 

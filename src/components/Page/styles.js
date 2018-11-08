@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignSelf: 'stretch',
     backgroundColor: styleConstants.colors.white,
-    paddingTop: Platform.OS === 'ios' ? 22 : 0,
+    paddingTop: Platform.OS === 'ios' ? 22 : 0, // status bar
   },
 });
 

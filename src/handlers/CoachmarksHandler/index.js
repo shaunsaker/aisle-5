@@ -178,7 +178,9 @@ export class CoachmarksHandler extends React.Component {
     this.setCoachmarkID(coachmarkID);
 
     if (coachmark.type === 'modal') {
-      this.navigate('infoModal', { ...coachmark });
+      const { emojiName, titleText, descriptionText } = coachmark;
+
+      this.navigate('infoModal', { emojiName, titleText, descriptionText });
     }
   }
 
