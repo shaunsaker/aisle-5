@@ -1,7 +1,7 @@
 const predictedItemsList = [
   {
     id: '-1',
-    name: 'Whiskey',
+    name: 'Bread',
     averageUsagePerDay: 0.5,
     previouslyPurchasedQuantity: null,
     remainingQuantity: null,
@@ -10,7 +10,7 @@ const predictedItemsList = [
   },
   {
     id: '0',
-    name: 'Wine',
+    name: 'Beer',
     averageUsagePerDay: 0.5,
     previouslyPurchasedQuantity: 1,
     remainingQuantity: 0,
@@ -19,7 +19,7 @@ const predictedItemsList = [
   },
   {
     id: '1',
-    name: 'Beer',
+    name: 'Apple',
     averageUsagePerDay: 2,
     previouslyPurchasedQuantity: 6,
     remainingQuantity: 2,
@@ -28,7 +28,7 @@ const predictedItemsList = [
   },
   {
     id: '10',
-    name: 'Bread',
+    name: 'Chicken',
     averageUsagePerDay: 0.5,
     previouslyPurchasedQuantity: 2,
     remainingQuantity: 1,
@@ -37,7 +37,7 @@ const predictedItemsList = [
   },
   {
     id: '2',
-    name: 'Milk',
+    name: 'Coffee',
     averageUsagePerDay: 0.25,
     previouslyPurchasedQuantity: 4,
     remainingQuantity: 2,
