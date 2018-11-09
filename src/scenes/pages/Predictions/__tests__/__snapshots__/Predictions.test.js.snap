@@ -412,7 +412,6 @@ exports[`Predictions renders renders with minimum required props 1`] = `
                         "flex": 1,
                         "fontFamily": "Muli-SemiBold",
                         "fontSize": 17,
-                        "lineHeight": 25.5,
                       }
                     }
                   >

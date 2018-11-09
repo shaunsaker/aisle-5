@@ -137,7 +137,6 @@ exports[`RemovePendingItemModal renders renders with minimum required props 1`] 
                     "color": "#212121",
                     "fontFamily": "Muli-SemiBold",
                     "fontSize": 17,
-                    "lineHeight": 25.5,
                     "marginBottom": 10,
                     "textAlign": "center",
                   }
@@ -169,7 +168,6 @@ exports[`RemovePendingItemModal renders renders with minimum required props 1`] 
                     "color": "#212121",
                     "fontFamily": "Muli-SemiBold",
                     "fontSize": 17,
-                    "lineHeight": 25.5,
                     "marginBottom": 10,
                     "textAlign": "center",
                   }

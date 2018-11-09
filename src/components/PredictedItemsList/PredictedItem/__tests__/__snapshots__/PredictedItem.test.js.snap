@@ -71,7 +71,6 @@ exports[`PredictedItem renders renders the default state 1`] = `
             "flex": 1,
             "fontFamily": "Muli-SemiBold",
             "fontSize": 17,
-            "lineHeight": 25.5,
           }
         }
       >
@@ -172,7 +171,6 @@ exports[`PredictedItem renders renders the not enough data state 1`] = `
             "flex": 1,
             "fontFamily": "Muli-SemiBold",
             "fontSize": 17,
-            "lineHeight": 25.5,
           }
         }
       >
@@ -196,7 +194,6 @@ exports[`PredictedItem renders renders the not enough data state 1`] = `
           "color": "#212121",
           "fontFamily": "Muli-SemiBold",
           "fontSize": 17,
-          "lineHeight": 25.5,
         }
       }
     >
@@ -277,7 +274,6 @@ exports[`PredictedItem renders renders the out of stock state 1`] = `
             "flex": 1,
             "fontFamily": "Muli-SemiBold",
             "fontSize": 17,
-            "lineHeight": 25.5,
           }
         }
       >
@@ -378,7 +374,6 @@ exports[`PredictedItem renders renders with minimum required props 1`] = `
             "flex": 1,
             "fontFamily": "Muli-SemiBold",
             "fontSize": 17,
-            "lineHeight": 25.5,
           }
         }
       />

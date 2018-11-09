@@ -124,7 +124,6 @@ exports[`InfoModal renders renders with minimum required props 1`] = `
                   "color": "#212121",
                   "fontFamily": "Muli-SemiBold",
                   "fontSize": 17,
-                  "lineHeight": 25.5,
                   "marginBottom": 20,
                   "textAlign": "center",
                 }
