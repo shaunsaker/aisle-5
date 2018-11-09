@@ -6,7 +6,8 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    maxWidth: 300,
+    maxWidth: 360,
+    marginHorizontal: styleConstants.dimensions.spacing.horizontal * 2,
     alignSelf: 'center',
     paddingVertical: 100, // fixes squashed container when input is focussed
   },

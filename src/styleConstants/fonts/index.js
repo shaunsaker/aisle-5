@@ -42,7 +42,6 @@ fonts.types = {
     ...fonts.families.medium,
     fontSize: fonts.sizes.regular,
     color: colors.primaryText,
-    lineHeight: fonts.sizes.regular * 1.5,
   },
   small: {
     ...fonts.families.medium,
