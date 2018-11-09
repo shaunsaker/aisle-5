@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>396876001034-jhlk43lb063i334uglpfmm5v8nv48lgm.apps.googleusercontent.com</string>
+	<string>315920114440-jab5rjkf1rqsr2k63nq7qgsbs9lnv6rd.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.396876001034-jhlk43lb063i334uglpfmm5v8nv48lgm</string>
+	<string>com.googleusercontent.apps.315920114440-jab5rjkf1rqsr2k63nq7qgsbs9lnv6rd</string>
 	<key>API_KEY</key>
-	<string>AIzaSyC1o9JamxZXnN3q0NET0i0AmYlh3axdQko</string>
+	<string>AIzaSyACoOFUXC4B6a6UcPOria4FIqwmnOADcqc</string>
 	<key>GCM_SENDER_ID</key>
-	<string>396876001034</string>
+	<string>315920114440</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>co.za.shaunsaker.aisle5</string>
 	<key>PROJECT_ID</key>
-	<string>isle5-development</string>
+	<string>isle5-production</string>
 	<key>STORAGE_BUCKET</key>
-	<string>isle5-development.appspot.com</string>
+	<string>isle5-production.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:396876001034:ios:050850ebe403dcd5</string>
+	<string>1:315920114440:ios:050850ebe403dcd5</string>
 	<key>DATABASE_URL</key>
-	<string>https://isle5-development.firebaseio.com</string>
+	<string>https://isle5-production.firebaseio.com</string>
 </dict>
 </plist>
