@@ -10,7 +10,7 @@
     "ios-development": "react-native run-ios",
     "android-development": "react-native run-android",
     "android-staging": "react-native run-android --variant=release",
-    "android-apk:": "cd android && ./gradlew clean && ./gradlew assembleRelease",
+    "android-apk": "cd android && ./gradlew clean && ./gradlew assembleRelease",
     "android-install": "adb install ./android/app/build/outputs/apk/release/app-armeabi-v7a-release.apk",
     "code-push-android": "code-push release-react Aisle5-android android  --deploymentName 'Production'",
     "code-push-ios": "code-push release-react Aisle5-ios ios  --deploymentName 'Production'",
