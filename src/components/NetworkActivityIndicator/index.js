@@ -1,16 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { View, ActivityIndicator } from 'react-native';
+import { View } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import styleConstants from '../../styleConstants';
 import styles from './styles';
 
-/*
-  This container's responsibility is to:
-
-  - display loading state based on pendingTransactions
-*/
 export class NetworkActivityIndicator extends React.Component {
   constructor(props) {
     super(props);
@@ -20,28 +15,24 @@ export class NetworkActivityIndicator extends React.Component {
 
   static propTypes = {
     hasNetwork: PropTypes.bool,
-    pendingTransactions: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   };
 
   static defaultProps = {};
 
   render() {
-    const { hasNetwork, pendingTransactions } = this.props;
-    const isSynced = !pendingTransactions.length;
-    const isLoading = hasNetwork && !isSynced;
+    const { hasNetwork } = this.props;
 
-    const loaderComponent = isLoading ? (
-      <ActivityIndicator size="small" color={styleConstants.colors.white} style={styles.loader} />
+    const iconComponent = !hasNetwork ? (
+      <Icon name="signal-cellular-off" style={styles.icon} />
     ) : null;
 
-    return <View style={styles.container}>{loaderComponent}</View>;
+    return <View style={styles.container}>{iconComponent}</View>;
   }
 }
 
 function mapStateToProps(state) {
   return {
     hasNetwork: state.appState.hasNetwork,
-    pendingTransactions: state.appState.pendingTransactions,
   };
 }
 
