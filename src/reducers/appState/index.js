@@ -20,9 +20,9 @@ export default function appStateReducer(state = initialState, action = {}) {
       newState.systemMessage = initialState.systemMessage;
       return newState;
 
-    case 'SET_NETWORK_CONNECTION_INFO':
+    case 'SET_HAS_NETWORK':
       newState = utils.objects.cloneObject(state);
-      newState.network = action.payload.network;
+      newState.hasNetwork = action.payload.hasNetwork;
       return newState;
 
     case 'ADD_PENDING_TRANSACTION':

@@ -19,19 +19,16 @@ export class NetworkActivityIndicator extends React.Component {
   }
 
   static propTypes = {
-    network: PropTypes.shape({
-      type: PropTypes.string,
-    }).isRequired,
+    hasNetwork: PropTypes.bool,
     pendingTransactions: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   };
 
   static defaultProps = {};
 
   render() {
-    const { network, pendingTransactions } = this.props;
-    const isOffline = network.type === 'none';
+    const { hasNetwork, pendingTransactions } = this.props;
     const isSynced = !pendingTransactions.length;
-    const isLoading = !isOffline && !isSynced;
+    const isLoading = hasNetwork && !isSynced;
 
     const loaderComponent = isLoading ? (
       <ActivityIndicator size="small" color={styleConstants.colors.white} style={styles.loader} />
@@ -43,7 +40,7 @@ export class NetworkActivityIndicator extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    network: state.appState.network,
+    hasNetwork: state.appState.hasNetwork,
     pendingTransactions: state.appState.pendingTransactions,
   };
 }

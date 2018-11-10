@@ -1,16 +1,14 @@
 import React from 'react';
-import { NetInfo } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { withNetworkConnectivity } from 'react-native-offline';
 
 export class NetworkHandler extends React.Component {
   constructor(props) {
     super(props);
 
-    this.addNetInfoEventListener = this.addNetInfoEventListener.bind(this);
-    this.removeNetInfoEventListener = this.removeNetInfoEventListener.bind(this);
     this.handleConnectionChange = this.handleConnectionChange.bind(this);
-    this.setNetworkConnectionInfo = this.setNetworkConnectionInfo.bind(this);
+    this.setHasNetwork = this.setHasNetwork.bind(this);
     this.disableNetwork = this.disableNetwork.bind(this);
     this.enableNetwork = this.enableNetwork.bind(this);
   }
@@ -18,45 +16,43 @@ export class NetworkHandler extends React.Component {
   static get propTypes() {
     return {
       dispatch: PropTypes.func,
+      isConnected: PropTypes.bool,
+      hasNetwork: PropTypes.bool,
     };
   }
 
   componentDidMount() {
-    this.addNetInfoEventListener();
+    const { isConnected } = this.props;
+
+    this.handleConnectionChange(isConnected);
   }
 
-  componentWillUnmount() {
-    this.removeNetInfoEventListener();
-  }
+  componentDidUpdate() {
+    const { isConnected, hasNetwork } = this.props;
 
-  addNetInfoEventListener() {
-    NetInfo.addEventListener('connectionChange', this.handleConnectionChange);
-  }
-
-  removeNetInfoEventListener() {
-    NetInfo.removeEventListener('connectionChange', this.handleConnectionChange);
-  }
-
-  handleConnectionChange(connectionInfo) {
-    this.setNetworkConnectionInfo(connectionInfo);
-
-    if (
-      connectionInfo.type === 'none' ||
-      (connectionInfo.type === 'cellular' && connectionInfo.effectiveType === '2g')
-    ) {
-      this.disableNetwork();
-    } else if (connectionInfo.type !== 'none' && connectionInfo.effectiveType !== '2g') {
-      this.enableNetwork();
+    // If network connectivity has changed
+    if (isConnected !== hasNetwork) {
+      this.handleConnectionChange(isConnected);
     }
   }
 
-  setNetworkConnectionInfo(network) {
+  handleConnectionChange(isConnected) {
+    this.setHasNetwork(isConnected);
+
+    if (isConnected) {
+      this.enableNetwork();
+    } else {
+      this.disableNetwork();
+    }
+  }
+
+  setHasNetwork(hasNetwork) {
     const { dispatch } = this.props;
 
     dispatch({
-      type: 'SET_NETWORK_CONNECTION_INFO',
+      type: 'SET_HAS_NETWORK',
       payload: {
-        network,
+        hasNetwork,
       },
     });
   }
@@ -84,8 +80,13 @@ export class NetworkHandler extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    network: state.appState.network,
+    hasNetwork: state.appState.hasNetwork,
   };
 }
 
-export default connect(mapStateToProps)(NetworkHandler);
+const config = {
+  checkConnectionInterval: 5000, // every 5 seconds
+  checkInBackground: true,
+};
+
+export default connect(mapStateToProps)(withNetworkConnectivity(config)(NetworkHandler));

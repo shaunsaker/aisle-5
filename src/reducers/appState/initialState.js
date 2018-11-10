@@ -4,10 +4,7 @@ const initialState = {
     lng: null,
   },
   systemMessage: null,
-  network: {
-    type: null,
-    effectiveType: null,
-  },
+  hasNetwork: null,
   pendingTransactions: [],
 };
 
