@@ -39,8 +39,18 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>We do not require access to your music</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>We do not require access to your bluetooth</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>We do not require access to your calendar</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>We do not require access to your location</string>
+	<key>NSMotionUsageDescription</key>
+	<string>We do not require access to your motion</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>We do not require access to your speech recognition</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>MaterialIcons.ttf</string>
@@ -59,7 +69,16 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIRequiresFullScreen</key>
+	<true/>
 </dict>
 </plist>
